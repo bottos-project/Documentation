@@ -8,6 +8,7 @@
 # Contact us
 
   English: https://gitter.im/bottos-project/bottos
+  
   Chinese: http://forum.botfans.org/
   
 
