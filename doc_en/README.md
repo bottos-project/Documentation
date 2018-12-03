@@ -12,8 +12,3 @@
 **Bottos Project Address on Github**
 - [Github Address](https://github.com/bottos-project)
 
-
-&nbsp;
-**Bottos Developer Documentation**
-- [English Version](http://47.74.187.9:4001/)
-- [中文版](http://47.74.187.9:4000/)
