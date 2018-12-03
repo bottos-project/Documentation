@@ -8,7 +8,4 @@
 - 16 GiB RAM (system memory)
 - 1T GB of hard-drive space or more
 
-&nbsp;
-**Bottos Project Address on Github**
-- [Github Address](https://github.com/bottos-project)
 
