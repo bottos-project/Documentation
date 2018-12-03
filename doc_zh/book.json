@@ -1,0 +1,11 @@
+{
+    "description" : "Bottos开发文档",
+    "root": ".",
+    "plugins": [
+        "-lunr",
+        "multipart"
+    ],
+    "theme-default": {
+        "showLevel": true
+    }
+}

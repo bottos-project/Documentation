@@ -1,0 +1,1073 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Wallet REST Interface · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../../Wallet SDK/Wallet SDK.html" />
+    
+    
+    <link rel="prev" href="Common REST Interface.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Bottos Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../../Bottos Basics/Bottos Architecture.html">
+            
+                <a href="../../Bottos Basics/Bottos Architecture.html">
+            
+                    
+                    Bottos Architecture
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../Bottos Node/Node Introduction.html">
+            
+                <a href="../../Bottos Node/Node Introduction.html">
+            
+                    
+                    Bottos Node
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../Bottos Node/Network Topology.html">
+            
+                <a href="../../Bottos Node/Network Topology.html">
+            
+                    
+                    Network Topology
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../Bottos Node/BCLI.html">
+            
+                <a href="../../Bottos Node/BCLI.html">
+            
+                    
+                    BCLI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Development/Write smart contract in C++.html">
+            
+                <a href="../Development/Write smart contract in C++.html">
+            
+                    
+                    Smart Contract
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Deploying and Testing.html">
+            
+                <a href="../Deploying and Testing.html">
+            
+                    
+                    Deploying and Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="Common REST Interface.html">
+            
+                <a href="Common REST Interface.html">
+            
+                    
+                    Common REST Interface
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.3" data-path="Wallet REST Interface.html">
+            
+                <a href="Wallet REST Interface.html">
+            
+                    
+                    Wallet REST Interface
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../Wallet SDK/Wallet SDK.html">
+            
+                <a href="../../Wallet SDK/Wallet SDK.html">
+            
+                    
+                    Wallet SDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../DApp Development/How to set up the development environment.html">
+            
+                <a href="../../DApp Development/How to set up the development environment.html">
+            
+                    
+                    DApp Development
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../DApp Development/Install and Run Bottos.html">
+            
+                <a href="../../DApp Development/Install and Run Bottos.html">
+            
+                    
+                    Install and Run Bottos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../DApp Development/Development and deployment of Smart Contract.html">
+            
+                <a href="../../DApp Development/Development and deployment of Smart Contract.html">
+            
+                    
+                    Development and deployment of Smart Contract
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../DApp Development/DApp developing and debugging.html">
+            
+                <a href="../../DApp Development/DApp developing and debugging.html">
+            
+                    
+                    DApp developing and debugging
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Wallet REST Interface</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="wallet-rest-interface">Wallet REST Interface</h1>
+<h2 id="one-step-to-create-wallet">One-Step to create wallet</h2>
+<p><strong>API FUNCTION</strong></p>
+<blockquote>
+<p>API Description: One step to create the wallet that is stored by default under directory of Linux&#xFF1A; /home/bottos/bot/</p>
+<p><strong>API Address</strong></p>
+<p>URL:  /v1/wallet/createwallet </p>
+<p><strong>Result Format</strong></p>
+<p>JSON</p>
+<p><strong>Request Format</strong></p>
+<p>POST</p>
+</blockquote>
+<p><strong>Request Parameter&#xFF1A;</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Mandatory</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>account_name</td>
+<td>TRUE</td>
+<td>string</td>
+<td>Null</td>
+<td>Account name</td>
+</tr>
+<tr>
+<td>passwd</td>
+<td>TRUE</td>
+<td>string</td>
+<td>Null</td>
+<td>Password</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Field:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>errcode</td>
+<td>uint32</td>
+<td>Error code, 0-succeed, others refer to error code chapter</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td>Response description</td>
+</tr>
+<tr>
+<td>result</td>
+<td>jsonObject</td>
+<td>Response result</td>
+</tr>
+<tr>
+<td>wallet_name</td>
+<td>string</td>
+<td>Generated wallet file name, default is account name+&quot;.keystore&quot; in tail</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Field change</strong></p>
+<ul>
+<li><p>Null</p>
+<p><strong>API Sample</strong></p>
+</li>
+</ul>
+<blockquote>
+<p>Address : &lt;<a href="http://127.0.0.1:6869/v1/wallet/createwallet" target="_blank">http://127.0.0.1:6869/v1/wallet/createwallet</a>  &gt;</p>
+</blockquote>
+<ul>
+<li><p>Request : </p>
+<p>```</p>
+<pre><code>&quot;account_name&quot;: &quot;testtest1&quot;,
+&quot;passwd&quot;: &quot;123456&quot;    
+</code></pre><p>}</p>
+</li>
+</ul>
+<pre><code>
+- Response :
+</code></pre><p>   HTTP/1.1 200 OK
+  {
+      &quot;errcode&quot;: 0,
+      &quot;msg&quot;: &quot;success&quot;,
+      &quot;result&quot;: {
+          &quot;wallet_name&quot;: &quot;testtest1.keystore&quot;
+      }
+  }</p>
+<pre><code>
+
+
+
+
+## Generate Public Private Key Pairs
+
+**API Function**
+
+&gt; API Description: Generate public private key pairs
+&gt;
+&gt; **API Address**
+&gt;
+&gt; URL:  /v1/wallet/generatekeypair
+&gt;
+&gt; **Result Format**
+&gt;
+&gt; JSON
+&gt;
+&gt; **Request Format**
+&gt;
+&gt; GET
+
+**Request Parameter&#xFF1A;**
+
+| Parameter | Mandatory | Type | Default Value | Description |
+| ---- | ---- | ---- | ------ | ---- |
+| Null   |      |      |        |      |
+
+**Response Field:**
+
+| Parameter        | Type       | Description                                 |
+| ----------- | ---------- | ------------------------------------ |
+| errcode     | uint32     | Error code, 0-succeed, others refer to error code chapter |
+| msg         | string     | Response description                             |
+| result      | jsonObject | Response result                             |
+| public_key  | string     | Public key                                 |
+| private_key | string     | Private Key                                 |
+
+**Field change**
+
+- Null
+
+  **API Sample**
+
+&gt; Address : &lt;http://127.0.0.1:6869/v1/wallet/generatekeypair  &gt;
+
+- Request :
+</code></pre><p>  Null</p>
+<pre><code>
+- Response :
+</code></pre><p>   HTTP/1.1 200 OK
+  {
+      &quot;errcode&quot;: 0,
+      &quot;msg&quot;: &quot;success&quot;,
+      &quot;result&quot;: {
+          &quot;public_key&quot;: &quot;043680ae1b81f87274d7051e6101afc8f8da3cd978bb75b22f24becb98afb456f110151644330ff6c742e44f8e9652f1ab5ea1cd3997bebe5a23a4389ff0cb6493&quot;,
+          &quot;private_key&quot;: &quot;8a068d821ad8d58fe8caaa87f32ea69f889f6b8ce8c6bc3bc67ce2c68c43da3b&quot;
+      }
+  }</p>
+<pre><code>
+## Create Account
+
+**API Function**
+
+&gt; API Description: Create account
+&gt;
+&gt; **API Address**
+&gt;
+&gt; URL:  /v1/wallet/createaccount 
+&gt;
+&gt; **Result Format**
+&gt;
+&gt; JSON
+&gt;
+&gt; **Request Format**
+&gt;
+&gt; POST
+
+**Request Parameter&#xFF1A;**
+
+| Parameter         | Mandatory  | Type   | Default Value | Description                                   |
+| ------------ | ----- | ------ | ------ | -------------------------------------- |
+| account_name | TRUE  | string | Null     | Account name                               |
+| public_key   | TRUE  | string | Null     | Public key                                   |
+| referrer     | FALSE | string | bottos | Referrer account, if is set to null, it is bottos account by default |
+
+**Response Field:**
+
+| Parameter         | Type       | Description                                 |
+| ------------ | ---------- | ------------------------------------ |
+| errcode      | uint32     | Error code, 0-succeed, others refer to error code chapter |
+| msg          | string     | Response description                             |
+| result       | jsonObject | Response result and data details               |
+| account_name | string     | New registered account name                     |
+
+**Field change**
+
+- Null
+
+  **API Sample**
+
+&gt; Address : &lt;http://127.0.0.1:6869/v1/wallet/createaccount &gt;
+
+- Request :
+</code></pre><p>  {
+      &quot;account_name&quot;: &quot;testtest&quot;,
+      &quot;public_key&quot;: &quot;0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f&quot;,
+      &quot;referrer&quot;: &quot;bottos&quot;<br>  }</p>
+<pre><code>
+- Response :
+</code></pre><p>   HTTP/1.1 200 OK
+  {
+      &quot;errcode&quot;: 0,
+      &quot;msg&quot;: &quot;success&quot;,
+      &quot;result&quot;: {
+          &quot;account_name&quot;:&quot;testtest&quot;
+      }
+  }</p>
+<pre><code>
+
+
+## Create Wallet by Manual
+
+**API Function**
+
+&gt; API Description: Create wallet manually&#xFF0C;wallet file is stored by default in Linux directory&#xFF1A; /home/bottos/bot/, and the generated wallet file name is account name +&quot;.keystore&quot; in tail by default.
+&gt;
+&gt; **API Address**
+&gt;
+&gt; URL:  /v1/wallet/createwalletmanual 
+&gt;
+&gt; **Result Format**
+&gt;
+&gt; JSON
+&gt;
+&gt; **Request Format**
+&gt;
+&gt; POST
+
+**Request Parameter&#xFF1A;**
+
+| Parameter         | Mandatory | Type   | Default Value | Description     |
+| ------------ | ---- | ------ | ------ | -------- |
+| account_name | TRUE | string | Null     | Account name |
+| private_key  | TRUE | string | Null     | Private Key     |
+| passwd       | TRUE | string | Null     | Password     |
+
+**Response Field:**
+
+| Parameter        | Type       | Description                                               |
+| ----------- | ---------- | -------------------------------------------------- |
+| errcode     | uint32     | Error code, 0-succeed, others refer to error code chapter               |
+| msg         | string     | Response description                                           |
+| result      | jsonObject | Response result                                           |
+| wallet_name | string     | the generated wallet file name, it is account name +&quot;.keystore&quot; in tail by default |
+
+**Field change**
+
+- Null
+
+  **API Sample**
+
+&gt; Address : &lt;http://127.0.0.1:6869/v1/wallet/createwalletmanual  &gt;
+
+- Request :
+</code></pre><p>  {
+      &quot;account_name&quot;: &quot;testtest1&quot;,
+      &quot;private_key&quot;: &quot;b799ef616830cd7b8599ae7958fbee56d4c8168ffd5421a16025a398b8a4be45&quot;,
+      &quot;passwd&quot;: &quot;123456&quot;
+  }</p>
+<pre><code>
+- Response :
+</code></pre><p>   HTTP/1.1 200 OK
+  {
+      &quot;errcode&quot;: 0,
+      &quot;msg&quot;: &quot;success&quot;,
+      &quot;result&quot;: {
+          &quot;wallet_name&quot;: &quot;testtest1.keystore&quot;
+      }
+  }</p>
+<pre><code>
+
+
+## Open/Unlock wallet
+
+**API Function**
+
+&gt; API Description: Open/Unlock wallet
+&gt;
+&gt; **API Address**
+&gt;
+&gt; URL:  /v1/wallet/unlockaccount
+&gt;
+&gt; **Result Format**
+&gt;
+&gt; JSON
+&gt;
+&gt; **Request Format**
+&gt;
+&gt; POST
+
+**Request Parameter&#xFF1A;**
+
+| Parameter         | Mandatory | Type   | Default Value | Description     |
+| ------------ | ---- | ------ | ------ | -------- |
+| account_name | TRUE | string | Null     | Account name |
+| passwd       | TRUE | string | Null     | Passsword     |
+
+**Response Field:**
+
+| Parameter    | Type       | Description                                 |
+| ------- | ---------- | ------------------------------------ |
+| errcode | uint32     | Error code, 0-succeed, others refer to error code chapter |
+| msg     | string     | Response description                             |
+| result  | jsonObject | Response result                             |
+| unlock  | bool       | Unlock Result                             |
+
+**Field change**
+
+- Null
+
+  **API Sample**
+
+&gt; Address : &lt;http://127.0.0.1:6869/v1/wallet/unlockaccount  &gt;
+
+- Request :
+</code></pre><p>  {
+      &quot;account_name&quot;: &quot;testtest1&quot;,
+      &quot;passwd&quot;: &quot;123456&quot;
+  }</p>
+<pre><code>
+- Response :
+</code></pre><p>   HTTP/1.1 200 OK
+  {
+      &quot;errcode&quot;: 0,
+      &quot;msg&quot;: &quot;success&quot;,
+      &quot;result&quot;: {
+          &quot;unlock&quot;: true
+      }
+  }</p>
+<pre><code>
+
+
+## Close/Lock Wallet
+
+**API Function**
+
+&gt; API Description: Close/Lock wallet
+&gt;
+&gt; **API Address**
+&gt;
+&gt; URL:  /v1/wallet/lockaccount 
+&gt;
+&gt; **Result Format**
+&gt;
+&gt; JSON
+&gt;
+&gt; **Request Format**
+&gt;
+&gt; POST
+
+**Request Parameter&#xFF1A;**
+
+| Parameter         | Mandatory | Type   | Default Value | Description     |
+| ------------ | ---- | ------ | ------ | -------- |
+| account_name | TRUE | string | Null     | Account name |
+
+**Response Field:**
+
+| Parameter    | Type       | Description                                 |
+| ------- | ---------- | ------------------------------------ |
+| errcode | uint32     | Error code, 0-succeed, others refer to error code chapter |
+| msg     | string     | Response description                             |
+| result  | jsonObject | Response result                             |
+| lock    | bool       | Unlock Result                             |
+
+**Field change**
+
+- Null
+
+  **API Sample**
+
+&gt; Address : &lt;http://127.0.0.1:6869/v1/wallet/lockaccount  &gt;
+
+- Request :
+</code></pre><p>  {
+      &quot;account_name&quot;: &quot;testtest1&quot;
+  }</p>
+<pre><code>
+- Response :
+</code></pre><p>   HTTP/1.1 200 OK
+  {
+      &quot;errcode&quot;: 0,
+      &quot;msg&quot;: &quot;success&quot;,
+      &quot;result&quot;: {
+          &quot;lock&quot;: true
+      }
+  }</p>
+<pre><code>
+
+
+## Query wallets&apos; list
+
+**API Function**
+
+&gt; API Description: Query wallets&apos; list
+&gt;
+&gt; **API Address**
+&gt;
+&gt; URL:  /v1/wallet/list
+&gt;
+&gt; **Result Format**
+&gt;
+&gt; JSON
+&gt;
+&gt; **Request Format**
+&gt;
+&gt; GET
+
+**Request Parameter&#xFF1A;**
+
+| Parameter | Mandatory | Type | Default Value | Description |
+| ---- | ---- | ---- | ------ | ---- |
+| Null   |      |      |        |      |
+
+**Response Field:**
+
+| Parameter         | Type       | Description                                       |
+| ------------ | ---------- | ------------------------------------------ |
+| errcode      | uint32     | Error code, 0-succeed, others refer to error code chapter       |
+| msg          | string     | Response description                                   |
+| result       | jsonObject | Response result                                   |
+| wallet_path  | string     | Wallet path+file name                          |
+| account_name | string     | Account name                                   |
+| public_key   | string     | Public key value. It could not be found in chain if the account hasn&apos;t been registered to chain. |
+
+**Field change**
+
+- Null
+
+  **API Sample**
+
+&gt; Address : &lt;http://127.0.0.1:6869/v1/wallet/list &gt;
+
+- Request :
+</code></pre><p>  Null</p>
+<pre><code>
+- Response :
+</code></pre><p>   HTTP/1.1 200 OK
+  {
+      &quot;errcode&quot;: 0,
+      &quot;msg&quot;: &quot;success&quot;,
+      &quot;result&quot;: [{
+          &quot;wallet_path&quot;: &quot;C:\Users\jim\AppData\Roaming\bot\testtest12.keystore&quot;,
+          &quot;account_name&quot;: &quot;testtest12&quot;,
+          &quot;public_key&quot;: &quot;0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f&quot;
+      },
+      {
+          &quot;wallet_path&quot;: &quot;C:\Users\jim\AppData\Roaming\bot\testtest2.keystore&quot;,
+          &quot;account_name&quot;: &quot;testtest2&quot;,
+          &quot;public_key&quot;: &quot;not found on Chain&quot;
+      }]
+  }</p>
+<pre><code>
+
+
+## Query Public and Private Key Pair
+
+**API Function**
+
+&gt; API Description: Query public and private Key pair&#xFF0C;the precondition to invoke this API: the account must be in opened or unlocked status.
+&gt;
+&gt; **API Address**
+&gt;
+&gt; URL:  /v1/wallet/getkeypair
+&gt;
+&gt; **Result Format**
+&gt;
+&gt; JSON
+&gt;
+&gt; **Request Format**
+&gt;
+&gt; POST
+
+**Request Parameter&#xFF1A;**
+
+| Parameter         | Mandatory | Type   | Default Value | Description     |
+| ------------ | ---- | ------ | ------ | -------- |
+| account_name | TRUE | string | Null     | Account name |
+
+**Response Field:**
+
+| Parameter         | Type       | Description                                 |
+| ------------ | ---------- | ------------------------------------ |
+| errcode      | uint32     | Error code, 0-succeed, others refer to error code chapter |
+| msg          | string     | Response description                             |
+| result       | jsonObject | Response result                             |
+| account_name | string     | Account name                             |
+| private_key  | string     | Private Key value                               |
+| public_key   | string     | Public Key value                               |
+
+**Field change**
+
+- Null
+
+  **API Sample**
+
+&gt; Address : &lt;http://127.0.0.1:6869/v1/wallet/getkeypair&gt;
+
+- Request :
+</code></pre><p>  {
+      &quot;account_name&quot;:&quot;testtest&quot;
+  }</p>
+<pre><code>
+- Response :
+</code></pre><p>  {
+      &quot;errcode&quot;: 0,
+      &quot;msg&quot;: &quot;success&quot;,
+      &quot;result&quot;: {
+          &quot;account_name&quot;: &quot;testtest&quot;,
+          &quot;private_key&quot;: &quot;8a068d821ad8d58fe8caaa87f32ea69f889f6b8ce8c6bc3bc67ce2c68c43da3b&quot;,
+          &quot;public_key&quot;: &quot;043680ae1b81f87274d7051e6101afc8f8da3cd978bb75b22f24becb98afb456f110151644330ff6c742e44f8e9652f1ab5ea1cd3997bebe5a23a4389ff0cb6493&quot;
+      }
+  }</p>
+<pre><code>
+
+
+## Sign for Transaction
+
+**API Function**
+
+&gt; API Description: Sign for transaction
+&gt;
+&gt; **API Address**
+&gt;
+&gt; URL:  /v1/wallet/signtransaction
+&gt;
+&gt; **Result Format**
+&gt;
+&gt; JSON
+&gt;
+&gt; **Request Format**
+&gt;
+&gt; POST
+
+**Request Parameter&#xFF1A;**
+
+| Parameter     | Mandatory | Type   | Default Value | Description                                            |
+| -------- | ---- | ------ | ------ | ----------------------------------------------- |
+| sender   | TRUE | string | Null     | Account name who send the transaction         |
+| contract | TRUE | string | Null     | Contract name                                 |
+| method   | TRUE | string | Null     | Contract method                                      |
+| param    | TRUE | string | Null     | Business structured data&#xFF0C;after the bpl serialization, it converts to hexadecimal string |
+
+**Response Field:**
+
+| Parameter    | Type       | Description                                       |
+| ------- | ---------- | ------------------------------------------ |
+| errcode | uint32     | Error code, 0-succeed, others refer to error code chapter       |
+| msg     | string     | Response description                                   |
+| result  | jsonObject | Response result&#xFF0C;See the &quot;Send Transaction information&quot; request field specifically |
+
+**Field change**
+
+- Null
+
+  **API Sample**
+
+&gt; Address : &lt;http://127.0.0.1:6869/v1/wallet/signtransaction&gt;
+
+- Request :
+</code></pre><p>  {
+      &quot;sender&quot;: &quot;bottos&quot;,
+      &quot;contract&quot;: &quot;bottos&quot;,
+      &quot;method&quot;: &quot;newaccount&quot;,
+      &quot;param&quot;: &quot;&quot;
+  }</p>
+<pre><code>
+- Response :
+</code></pre><p>   HTTP/1.1 200 OK
+  {
+      &quot;errcode&quot;: 0,
+      &quot;msg&quot;: &quot;success&quot;,
+      &quot;result&quot;: {
+          &quot;version&quot;: 1,
+          &quot;cursor_num&quot;: 26,
+          &quot;cursor_label&quot;: 1948301132,
+          &quot;lifetime&quot;: 1537330126,
+          &quot;sender&quot;: &quot;bottos&quot;,
+          &quot;contract&quot;: &quot;bottos&quot;,
+          &quot;method&quot;: &quot;newaccount&quot;,
+          &quot;param&quot;: &quot;&quot;,
+          &quot;sig_alg&quot;: 1,
+          &quot;signature&quot;: &quot;aa249f7c0e5a5564b48ada5e9f0ffa4665d955b08e08c43906a156fa5bf30272547f2e4cde31fa8d5d303f36a4de0718ec3284b2e82f93fa7da50a54cbdcf86a&quot;
+      }
+  }</p>
+<pre><code>
+## Sign for data
+
+**API Function**
+
+&gt; API Description: sign for data
+&gt;
+&gt; **API Address**
+&gt;
+&gt; URL:  /v1/wallet/signhash
+&gt;
+&gt; **Result Format**
+&gt;
+&gt; JSON
+&gt;
+&gt; **Request Format**
+&gt;
+&gt; POST
+
+**Request Parameter&#xFF1A;**
+
+| Parameter         | Mandatory | Type   | Default Value | Description         |
+| ------------ | ---- | ------ | ------ | ------------ |
+| account_name | TRUE | string | Null     | Account name     |
+| param        | TRUE | []byte | Null     | Arrays to be signed |
+
+**Response Field:**
+
+| Parameter       | Type       | Description                                 |
+| ---------- | ---------- | ------------------------------------ |
+| errcode    | uint32     | Error code, 0-succeed, others refer to error code chapter |
+| msg        | string     | Response description                             |
+| result     | jsonObject | Response result                             |
+| hash_value | string     | Signature value                               |
+
+**Field change**
+
+- Null
+
+  **API Sample**
+
+&gt; Address : &lt;http://127.0.0.1:6869/v1/wallet/signhash
+
+- Request :
+</code></pre><p>  {
+      &quot;account_name&quot;: &quot;bottos&quot;,
+      &quot;param&quot;: [11]
+  }</p>
+<pre><code>
+- Response :
+</code></pre><p>   HTTP/1.1 200 OK
+  {
+      &quot;errcode&quot;: 0,
+      &quot;msg&quot;: &quot;success&quot;,
+      &quot;result&quot;: {
+          &quot;hash_value&quot;: &quot;ed6b57fa91ee369af925e4c0545c06f5829ce3d2825949931a2b8816039f53f47160701c779b528abe84f5d6acdb2d9c46de6958e42606d2e4d7b9b072991729&quot;
+      }
+  }
+  ```</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="Common REST Interface.html" class="navigation navigation-prev " aria-label="Previous page: Common REST Interface">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../../Wallet SDK/Wallet SDK.html" class="navigation navigation-next " aria-label="Next page: Wallet SDK">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Wallet REST Interface","level":"1.3.3","depth":2,"next":{"title":"Wallet SDK","level":"1.4","depth":1,"path":"Wallet SDK/Wallet SDK.md","ref":"Wallet SDK/Wallet SDK.md","articles":[]},"previous":{"title":"Common REST Interface","level":"1.3.2","depth":2,"path":"Smart Contract/API/Common REST Interface.md","ref":"Smart Contract/API/Common REST Interface.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*","description":"Bottos Development files","theme-default":{"showLevel":true}},"file":{"path":"Smart Contract/API/Wallet REST Interface.md","mtime":"2018-11-12T09:29:19.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-14T09:34:16.926Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

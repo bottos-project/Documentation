@@ -1,0 +1,1121 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Wallet SDK · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../DApp Development/How to set up the development environment.html" />
+    
+    
+    <link rel="prev" href="../Smart Contract/API/Wallet REST Interface.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Bottos Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../Bottos Basics/Bottos Architecture.html">
+            
+                <a href="../Bottos Basics/Bottos Architecture.html">
+            
+                    
+                    Bottos Architecture
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Bottos Node/Node Introduction.html">
+            
+                <a href="../Bottos Node/Node Introduction.html">
+            
+                    
+                    Bottos Node
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Bottos Node/Network Topology.html">
+            
+                <a href="../Bottos Node/Network Topology.html">
+            
+                    
+                    Network Topology
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Bottos Node/BCLI.html">
+            
+                <a href="../Bottos Node/BCLI.html">
+            
+                    
+                    BCLI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Smart Contract/Development/Write smart contract in C++.html">
+            
+                <a href="../Smart Contract/Development/Write smart contract in C++.html">
+            
+                    
+                    Smart Contract
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Smart Contract/Deploying and Testing.html">
+            
+                <a href="../Smart Contract/Deploying and Testing.html">
+            
+                    
+                    Deploying and Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../Smart Contract/API/Common REST Interface.html">
+            
+                <a href="../Smart Contract/API/Common REST Interface.html">
+            
+                    
+                    Common REST Interface
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../Smart Contract/API/Wallet REST Interface.html">
+            
+                <a href="../Smart Contract/API/Wallet REST Interface.html">
+            
+                    
+                    Wallet REST Interface
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.4" data-path="Wallet SDK.html">
+            
+                <a href="Wallet SDK.html">
+            
+                    
+                    Wallet SDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../DApp Development/How to set up the development environment.html">
+            
+                <a href="../DApp Development/How to set up the development environment.html">
+            
+                    
+                    DApp Development
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../DApp Development/Install and Run Bottos.html">
+            
+                <a href="../DApp Development/Install and Run Bottos.html">
+            
+                    
+                    Install and Run Bottos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../DApp Development/Development and deployment of Smart Contract.html">
+            
+                <a href="../DApp Development/Development and deployment of Smart Contract.html">
+            
+                    
+                    Development and deployment of Smart Contract
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../DApp Development/DApp developing and debugging.html">
+            
+                <a href="../DApp Development/DApp developing and debugging.html">
+            
+                    
+                    DApp developing and debugging
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >Wallet SDK</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="wallet-sdk">Wallet SDK</h1>
+<h2 id="classes">Classes</h2>
+<dl>
+<dt><a href="#BottosWalletSDK">BottosWalletSDK</a></dt>
+<dd></dd>
+</dl>
+
+<h2 id="objects">Objects</h2>
+<dl>
+<dt><a href="#Api">Api</a> : <code>object</code></dt>
+<dd></dd>
+<dt><a href="#Contract">Contract</a> : <code>object</code></dt>
+<dd></dd>
+<dt><a href="#Tool">Tool</a> : <code>object</code></dt>
+<dd></dd>
+<dt><a href="#Wallet">Wallet</a> : <code>object</code></dt>
+<dd></dd>
+</dl>
+
+<h2 id="typedefs">Typedefs</h2>
+<dl>
+<dt><a href="#functionCallback">functionCallback</a> : <code>function</code></dt>
+<dd><p>This callback is displayed as a global member.</p>
+</dd>
+<dt><a href="#originFetchTemplate">originFetchTemplate</a> : <code>Object</code></dt>
+<dd></dd>
+</dl>
+
+<p><a name="BottosWalletSDK"></a></p>
+<h2 id="bottoswalletsdk">BottosWalletSDK</h2>
+<p><strong>Kind</strong>: global class  </p>
+<ul>
+<li><a href="#BottosWalletSDK">BottosWalletSDK</a><ul>
+<li><a href="#new_BottosWalletSDK_new">new BottosWalletSDK(config)</a></li>
+<li><a href="#BottosWalletSDK+Api">.Api</a></li>
+<li><a href="#BottosWalletSDK+Tool">.Tool</a></li>
+<li><a href="#BottosWalletSDK+Wallet">.Wallet</a></li>
+<li><a href="#BottosWalletSDK+Contract">.Contract</a></li>
+<li><a href="#BottosWalletSDK+setBaseUrl">.setBaseUrl(baseUrl)</a></li>
+</ul>
+</li>
+</ul>
+<p><a name="new_BottosWalletSDK_new"></a></p>
+<h3 id="new-bottoswalletsdkconfig">new BottosWalletSDK(config)</h3>
+<p>Represents the BottosWalletSDK.</p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>config</td>
+<td><code>Object</code></td>
+<td></td>
+</tr>
+<tr>
+<td>[config.baseUrl]</td>
+<td><code>string</code></td>
+<td><code>&quot;http://localhost:8689/v1&amp;quot;</code></td>
+</tr>
+<tr>
+<td>[config.version]</td>
+<td><code>number</code></td>
+<td><code>1</code></td>
+</tr>
+<tr>
+<td>[config.crypto]</td>
+<td><code>Object</code></td>
+<td><code>BTCryptTool</code></td>
+</tr>
+</tbody>
+</table>
+<p><a name="BottosWalletSDK+Api"></a></p>
+<h3 id="bottoswalletsdkapi">bottosWalletSDK.Api</h3>
+<p>See <a href="#Api">Api</a>.</p>
+<p><strong>Kind</strong>: instance property of <a href="#BottosWalletSDK"><code>BottosWalletSDK</code></a><br><a name="BottosWalletSDK+Tool"></a></p>
+<h3 id="bottoswalletsdktool">bottosWalletSDK.Tool</h3>
+<p>See <a href="#Tool">Tool</a>.</p>
+<p><strong>Kind</strong>: instance property of <a href="#BottosWalletSDK"><code>BottosWalletSDK</code></a><br><a name="BottosWalletSDK+Wallet"></a></p>
+<h3 id="bottoswalletsdkwallet">bottosWalletSDK.Wallet</h3>
+<p>See <a href="#Wallet">Wallet</a>.</p>
+<p><strong>Kind</strong>: instance property of <a href="#BottosWalletSDK"><code>BottosWalletSDK</code></a><br><a name="BottosWalletSDK+Contract"></a></p>
+<h3 id="bottoswalletsdkcontract">bottosWalletSDK.Contract</h3>
+<p>See <a href="#Contract">Contract</a>.</p>
+<p><strong>Kind</strong>: instance property of <a href="#BottosWalletSDK"><code>BottosWalletSDK</code></a><br><a name="BottosWalletSDK+setBaseUrl"></a></p>
+<h3 id="bottoswalletsdksetbaseurlbaseurl">bottosWalletSDK.setBaseUrl(baseUrl)</h3>
+<p><strong>Kind</strong>: instance method of <a href="#BottosWalletSDK"><code>BottosWalletSDK</code></a>  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>baseUrl</td>
+<td><code>string</code></td>
+<td>The baseUrl used in request.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="Api"></a></p>
+<h2 id="api--object">Api : <code>object</code></h2>
+<p><strong>Kind</strong>: global namespace  </p>
+<ul>
+<li><a href="#Api">Api</a> : <code>object</code><ul>
+<li><a href="#Api.chain_id">.chain_id</a></li>
+<li><a href="#Api.request">.request(url, params, [method])</a></li>
+<li><a href="#Api.getAbi">.getAbi(contract, [callback])</a> &#x21D2; <code>Promise.&lt;Object&gt;</code> | <code>undefined</code></li>
+<li><a href="#Api.getBlockHeader">.getBlockHeader([callback])</a> &#x21D2; <code>Promise.&lt;Object&gt;</code> | <code>undefined</code></li>
+</ul>
+</li>
+</ul>
+<p><a name="Api.chain_id"></a></p>
+<h3 id="apichainid">Api.chain_id</h3>
+<p>Documented as Api.chain_id</p>
+<p><strong>Kind</strong>: static property of <a href="#Api"><code>Api</code></a><br><a name="Api.request"></a></p>
+<h3 id="apirequesturl-params-method">Api.request(url, params, [method])</h3>
+<p><strong>Kind</strong>: static method of <a href="#Api"><code>Api</code></a>  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Default</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>url</td>
+<td><code>string</code></td>
+<td></td>
+</tr>
+<tr>
+<td>params</td>
+<td><code>Object</code></td>
+<td></td>
+</tr>
+<tr>
+<td>[method]</td>
+<td><code>string</code></td>
+<td><code>&quot;POST&quot;</code></td>
+</tr>
+</tbody>
+</table>
+<p><a name="Api.getAbi"></a></p>
+<h3 id="apigetabicontract-callback-&#x21D2;-promiseobject--undefined">Api.getAbi(contract, [callback]) &#x21D2; <code>Promise.&lt;Object&gt;</code> | <code>undefined</code></h3>
+<p>Returns the abi. If callback is undefined, this function will return a promise.</p>
+<p><strong>Kind</strong>: static method of <a href="#Api"><code>Api</code></a>  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>contract</td>
+<td><code>string</code></td>
+<td>The contract name.</td>
+</tr>
+<tr>
+<td>[callback]</td>
+<td><a href="#functionCallback"><code>functionCallback</code></a></td>
+<td>The optional callback.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="Api.getBlockHeader"></a></p>
+<h3 id="apigetblockheadercallback-&#x21D2;-promiseobject--undefined">Api.getBlockHeader([callback]) &#x21D2; <code>Promise.&lt;Object&gt;</code> | <code>undefined</code></h3>
+<p>Documented as Api.getBlockHeader.</p>
+<p><strong>Kind</strong>: static method of <a href="#Api"><code>Api</code></a><br><strong>Returns</strong>: <code>Promise.&lt;Object&gt;</code> | <code>undefined</code> - If callback is undefined, a promise will be returned.  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[callback]</td>
+<td><a href="#functionCallback"><code>functionCallback</code></a></td>
+</tr>
+</tbody>
+</table>
+<p><a name="Contract"></a></p>
+<h2 id="contract--object">Contract : <code>object</code></h2>
+<p><strong>Kind</strong>: global namespace  </p>
+<ul>
+<li><a href="#Contract">Contract</a> : <code>object</code><ul>
+<li><a href="#Contract.deployContract">.deployContract(param, senderInfo)</a> &#x21D2; <code>Promise.&lt;Object&gt;</code></li>
+<li><a href="#Contract.deployABI">.deployABI(param, senderInfo)</a> &#x21D2; <code>Promise.&lt;Object&gt;</code></li>
+<li><a href="#Contract.callContract">.callContract(originFetchTemplate, privateKey)</a> &#x21D2; <code>Promise.&lt;Object&gt;</code></li>
+</ul>
+</li>
+</ul>
+<p><a name="Contract.deployContract"></a></p>
+<h3 id="contractdeploycontractparam-senderinfo-&#x21D2;-promiseobject">Contract.deployContract(param, senderInfo) &#x21D2; <code>Promise.&lt;Object&gt;</code></h3>
+<p>Deploy a contract.</p>
+<p><strong>Kind</strong>: static method of <a href="#Contract"><code>Contract</code></a>  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>param</td>
+<td><code>Object</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[param.vm_type]</td>
+<td><code>number</code></td>
+<td><code>1</code></td>
+<td>vm_type, now is 1.</td>
+</tr>
+<tr>
+<td>[param.vm_version]</td>
+<td><code>number</code></td>
+<td><code>1</code></td>
+<td>vm_version, now is 1.</td>
+</tr>
+<tr>
+<td>param.contract_code</td>
+<td><code>Uint8Array</code> \</td>
+<td><code>ArrayBuffer</code></td>
+<td></td>
+<td>wasm file buffer.</td>
+</tr>
+<tr>
+<td>senderInfo</td>
+<td><code>Object</code></td>
+<td></td>
+<td>The sender</td>
+</tr>
+<tr>
+<td>senderInfo.account</td>
+<td><code>string</code></td>
+<td></td>
+<td>sender&apos;s account</td>
+</tr>
+<tr>
+<td>senderInfo.privateKey</td>
+<td><code>string</code> \</td>
+<td><code>Uint8Array</code></td>
+<td></td>
+<td>sender&apos;s privateKey</td>
+</tr>
+</tbody>
+</table>
+<p><a name="Contract.deployABI"></a></p>
+<h3 id="contractdeployabiparam-senderinfo-&#x21D2;-promiseobject">Contract.deployABI(param, senderInfo) &#x21D2; <code>Promise.&lt;Object&gt;</code></h3>
+<p>Deploy an abi.</p>
+<p><strong>Kind</strong>: static method of <a href="#Contract"><code>Contract</code></a>  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>param</td>
+<td><code>Object</code></td>
+<td></td>
+</tr>
+<tr>
+<td>param.contract_abi</td>
+<td><code>string</code> \</td>
+<td><code>Uint8Array</code> \</td>
+<td><code>ArrayBuffer</code></td>
+<td>ABI content or file buffer.</td>
+</tr>
+<tr>
+<td>senderInfo</td>
+<td><code>Object</code></td>
+<td>The sender</td>
+</tr>
+<tr>
+<td>senderInfo.account</td>
+<td><code>string</code></td>
+<td>sender&apos;s account</td>
+</tr>
+<tr>
+<td>senderInfo.privateKey</td>
+<td><code>string</code> \</td>
+<td><code>Uint8Array</code></td>
+<td>sender&apos;s privateKey</td>
+</tr>
+</tbody>
+</table>
+<p><a name="Contract.callContract"></a></p>
+<h3 id="contractcallcontractoriginfetchtemplate-privatekey-&#x21D2;-promiseobject">Contract.callContract(originFetchTemplate, privateKey) &#x21D2; <code>Promise.&lt;Object&gt;</code></h3>
+<p><strong>Kind</strong>: static method of <a href="#Contract"><code>Contract</code></a>  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>originFetchTemplate</td>
+<td><code>Object</code></td>
+</tr>
+<tr>
+<td>privateKey</td>
+<td><code>string</code> \</td>
+<td><code>Uint8Array</code></td>
+</tr>
+</tbody>
+</table>
+<p><a name="Tool"></a></p>
+<h2 id="tool--object">Tool : <code>object</code></h2>
+<p><strong>Kind</strong>: global namespace  </p>
+<ul>
+<li><a href="#Tool">Tool</a> : <code>object</code><ul>
+<li><a href="#Tool.buf2hex">.buf2hex(buffer)</a> &#x21D2; <code>string</code></li>
+<li><a href="#Tool.getRequestParams">.getRequestParams(originFetchTemplate, privateKey)</a> &#x21D2; <code>Promise.&lt;Object&gt;</code></li>
+</ul>
+</li>
+</ul>
+<p><a name="Tool.buf2hex"></a></p>
+<h3 id="toolbuf2hexbuffer-&#x21D2;-string">Tool.buf2hex(buffer) &#x21D2; <code>string</code></h3>
+<p><strong>Kind</strong>: static method of <a href="#Tool"><code>Tool</code></a><br><strong>Returns</strong>: <code>string</code> - Hexadecimal string.  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>buffer</td>
+<td><code>Uint8Array</code></td>
+<td>Uint8Array buffer.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="Tool.getRequestParams"></a></p>
+<h3 id="toolgetrequestparamsoriginfetchtemplate-privatekey-&#x21D2;-promiseobject">Tool.getRequestParams(originFetchTemplate, privateKey) &#x21D2; <code>Promise.&lt;Object&gt;</code></h3>
+<p><strong>Kind</strong>: static method of <a href="#Tool"><code>Tool</code></a>  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>originFetchTemplate</td>
+<td><a href="#originFetchTemplate"><code>originFetchTemplate</code></a></td>
+<td></td>
+</tr>
+<tr>
+<td>privateKey</td>
+<td><code>string</code> \</td>
+<td><code>Uint8Array</code></td>
+<td>Your private key.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="Wallet"></a></p>
+<h2 id="wallet--object">Wallet : <code>object</code></h2>
+<p><strong>Kind</strong>: global namespace  </p>
+<ul>
+<li><a href="#Wallet">Wallet</a> : <code>object</code><ul>
+<li><a href="#Wallet.createAccountByIntro">.createAccountByIntro(params)</a> &#x21D2; <code>Object</code></li>
+<li><a href="#Wallet.createKeys">.createKeys()</a> &#x21D2; <code>Object</code></li>
+<li><a href="#Wallet.createAccountWithIntro">.createAccountWithIntro(params, referrerInfo)</a> &#x21D2; <code>Promise.&lt;Object&gt;</code></li>
+<li><a href="#Wallet.recover">.recover(password, keyObject)</a> &#x21D2; <code>Uint8Array</code></li>
+<li><a href="#Wallet.getAccountInfo">.getAccountInfo(account_name)</a> &#x21D2; <code>Promise.&lt;Object&gt;</code></li>
+<li><a href="#Wallet.sendTransaction">.sendTransaction(params, privateKey)</a> &#x21D2; <code>Promise.&lt;Object&gt;</code></li>
+<li><a href="#Wallet.stake">.stake(amount, privateKey)</a> &#x21D2; <code>Promise.&lt;Object&gt;</code></li>
+<li><a href="#Wallet.unstake">.unstake(amount, privateKey)</a> &#x21D2; <code>Promise.&lt;Object&gt;</code></li>
+<li><a href="#Wallet.claim">.claim(amount, privateKey)</a> &#x21D2; <code>Promise.&lt;Object&gt;</code></li>
+</ul>
+</li>
+</ul>
+<p><a name="Wallet.createAccountByIntro"></a></p>
+<h3 id="walletcreateaccountbyintroparams-&#x21D2;-object">Wallet.createAccountByIntro(params) &#x21D2; <code>Object</code></h3>
+<p><strong>Kind</strong>: static method of <a href="#Wallet"><code>Wallet</code></a><br><strong>Returns</strong>: <code>Object</code> - keystore  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>params</td>
+<td><code>Object</code></td>
+<td>the params required for create keystore</td>
+</tr>
+<tr>
+<td>params.account</td>
+<td><code>string</code></td>
+<td>account</td>
+</tr>
+<tr>
+<td>params.password</td>
+<td><code>string</code></td>
+<td>password</td>
+</tr>
+<tr>
+<td>params.privateKey</td>
+<td><code>string</code> \</td>
+<td><code>Uint8Array</code></td>
+<td>privateKey</td>
+</tr>
+</tbody>
+</table>
+<p><a name="Wallet.createKeys"></a></p>
+<h3 id="walletcreatekeys-&#x21D2;-object">Wallet.createKeys() &#x21D2; <code>Object</code></h3>
+<p>Create public and private key pair</p>
+<p><strong>Kind</strong>: static method of <a href="#Wallet"><code>Wallet</code></a><br><strong>Returns</strong>: <code>Object</code> - keys<br><a name="Wallet.createAccountWithIntro"></a></p>
+<h3 id="walletcreateaccountwithintroparams-referrerinfo-&#x21D2;-promiseobject">Wallet.createAccountWithIntro(params, referrerInfo) &#x21D2; <code>Promise.&lt;Object&gt;</code></h3>
+<p>register account on chain</p>
+<p><strong>Kind</strong>: static method of <a href="#Wallet"><code>Wallet</code></a>  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>params</td>
+<td><code>Object</code></td>
+<td>The params</td>
+</tr>
+<tr>
+<td>params.account</td>
+<td><code>string</code></td>
+<td>The new user&apos;s account</td>
+</tr>
+<tr>
+<td>params.publicKey</td>
+<td><code>string</code> \</td>
+<td><code>Uint8Array</code></td>
+<td>The publicKey provided by the new user</td>
+</tr>
+<tr>
+<td>referrerInfo</td>
+<td><code>Object</code></td>
+<td>The referrer</td>
+</tr>
+<tr>
+<td>referrerInfo.account</td>
+<td><code>string</code></td>
+<td>referrer&apos;s account</td>
+</tr>
+<tr>
+<td>referrerInfo.privateKey</td>
+<td><code>string</code> \</td>
+<td><code>Uint8Array</code></td>
+<td>referrer&apos;s privateKey</td>
+</tr>
+</tbody>
+</table>
+<p><a name="Wallet.recover"></a></p>
+<h3 id="walletrecoverpassword-keyobject-&#x21D2;-uint8array">Wallet.recover(password, keyObject) &#x21D2; <code>Uint8Array</code></h3>
+<p><strong>Kind</strong>: static method of <a href="#Wallet"><code>Wallet</code></a><br><strong>Returns</strong>: <code>Uint8Array</code> - privateKey  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>password</td>
+<td><code>string</code></td>
+<td>password</td>
+</tr>
+<tr>
+<td>keyObject</td>
+<td><code>Object</code></td>
+<td>the keystore</td>
+</tr>
+</tbody>
+</table>
+<p><a name="Wallet.getAccountInfo"></a></p>
+<h3 id="walletgetaccountinfoaccountname-&#x21D2;-promiseobject">Wallet.getAccountInfo(account_name) &#x21D2; <code>Promise.&lt;Object&gt;</code></h3>
+<p><strong>Kind</strong>: static method of <a href="#Wallet"><code>Wallet</code></a>  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>account_name</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<p><a name="Wallet.sendTransaction"></a></p>
+<h3 id="walletsendtransactionparams-privatekey-&#x21D2;-promiseobject">Wallet.sendTransaction(params, privateKey) &#x21D2; <code>Promise.&lt;Object&gt;</code></h3>
+<p><strong>Kind</strong>: static method of <a href="#Wallet"><code>Wallet</code></a>  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>params</td>
+<td><code>Object</code></td>
+</tr>
+<tr>
+<td>params.from</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>params.to</td>
+<td><code>string</code></td>
+</tr>
+<tr>
+<td>params.value</td>
+<td><code>string</code> \</td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td>privateKey</td>
+<td><code>string</code></td>
+</tr>
+</tbody>
+</table>
+<p><a name="Wallet.stake"></a></p>
+<h3 id="walletstakeamount-privatekey-&#x21D2;-promiseobject">Wallet.stake(amount, privateKey) &#x21D2; <code>Promise.&lt;Object&gt;</code></h3>
+<p><strong>Kind</strong>: static method of <a href="#Wallet"><code>Wallet</code></a>  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>amount</td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td>privateKey</td>
+<td><code>string</code> \</td>
+<td><code>Uint8Array</code></td>
+</tr>
+</tbody>
+</table>
+<p><a name="Wallet.unstake"></a></p>
+<h3 id="walletunstakeamount-privatekey-&#x21D2;-promiseobject">Wallet.unstake(amount, privateKey) &#x21D2; <code>Promise.&lt;Object&gt;</code></h3>
+<p><strong>Kind</strong>: static method of <a href="#Wallet"><code>Wallet</code></a>  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>amount</td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td>privateKey</td>
+<td><code>string</code> \</td>
+<td><code>Uint8Array</code></td>
+</tr>
+</tbody>
+</table>
+<p><a name="Wallet.claim"></a></p>
+<h3 id="walletclaimamount-privatekey-&#x21D2;-promiseobject">Wallet.claim(amount, privateKey) &#x21D2; <code>Promise.&lt;Object&gt;</code></h3>
+<p><strong>Kind</strong>: static method of <a href="#Wallet"><code>Wallet</code></a>  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>amount</td>
+<td><code>number</code></td>
+</tr>
+<tr>
+<td>privateKey</td>
+<td><code>string</code> \</td>
+<td><code>Uint8Array</code></td>
+</tr>
+</tbody>
+</table>
+<p><a name="functionCallback"></a></p>
+<h2 id="functioncallback--function">functionCallback : <code>function</code></h2>
+<p>This callback is displayed as a global member.</p>
+<p><strong>Kind</strong>: global typedef  </p>
+<table>
+<thead>
+<tr>
+<th>Param</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>err</td>
+<td><code>*</code></td>
+<td>The callback error.</td>
+</tr>
+<tr>
+<td>result</td>
+<td><code>*</code></td>
+<td>The success result.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="originFetchTemplate"></a></p>
+<h2 id="originfetchtemplate--object">originFetchTemplate : <code>Object</code></h2>
+<p><strong>Kind</strong>: global typedef<br><strong>Properties</strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>[originFetchTemplate.version]</td>
+<td><code>number</code></td>
+<td><code>1</code></td>
+<td>Default value is 1.</td>
+</tr>
+<tr>
+<td>originFetchTemplate.sender</td>
+<td><code>string</code></td>
+<td></td>
+<td>Default value is bottos.</td>
+</tr>
+<tr>
+<td>[originFetchTemplate.contract]</td>
+<td><code>string</code></td>
+<td><code>&quot;bottos&quot;</code></td>
+<td>The contract. Default value is bottos.</td>
+</tr>
+<tr>
+<td>originFetchTemplate.method</td>
+<td><code>string</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>originFetchTemplate.param</td>
+<td><code>Object</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>[originFetchTemplate.sig_alg]</td>
+<td><code>number</code></td>
+<td><code>1</code></td>
+<td>Default value is 1.</td>
+</tr>
+</tbody>
+</table>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../Smart Contract/API/Wallet REST Interface.html" class="navigation navigation-prev " aria-label="Previous page: Wallet REST Interface">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../DApp Development/How to set up the development environment.html" class="navigation navigation-next " aria-label="Next page: DApp Development">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Wallet SDK","level":"1.4","depth":1,"next":{"title":"DApp Development","level":"1.5","depth":1,"path":"DApp Development/How to set up the development environment.md","ref":"DApp Development/How to set up the development environment.md","articles":[{"title":"Install and Run Bottos","level":"1.5.1","depth":2,"path":"DApp Development/Install and Run Bottos.md","ref":"DApp Development/Install and Run Bottos.md","articles":[]},{"title":"Development and deployment of Smart Contract","level":"1.5.2","depth":2,"path":"DApp Development/Development and deployment of Smart Contract.md","ref":"DApp Development/Development and deployment of Smart Contract.md","articles":[]},{"title":"DApp developing and debugging","level":"1.5.3","depth":2,"path":"DApp Development/DApp developing and debugging.md","ref":"DApp Development/DApp developing and debugging.md","articles":[]}]},"previous":{"title":"Wallet REST Interface","level":"1.3.3","depth":2,"path":"Smart Contract/API/Wallet REST Interface.md","ref":"Smart Contract/API/Wallet REST Interface.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*","description":"Bottos Development files","theme-default":{"showLevel":true}},"file":{"path":"Wallet SDK/Wallet SDK.md","mtime":"2018-11-14T08:22:06.017Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-14T09:34:16.926Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

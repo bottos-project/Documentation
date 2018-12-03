@@ -1,0 +1,2646 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>BCLI使用说明 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-multipart/multipart.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../智能合约/Development/使用C++编写智能合约.html" />
+    
+    
+    <link rel="prev" href="网络拓扑结构.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Bottos简介
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../Bottos简介/Bottos系统架构.html">
+            
+                <a href="../Bottos简介/Bottos系统架构.html">
+            
+                    
+                    Bottos系统架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="节点简介.html">
+            
+                <a href="节点简介.html">
+            
+                    
+                    Bottos节点
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="节点简介.html">
+            
+                <a href="节点简介.html">
+            
+                    
+                    节点介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="网络拓扑结构.html">
+            
+                <a href="网络拓扑结构.html">
+            
+                    
+                    网络拓扑结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.3" data-path="BCLI使用说明.html">
+            
+                <a href="BCLI使用说明.html">
+            
+                    
+                    BCLI使用说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../智能合约/Development/使用C++编写智能合约.html">
+            
+                <a href="../智能合约/Development/使用C++编写智能合约.html">
+            
+                    
+                    智能合约
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../智能合约/Development/使用C++编写智能合约.html">
+            
+                <a href="../智能合约/Development/使用C++编写智能合约.html">
+            
+                    
+                    使用C++编写智能合约
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../智能合约/部署与测试.html">
+            
+                <a href="../智能合约/部署与测试.html">
+            
+                    
+                    部署与测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../智能合约/API/公共REST接口.html">
+            
+                <a href="../智能合约/API/公共REST接口.html">
+            
+                    
+                    公共REST接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../智能合约/API/钱包REST接口.html">
+            
+                <a href="../智能合约/API/钱包REST接口.html">
+            
+                    
+                    钱包REST接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../钱包SDK/钱包SDK.html">
+            
+                <a href="../钱包SDK/钱包SDK.html">
+            
+                    
+                    钱包SDK
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../钱包SDK/钱包SDK.html">
+            
+                <a href="../钱包SDK/钱包SDK.html">
+            
+                    
+                    钱包SDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../DApp开发/搭建开发环境.html">
+            
+                <a href="../DApp开发/搭建开发环境.html">
+            
+                    
+                    DApp开发
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../DApp开发/搭建开发环境.html">
+            
+                <a href="../DApp开发/搭建开发环境.html">
+            
+                    
+                    搭建开发环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../DApp开发/安装运行Bottos.html">
+            
+                <a href="../DApp开发/安装运行Bottos.html">
+            
+                    
+                    安装运行Bottos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../DApp开发/智能合约的开发与部署.html">
+            
+                <a href="../DApp开发/智能合约的开发与部署.html">
+            
+                    
+                    智能合约的开发与部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.4" data-path="../DApp开发/DApp开发与调试.html">
+            
+                <a href="../DApp开发/DApp开发与调试.html">
+            
+                    
+                    DApp开发与调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >BCLI使用说明</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="bcli-&#x4F7F;&#x7528;&#x8BF4;&#x660E;">BCLI &#x4F7F;&#x7528;&#x8BF4;&#x660E;</h1>
+<h3 id="&#x4E00;&#x3001;bcli&#x5DE5;&#x5177;&#x7B80;&#x8FF0;">&#x4E00;&#x3001;BCLI&#x5DE5;&#x5177;&#x7B80;&#x8FF0;</h3>
+<p>Bottos BCLI &#x5B9E;&#x73B0;&#x4E86;&#x4E00;&#x7EC4;&#x4EBA;&#x673A;&#x4EA4;&#x4E92;&#x547D;&#x4EE4;&#x884C;&#xFF0C;&#x4E3B;&#x8981;&#x57FA;&#x4E8E;RESTFUL API&#x548C;&#x94FE;&#x8FDB;&#x884C;&#x4EA4;&#x4E92;&#x53CA;&#x5B9E;&#x73B0;&#x521B;&#x5EFA;&#x7528;&#x6237;&#xFF0C;&#x67E5;&#x94FE;&#xFF0C;&#x8F6C;&#x8D26;&#xFF0C;&#x94B1;&#x5305;&#x7B49;&#x57FA;&#x4E8E;&#x4E3B;&#x94FE;&#x7684;&#x4EBA;&#x673A;&#x4EA4;&#x4E92;&#x884C;&#x529F;&#x80FD;&#x3002;</p>
+<h3 id="&#x4E8C;&#x3001;bcli&#x5DE5;&#x5177;&#x5B89;&#x88C5;&#x548C;&#x4F7F;&#x7528;">&#x4E8C;&#x3001;BCLI&#x5DE5;&#x5177;&#x5B89;&#x88C5;&#x548C;&#x4F7F;&#x7528;</h3>
+<p>&#x5728;BOTTOS&#x4EE3;&#x7801;&#x7684;BCLI&#x76EE;&#x5F55;&#x4E0B;&#x6267;&#x884C;go build&#xFF0C;&#x7F16;&#x8BD1;&#x6210;&#x529F;&#x540E;&#x5C06;&#x4F1A;&#x4EA7;&#x751F;bcli&#x53EF;&#x6267;&#x884C;&#x6587;&#x4EF6;&#x3002;</p>
+<h3 id="&#x4E09;&#x3001;bcli&#x547D;&#x4EE4;&#x884C;&#x8BF4;&#x660E;">&#x4E09;&#x3001;BCLI&#x547D;&#x4EE4;&#x884C;&#x8BF4;&#x660E;</h3>
+<p>&#x5168;&#x5C40;&#x9009;&#x9879;&#x8BF4;&#x660E;</p>
+<table>
+<thead>
+<tr>
+<th>&#x5168;&#x5C40;&#x9009;&#x9879;&#x540D;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>--servaddr</td>
+<td style="text-align:center">&#x914D;&#x7F6E;&#x5168;&#x5C40;restful&#x5730;&#x5740;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x5168;&#x5C40;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;</p>
+<pre><code>./bcli --help
+
+NAME:
+Bottos bcli tool - a tool that makes user communicate with bottos blockchain
+
+USAGE:
+bcli [global options] command [command options] [arguments...]
+
+VERSION:
+0.0.1
+
+COMMANDS:
+    getinfo      get chian info
+    getblock     get block info
+    gettable     get table info
+    account      create or get account
+    transfer     for user transfering bto
+    transaction  get or push transactions
+    contract     get or deploy contract
+    p2p          for p2p connection
+    delegate     for delegate operations
+    wallet       For wallet operations
+    genesis      for genesis node operations
+    help, h      Shows a list of commands or help for one command
+
+GLOBAL OPTIONS:
+--servaddr value  (default: &quot;127.0.0.1:8689&quot;)
+--help, -h        show help
+--version, -v     print the version
+</code></pre><p>&#x547D;&#x4EE4;&#x529F;&#x80FD;&#x8BF4;&#x660E;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E3B;&#x547D;&#x4EE4;&#x884C;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x5217;&#x8868;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>./bcli</td>
+<td style="text-align:center">getinfo</td>
+<td style="text-align:center">&#x83B7;&#x53D6;&#x5757;&#x5934;&#x4FE1;&#x606F;</td>
+</tr>
+<tr>
+<td>./bcli</td>
+<td style="text-align:center">getblock</td>
+<td style="text-align:center">&#x83B7;&#x53D6;&#x6307;&#x5B9A;BLOCK&#x4FE1;&#x606F;</td>
+</tr>
+<tr>
+<td>./bcli</td>
+<td style="text-align:center">gettable</td>
+<td style="text-align:center">&#x83B7;&#x53D6;&#x5408;&#x7EA6;&#x8868;&#x4FE1;&#x606F;</td>
+</tr>
+<tr>
+<td>./bcli</td>
+<td style="text-align:center">account</td>
+<td style="text-align:center">&#x521B;&#x5EFA;/&#x83B7;&#x53D6;&#x7528;&#x6237;&#x4FE1;&#x606F;&#xFF0C;&#x8D28;&#x62BC;/&#x89E3;&#x8D28;&#x62BC;/&#x56DE;&#x6536;&#x8D28;&#x62BC;&#x7B49;</td>
+</tr>
+<tr>
+<td>./bcli</td>
+<td style="text-align:center">transfer</td>
+<td style="text-align:center">BTO&#x8F6C;&#x8D26;&#x529F;&#x80FD;</td>
+</tr>
+<tr>
+<td>./bcli</td>
+<td style="text-align:center">transaction</td>
+<td style="text-align:center">&#x67E5;&#x8BE2;/&#x53D1;&#x8D77; transaction</td>
+</tr>
+<tr>
+<td>./bcli</td>
+<td style="text-align:center">contract</td>
+<td style="text-align:center">&#x67E5;&#x8BE2;/&#x90E8;&#x7F72;&#x5408;&#x7EA6;&#x548C;ABI</td>
+</tr>
+<tr>
+<td>./bcli</td>
+<td style="text-align:center">p2p</td>
+<td style="text-align:center">P2P&#x547D;&#x4EE4;&#x884C;&#x6682;&#x4E0D;&#x652F;&#x6301;</td>
+</tr>
+<tr>
+<td>./bcli</td>
+<td style="text-align:center">delegate</td>
+<td style="text-align:center">&#x6CE8;&#x518C;/&#x89E3;&#x6CE8;&#x518C;&#x751F;&#x4EA7;&#x8005;&#xFF0C;&#x751F;&#x4EA7;&#x8005;&#x6295;&#x7968;/&#x53D6;&#x6D88;&#x6295;&#x7968;&#x7B49;</td>
+</tr>
+<tr>
+<td>./bcli</td>
+<td style="text-align:center">wallet</td>
+<td style="text-align:center">&#x94B1;&#x5305;&#x521B;&#x5EFA;/&#x9501;&#x5B9A;/&#x89E3;&#x9501;/&#x67E5;&#x8BE2;&#x7B49;</td>
+</tr>
+<tr>
+<td>./bcli</td>
+<td style="text-align:center">genesis</td>
+<td style="text-align:center">&#x521B;&#x4E16;&#x8282;&#x70B9;&#x64CD;&#x4F5C;&#x76F8;&#x5173;&#xFF0C;&#x8BBE;&#x7F6E;&#x521D;&#x59CB;&#x751F;&#x4EA7;&#x8005;&#xFF0C;&#x79FB;&#x4EA4;&#x51FA;&#x5757;&#x6743;&#x5229;&#xFF0C;&#x53D6;&#x6D88;&#x8282;&#x70B9;&#x64CD;&#x4F5C;&#x6743;&#x9650;&#x7B49;</td>
+</tr>
+</tbody>
+</table>
+<h4 id="1-bcli&#x7528;&#x6237;&#x8D26;&#x6237;&#x529F;&#x80FD;&#x547D;&#x4EE4;&#x884C;">1. BCLI&#x7528;&#x6237;&#x8D26;&#x6237;&#x529F;&#x80FD;&#x547D;&#x4EE4;&#x884C;</h4>
+<p>&#x7528;&#x6237;&#x8D26;&#x6237;&#x529F;&#x80FD;&#x547D;&#x4EE4;&#x884C;&#x4E3B;&#x8981;&#x8D1F;&#x8D23;&#x521B;&#x5EFA;&#x65B0;&#x7528;&#x6237;&#xFF0C;&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x7528;&#x6237;&#x4FE1;&#x606F;&#xFF0C;&#x8D28;&#x62BC;&#x548C;&#x89E3;&#x8D28;&#x62BC;BTO&#xFF0C;&#x4EE5;&#x53CA;&#x56DE;&#x6536;&#x8D28;&#x62BC;&#x7B49;&#x3002;</p>
+<p>&#x603B;&#x4F53;&#x547D;&#x4EE4;&#x884C;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;</p>
+<pre><code>./bcli account --help
+
+NAME:
+Bottos bcli tool account - create or get account
+
+USAGE:
+Bottos bcli tool account command [command options] [arguments...]
+
+COMMANDS:
+    create   create account
+    get      get account info
+    stake    stake of account
+    unstake  unstake of account
+    claim    claim of stake
+
+OPTIONS:
+--help, -h  show help
+</code></pre><p>&#x547D;&#x4EE4;&#x529F;&#x80FD;&#x8BF4;&#x660E;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E3B;&#x547D;&#x4EE4;&#x884C;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x5217;&#x8868;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>./bcli account</td>
+<td style="text-align:center">create</td>
+<td style="text-align:center">&#x521B;&#x5EFA;&#x65B0;&#x7528;&#x6237;</td>
+</tr>
+<tr>
+<td>./bcli account</td>
+<td style="text-align:center">get</td>
+<td style="text-align:center">&#x83B7;&#x53D6;&#x7528;&#x6237;&#x4FE1;&#x606F;</td>
+</tr>
+<tr>
+<td>./bcli account</td>
+<td style="text-align:center">stake</td>
+<td style="text-align:center">&#x8D28;&#x62BC;BTO</td>
+</tr>
+<tr>
+<td>./bcli account</td>
+<td style="text-align:center">unstake</td>
+<td style="text-align:center">&#x89E3;&#x8D28;&#x62BC;BTO</td>
+</tr>
+<tr>
+<td>./bcli account</td>
+<td style="text-align:center">claim</td>
+<td style="text-align:center">&#x56DE;&#x6536;&#x90E8;&#x5206;&#x8D28;&#x62BC;BTO</td>
+</tr>
+</tbody>
+</table>
+<h5 id="&#x521B;&#x5EFA;&#x7528;&#x6237;&#x547D;&#x4EE4;&#x8BF4;&#x660E;">&#x521B;&#x5EFA;&#x7528;&#x6237;&#x547D;&#x4EE4;&#x8BF4;&#x660E;</h5>
+<p>&#x5E2E;&#x52A9;&#x4FE1;&#x606F;</p>
+<pre><code>./bcli account create --help
+
+NAME:
+Bottos bcli tool account create - create account
+USAGE:
+Bottos bcli tool account create [command options] [arguments...]
+
+OPTIONS:
+</code></pre><p>   --username value  acocunt name
+   --pubkey value    account public key (default: &quot;0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f&quot;)
+   --referrer value  account referrer</p>
+<p>&#x53C2;&#x6570;&#x8BF4;&#x660E;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E3B;&#x547D;&#x4EE4;&#x884C;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x5217;&#x8868;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+<th style="text-align:center">&#x5FC5;&#x9009;&#x53C2;&#x6570;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bcli account create</td>
+<td style="text-align:center">--username</td>
+<td style="text-align:center">&#x521B;&#x5EFA;&#x7684;&#x7528;&#x6237;&#x540D;</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">--pubkey</td>
+<td style="text-align:center">&#x65B0;&#x5EFA;&#x7528;&#x6237;&#x7684;&#x516C;&#x94A5;&#xFF0C;&#x4E0D;&#x586B;&#x5219;&#x4F7F;&#x7528;&#x5185;&#x7F6E;&#x7F3A;&#x7701;pubkey</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">--referrer</td>
+<td style="text-align:center">&#x5F15;&#x8350;&#x4EBA;&#xFF0C;&#x4E0D;&#x586B;&#x5219;&#x4F7F;&#x7528;&#x7F3A;&#x7701;&#x5185;&#x7F6E;&#x8D26;&#x6237;&#x8FDB;&#x884C;&#x7B7E;&#x540D;&#xFF0C;&#x5426;&#x5219;&#x4F7F;&#x7528;&#x5F15;&#x8350;&#x4EBA;&#x505A;&#x7B7E;&#x540D;</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD4;&#x56DE;&#x4FE1;&#x606F;</p>
+<p>&#x8BE5;&#x547D;&#x4EE4;&#x6210;&#x529F;&#x540E;&#x5C06;&#x8FD4;&#x56DE;BCLI&#x6210;&#x529F;&#x53D1;&#x9001;&#x7684;Transaction&#x4FE1;&#x606F;&#xFF0C;&#x4E3B;&#x8981;&#x5185;&#x5BB9;&#x5305;&#x542B;&#x7528;&#x6237;&#x540D;&#xFF0C;&#x516C;&#x94A5;&#xFF0C;&#x53D1;&#x8D77;&#x8005;&#x53CA;&#x7B7E;&#x540D;&#xFF08;--referrer&#x4FE1;&#x606F;&#xFF0C;&#x7F3A;&#x7701;&#x4E3A;&#x5185;&#x7F6E;bottos&#x7528;&#x6237;&#xFF09;&#x7B49;&#x3002;</p>
+<p>&#x793A;&#x4F8B;</p>
+<pre><code>./bcli account create --username user1 --pubkey 0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f
+</code></pre><p>&#x8F93;&#x51FA;&#x7ED3;&#x679C;</p>
+<pre><code>Create account: user1 Succeed
+Trx: 
+{
+    &quot;version&quot;: 1,
+    &quot;cursor_num&quot;: 1093,
+    &quot;cursor_label&quot;: 3607725829,
+    &quot;lifetime&quot;: 1536230581,
+    &quot;sender&quot;: &quot;bottos&quot;,
+    &quot;contract&quot;: &quot;bottos&quot;,
+    &quot;method&quot;: &quot;newaccount&quot;,
+    &quot;param&quot;: {
+        &quot;name&quot;: &quot;user1&quot;,
+        &quot;pubkey&quot;: &quot;0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f&quot;
+    },
+    &quot;param_bin&quot;: &quot;dc0002da00057573657231da008230343534663163323232336435353361613665653533656131636365613862376266373862386361393966336666363232613362623365363264656463373132303839303333643630393164373732393635343762633037313032326361323833386339653836646563323936363763663734306535633965363534623631323766&quot;,
+    &quot;sig_alg&quot;: 1,
+    &quot;signature&quot;: &quot;90936cc7c453a737ec16a70d4c63d1032b1f3d3419a3b20f428d6c98490d5934553bcf2bb5ee6c21914b1421fcbb41146fe8beafd0f0bc78d8708811769dd6db&quot;
+}
+TrxHash: fc83e64f1e05fd6a78256250c6e58a782567ead312db711a6549a6675eafb696
+</code></pre><h5 id="&#x83B7;&#x53D6;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x547D;&#x4EE4;&#x793A;&#x4F8B;">&#x83B7;&#x53D6;&#x7528;&#x6237;&#x4FE1;&#x606F;&#x547D;&#x4EE4;&#x793A;&#x4F8B;</h5>
+<p>&#x5E2E;&#x52A9;&#x4FE1;&#x606F;</p>
+<pre><code>./bcli account get --help
+NAME:
+Bottos bcli tool account get - get account info
+
+USAGE:
+Bottos bcli tool account get [command options] [arguments...]
+
+OPTIONS:
+    --username value  acocunt nam
+</code></pre><p>&#x53C2;&#x6570;&#x8BF4;&#x660E;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E3B;&#x547D;&#x4EE4;&#x884C;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x5217;&#x8868;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+<th style="text-align:center">&#x5FC5;&#x9009;&#x53C2;&#x6570;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bcli account get</td>
+<td style="text-align:center">--username</td>
+<td style="text-align:center">&#x7528;&#x6237;&#x540D;</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD4;&#x56DE;&#x4FE1;&#x606F;</p>
+<p>&#x8BE5;&#x547D;&#x4EE4;&#x6210;&#x529F;&#x540E;&#x5C06;&#x8FD4;&#x56DE;&#x7528;&#x6237;&#x6240;&#x6301;&#x6709;&#x7684;BTO&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x793A;&#x4F8B;</p>
+<pre><code>./bcli account get --username bottos
+</code></pre><p>&#x8F93;&#x51FA;&#x7ED3;&#x679C;</p>
+<pre><code>Account: bottos
+Balance: 999710000.00000000 BTO
+</code></pre><h5 id="&#x7528;&#x6237;&#x8D28;&#x62BC;bto&#x547D;&#x4EE4;&#x793A;&#x4F8B;">&#x7528;&#x6237;&#x8D28;&#x62BC;BTO&#x547D;&#x4EE4;&#x793A;&#x4F8B;</h5>
+<p>&#x5E2E;&#x52A9;&#x4FE1;&#x606F;</p>
+<pre><code>./bcli account stake --help
+
+NAME:
+Bottos bcli tool account stake - stake of account
+
+USAGE:
+Bottos bcli tool account stake [command options] [arguments...]
+
+OPTIONS:
+    --account value  acocunt name
+    --amount value   amount of bto
+</code></pre><p>&#x53C2;&#x6570;&#x8BF4;&#x660E;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E3B;&#x547D;&#x4EE4;&#x884C;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x5217;&#x8868;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+<th style="text-align:center">&#x5FC5;&#x9009;&#x53C2;&#x6570;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bcli account stake</td>
+<td style="text-align:center">--account</td>
+<td style="text-align:center">&#x7528;&#x6237;&#x540D;</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">--amount</td>
+<td style="text-align:center">&#x8D28;&#x62BC;BTO&#x4E2A;&#x6570;</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD4;&#x56DE;&#x4FE1;&#x606F;</p>
+<p>&#x8BE5;&#x547D;&#x4EE4;&#x6210;&#x529F;&#x540E;&#x5C06;&#x8FD4;&#x56DE;BCLI&#x6210;&#x529F;&#x53D1;&#x9001;&#x7684;Transaction&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x793A;&#x4F8B;</p>
+<pre><code>./bcli account stake --account lyp --amount 2
+</code></pre><p>&#x8F93;&#x51FA;&#x7ED3;&#x679C;</p>
+<pre><code>Transfer Succeed:
+Trx: 
+{
+    &quot;version&quot;: 1,
+    &quot;cursor_num&quot;: 3909,
+    &quot;cursor_label&quot;: 4191535575,
+    &quot;lifetime&quot;: 1536560467,
+    &quot;sender&quot;: &quot;bottos&quot;,
+    &quot;contract&quot;: &quot;bottos&quot;,
+    &quot;method&quot;: &quot;stake&quot;,
+    &quot;param&quot;: &quot;dc0001c500200000000000000000000000000000000000000000000000000000000000000002&quot;,
+    &quot;param_bin&quot;: &quot;dc0001c500200000000000000000000000000000000000000000000000000000000000000002&quot;,
+    &quot;sig_alg&quot;: 1,
+    &quot;signature&quot;: &quot;fcb341de3ada22108107285b511fe35d8777d31150545678eb278ad4457303c8059e1b1ff2fa39fb545a0ea743b45e830c6d1bbf86611087a4807116c5351acd&quot;
+}
+TrxHash: cbea44984ca17dc640cec7bc5349b6c839229ff86462a24fa0e1196d2b73cedd
+</code></pre><h5 id="&#x7528;&#x6237;&#x89E3;&#x8D28;&#x62BC;bto&#x547D;&#x4EE4;&#x793A;&#x4F8B;">&#x7528;&#x6237;&#x89E3;&#x8D28;&#x62BC;BTO&#x547D;&#x4EE4;&#x793A;&#x4F8B;</h5>
+<p>&#x5E2E;&#x52A9;&#x4FE1;&#x606F;</p>
+<pre><code>./bcli account unstake --help
+
+NAME:
+Bottos bcli tool account unstake - unstake of account
+
+USAGE:
+Bottos bcli tool account unstake [command options] [arguments...]
+
+OPTIONS:
+    --account value  acocunt name
+    --amount value   amount of bto
+</code></pre><p>&#x53C2;&#x6570;&#x8BF4;&#x660E;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E3B;&#x547D;&#x4EE4;&#x884C;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x5217;&#x8868;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+<th style="text-align:center">&#x5FC5;&#x9009;&#x53C2;&#x6570;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bcli account unstake</td>
+<td style="text-align:center">--account</td>
+<td style="text-align:center">&#x7528;&#x6237;&#x540D;</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">--amount</td>
+<td style="text-align:center">&#x89E3;&#x8D28;&#x62BC;BTO&#x4E2A;&#x6570;</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD4;&#x56DE;&#x4FE1;&#x606F;</p>
+<p>&#x8BE5;&#x547D;&#x4EE4;&#x6210;&#x529F;&#x540E;&#x5C06;&#x8FD4;&#x56DE;BCLI&#x6210;&#x529F;&#x53D1;&#x9001;&#x7684;Transaction&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x793A;&#x4F8B;</p>
+<pre><code>./bcli account unstake --account lyp --amount 2
+</code></pre><p>&#x8F93;&#x51FA;&#x7ED3;&#x679C;</p>
+<pre><code>Transfer Succeed:
+Trx: 
+{
+    &quot;version&quot;: 1,
+    &quot;cursor_num&quot;: 4067,
+    &quot;cursor_label&quot;: 3077673547,
+    &quot;lifetime&quot;: 1536560941,
+    &quot;sender&quot;: &quot;bottos&quot;,
+    &quot;contract&quot;: &quot;bottos&quot;,
+    &quot;method&quot;: &quot;unstake&quot;,
+    &quot;param&quot;: &quot;dc0001c500200000000000000000000000000000000000000000000000000000000000000002&quot;,
+    &quot;param_bin&quot;: &quot;dc0001c500200000000000000000000000000000000000000000000000000000000000000002&quot;,
+    &quot;sig_alg&quot;: 1,
+    &quot;signature&quot;: &quot;9f14f894a5dd68a7ec010e95ae9c0de52bf368964e8a539d4f2a2c68240e1e4164d4e7a0b34943399c821c81c7b5526ff96370f2cd7d175c4dab062a98f354e5&quot;
+}
+TrxHash: 336b46af3a8eefbc8879cd46e91c42eb122152111c3f61c312422eb41b77e383
+</code></pre><h5 id="&#x7528;&#x6237;&#x56DE;&#x6536;&#x8D28;&#x62BC;bto&#x547D;&#x4EE4;&#x793A;&#x4F8B;">&#x7528;&#x6237;&#x56DE;&#x6536;&#x8D28;&#x62BC;BTO&#x547D;&#x4EE4;&#x793A;&#x4F8B;</h5>
+<p>&#x5E2E;&#x52A9;&#x4FE1;&#x606F;</p>
+<pre><code>./bcli account claim --help
+
+NAME:
+Bottos bcli tool account claim - claim of stake
+
+USAGE:
+Bottos bcli tool account claim [command options] [arguments...]
+
+OPTIONS:
+    --account value  acocunt name
+    --amount value   amount of bto
+</code></pre><p>&#x53C2;&#x6570;&#x8BF4;&#x660E;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E3B;&#x547D;&#x4EE4;&#x884C;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x5217;&#x8868;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+<th style="text-align:center">&#x5FC5;&#x9009;&#x53C2;&#x6570;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bcli account claim</td>
+<td style="text-align:center">--account</td>
+<td style="text-align:center">&#x7528;&#x6237;&#x540D;</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">--amount</td>
+<td style="text-align:center">&#x56DE;&#x6536;&#x8D28;&#x62BC;BTO&#x4E2A;&#x6570;</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD4;&#x56DE;&#x4FE1;&#x606F;</p>
+<p>&#x8BE5;&#x547D;&#x4EE4;&#x6210;&#x529F;&#x540E;&#x5C06;&#x8FD4;&#x56DE;BCLI&#x6210;&#x529F;&#x53D1;&#x9001;&#x7684;Transaction&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x793A;&#x4F8B;</p>
+<pre><code>./bcli account claim --account lyp --amount 2
+</code></pre><p>&#x8F93;&#x51FA;&#x7ED3;&#x679C;</p>
+<pre><code>Transfer Succeed:
+Trx: 
+{
+    &quot;version&quot;: 1,
+    &quot;cursor_num&quot;: 4148,
+    &quot;cursor_label&quot;: 2794796656,
+    &quot;lifetime&quot;: 1536561184,
+    &quot;sender&quot;: &quot;bottos&quot;,
+    &quot;contract&quot;: &quot;bottos&quot;,
+    &quot;method&quot;: &quot;claim&quot;,
+    &quot;param&quot;: &quot;dc0001c500200000000000000000000000000000000000000000000000000000000000000002&quot;,
+    &quot;param_bin&quot;: &quot;dc0001c500200000000000000000000000000000000000000000000000000000000000000002&quot;,
+    &quot;sig_alg&quot;: 1,
+    &quot;signature&quot;: &quot;e05082ecf9028bc9e1e0aa003f6f13cffabba4fc28118ad3d3e9de678525d5b049035818d14c8067b739db34408d8aee1aa50deb99a0fcd9973ad2dcd7fdc627&quot;
+}
+TrxHash: fe3952e5743db0b35bf669b68e5a3d243c19836e1f5c17b970f524a9d59b8eab
+</code></pre><h4 id="2-bcli-&#x5408;&#x7EA6;&#x529F;&#x80FD;&#x547D;&#x4EE4;&#x884C;">2. BCLI &#x5408;&#x7EA6;&#x529F;&#x80FD;&#x547D;&#x4EE4;&#x884C;</h4>
+<p>BCLI&#x5408;&#x7EA6;&#x529F;&#x80FD;&#x547D;&#x4EE4;&#x884C;&#x4E3B;&#x8981;&#x5B9E;&#x73B0;&#x7528;&#x6237;&#x4E3B;&#x52A8;&#x90E8;&#x7F72;&#x4E00;&#x4E2A;&#x5408;&#x7EA6;&#x53CA;ABI&#x6587;&#x4EF6;&#x5230;&#x4E3B;&#x94FE;&#xFF0C;&#x4EE5;&#x53CA;&#x4ECE;&#x4E3B;&#x94FE;&#x83B7;&#x53D6;&#x5408;&#x7EA6;code&#xFF08;&#x6216;&#x6587;&#x4EF6;&#xFF09; &#x6587;&#x4EF6;&#x548C;ABI&#xFF08;&#x6216;&#x6587;&#x4EF6;&#xFF09;&#x529F;&#x80FD;&#x3002;</p>
+<p>&#x603B;&#x4F53;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;&#x5982;&#x4E0B;</p>
+<pre><code>./bcli contract --help
+
+NAME:
+Bottos bcli tool contract - get or deploy contract
+
+USAGE:
+Bottos bcli tool contract command [command options] [arguments...]
+
+COMMANDS:
+    deploy      contract deploy
+    deploycode  contract  deploycode
+    deployabi   Contract  deployabi
+    get         get contract
+
+OPTIONS:
+    --help, -h  show help
+</code></pre><p>&#x547D;&#x4EE4;&#x529F;&#x80FD;&#x8BF4;&#x660E;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E3B;&#x547D;&#x4EE4;&#x884C;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x5217;&#x8868;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>./bcli contract</td>
+<td style="text-align:center">deploy</td>
+<td style="text-align:center">&#x90E8;&#x7F72;ABI&#x6587;&#x4EF6;&#x4EE5;&#x53CA;WASM&#x5408;&#x7EA6;</td>
+</tr>
+<tr>
+<td>./bcli contract</td>
+<td style="text-align:center">deploycode</td>
+<td style="text-align:center">&#x90E8;&#x7F72;&#x5408;&#x7EA6;</td>
+</tr>
+<tr>
+<td>./bcli contract</td>
+<td style="text-align:center">deployabi</td>
+<td style="text-align:center">&#x90E8;&#x7F72;ABI&#x6587;&#x4EF6;</td>
+</tr>
+<tr>
+<td>./bcli contract</td>
+<td style="text-align:center">get</td>
+<td style="text-align:center">&#x83B7;&#x53D6;&#x6307;&#x5B9A;&#x5408;&#x7EA6;&#x548C;ABI&#x4FE1;&#x606F;&#x5E76;&#x5B58;&#x6587;&#x4EF6;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="bcli-&#x5408;&#x7EA6;&#x90E8;&#x7F72;&#x547D;&#x4EE4;&#x884C;">BCLI &#x5408;&#x7EA6;&#x90E8;&#x7F72;&#x547D;&#x4EE4;&#x884C;</h5>
+<p>&#x5E2E;&#x52A9;&#x4FE1;&#x606F;</p>
+<pre><code>./bcli contract deploycode --help
+NAME:
+Bottos bcli tool contract deploycode - contract  deploycode
+
+USAGE:
+    Bottos bcli tool contract deploycode [command options] [arguments...]
+
+OPTIONS:
+    --name value  the contract name
+    --code value  the contract&apos;s wasm file path ( includes wasm file name )
+    --user value  the user account
+</code></pre><p>&#x53C2;&#x6570;&#x8BF4;&#x660E;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E3B;&#x547D;&#x4EE4;&#x884C;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x5217;&#x8868;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+<th style="text-align:center">&#x5FC5;&#x9009;&#x53C2;&#x6570;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bcli contract deploycode</td>
+<td style="text-align:center">--name</td>
+<td style="text-align:center">&#x5408;&#x7EA6;&#x540D;</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">--code</td>
+<td style="text-align:center">&#x5408;&#x7EA6;&#x6587;&#x4EF6;&#xFF08;.WASM&#xFF09;&#x6240;&#x5728;&#x8DEF;&#x5F84;</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">--user</td>
+<td style="text-align:center">&#x53D1;&#x8D77;&#x5408;&#x7EA6;&#x7B7E;&#x540D;&#x7684;&#x7528;&#x6237;&#x540D;</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD4;&#x56DE;&#x4FE1;&#x606F;</p>
+<p>&#x8BE5;&#x547D;&#x4EE4;&#x6210;&#x529F;&#x540E;&#x5C06;&#x8FD4;&#x56DE;BCLI&#x6210;&#x529F;&#x53D1;&#x9001;&#x7684;Transaction&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x793A;&#x4F8B;</p>
+<pre><code>./bcli contract deploycode --name nodeclustermng --code nodeclustermng.wasm --user bottos
+</code></pre><p>&#x8F93;&#x51FA;&#x7ED3;&#x679C;</p>
+<pre><code>Deploy contract: nodeclustermng Succeed
+Trx: 
+{
+    &quot;version&quot;: 1,
+    &quot;cursor_num&quot;: 4948,
+    &quot;cursor_label&quot;: 3178968225,
+    &quot;lifetime&quot;: 1536563584,
+    &quot;sender&quot;: &quot;nodeclustermng&quot;,
+    &quot;contract&quot;: &quot;bottos&quot;,
+    &quot;method&quot;: &quot;deploycode&quot;,
+    &quot;param&quot;: {
+        &quot;name&quot;: &quot;nodeclustermng&quot;,
+        &quot;vm_type&quot;: 1,
+        &quot;vm_version&quot;: 1,
+        &quot;contract_code&quot;: &quot;0061736d0100000001290760027f7f017f60017f0060027f7f0060067f7f7f7f7f7f017f60037f7f7f017f60000060017f017f02560603656e7608676574506172616d000003656e76066d656d637079000403656e76066d656d736574000403656e7606...&quot;
+    },
+    &quot;param_bin&quot;: &quot;dc0004da000e6e6f6465636c75737465726d6e67cc01cc01c5162f0061736d0100000001290760027f7f017f60017f0060027f7f0060067f7f7f7f7f7f017f60037f7f7f017f60000060017f017f02560603656e7608676574506172616d000003656e76...&quot;,
+    &quot;sig_alg&quot;: 1,
+    &quot;signature&quot;: &quot;aa80b0d7ab8779f112e38cd9ae6eff759dc3997c2d852c33130baac8cf4c641d549b43d69759c3e2b1c617a7552134be5d68ff11dbb0b2fd70d51a2606b853be&quot;
+}
+TrxHash: ad45ac9a840642e569f07d0a9ba7fb9331e67bc96576e157b68ee09840d430f7
+</code></pre><h5 id="bcli-abi&#x90E8;&#x7F72;&#x547D;&#x4EE4;&#x884C;">BCLI ABI&#x90E8;&#x7F72;&#x547D;&#x4EE4;&#x884C;</h5>
+<p>&#x5E2E;&#x52A9;&#x4FE1;&#x606F;</p>
+<pre><code>./bcli contract deployabi --help
+NAME:
+Bottos bcli tool contract deployabi - Contract  deployabi
+
+USAGE:
+    Bottos bcli tool contract deployabi [command options] [arguments...]
+
+OPTIONS:
+    --name value  the contract name
+    --abi value   the contract&apos;s abi file path ( includes abi file name )
+    --user value  the user account
+</code></pre><p>&#x53C2;&#x6570;&#x8BF4;&#x660E;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E3B;&#x547D;&#x4EE4;&#x884C;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x5217;&#x8868;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+<th style="text-align:center">&#x5FC5;&#x9009;&#x53C2;&#x6570;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bcli contract deployabi</td>
+<td style="text-align:center">--name</td>
+<td style="text-align:center">&#x5408;&#x7EA6;&#x540D;</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">--abi</td>
+<td style="text-align:center">abi&#x63CF;&#x8FF0;&#x6587;&#x4EF6;&#xFF08;.abi&#xFF09;&#x6240;&#x5728;&#x8DEF;&#x5F84;</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">--user</td>
+<td style="text-align:center">&#x53D1;&#x8D77;&#x5408;&#x7EA6;&#x7B7E;&#x540D;&#x7684;&#x7528;&#x6237;&#x540D;</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD4;&#x56DE;&#x4FE1;&#x606F;</p>
+<p>&#x8BE5;&#x547D;&#x4EE4;&#x6210;&#x529F;&#x540E;&#x5C06;&#x8FD4;&#x56DE;BCLI&#x6210;&#x529F;&#x53D1;&#x9001;&#x7684;Transaction&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x793A;&#x4F8B;</p>
+<pre><code>./bcli contract deployabi --name nodeclustermng --abi nodeclustermng.abi --user bottos
+</code></pre><p>&#x8F93;&#x51FA;&#x7ED3;&#x679C;</p>
+<pre><code>{
+    &quot;errcode&quot;: 0,
+    &quot;msg&quot;: &quot;trx receive succ&quot;,
+    &quot;result&quot;: {
+        &quot;trx&quot;: {
+            &quot;version&quot;: 1,
+            &quot;cursor_num&quot;: 5264,
+            &quot;cursor_label&quot;: 890555306,
+            &quot;lifetime&quot;: 1536564532,
+            &quot;sender&quot;: &quot;nodeclustermng&quot;,
+            &quot;contract&quot;: &quot;bottos&quot;,
+            &quot;method&quot;: &quot;deployabi&quot;,
+            &quot;param&quot;: &quot;dc0002da000e6e6f6465636c75737465726d6e67c504297b0a09227479706573223a205b5d2c0a092273747275637473223a205b0a20202020202020202020202020207b0a202020202020202020202020202009226e616d65223a20224e6f6465436c7573746572526567222c0a2020202020202020202020202020092262617365223a2022222c0a202020202020202020202020202009226669656c6473223a207b0a20202020202020202020202020200909226e6f64654950223a2022737472696e67222c0a2020202020202020202020202020090922636c75737465724950223a2022737472696e67222c0a202020202020202020202020202009092275756964223a2022737472696e67222c0a20202020202020202020202020200909226361706163697479223a2022737472696e67220a20202020202020202020202020202020202020207d0a2020202020202020202020202020097d2c0a20202020202020202020202020207b0a202020202020202020202020202009226e616d65223a20224e6f6465436c7573746572496e666f222c0a2020202020202020202020202020092262617365223a2022222c0a202020202020202020202020202009226669656c6473223a207b0a2020202020202020202020202020090922636c75737465724950223a2022737472696e67222c0a202020202020202020202020202009092275756964223a2022737472696e67222c0a20202020202020202020202020200909226361706163697479223a2022737472696e67220a20202020202020202020202020202020202020207d0a2020202020202020202020202020097d0a202020202020205d2c0a0922616374696f6e73223a205b0a20202020202020202020202020207b0a20202020202020202020202020200922616374696f6e5f6e616d65223a2022726567222c0a2020202020202020202020202020092274797065223a20224e6f6465436c7573746572526567220a20202020202020202020202020207d0a202020202020205d2c0a09227461626c6573223a205b0a20202020202020202020202020207b0a202020202020202020202020202009227461626c655f6e616d65223a20226e6f6465636c7573746572696e666f222c0a20202020202020202020202020200922696e6465785f74797065223a2022737472696e67222c0a202020202020202020202020202009226b65795f6e616d6573223a20205b0a20202020202020202020202020200909226e6f64654950220a202020202020202020202020202009205d2c0a202020202020202020202020202009226b65795f7479706573223a20205b0a2020202020202020202020202020090922737472696e67220a202020202020202020202020202009205d2c0a2020202020202020202020202020092274797065223a20224e6f6465436c7573746572496e666f220a20202020202020202020202020207d0a202020202020205d0a7d0a&quot;,
+            &quot;sig_alg&quot;: 1,
+            &quot;signature&quot;: &quot;1807799fb6c007dff7a49641f1a84b41c083d346af300bbafa0dd1894a01ab6e51d1885b9ded14a66850b85e5ef4c38cc515bd9934f7ceaf26f2db33cfc6973f&quot;
+        },
+        &quot;trx_hash&quot;: &quot;62472648f88eece3a959d4cc1ff6e5dca11f05b1c6fb214e49ac4a9b3458ed1e&quot;
+    }
+}
+</code></pre><p>&#x6CE8;&#xFF1A; 
+    BOTTOS ABI &#x6587;&#x4EF6;&#x662F;&#x5BF9;&#x5408;&#x7EA6;&#x4E00;&#x4E9B;&#x65B9;&#x6CD5;&#x6240;&#x9700;&#x7684;&#x63A5;&#x53E3;&#x548C;&#x7ED3;&#x6784;&#x4EE5;&#x53CA;&#x53C2;&#x6570;&#x7684;&#x4FE1;&#x606F;&#x63CF;&#x8FF0;&#xFF0C;&#x4F8B;&#x5982;&#x672C;&#x4F8B;&#x4E2D;nodeclustermng.abi&#x6587;&#x4EF6;&#x5185;&#x5BB9;&#x5982;&#x4E0B;&#x3002;</p>
+<pre><code>&quot;structs&quot; &#x4EE3;&#x8868;&#x672C;&#x5408;&#x7EA6;&#x6240;&#x6709;&#x65B9;&#x6CD5;&#x9700;&#x8981;&#x4F7F;&#x7528;&#x5230;&#x7684;&#x6240;&#x6709;&#x7ED3;&#x6784;&#x4F53;&#x5B9A;&#x4E49;&#xFF1B;
+&quot;actions&quot; &#x4EE3;&#x8868;&#x672C;&#x5408;&#x7EA6;&#x6240;&#x6709;&#x5408;&#x7EA6;&#x652F;&#x6301;&#x7684;&#x6240;&#x6709;&#x5408;&#x7EA6;&#x65B9;&#x6CD5;&#x540D;&#x4EE5;&#x53CA;&#x6240;&#x9700;&#x7684;&#x5BF9;&#x5E94;&#x7ED3;&#x6784;&#x540D;
+&quot;tables&quot; &#x4EE3;&#x8868;&#x67E5;&#x8BE2;&#x5408;&#x7EA6;&#x88AB;&#x8C03;&#x7528;&#x540E;&#xFF08;&#x751F;&#x6548;&#x540E;&#xFF09;&#x5408;&#x7EA6;&#x4FE1;&#x606F;&#x4F1A;&#x5199;&#x5165;&#x94FE;&#x4E0A;&#xFF0C;tables&#x4EE3;&#x8868;&#x67E5;&#x8BE2;&#x94FE;&#x4E0A;&#x7684;&#x67D0;&#x6761;&#x4FE1;&#x606F;&#x6240;&#x9700;&#x8981;&#x7684;&#x5165;&#x53C2;&#xFF0C;&#x5305;&#x542B;&#x5173;&#x952E;&#x5B57;&#x548C;&#x6240;&#x5BF9;&#x5E94;&#x7684;&#x7ED3;&#x6784;&#x4FE1;&#x606F;&#x3002;
+
+&#x5177;&#x4F53;&#x793A;&#x4F8B;&#x5982;&#x4E0B;&#x3002;
+
+{
+    &quot;types&quot;: [],
+    &quot;structs&quot;: [
+            {
+                &quot;name&quot;: &quot;NodeClusterReg&quot;,
+                &quot;base&quot;: &quot;&quot;,
+                &quot;fields&quot;: {
+                    &quot;nodeIP&quot;: &quot;string&quot;,
+                    &quot;clusterIP&quot;: &quot;string&quot;,
+                    &quot;uuid&quot;: &quot;string&quot;,
+                    &quot;capacity&quot;: &quot;string&quot;
+                    }
+                },
+            {
+                &quot;name&quot;: &quot;NodeClusterInfo&quot;,
+                &quot;base&quot;: &quot;&quot;,
+                &quot;fields&quot;: {
+                    &quot;clusterIP&quot;: &quot;string&quot;,
+                    &quot;uuid&quot;: &quot;string&quot;,
+                    &quot;capacity&quot;: &quot;string&quot;
+                    }
+                }
+    ],
+    &quot;actions&quot;: [
+            {
+                &quot;action_name&quot;: &quot;reg&quot;,
+                &quot;type&quot;: &quot;NodeClusterReg&quot;
+            }
+    ],
+    &quot;tables&quot;: [
+            {
+                &quot;table_name&quot;: &quot;nodeclusterinfo&quot;,
+                &quot;index_type&quot;: &quot;string&quot;,
+                &quot;key_names&quot;:  [
+                    &quot;nodeIP&quot;
+                ],
+                &quot;key_types&quot;:  [
+                    &quot;string&quot;
+                ],
+                &quot;type&quot;: &quot;NodeClusterInfo&quot;
+            }
+    ]
+}
+</code></pre><h5 id="bcli-code&#x548C;abi&#x540C;&#x65F6;&#x90E8;&#x7F72;&#x547D;&#x4EE4;&#x884C;">BCLI CODE&#x548C;ABI&#x540C;&#x65F6;&#x90E8;&#x7F72;&#x547D;&#x4EE4;&#x884C;</h5>
+<p>&#x5E2E;&#x52A9;&#x4FE1;&#x606F;</p>
+<pre><code>./bcli contract deploy --help
+NAME:
+Bottos bcli tool contract deploy - contract deploy
+
+USAGE:
+    Bottos bcli tool contract deploy [command options] [arguments...]
+
+OPTIONS:
+    --name value  the contract name
+    --code value  the contract&apos;s wasm file path ( includes wasm file name )
+    --abi value   the contract&apos;s abi file path ( includes abi file name )
+    --user value  the user account
+</code></pre><p>&#x53C2;&#x6570;&#x8BF4;&#x660E;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E3B;&#x547D;&#x4EE4;&#x884C;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x5217;&#x8868;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+<th style="text-align:center">&#x5FC5;&#x9009;&#x53C2;&#x6570;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bcli contract deploy</td>
+<td style="text-align:center">--name</td>
+<td style="text-align:center">&#x5408;&#x7EA6;&#x540D;</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">--code</td>
+<td style="text-align:center">&#x5408;&#x7EA6;&#x540D;</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">--abi</td>
+<td style="text-align:center">abi&#x63CF;&#x8FF0;&#x6587;&#x4EF6;&#xFF08;.abi&#xFF09;&#x6240;&#x5728;&#x8DEF;&#x5F84;</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">--user</td>
+<td style="text-align:center">&#x53D1;&#x8D77;&#x5408;&#x7EA6;&#x7B7E;&#x540D;&#x7684;&#x7528;&#x6237;&#x540D;</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD4;&#x56DE;&#x4FE1;&#x606F;</p>
+<p>&#x8BE5;&#x547D;&#x4EE4;&#x6210;&#x529F;&#x540E;&#x5C06;&#x8FD4;&#x56DE;BCLI&#x6210;&#x529F;&#x53D1;&#x9001;&#x7684;Transaction&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x793A;&#x4F8B;</p>
+<pre><code>./bcli contract deploy --name nodeclustermng --code nodeclustermng.wasm --abi nodeclustermng.wasm --user nodeclustermng
+</code></pre><p>&#x8F93;&#x51FA;&#x7ED3;&#x679C;</p>
+<pre><code>Deploy contract: nodeclustermng Succeed
+Trx:
+{
+    &quot;version&quot;: 1,
+    &quot;cursor_num&quot;: 5730,
+    &quot;cursor_label&quot;: 2562596760,
+    &quot;lifetime&quot;: 1536565930,
+    &quot;sender&quot;: &quot;nodeclustermng&quot;,
+    &quot;contract&quot;: &quot;bottos&quot;,
+    &quot;method&quot;: &quot;deploycode&quot;,
+    &quot;param&quot;: {
+        &quot;name&quot;: &quot;nodeclustermng&quot;,
+        &quot;vm_type&quot;: 1,
+        &quot;vm_version&quot;: 1,
+        &quot;contract_code&quot;: &quot;0061736d0100000001290760027f7f017f60017f0060027f7f0060067f7f7f7f7f7f017f60037f7f7f017f60000060017f017f02560603656e7608676574506172616d000003656e76066d656d637079000403656e76066d656d736574000403656e7606...&quot;
+    },
+    &quot;param_bin&quot;: &quot;dc0004da000e6e6f6465636c75737465726d6e67cc01cc01c5162f0061736d0100000001290760027f7f017f60017f0060027f7f0060067f7f7f7f7f7f017f60037f7f7f017f60000060017f017f02560603656e7608676574506172616d000003656e76...&quot;,
+    &quot;sig_alg&quot;: 1,
+    &quot;signature&quot;: &quot;5611a1ccaa1286616e01e93517c04d4353143b5fe3d831ce9f67c48d7a19f39c505e6bd8e190f65ea74f8ade93a5db528c5299b8314cfa37243a8a66df0d900a&quot;
+}
+TrxHash: 5be2a59d92486a5b9cdc9ab8197f9640d0276949d08c7f8887374a9cd5b36bdc
+{
+    &quot;errcode&quot;: 0,
+    &quot;msg&quot;: &quot;trx receive succ&quot;,
+    &quot;result&quot;: {
+        &quot;trx&quot;: {
+            &quot;version&quot;: 1,
+            &quot;cursor_num&quot;: 5730,
+            &quot;cursor_label&quot;: 2562596760,
+            &quot;lifetime&quot;: 1536565930,
+            &quot;sender&quot;: &quot;nodeclustermng&quot;,
+            &quot;contract&quot;: &quot;bottos&quot;,
+            &quot;method&quot;: &quot;deployabi&quot;,
+            &quot;param&quot;: &quot;dc0002da000e6e6f6465636c75737465726d6e67c5162f0061736d0100000001290760027f7f017f60017f0060027f7f0060067f7f7f7f7f7f017f60037f7f7f017f60000060017f017f02560603656e7608676574506172616d000003656e76066d656d637079000403656e76066d656d736574000403656e76067072696e7469000103656e76067072696e7473000203656e760b73657453747256616c75650003030504050506000404017000000503010001073d04066d656d6f7279020004696e697400070573746172740008215f474c4f42414c5f5f7375625f495f6e6f6465636c75737465726d6e672e63707000060ada2804f202004100420037028c4041004200370294404100420037029c40410042003702a440410042003702ac40410041003602b440410041003602b840410041003602bc40410041003602c040410041003602c440410041003602c840410041003602cc40410041003602d040410041003602d440410041003602d840410041003602dc40410041003602e040410041003602e440410041003602e840410041003602ec40410041003602f040410041003602f440410041003602f840410041003602fc404100410036028041410041003602844141004100360288414100410036028c414100410036029041410041003602944141004100360298414100410036029c41410041003602a041410041003602a441410041003602a841410041003602ac41410041003602b041410041003602b441410041003602b841410041003602bc41410041003602c041410041003602c441410041003602c841410041003602cc41410041003602d041410041003602d4410b02000bec1b01087f4100410028020441c0196b22083602040240024002400240024002400240200041f200470d00200841c0096a410041801010021a20084180056a410041ba0410021a200841c0096a41801010002205100302402005450d00200841c0096a210020052107034020002d00001003200041016a21002007417f6a22070d000b0b200841003a00f004200820053602f804200841003602fc042008200841c0096a3602f404200841f0046a200841306a1009450d0420082d00304106470d0120082802384104470d04200841f0046a200841306a1009450d0420082d00304105470d022008280238220641016a410a490d03200841013a00f0040c040b200841c0096a41b0c300412310011a200841c0096a4101722105410021000340200520006a2107200041016a2206210020072d00000d000b200841c0096a200610040c040b200841063a00f0040c020b200841063a00f0040c010b0240024020082802f4042207450d00200841fc046a280200220020066a200841f8046a2802004d0d010b200841043a00f0040c010b02402006450d00200720006a210020084180056a2107200621050340200720002d00003a0000200741016a2107200041016a21002005417f6a22050d000b200841fc046a28020021000b20084180056a20066a41003a0000200841fc046a200020066a360200200841f0046a200841306a1009450d000240024020082d00304105470d002008280238220641016a41c303490d01200841013a00f0040c020b200841063a00f0040c010b0240024020082802f4042207450d00200841fc046a280200220020066a200841f8046a2802004d0d010b200841043a00f0040c010b20084189056a210102402006450d00200720006a210020012107200621050340200720002d00003a0000200741016a2107200041016a21002005417f6a22050d000b200841fc046a28020021000b200841fc046a200020066a36020020084180056a20066a41096a41003a0000200841f0046a200841306a1009450d000240024020082d00304105470d002008280238220641016a41e500490d01200841013a00f0040c020b200841063a00f0040c010b0240024020082802f4042207450d00200841fc046a280200220020066a200841f8046a2802004d0d010b200841043a00f0040c010b200841cb086a210202402006450d00200720006a210020022107200621050340200720002d00003a0000200741016a2107200041016a21002005417f6a22050d000b200841fc046a28020021000b200841fc046a200020066a36020020084180056a20066a41cb036a41003a0000200841f0046a200841306a1009450d000240024020082d00304105470d002008280238220341016a410c490d01200841013a00f0040c020b200841063a00f0040c010b0240024020082802f4042205450d00200841fc046a280200220720036a200841f8046a2802004d0d010b200841043a00f0040c010b200841af096a210002402003450d00200520076a210720002105200321060340200520072d00003a0000200541016a2105200741016a21072006417f6a22060d000b200841fc046a28020021070b200841fc046a200720036a3602004100210720084180056a20036a41af046a41003a0000200841366a41002d0086423a0000200841346a41002f0084423b01002008410028008042360230200841306a41017221060340200620076a2105200741016a2203210720052d00000d000b200841306a200310044100210741002103024020082d008005450d0020084180056a4101722104410021050340200420056a2106200541016a2203210520062d00000d000b0b20084180056a20031004200841386a41002f0098423b01002008410029009042370230200841306a41017221060340200620076a2105200741016a2203210720052d00000d000b200841306a200310044100210741002103024020084189056a2d0000450d002008418a056a2104410021050340200420056a2106200541016a2203210520062d00000d000b0b200120031004200841346a41002d00a4423a0000200841002800a042360230200841306a41017221060340200620076a2105200741016a2203210720052d00000d000b200841306a2003100441002107410021030240200841cb086a2d0000450d00200841cc086a2104410021050340200420056a2106200541016a2203210520062d00000d000b0b200220031004200841386a41002d00b8423a0000200841002900b042370230200841306a41017221060340200620076a2105200741016a2203210720052d00000d000b200841306a20031004410021060240200841af096a2d0000450d00200841b0096a2103410021070340200320076a2105200741016a2206210720052d00000d000b0b200020061004200841306a410041b10410021a200841306a21070340200720012d000022053a0000200741016a2107200141016a210120050d000b200841f2036a21070340200720022d000022053a0000200741016a2107200241016a210220050d000b200841d6046a21070340200720002d000022053a0000200741016a2107200041016a210020050d000b200841f0046a41086a418010360200200841fc046a2201410336020041002105200841003a00f004200841dc013a00c00920084180063b00c1092008200841c0096a3602f404024020082d00302203450d00200841306a4101722106410021000340200620006a2107200041016a2205210020072d00000d000b0b4106210220014106360200200841da013a00c309200820053a00c50920082005410874418080fc07714110763a00c4090240024002400240200541ffff03712206450d0041052100200641066a4180104b0d01200820033a00c609024020064101460d00410120066b2105200841c0096a4107722100200841306a41017221070340200020072d00003a0000200041016a2100200741016a2107200541016a22050d000b0b200841fc046a2200200028020020066a22023602000b02400240200841f2036a2d00002201450d00200841f3036a2106410021000340200620006a2107200041016a2205210020072d00000d000c020b0b410021050b4103210020082802f4042207450d00200241016a200841f0046a41086a2802004b0d00200720026a41da013a0000200841fc046a22002000280200220741016a2206360200024020082802f4042202450d0041082100200741036a200841f0046a41086a2802004b0d01200220066a220020054118742005410874418080fc07717220054108764180fe03712005411876727222074118763a0001200020074110763a0000200841fc046a22002000280200220741026a22023602000240200541ffff03712206450d004105210020082802f4042203450d02200220066a200841f8046a2802004b0d02200320026a20013a0000024020064101460d00410120066b2105200320076a41036a2100200841f3036a21070340200020072d00003a0000200041016a2100200741016a2107200541016a22050d000b0b200841fc046a2200200028020020066a22023602000b02400240200841d6046a2d00002201450d00200841d7046a2106410021000340200620006a2107200041016a2205210020072d00000d000c020b0b410021050b4103210020082802f4042207450d01200241016a200841f0046a41086a2802004b0d01200720026a41da013a0000200841fc046a22002000280200220741016a220636020020082802f4042202450d0041082100200741036a200841f0046a41086a2802004b0d01200220066a220020054118742005410874418080fc07717220054108764180fe03712005411876727222074118763a0001200020074110763a0000200841fc046a22002000280200220741026a22023602000240200541ffff03712206450d004105210020082802f4042203450d02200220066a200841f8046a2802004b0d02200320026a20013a0000024020064101460d00410120066b2105200320076a41036a2100200841d7046a21070340200020072d00003a0000200041016a2100200741016a2107200541016a22050d000b0b200841fc046a2200200028020020066a22023602000b41002100200841002903e842370328200841002903e042370320200841206a41017221050340200520006a2107200041016a2206210020072d00000d000b20082d008005450d0220084180056a4101722101410021000340200120006a2107200041016a2205210020072d00000d000c040b0b410821000b200820003a00f00441002100200841106a41002d00d0423a0000200841002903c842370308200841002903c042370300200841017221050340200520006a2107200041016a2206210020072d00000d000b2008200610040c030b410021050b0240200841206a200620084180056a200520082802f40420021005450d0041002100200841146a41002d00a4433a0000200841106a41002802a04336020020084100290398433703082008410029039043370300200841017221050340200520006a2107200041016a2206210020072d00000d000b200820061004410021000c030b41002100200841146a41002d0084433a0000200841106a410028028043360200200841002903f842370308200841002903f042370300200841017221050340200520006a2107200041016a2206210020072d00000d000b2008200610040c010b41002100200841c4006a41002f01f4413b0100200841c0006a41002802f041360200200841002903e841370338200841002903e041370330200841306a41017221050340200520006a2107200041016a2206210020072d00000d000b200841306a200610040b410121000b4100200841c0196a36020420000bf20902047f017e0240024020002802042202450d00200028020c220341016a220420002802084d0d010b200041023a000041000f0b200220036a2d000021022000410c6a200436020002400240024002400240024002400240024002400240024002400240200241bb7e6a220241174b0d00024020020e18000101010101010203040501010101010101010101060107000b200141003a00000240200041046a2802002202450d002000410c6a2203280200220441026a2205200041086a2802004d0d080b200041073a000041000f0b200041063a000041000f0b200141013a00000240200041046a2802002202450d002000410c6a2203280200220441016a200041086a2802004d0d070b200041043a000041000f0b200141023a00000240200041046a2802002202450d002000410c6a2203280200220441026a200041086a2802004d0d070b200041043a000041000f0b200141033a00000240200041046a2802002202450d002000410c6a2203280200220441046a200041086a2802004d0d070b200041043a000041000f0b200141043a00000240200041046a2802002202450d002000410c6a2203280200220441086a200041086a2802004d0d070b200041043a000041000f0b200141053a00000240200041046a2802002202450d002000410c6a2203280200220441026a2205200041086a2802004d0d070b200041043a000041000f0b200141063a00000240200041046a2802002202450d002000410c6a2203280200220441026a2205200041086a2802004d0d070b200041043a000041000f0b200220046a22002d0000210220002d0001210020032005360200200141086a200220004108747222004118742000410874418080fc07717241107636020041010f0b200141086a200220046a2d00003a00002003200328020041016a36020041010f0b200141086a2200200220046a22022d00003a0000200141096a20022d00013a00002003200328020041026a360200200020002f010022014118742001410874418080fc0771724110763b010041010f0b200141086a2205200220046a22002d00003a0000200141096a20002d00013a00002001410a6a200041026a2d00003a00002001410b6a200041036a2d00003a00002003200328020041046a3602002005200528020022004118742000410874418080fc07717220004108764180fe03712000411876727236020041010f0b200141086a2205200220046a22002d00003a0000200141096a20002d00013a00002001410a6a200041026a2d00003a00002001410b6a200041036a2d00003a00002001410c6a200041046a2d00003a00002001410d6a200041056a2d00003a00002001410e6a200041066a2d00003a00002001410f6a200041076a2d00003a00002003200328020041086a360200200520052903002206423886200642288642808080808080c0ff0083842006421886428080808080e03f8320064208864280808080f01f838484200642088842808080f80f832006421888428080fc07838420064228884280fe0383200642388884848437030041010f0b200220046a22002d0000210220002d0001210020032005360200200141086a200220004108747222004118742000410874418080fc07717241107636020041010f0b200220046a22002d0000210220002d0001210020032005360200200141086a200220004108747222004118742000410874418080fc07717241107636020041010b0bf3010b0041040b04e06100000041e0c1000b166e6f646520636c757374657220726567206661696c00004180c2000b076e6f6465495000004190c2000b0a636c75737465724950000041a0c2000b0575756964000041b0c2000b096361706163697479000041c0c2000b117061636b20696e666f206661696c6564000041e0c2000b106e6f6465636c7573746572696e666f000041f0c2000b15736574207374722076616c7565206661696c656400004190c3000b15726567206e6f646520636c757374657220737563000041b0c3000b23696e76616c6964206d6574686f642066726f6d206e6f6465636c75737465726d6e6700&quot;,
+            &quot;sig_alg&quot;: 1,
+            &quot;signature&quot;: &quot;fecde87d6c5cd6c53b3a4f7c79e6335c5d229bad22092db918850130163cc1bd688bfbf79b188352129ec6c1240d56f8c7c90ad16f953a8cd41a71e63aa426f2&quot;
+        },
+        &quot;trx_hash&quot;: &quot;f55af648b151466499d19d8de3a62ab304a3ff49616e10fa12f78443ec12c4e4&quot;
+    }
+}
+</code></pre><h5 id="bcli&#x83B7;&#x53D6;&#x5408;&#x7EA6;code&#x6587;&#x4EF6;&#x548C;abi&#x6587;&#x4EF6;">BCLI&#x83B7;&#x53D6;&#x5408;&#x7EA6;CODE&#x6587;&#x4EF6;&#x548C;ABI&#x6587;&#x4EF6;</h5>
+<p>&#x5E2E;&#x52A9;&#x4FE1;&#x606F;</p>
+<pre><code>./bcli contract get --help
+NAME:
+Bottos bcli tool contract get - get contract
+
+USAGE:
+Bottos bcli tool contract get [command options] [arguments...]
+
+OPTIONS:
+    --name value  the contract name
+    --code value  the contract&apos;s wasm file path ( includes wasm file name )
+    --abi value   the contract&apos;s abi file path ( includes abi file name )
+</code></pre><p>&#x53C2;&#x6570;&#x8BF4;&#x660E;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E3B;&#x547D;&#x4EE4;&#x884C;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x5217;&#x8868;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+<th style="text-align:center">&#x5FC5;&#x9009;&#x53C2;&#x6570;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bcli contract deploy</td>
+<td style="text-align:center">--name</td>
+<td style="text-align:center">&#x5408;&#x7EA6;&#x540D;</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">--code</td>
+<td style="text-align:center">&#x8981;&#x4FDD;&#x5B58;&#x7684;&#x5408;&#x7EA6;&#x8DEF;&#x5F84;&#x540D;</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">--abi</td>
+<td style="text-align:center">&#x8981;&#x4FDD;&#x5B58;&#x7684;abi&#x63CF;&#x8FF0;&#x6587;&#x4EF6;&#xFF08;.abi&#xFF09;&#x8DEF;&#x5F84;</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD4;&#x56DE;&#x4FE1;&#x606F;</p>
+<p>&#x8BE5;&#x547D;&#x4EE4;&#x6210;&#x529F;&#x540E;&#x5C06;&#x8FD4;&#x56DE;&#x5408;&#x7EA6;&#x6587;&#x4EF6;&#x7801;&#x6D41;&#x548C;ABI&#x6587;&#x4EF6;&#x4FE1;&#x606F;&#xFF0C;&#x4EE5;&#x53CA;&#x4FDD;&#x5B58;&#x5BF9;&#x5E94;&#x5185;&#x5BB9;&#x5230;&#x76EE;&#x7684;&#x5408;&#x7EA6;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x53CA;ABI&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x3002;</p>
+<p>&#x793A;&#x4F8B;</p>
+<pre><code>./bcli contract get --name nodeclustermng --code ~/nodeclustermng.wasm --abi ~/nodeclustermng.abi
+</code></pre><p>&#x8F93;&#x51FA;&#x7ED3;&#x679C;</p>
+<p>============CONTRACTCODE===============</p>
+<p>&quot;0061736d0100000001290760027f7f017f60017f0060027f7f0060067f7f7f7f7f7f017f60037f7f7f017f60000060017f017f02560603656e7608676574506172616d000003656e76066d656d637079000403656e76066d656d736574000403656e76067072696e7469000103656e76067072696e7473000203656e760b73657453747256616c75650003030504050506000404017000000503010001073d04066d656d6f7279020004696e697400070573746172740008215f474c4f42414c5f5f7375625f495f6e6f6465636c75737465726d6e672e63707000060ada2804f202004100420037028c4041004200370294404100420037029c40410042003702a440410042003702ac40410041003602b440410041003602b840410041003602bc40410041003602c040410041003602c440410041003602c840410041003602cc40410041003602d040410041003602d440410041003602d840410041003602dc40410041003602e040410041003602e440410041003602e840410041003602ec40410041003602f040410041003602f440410041003602f840410041003602fc404100410036028041410041003602844141004100360288414100410036028c414100410036029041410041003602944141004100360298414100410036029c41410041003602a041410041003602a441410041003602a841410041003602ac41410041003602b041410041003602b441410041003602b841410041003602bc41410041003602c041410041003602c441410041003602c841410041003602cc41410041003602d041410041003602d4410b02000bec1b01087f4100410028020441c0196b22083602040240024002400240024002400240200041f200470d00200841c0096a410041801010021a20084180056a410041ba0410021a200841c0096a41801010002205100302402005450d00200841c0096a210020052107034020002d00001003200041016a21002007417f6a22070d000b0b200841003a00f004200820053602f804200841003602fc042008200841c0096a3602f404200841f0046a200841306a1009450d0420082d00304106470d0120082802384104470d04200841f0046a200841306a1009450d0420082d00304105470d022008280238220641016a410a490d03200841013a00f0040c040b200841c0096a41b0c300412310011a200841c0096a4101722105410021000340200520006a2107200041016a2206210020072d00000d000b200841c0096a200610040c040b200841063a00f0040c020b200841063a00f0040c010b0240024020082802f4042207450d00200841fc046a280200220020066a200841f8046a2802004d0d010b200841043a00f0040c010b02402006450d00200720006a210020084180056a2107200621050340200720002d00003a0000200741016a2107200041016a21002005417f6a22050d000b200841fc046a28020021000b20084180056a20066a41003a0000200841fc046a200020066a360200200841f0046a200841306a1009450d000240024020082d00304105470d002008280238220641016a41c303490d01200841013a00f0040c020b200841063a00f0040c010b0240024020082802f4042207450d00200841fc046a280200220020066a200841f8046a2802004d0d010b200841043a00f0040c010b20084189056a210102402006450d00200720006a210020012107200621050340200720002d00003a0000200741016a2107200041016a21002005417f6a22050d000b200841fc046a28020021000b200841fc046a200020066a36020020084180056a20066a41096a41003a0000200841f0046a200841306a1009450d000240024020082d00304105470d002008280238220641016a41e500490d01200841013a00f0040c020b200841063a00f0040c010b0240024020082802f4042207450d00200841fc046a280200220020066a200841f8046a2802004d0d010b200841043a00f0040c010b200841cb086a210202402006450d00200720006a210020022107200621050340200720002d00003a0000200741016a2107200041016a21002005417f6a22050d000b200841fc046a28020021000b200841fc046a200020066a36020020084180056a20066a41cb036a41003a0000200841f0046a200841306a1009450d000240024020082d00304105470d002008280238220341016a410c490d01200841013a00f0040c020b200841063a00f0040c010b0240024020082802f4042205450d00200841fc046a280200220720036a200841f8046a2802004d0d010b200841043a00f0040c010b200841af096a210002402003450d00200520076a210720002105200321060340200520072d00003a0000200541016a2105200741016a21072006417f6a22060d000b200841fc046a28020021070b200841fc046a200720036a3602004100210720084180056a20036a41af046a41003a0000200841366a41002d0086423a0000200841346a41002f0084423b01002008410028008042360230200841306a41017221060340200620076a2105200741016a2203210720052d00000d000b200841306a200310044100210741002103024020082d008005450d0020084180056a4101722104410021050340200420056a2106200541016a2203210520062d00000d000b0b20084180056a20031004200841386a41002f0098423b01002008410029009042370230200841306a41017221060340200620076a2105200741016a2203210720052d00000d000b200841306a200310044100210741002103024020084189056a2d0000450d002008418a056a2104410021050340200420056a2106200541016a2203210520062d00000d000b0b200120031004200841346a41002d00a4423a0000200841002800a042360230200841306a41017221060340200620076a2105200741016a2203210720052d00000d000b200841306a2003100441002107410021030240200841cb086a2d0000450d00200841cc086a2104410021050340200420056a2106200541016a2203210520062d00000d000b0b200220031004200841386a41002d00b8423a0000200841002900b042370230200841306a41017221060340200620076a2105200741016a2203210720052d00000d000b200841306a20031004410021060240200841af096a2d0000450d00200841b0096a2103410021070340200320076a2105200741016a2206210720052d00000d000b0b200020061004200841306a410041b10410021a200841306a21070340200720012d000022053a0000200741016a2107200141016a210120050d000b200841f2036a21070340200720022d000022053a0000200741016a2107200241016a210220050d000b200841d6046a21070340200720002d000022053a0000200741016a2107200041016a210020050d000b200841f0046a41086a418010360200200841fc046a2201410336020041002105200841003a00f004200841dc013a00c00920084180063b00c1092008200841c0096a3602f404024020082d00302203450d00200841306a4101722106410021000340200620006a2107200041016a2205210020072d00000d000b0b4106210220014106360200200841da013a00c309200820053a00c50920082005410874418080fc07714110763a00c4090240024002400240200541ffff03712206450d0041052100200641066a4180104b0d01200820033a00c609024020064101460d00410120066b2105200841c0096a4107722100200841306a41017221070340200020072d00003a0000200041016a2100200741016a2107200541016a22050d000b0b200841fc046a2200200028020020066a22023602000b02400240200841f2036a2d00002201450d00200841f3036a2106410021000340200620006a2107200041016a2205210020072d00000d000c020b0b410021050b4103210020082802f4042207450d00200241016a200841f0046a41086a2802004b0d00200720026a41da013a0000200841fc046a22002000280200220741016a2206360200024020082802f4042202450d0041082100200741036a200841f0046a41086a2802004b0d01200220066a220020054118742005410874418080fc07717220054108764180fe03712005411876727222074118763a0001200020074110763a0000200841fc046a22002000280200220741026a22023602000240200541ffff03712206450d004105210020082802f4042203450d02200220066a200841f8046a2802004b0d02200320026a20013a0000024020064101460d00410120066b2105200320076a41036a2100200841f3036a21070340200020072d00003a0000200041016a2100200741016a2107200541016a22050d000b0b200841fc046a2200200028020020066a22023602000b02400240200841d6046a2d00002201450d00200841d7046a2106410021000340200620006a2107200041016a2205210020072d00000d000c020b0b410021050b4103210020082802f4042207450d01200241016a200841f0046a41086a2802004b0d01200720026a41da013a0000200841fc046a22002000280200220741016a220636020020082802f4042202450d0041082100200741036a200841f0046a41086a2802004b0d01200220066a220020054118742005410874418080fc07717220054108764180fe03712005411876727222074118763a0001200020074110763a0000200841fc046a22002000280200220741026a22023602000240200541ffff03712206450d004105210020082802f4042203450d02200220066a200841f8046a2802004b0d02200320026a20013a0000024020064101460d00410120066b2105200320076a41036a2100200841d7046a21070340200020072d00003a0000200041016a2100200741016a2107200541016a22050d000b0b200841fc046a2200200028020020066a22023602000b41002100200841002903e842370328200841002903e042370320200841206a41017221050340200520006a2107200041016a2206210020072d00000d000b20082d008005450d0220084180056a4101722101410021000340200120006a2107200041016a2205210020072d00000d000c040b0b410821000b200820003a00f00441002100200841106a41002d00d0423a0000200841002903c842370308200841002903c042370300200841017221050340200520006a2107200041016a2206210020072d00000d000b2008200610040c030b410021050b0240200841206a200620084180056a200520082802f40420021005450d0041002100200841146a41002d00a4433a0000200841106a41002802a04336020020084100290398433703082008410029039043370300200841017221050340200520006a2107200041016a2206210020072d00000d000b200820061004410021000c030b41002100200841146a41002d0084433a0000200841106a410028028043360200200841002903f842370308200841002903f042370300200841017221050340200520006a2107200041016a2206210020072d00000d000b2008200610040c010b41002100200841c4006a41002f01f4413b0100200841c0006a41002802f041360200200841002903e841370338200841002903e041370330200841306a41017221050340200520006a2107200041016a2206210020072d00000d000b200841306a200610040b410121000b4100200841c0196a36020420000bf20902047f017e0240024020002802042202450d00200028020c220341016a220420002802084d0d010b200041023a000041000f0b200220036a2d000021022000410c6a200436020002400240024002400240024002400240024002400240024002400240200241bb7e6a220241174b0d00024020020e18000101010101010203040501010101010101010101060107000b200141003a00000240200041046a2802002202450d002000410c6a2203280200220441026a2205200041086a2802004d0d080b200041073a000041000f0b200041063a000041000f0b200141013a00000240200041046a2802002202450d002000410c6a2203280200220441016a200041086a2802004d0d070b200041043a000041000f0b200141023a00000240200041046a2802002202450d002000410c6a2203280200220441026a200041086a2802004d0d070b200041043a000041000f0b200141033a00000240200041046a2802002202450d002000410c6a2203280200220441046a200041086a2802004d0d070b200041043a000041000f0b200141043a00000240200041046a2802002202450d002000410c6a2203280200220441086a200041086a2802004d0d070b200041043a000041000f0b200141053a00000240200041046a2802002202450d002000410c6a2203280200220441026a2205200041086a2802004d0d070b200041043a000041000f0b200141063a00000240200041046a2802002202450d002000410c6a2203280200220441026a2205200041086a2802004d0d070b200041043a000041000f0b200220046a22002d0000210220002d0001210020032005360200200141086a200220004108747222004118742000410874418080fc07717241107636020041010f0b200141086a200220046a2d00003a00002003200328020041016a36020041010f0b200141086a2200200220046a22022d00003a0000200141096a20022d00013a00002003200328020041026a360200200020002f010022014118742001410874418080fc0771724110763b010041010f0b200141086a2205200220046a22002d00003a0000200141096a20002d00013a00002001410a6a200041026a2d00003a00002001410b6a200041036a2d00003a00002003200328020041046a3602002005200528020022004118742000410874418080fc07717220004108764180fe03712000411876727236020041010f0b200141086a2205200220046a22002d00003a0000200141096a20002d00013a00002001410a6a200041026a2d00003a00002001410b6a200041036a2d00003a00002001410c6a200041046a2d00003a00002001410d6a200041056a2d00003a00002001410e6a200041066a2d00003a00002001410f6a200041076a2d00003a00002003200328020041086a360200200520052903002206423886200642288642808080808080c0ff0083842006421886428080808080e03f8320064208864280808080f01f838484200642088842808080f80f832006421888428080fc07838420064228884280fe0383200642388884848437030041010f0b200220046a22002d0000210220002d0001210020032005360200200141086a200220004108747222004118742000410874418080fc07717241107636020041010f0b200220046a22002d0000210220002d0001210020032005360200200141086a200220004108747222004118742000410874418080fc07717241107636020041010b0bf3010b0041040b04e06100000041e0c1000b166e6f646520636c757374657220726567206661696c00004180c2000b076e6f6465495000004190c2000b0a636c75737465724950000041a0c2000b0575756964000041b0c2000b096361706163697479000041c0c2000b117061636b20696e666f206661696c6564000041e0c2000b106e6f6465636c7573746572696e666f000041f0c2000b15736574207374722076616c7565206661696c656400004190c3000b15726567206e6f646520636c757374657220737563000041b0c3000b23696e76616c6964206d6574686f642066726f6d206e6f6465636c75737465726d6e6700&quot;</p>
+<p>============ABI===============</p>
+<p>{
+    &quot;types&quot;: [],
+    &quot;structs&quot;: [
+              {
+                  &quot;name&quot;: &quot;NodeClusterReg&quot;,
+                  &quot;base&quot;: &quot;&quot;,
+                  &quot;fields&quot;: {
+                      &quot;nodeIP&quot;: &quot;string&quot;,
+                      &quot;clusterIP&quot;: &quot;string&quot;,
+                      &quot;uuid&quot;: &quot;string&quot;,
+                      &quot;capacity&quot;: &quot;string&quot;
+                    }
+                  },
+              {
+                  &quot;name&quot;: &quot;NodeClusterInfo&quot;,
+                  &quot;base&quot;: &quot;&quot;,
+                  &quot;fields&quot;: {
+                      &quot;clusterIP&quot;: &quot;string&quot;,
+                      &quot;uuid&quot;: &quot;string&quot;,
+                      &quot;capacity&quot;: &quot;string&quot;
+                    }
+                  }
+       ],
+    &quot;actions&quot;: [
+              {
+                  &quot;action_name&quot;: &quot;reg&quot;,
+                  &quot;type&quot;: &quot;NodeClusterReg&quot;
+              }
+       ],
+    &quot;tables&quot;: [
+              {
+                  &quot;table_name&quot;: &quot;nodeclusterinfo&quot;,
+                  &quot;index_type&quot;: &quot;string&quot;,
+                  &quot;key_names&quot;:  [
+                      &quot;nodeIP&quot;
+                   ],
+                  &quot;key_types&quot;:  [
+                      &quot;string&quot;
+                   ],
+                  &quot;type&quot;: &quot;NodeClusterInfo&quot;
+              }
+       ]
+}</p>
+<h5 id="bcli&#x83B7;&#x53D6;&#x5408;&#x7EA6;table&#x4FE1;&#x606F;">BCLI&#x83B7;&#x53D6;&#x5408;&#x7EA6;TABLE&#x4FE1;&#x606F;</h5>
+<p>&#x5E2E;&#x52A9;&#x4FE1;&#x606F;</p>
+<pre><code>./bcli gettable --help
+NAME:
+bcli gettable - get table info
+
+USAGE:
+    bcli gettable [command options] [arguments...]
+
+OPTIONS:
+    --contract value  contract name (default: &quot;usermng&quot;)
+    --table value     table name
+    --key value       Key value
+</code></pre><p>&#x53C2;&#x6570;&#x8BF4;&#x660E;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E3B;&#x547D;&#x4EE4;&#x884C;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x5217;&#x8868;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+<th style="text-align:center">&#x5FC5;&#x9009;&#x53C2;&#x6570;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bcli gettable</td>
+<td style="text-align:center">--contract</td>
+<td style="text-align:center">&#x5408;&#x7EA6;&#x540D;</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">--table</td>
+<td style="text-align:center">&#x8981;&#x5411;&#x94FE;&#x4E0A;&#x67E5;&#x8BE2;&#x7684;TABLE&#x540D;   &#xFF08;&#x53C2;&#x8003;ABI&#x6587;&#x4EF6;TABLE&#x63CF;&#x8FF0;&#xFF09;</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">--key</td>
+<td style="text-align:center">&#x8981;&#x5411;&#x94FE;&#x4E0A;&#x67E5;&#x8BE2;&#x7684;key&#x5173;&#x952E;&#x5B57;&#x503C;&#xFF08;&#x53C2;&#x8003;ABI&#x6587;&#x4EF6;TABLE&#x63CF;&#x8FF0;&#xFF09;</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD4;&#x56DE;&#x4FE1;&#x606F;</p>
+<p>&#x8BE5;&#x547D;&#x4EE4;&#x6210;&#x529F;&#x540E;&#x5C06;&#x8FD4;&#x56DE;BCLI&#x53D1;&#x9001;&#x7684;Transaction&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x793A;&#x4F8B;</p>
+<pre><code>&#xFF08;&#x65E0;&#xFF0C;&#x5408;&#x7EA6;&#x6682;&#x4E14;&#x5728;&#x8C03;&#x8BD5;&#x4E2D;&#xFF09;
+</code></pre><h4 id="3-bcli-&#x5019;&#x9009;&#x8282;&#x70B9;&#x9009;&#x4E3E;&#x529F;&#x80FD;&#x547D;&#x4EE4;&#x884C;">3. BCLI &#x5019;&#x9009;&#x8282;&#x70B9;&#x9009;&#x4E3E;&#x529F;&#x80FD;&#x547D;&#x4EE4;&#x884C;</h4>
+<p>BCLI&#x5019;&#x9009;&#x8282;&#x70B9;&#x529F;&#x80FD;&#x9009;&#x4E3E;&#x547D;&#x4EE4;&#x884C;&#x4E3B;&#x7EBF;&#x5B9E;&#x73B0;&#x5019;&#x9009;&#x8282;&#x70B9;&#x4E4B;&#xFF1A;&#x6CE8;&#x518C;&#x8282;&#x70B9;&#x4E3A;&#x751F;&#x4EA7;&#x8282;&#x70B9;&#xFF0C;&#x89E3;&#x6CE8;&#x518C;&#x751F;&#x4EA7;&#x8282;&#x70B9;&#xFF0C;&#x5217;&#x4E3E;&#x6240;&#x6709;&#xFF08;&#x90E8;&#x5206;&#xFF09;&#x751F;&#x4EA7;&#x8282;&#x70B9;&#x4FE1;&#x606F;&#xFF0C;&#x6295;&#x7968;&#xFF08;&#x6295;&#x67D0;&#x8282;&#x70B9;&#x6210;&#x4E3A;&#x751F;&#x4EA7;&#x8282;&#x70B9;&#xFF09;&#xFF0C;&#x53D6;&#x6D88;&#x6295;&#x7968;&#x7B49;&#x3002;</p>
+<p>&#x603B;&#x4F53;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;&#x5982;&#x4E0B;</p>
+<pre><code>./bcli delegate --help
+NAME:
+Bottos bcli tool delegate - for delegate operations
+
+USAGE:
+    Bottos bcli tool delegate command [command options] [arguments...]
+
+COMMANDS:
+    reg         reg delegate
+    unreg       unreg delegate
+    list        list delegates
+    vote        Vote for producers
+    cancelvote  cancel vote for producers
+
+OPTIONS:
+    --help, -h  show help
+</code></pre><p>&#x547D;&#x4EE4;&#x529F;&#x80FD;&#x8BF4;&#x660E;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E3B;&#x547D;&#x4EE4;&#x884C;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x5217;&#x8868;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>./bcli delegate</td>
+<td style="text-align:center">reg</td>
+<td style="text-align:center">&#x6CE8;&#x518C;&#x4E3A;&#x751F;&#x4EA7;&#x8005;</td>
+</tr>
+<tr>
+<td>./bcli delegate</td>
+<td style="text-align:center">unreg</td>
+<td style="text-align:center">&#x89E3;&#x6CE8;&#x518C;&#x751F;&#x4EA7;&#x8005;</td>
+</tr>
+<tr>
+<td>./bcli delegate</td>
+<td style="text-align:center">list</td>
+<td style="text-align:center">&#x67E5;&#x770B;&#x751F;&#x4EA7;&#x8005;&#x5217;&#x8868;</td>
+</tr>
+<tr>
+<td>./bcli delegate</td>
+<td style="text-align:center">vote</td>
+<td style="text-align:center">&#x9009;&#x4E3E;&#x751F;&#x4EA7;&#x8005;</td>
+</tr>
+<tr>
+<td>./bcli delegate</td>
+<td style="text-align:center">cancelvote</td>
+<td style="text-align:center">&#x53D6;&#x6D88;&#x9009;&#x4E3E;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="bcli&#x6CE8;&#x518C;&#x751F;&#x4EA7;&#x8282;&#x70B9;&#x547D;&#x4EE4;&#x884C;">BCLI&#x6CE8;&#x518C;&#x751F;&#x4EA7;&#x8282;&#x70B9;&#x547D;&#x4EE4;&#x884C;</h5>
+<p>&#x5E2E;&#x52A9;&#x4FE1;&#x606F;</p>
+<pre><code>./bcli delegate reg --help
+NAME:
+Bottos bcli tool delegate reg - reg delegate
+
+USAGE:
+    Bottos bcli tool delegate reg [command options] [arguments...]
+
+OPTIONS:
+    --account value      account name
+    --signkey value      public sign key (default: &quot;0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f&quot;)
+    --location value     location
+    --description value  description
+</code></pre><p>&#x53C2;&#x6570;&#x8BF4;&#x660E;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E3B;&#x547D;&#x4EE4;&#x884C;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x5217;&#x8868;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+<th style="text-align:center">&#x5FC5;&#x9009;&#x53C2;&#x6570;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bcli delegate reg</td>
+<td style="text-align:center">--account</td>
+<td style="text-align:center">&#x7528;&#x6237;&#x540D;</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">--signkey</td>
+<td style="text-align:center">&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x516C;&#x94A5;&#xFF08;&#x7F3A;&#x7701;&#x4E3A;&#x5185;&#x7F6E;&#x7F3A;&#x7701;&#x503C;&#xFF09;</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">--location</td>
+<td style="text-align:center">&#x6295;&#x7968;&#x5730;&#x7406;&#x57CE;&#x5E02;&#x540D;</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">--description</td>
+<td style="text-align:center">&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x63CF;&#x8FF0;</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD4;&#x56DE;&#x4FE1;&#x606F;</p>
+<p>&#x8BE5;&#x547D;&#x4EE4;&#x6210;&#x529F;&#x540E;&#x5C06;&#x8FD4;&#x56DE;BCLI&#x53D1;&#x9001;&#x7684;Transaction&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x793A;&#x4F8B;</p>
+<pre><code>./bcli delegate reg --account lyp --location &quot;SHANGHAI&quot; --description &quot;Reg lyp as a producer&quot;
+</code></pre><p>&#x8F93;&#x51FA;&#x7ED3;&#x679C;</p>
+<pre><code>Transfer Succeed:
+Trx:
+{
+    &quot;version&quot;: 1,
+    &quot;cursor_num&quot;: 6115,
+    &quot;cursor_label&quot;: 789697330,
+    &quot;lifetime&quot;: 1536567085,
+    &quot;sender&quot;: &quot;bottos&quot;,
+    &quot;contract&quot;: &quot;bottos&quot;,
+    &quot;method&quot;: &quot;regdelegate&quot;,
+    &quot;param&quot;: &quot;dc0004da00036c7970da008230343534663163323232336435353361613665653533656131636365613862376266373862386361393966336666363232613362623365363264656463373132303839303333643630393164373732393635343762633037313032326361323833386339653836646563323936363763663734306535633965363534623631323766da00085348414e47484149da0015526567206c797020617320612070726f6475636572&quot;,
+    &quot;param_bin&quot;: &quot;dc0004da00036c7970da008230343534663163323232336435353361613665653533656131636365613862376266373862386361393966336666363232613362623365363264656463373132303839303333643630393164373732393635343762633037313032326361323833386339653836646563323936363763663734306535633965363534623631323766da00085348414e47484149da0015526567206c797020617320612070726f6475636572&quot;,
+    &quot;sig_alg&quot;: 1,
+    &quot;signature&quot;: &quot;eb0f741d4466c8d650c867dd3da988d2b81fc7c035018a461c01b9adab0767177239a041c9e6835e0952d2a95ab48900255a97ef8145a61115b286f1bbbfd3bb&quot;
+}
+TrxHash: 816dc08c5cb3c4e059d04ac4842ceb583b34c58c865311c889d2d9d9acf9658b
+</code></pre><p>&#x6CE8;&#xFF1A;
+&#x6B64;&#x547D;&#x4EE4;&#x6267;&#x884C;&#x524D;&#x63D0;&#xFF1A;&#x521B;&#x4E16;&#x8282;&#x70B9;&#x5FC5;&#x987B;&#x6210;&#x529F;&#x79FB;&#x4EA4;&#x51FA;&#x5757;&#x6743;&#x5229;&#x3002;
+&#x53C2;&#x8003;&#x547D;&#x4EE4;./bcli genesis blkprodtrans --sender lyp --actblknum 10</p>
+<h5 id="bcli&#x89E3;&#x6CE8;&#x518C;&#x751F;&#x4EA7;&#x8282;&#x70B9;&#x547D;&#x4EE4;&#x884C;">BCLI&#x89E3;&#x6CE8;&#x518C;&#x751F;&#x4EA7;&#x8282;&#x70B9;&#x547D;&#x4EE4;&#x884C;</h5>
+<p>&#x5E2E;&#x52A9;&#x4FE1;&#x606F;</p>
+<pre><code>./bcli  delegate unreg  --help
+
+NAME:
+Bottos bcli tool delegate unreg - unreg delegate
+
+USAGE:
+    Bottos bcli tool delegate unreg [command options] [arguments...]
+
+OPTIONS:
+    --account value  account
+</code></pre><p>&#x53C2;&#x6570;&#x8BF4;&#x660E;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E3B;&#x547D;&#x4EE4;&#x884C;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x5217;&#x8868;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+<th style="text-align:center">&#x5FC5;&#x9009;&#x53C2;&#x6570;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bcli delegate unreg</td>
+<td style="text-align:center">--account</td>
+<td style="text-align:center">&#x7528;&#x6237;&#x540D;</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD4;&#x56DE;&#x4FE1;&#x606F;</p>
+<p>&#x8BE5;&#x547D;&#x4EE4;&#x6210;&#x529F;&#x540E;&#x5C06;&#x8FD4;&#x56DE;BCLI&#x53D1;&#x9001;&#x7684;Transaction&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x793A;&#x4F8B;</p>
+<pre><code>./bcli delegate unreg --account lyp
+</code></pre><p>&#x8F93;&#x51FA;&#x7ED3;&#x679C;
+    Transfer Succeed:
+    Trx: 
+    {
+        &quot;version&quot;: 1,
+        &quot;cursor_num&quot;: 6237,
+        &quot;cursor_label&quot;: 2162498930,
+        &quot;lifetime&quot;: 1536567466,
+        &quot;sender&quot;: &quot;bottos&quot;,
+        &quot;contract&quot;: &quot;bottos&quot;,
+        &quot;method&quot;: &quot;unregdelegate&quot;,
+        &quot;param&quot;: &quot;dc0001da00036c7970&quot;,
+        &quot;param_bin&quot;: &quot;dc0001da00036c7970&quot;,
+        &quot;sig_alg&quot;: 1,
+        &quot;signature&quot;: &quot;48e3f949527851c13e9a82e5eb5bd605548ca4491ea05f3afed8405cab6985c037b6d59175d7880658da9bad33ab61e14da77b846305913d1b9326afd0b326dd&quot;
+    }
+    TrxHash: 8eacc1d64d722565b0033ca7afbd090ab73ae56f6ab2bf10fe934a3d305ffd6f</p>
+<h5 id="bcli&#x5217;&#x4E3E;&#x5F53;&#x524D;&#x751F;&#x4EA7;&#x8282;&#x70B9;&#x5217;&#x8868;">BCLI&#x5217;&#x4E3E;&#x5F53;&#x524D;&#x751F;&#x4EA7;&#x8282;&#x70B9;&#x5217;&#x8868;</h5>
+<p>&#x5E2E;&#x52A9;&#x4FE1;&#x606F;</p>
+<pre><code>./bcli delegate list --help
+NAME:
+Bottos bcli tool delegate list - list delegates
+
+USAGE:
+    Bottos bcli tool delegate list [command options] [arguments...]
+
+OPTIONS:
+    --limit value  (default: 100)
+    --start value  (default: 0)
+</code></pre><p>&#x53C2;&#x6570;&#x8BF4;&#x660E;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E3B;&#x547D;&#x4EE4;&#x884C;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x5217;&#x8868;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+<th style="text-align:center">&#x5FC5;&#x9009;&#x53C2;&#x6570;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bcli delegate list</td>
+<td style="text-align:center">--limit</td>
+<td style="text-align:center">&#x8F93;&#x51FA;&#x524D;N&#x6761;&#x8BB0;&#x5F55;</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">--limit</td>
+<td style="text-align:center">&#x4ECE;&#x7B2C;&#x51E0;&#x6761;&#x5F00;&#x59CB;&#x8F93;&#x51FA;&#x548C;&#x7EDF;&#x8BA1;&#x6761;&#x6570;</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD4;&#x56DE;&#x4FE1;&#x606F;</p>
+<p>&#x8BE5;&#x547D;&#x4EE4;&#x6210;&#x529F;&#x540E;&#x5C06;&#x8FD4;&#x56DE;BCLI&#x53D1;&#x9001;&#x7684;Transaction&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x793A;&#x4F8B;</p>
+<pre><code>./bcli delegate list
+</code></pre><p>&#x8F93;&#x51FA;&#x7ED3;&#x679C;</p>
+<pre><code>[
+    {
+        &quot;account_name&quot;: &quot;adhil&quot;,
+        &quot;active&quot;: false,
+        &quot;desc&quot;: &quot;&quot;,
+        &quot;last_confirmed_block_num&quot;: 6358,
+        &quot;last_slot&quot;: 1147647,
+        &quot;location&quot;: &quot;&quot;,
+        &quot;report_key&quot;: &quot;0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f&quot;,
+        &quot;total_missed&quot;: 0
+    },
+    {
+        &quot;account_name&quot;: &quot;albireo&quot;,
+        &quot;active&quot;: false,
+        &quot;desc&quot;: &quot;&quot;,
+        &quot;last_confirmed_block_num&quot;: 6377,
+        &quot;last_slot&quot;: 1147667,
+        &quot;location&quot;: &quot;&quot;,
+        &quot;report_key&quot;: &quot;0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f&quot;,
+        &quot;total_missed&quot;: 0
+    },
+    .....
+    ....
+    .... (&#x7565;)
+</code></pre><h5 id="bcli&#x751F;&#x4EA7;&#x8005;&#x6295;&#x7968;&#x547D;&#x4EE4;&#x884C;">BCLI&#x751F;&#x4EA7;&#x8005;&#x6295;&#x7968;&#x547D;&#x4EE4;&#x884C;</h5>
+<p>&#x5E2E;&#x52A9;&#x4FE1;&#x606F;</p>
+<pre><code>./bcli delegate vote --help
+NAME:
+Bottos bcli tool delegate vote - Vote for producers
+
+USAGE:
+    Bottos bcli tool delegate vote [command options] [arguments...]
+
+OPTIONS:
+    --voter value     voter account
+    --delegate value  delegate account
+</code></pre><p>&#x53C2;&#x6570;&#x8BF4;&#x660E;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E3B;&#x547D;&#x4EE4;&#x884C;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x5217;&#x8868;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+<th style="text-align:center">&#x5FC5;&#x9009;&#x53C2;&#x6570;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bcli delegate vote</td>
+<td style="text-align:center">--voter</td>
+<td style="text-align:center">&#x6295;&#x7968;&#x8005;</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">--delegate</td>
+<td style="text-align:center">&#x8981;&#x6295;&#x7ED9;&#x54EA;&#x4E2A;&#x751F;&#x4EA7;&#x8282;&#x70B9;&#xFF08;&#x5FC5;&#x987B;&#x6295;&#x7ED9;&#x5DF2;&#x6CE8;&#x518C;&#x4E3A;&#x751F;&#x4EA7;&#x8282;&#x70B9;&#x7684;&#x8282;&#x70B9;&#xFF09;</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD4;&#x56DE;&#x4FE1;&#x606F;</p>
+<p>&#x8BE5;&#x547D;&#x4EE4;&#x6210;&#x529F;&#x540E;&#x5C06;&#x8FD4;&#x56DE;BCLI&#x53D1;&#x9001;&#x7684;Transaction&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x793A;&#x4F8B;</p>
+<pre><code>./bcli delegate vote --voter bottos --delegate lyp
+</code></pre><p>&#x8F93;&#x51FA;&#x7ED3;&#x679C;</p>
+<pre><code>Transfer Succeed:
+Trx: 
+{
+    &quot;version&quot;: 1,
+    &quot;cursor_num&quot;: 6616,
+    &quot;cursor_label&quot;: 1568844234,
+    &quot;lifetime&quot;: 1536568645,
+    &quot;sender&quot;: &quot;bottos&quot;,
+    &quot;contract&quot;: &quot;bottos&quot;,
+    &quot;method&quot;: &quot;votedelegate&quot;,
+    &quot;param&quot;: &quot;dc0003cc01da0006626f74746f73da00036c7970&quot;,
+    &quot;param_bin&quot;: &quot;dc0003cc01da0006626f74746f73da00036c7970&quot;,
+    &quot;sig_alg&quot;: 1,
+    &quot;signature&quot;: &quot;86968717552104084b995c8ac46aca0f20fde5535daaf6f634af3cef9ecef804508577ee0c4c5c41f33e10feec45c22fccb5569e712fa62149f38d816d76ce35&quot;
+}
+</code></pre><h5 id="bcli&#x751F;&#x4EA7;&#x8005;&#x53D6;&#x6D88;&#x6295;&#x7968;&#x547D;&#x4EE4;&#x884C;">BCLI&#x751F;&#x4EA7;&#x8005;&#x53D6;&#x6D88;&#x6295;&#x7968;&#x547D;&#x4EE4;&#x884C;</h5>
+<p>&#x5E2E;&#x52A9;&#x4FE1;&#x606F;</p>
+<pre><code>./bcli delegate cancelvote --help
+NAME:
+Bottos bcli tool delegate cancelvote - cancel vote for producers
+
+USAGE:
+    Bottos bcli tool delegate cancelvote [command options] [arguments...]
+
+OPTIONS:
+    --voter value     voter account
+    --delegate value  delegate account
+</code></pre><p>&#x53C2;&#x6570;&#x8BF4;&#x660E;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E3B;&#x547D;&#x4EE4;&#x884C;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x5217;&#x8868;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+<th style="text-align:center">&#x5FC5;&#x9009;&#x53C2;&#x6570;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bcli delegate cancelvote</td>
+<td style="text-align:center">--voter</td>
+<td style="text-align:center">&#x6295;&#x7968;&#x8005;</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">--delegate</td>
+<td style="text-align:center">&#x8981;&#x53D6;&#x6D88;&#x6295;&#x7ED9;&#x54EA;&#x4E2A;&#x751F;&#x4EA7;&#x8282;&#x70B9;&#xFF08;&#x5FC5;&#x987B;&#x586B;&#x5199;&#x6CE8;&#x518C;&#x4E3A;&#x751F;&#x4EA7;&#x8282;&#x70B9;&#x7684;&#x8282;&#x70B9;&#xFF09;</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD4;&#x56DE;&#x4FE1;&#x606F;</p>
+<p>&#x8BE5;&#x547D;&#x4EE4;&#x6210;&#x529F;&#x540E;&#x5C06;&#x8FD4;&#x56DE;BCLI&#x53D1;&#x9001;&#x7684;Transaction&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x793A;&#x4F8B;</p>
+<pre><code>./bcli delegate cancelvote --voter bottos --delegate lyp
+</code></pre><p>&#x8F93;&#x51FA;&#x7ED3;&#x679C;</p>
+<pre><code>Transfer Succeed:
+Trx:
+{
+    &quot;version&quot;: 1,
+    &quot;cursor_num&quot;: 6690,
+    &quot;cursor_label&quot;: 482796464,
+    &quot;lifetime&quot;: 1536568876,
+    &quot;sender&quot;: &quot;bottos&quot;,
+    &quot;contract&quot;: &quot;bottos&quot;,
+    &quot;method&quot;: &quot;votedelegate&quot;,
+    &quot;param&quot;: &quot;dc0003cc00da0006626f74746f73da00036c7970&quot;,
+    &quot;param_bin&quot;: &quot;dc0003cc00da0006626f74746f73da00036c7970&quot;,
+    &quot;sig_alg&quot;: 1,
+    &quot;signature&quot;: &quot;946291c599105d2906d004b73fbec002e4ae2d8e113a4d71bbc17fa7129affb324ee6b6e1a101f9da217eee14ff1bac697f55bb29e634cdd4eda20b33801d116&quot;
+}
+TrxHash: f90e5cb5c6e5990c6bceb6e0fd7ec5a2f629760dd809b7fbd9c2832f916319ee
+</code></pre><h4 id="4-bcli-&#x5757;&#x4FE1;&#x606F;&#x83B7;&#x53D6;&#x547D;&#x4EE4;&#x884C;">4. BCLI &#x5757;&#x4FE1;&#x606F;&#x83B7;&#x53D6;&#x547D;&#x4EE4;&#x884C;</h4>
+<p>BCLI&#x5757;&#x4FE1;&#x606F;&#x83B7;&#x53D6;&#x4E3B;&#x8981;&#x5305;&#x62EC;&#xFF1A; &#x83B7;&#x53D6;&#x5F53;&#x524D;&#x5757;&#x4FE1;&#x606F;&#xFF0C;&#x5757;&#x5934;&#x4FE1;&#x606F;&#x3002;</p>
+<h5 id="bcli&#x5757;&#x5934;&#x4FE1;&#x606F;&#x83B7;&#x53D6;&#x547D;&#x4EE4;&#x884C;">BCLI&#x5757;&#x5934;&#x4FE1;&#x606F;&#x83B7;&#x53D6;&#x547D;&#x4EE4;&#x884C;</h5>
+<p>&#x5E2E;&#x52A9;&#x4FE1;&#x606F;</p>
+<pre><code>./bcli getinfo --help
+NAME:
+    bcli getinfo - get chian info
+
+USAGE:
+    bcli getinfo [arguments...]
+</code></pre><p>&#x53C2;&#x6570;&#x8BF4;&#x660E;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E3B;&#x547D;&#x4EE4;&#x884C;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x5217;&#x8868;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+<th style="text-align:center">&#x5FC5;&#x9009;&#x53C2;&#x6570;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>./bcli getinfo</td>
+<td style="text-align:center">(&#x65E0;)</td>
+<td style="text-align:center">(&#x65E0;)</td>
+<td style="text-align:center">(&#x65E0;)</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">(&#x65E0;)</td>
+<td style="text-align:center">(&#x65E0;)</td>
+<td style="text-align:center">(&#x65E0;)</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD4;&#x56DE;&#x4FE1;&#x606F;</p>
+<p>&#x8BE5;&#x547D;&#x4EE4;&#x6210;&#x529F;&#x540E;&#x5C06;&#x8FD4;&#x56DE;&#x5B9E;&#x65F6;&#x6700;&#x65B0;&#x5757;&#x5934;&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x793A;&#x4F8B;</p>
+<pre><code>./bcli getinfo
+</code></pre><p>&#x8F93;&#x51FA;&#x7ED3;&#x679C;</p>
+<pre><code>==Chain Info==
+
+{
+    &quot;head_block_num&quot;: 7047,
+    &quot;head_block_hash&quot;: &quot;34460313889fc988137e42394009df8880e5e82118fcae4579fc0e33d913309e&quot;,
+    &quot;head_block_time&quot;: 1536569883,
+    &quot;head_block_delegate&quot;: &quot;sulafat&quot;,
+    &quot;cursor_label&quot;: 3641913502,
+    &quot;last_consensus_block_num&quot;: 7026,
+    &quot;chain_id&quot;: &quot;5c7c2ea85df042747b38b183c84c8313b499177ed4abbf29d0947f4908934941&quot;
+}
+</code></pre><h5 id="bcli&#x6700;&#x65B0;&#x5757;&#x4FE1;&#x606F;&#x83B7;&#x53D6;&#x547D;&#x4EE4;&#x884C;">BCLI&#x6700;&#x65B0;&#x5757;&#x4FE1;&#x606F;&#x83B7;&#x53D6;&#x547D;&#x4EE4;&#x884C;</h5>
+<p>&#x5E2E;&#x52A9;&#x4FE1;&#x606F;</p>
+<pre><code>./bcli getblock --help
+NAME:
+    bcli getblock - get block info
+
+USAGE:
+    bcli getblock [command options] [arguments...]
+
+OPTIONS:
+    --num value   get block by number (default: 100)
+    --hash value  get block by hash
+</code></pre><p>&#x53C2;&#x6570;&#x8BF4;&#x660E;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E3B;&#x547D;&#x4EE4;&#x884C;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x5217;&#x8868;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+<th style="text-align:center">&#x5FC5;&#x9009;&#x53C2;&#x6570;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>./bcli getblock</td>
+<td style="text-align:center">(&#x65E0;)</td>
+<td style="text-align:center">(&#x65E0;)</td>
+<td style="text-align:center">(&#x65E0;)</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">(&#x65E0;)</td>
+<td style="text-align:center">(&#x65E0;)</td>
+<td style="text-align:center">(&#x65E0;)</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD4;&#x56DE;&#x4FE1;&#x606F;</p>
+<pre><code>&#x8BE5;&#x547D;&#x4EE4;&#x6210;&#x529F;&#x540E;&#x5C06;&#x8FD4;&#x56DE;&#x5B9E;&#x65F6;&#x6700;&#x65B0;&#x5757;&#x4FE1;&#x606F;&#x3002;
+</code></pre><p>&#x793A;&#x4F8B;</p>
+<pre><code>./bcli getblock
+
+&#x8F93;&#x51FA;&#x7ED3;&#x679C;
+
+==Block Info==
+
+{
+    &quot;prev_block_hash&quot;: &quot;6de5f9fb40511d307a55f5838e936a4d8c211177a0750287010bc7e67935954f&quot;,
+    &quot;block_num&quot;: 100,
+    &quot;block_hash&quot;: &quot;e97df19ae9b73ba46b5f5681b159f87a56a4aa8426dc0407f6ea4ed12fb1857d&quot;,
+    &quot;cursor_block_label&quot;: 800163197,
+    &quot;block_time&quot;: 1536548940,
+    &quot;trx_merkle_root&quot;: &quot;0000000000000000000000000000000000000000000000000000000000000000&quot;,
+    &quot;delegate&quot;: &quot;vega&quot;,
+    &quot;delegate_sign&quot;: &quot;fa3504d657168fb9b16ae9ee3d281ead80adb43fbb3859213198f856732b12c33459b2ff820af6fdf15c9dce7dde9a29fe0446a09568b1a34a3909cd64a73815&quot;,
+    &quot;trxs&quot;: null
+}
+</code></pre><h4 id="5-bcli-&#x521B;&#x4E16;&#x8282;&#x70B9;&#x529F;&#x80FD;&#x547D;&#x4EE4;&#x884C;">5. BCLI &#x521B;&#x4E16;&#x8282;&#x70B9;&#x529F;&#x80FD;&#x547D;&#x4EE4;&#x884C;</h4>
+<p>BCLI&#x521B;&#x4E16;&#x8282;&#x70B9;&#x529F;&#x80FD;&#x547D;&#x4EE4;&#x884C;&#x4E3B;&#x8981;&#x5305;&#x62EC;&#xFF1A; &#x6DFB;&#x52A0;&#x521D;&#x59CB;&#x751F;&#x4EA7;&#x8005;&#xFF0C; &#x79FB;&#x4EA4;&#x51FA;&#x5757;&#x6743;&#x5229;&#xFF0C;&#x64A4;&#x9500;&#x521B;&#x4E16;&#x8282;&#x70B9;&#x7279;&#x6743;&#x64CD;&#x4F5C;&#x6743;&#x9650;&#x3002;</p>
+<p>&#x603B;&#x4F53;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;&#x5982;&#x4E0B;</p>
+<pre><code>./bcli genesis --help
+
+NAME:
+Bottos bcli tool genesis - for genesis node operations
+
+USAGE:
+    Bottos bcli tool genesis command [command options] [arguments...]
+
+COMMANDS:
+    setdelegate      set delegate
+    blkprodtrans     for genesis node transfering the permission of producing blocks
+    cancelprevilige  cancel genesis node permission
+
+OPTIONS:
+    --help, -h  show help
+</code></pre><p>&#x547D;&#x4EE4;&#x529F;&#x80FD;&#x8BF4;&#x660E;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E3B;&#x547D;&#x4EE4;&#x884C;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x5217;&#x8868;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>./bcli genesis</td>
+<td style="text-align:center">setdelegate</td>
+<td style="text-align:center">&#x521B;&#x4E16;&#x8282;&#x70B9;&#x4E0A;&#x6307;&#x5B9A;&#x521D;&#x59CB;&#x751F;&#x4EA7;&#x8005;</td>
+</tr>
+<tr>
+<td>./bcli genesis</td>
+<td style="text-align:center">blkprodtrans</td>
+<td style="text-align:center">&#x521B;&#x4E16;&#x8282;&#x70B9;&#x79FB;&#x4EA4;&#x51FA;&#x5757;&#x6743;&#x5229;</td>
+</tr>
+<tr>
+<td>./bcli genesis</td>
+<td style="text-align:center">cancelprevilige</td>
+<td style="text-align:center">&#x521B;&#x4E16;&#x8282;&#x70B9;&#x53D6;&#x6D88;&#x64CD;&#x4F5C;&#x6743;&#x9650;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="bcli&#x521B;&#x4E16;&#x8282;&#x70B9;&#x6DFB;&#x52A0;&#x521D;&#x59CB;&#x751F;&#x4EA7;&#x8005;&#x529F;&#x80FD;&#x547D;&#x4EE4;&#x884C;">BCLI&#x521B;&#x4E16;&#x8282;&#x70B9;&#x6DFB;&#x52A0;&#x521D;&#x59CB;&#x751F;&#x4EA7;&#x8005;&#x529F;&#x80FD;&#x547D;&#x4EE4;&#x884C;</h5>
+<p>&#x5E2E;&#x52A9;&#x4FE1;&#x606F;</p>
+<pre><code>./bcli genesis setdelegate --help
+NAME:
+Bottos bcli tool genesis setdelegate - set delegate
+
+USAGE:
+    Bottos bcli tool genesis setdelegate [command options] [arguments...]
+
+OPTIONS:
+    --sender value       sender account
+    --account value      account name
+    --signkey value      public sign key (default: &quot;0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f&quot;)
+    --location value     location
+    --description value  description
+</code></pre><p>&#x53C2;&#x6570;&#x8BF4;&#x660E;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E3B;&#x547D;&#x4EE4;&#x884C;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x5217;&#x8868;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+<th style="text-align:center">&#x5FC5;&#x9009;&#x53C2;&#x6570;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>./bcli genesis setdelegate</td>
+<td style="text-align:center">--sender</td>
+<td style="text-align:center">&#x53D1;&#x8D77;&#x7B7E;&#x540D;&#x8005;&#xFF08;&#x5FC5;&#x987B;&#x4E3A;&#x5DF2;&#x6CE8;&#x518C;&#x7528;&#x6237;&#x540D;&#xFF0C;&#x7F3A;&#x7701;&#x4E3A;&#x5185;&#x7F6E;bottos&#x7528;&#x6237;&#xFF09;</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">--account</td>
+<td style="text-align:center">&#x8981;&#x88AB;&#x6DFB;&#x52A0;&#x7684;&#x521D;&#x59CB;&#x751F;&#x4EA7;&#x8005;&#x7528;&#x6237;&#x540D;</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">--signkey</td>
+<td style="text-align:center">&#x7528;&#x6237;&#x7684;&#x516C;&#x94A5;</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">--location</td>
+<td style="text-align:center">&#x7528;&#x6237;&#x6307;&#x5B9A;&#x7684;&#x57CE;&#x5E02;&#x540D;</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">--description</td>
+<td style="text-align:center">&#x7528;&#x6237;&#x6307;&#x5B9A;&#x7684;&#x63CF;&#x8FF0;</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD4;&#x56DE;&#x4FE1;&#x606F;</p>
+<p>&#x8BE5;&#x547D;&#x4EE4;&#x6210;&#x529F;&#x540E;&#x5C06;&#x8FD4;&#x56DE;BCLI&#x63D0;&#x4EA4;&#x7684;Transaction&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x793A;&#x4F8B;</p>
+<pre><code>./bcli genesis setdelegate --sender bottos --account lyp
+</code></pre><p>&#x8F93;&#x51FA;&#x7ED3;&#x679C;</p>
+<pre><code>Transfer Succeed:
+Trx: 
+{
+    &quot;version&quot;: 1,
+    &quot;cursor_num&quot;: 7356,
+    &quot;cursor_label&quot;: 2458267119,
+    &quot;lifetime&quot;: 1536570943,
+    &quot;sender&quot;: &quot;bottos&quot;,
+    &quot;contract&quot;: &quot;bottos&quot;,
+    &quot;method&quot;: &quot;setdelegate&quot;,
+    &quot;param&quot;: &quot;&quot;,
+    &quot;param_bin&quot;: &quot;&quot;,
+    &quot;sig_alg&quot;: 1,
+    &quot;signature&quot;: &quot;fe901957f6b55a41aef893ec6c285bd8f3c6624a1a0950d96cea4dab5896fe3d4476f602b910cdd7d51e9f74ee69af9c17b126ca37a85c040d6aee0827e33e3d&quot;
+}
+TrxHash: ec4654e3edb61c661ed63cf6b02d44cd255ca7a604c463074fb1307f70025181
+</code></pre><h5 id="bcli&#x521B;&#x4E16;&#x8282;&#x70B9;&#x79FB;&#x4EA4;&#x51FA;&#x5757;&#x6743;&#x5229;&#x529F;&#x80FD;&#x547D;&#x4EE4;&#x884C;">BCLI&#x521B;&#x4E16;&#x8282;&#x70B9;&#x79FB;&#x4EA4;&#x51FA;&#x5757;&#x6743;&#x5229;&#x529F;&#x80FD;&#x547D;&#x4EE4;&#x884C;</h5>
+<p>&#x5E2E;&#x52A9;&#x4FE1;&#x606F;</p>
+<pre><code>./bcli genesis blkprodtrans --help
+NAME:
+Bottos bcli tool genesis blkprodtrans - for genesis node transfering the permission of producing blocks
+
+USAGE:
+    Bottos bcli tool genesis blkprodtrans [command options] [arguments...]
+
+OPTIONS:
+    --sender value     sender account
+    --actblknum value  the threshold number of active block for which genesis node transfering the permission of producing blocks after exceeding it (default: 0)
+</code></pre><p>&#x53C2;&#x6570;&#x8BF4;&#x660E;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E3B;&#x547D;&#x4EE4;&#x884C;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x5217;&#x8868;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+<th style="text-align:center">&#x5FC5;&#x9009;&#x53C2;&#x6570;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>./bcli genesis blkprodtrans</td>
+<td style="text-align:center">--sender</td>
+<td style="text-align:center">&#x53D1;&#x8D77;&#x7B7E;&#x540D;&#x8005;&#xFF08;&#x5FC5;&#x987B;&#x4E3A;&#x5DF2;&#x6CE8;&#x518C;&#x7528;&#x6237;&#x540D;&#xFF0C;&#x7F3A;&#x7701;&#x4E3A;&#x5185;&#x7F6E;bottos&#x7528;&#x6237;&#xFF09;</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD4;&#x56DE;&#x4FE1;&#x606F;</p>
+<p>&#x8BE5;&#x547D;&#x4EE4;&#x6210;&#x529F;&#x540E;&#x5C06;&#x8FD4;&#x56DE;BCLI&#x63D0;&#x4EA4;&#x7684;Transaction&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x793A;&#x4F8B;</p>
+<pre><code> ./bcli genesis blkprodtrans --sender lyp
+</code></pre><p>&#x8F93;&#x51FA;&#x7ED3;&#x679C;</p>
+<pre><code>Transfer Succeed:
+Trx: 
+{
+    &quot;version&quot;: 1,
+    &quot;cursor_num&quot;: 7431,
+    &quot;cursor_label&quot;: 974139076,
+    &quot;lifetime&quot;: 1536571174,
+    &quot;sender&quot;: &quot;lyp&quot;,
+    &quot;contract&quot;: &quot;bottos&quot;,
+    &quot;method&quot;: &quot;blkprodtrans&quot;,
+    &quot;param&quot;: &quot;&quot;,
+    &quot;param_bin&quot;: &quot;&quot;,
+    &quot;sig_alg&quot;: 1,
+    &quot;signature&quot;: &quot;393abd00bc0c7bb2da1bec6fb03d755e553e17cddfd7b4e40daecdf372d188854517d099a5d166057e6e85e7b4edae98d5e75d48ec09f891d1f6eca3c94b979f&quot;
+}
+TrxHash: 2e25dd5f8bc7c598a3c6b81f245b6413143973ab9c9bc46f695a9ef6b33b4507
+</code></pre><h5 id="bcli&#x64A4;&#x9500;&#x521B;&#x4E16;&#x8282;&#x70B9;&#x7279;&#x6743;&#x64CD;&#x4F5C;&#x6743;&#x9650;&#x529F;&#x80FD;&#x547D;&#x4EE4;&#x884C;">BCLI&#x64A4;&#x9500;&#x521B;&#x4E16;&#x8282;&#x70B9;&#x7279;&#x6743;&#x64CD;&#x4F5C;&#x6743;&#x9650;&#x529F;&#x80FD;&#x547D;&#x4EE4;&#x884C;</h5>
+<p>&#x5E2E;&#x52A9;&#x4FE1;&#x606F;</p>
+<pre><code>./bcli genesis cancelprevilige --help
+NAME:
+Bottos bcli tool genesis cancelprevilige - cancel genesis node permission
+
+USAGE:
+    Bottos bcli tool genesis cancelprevilige [command options] [arguments...]
+
+OPTIONS:
+    --sender value  sender account
+</code></pre><p>&#x53C2;&#x6570;&#x8BF4;&#x660E;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E3B;&#x547D;&#x4EE4;&#x884C;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x5217;&#x8868;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+<th style="text-align:center">&#x5FC5;&#x9009;&#x53C2;&#x6570;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>./bcli genesis cancelprevilige</td>
+<td style="text-align:center">--sender</td>
+<td style="text-align:center">&#x53D1;&#x8D77;&#x7B7E;&#x540D;&#x8005;&#xFF08;&#x5FC5;&#x987B;&#x4E3A;&#x5DF2;&#x6CE8;&#x518C;&#x7528;&#x6237;&#x540D;&#xFF0C;&#x7F3A;&#x7701;&#x4E3A;&#x5185;&#x7F6E;bottos&#x7528;&#x6237;&#xFF09;</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD4;&#x56DE;&#x4FE1;&#x606F;</p>
+<p>&#x8BE5;&#x547D;&#x4EE4;&#x6210;&#x529F;&#x540E;&#x5C06;&#x8FD4;&#x56DE;BCLI&#x63D0;&#x4EA4;&#x7684;Transaction&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x793A;&#x4F8B;</p>
+<pre><code> ./bcli genesis cancelprevilige --sender lyp
+</code></pre><p>&#x8F93;&#x51FA;&#x7ED3;&#x679C;</p>
+<pre><code>Transfer Succeed:
+Trx: 
+{
+    &quot;version&quot;: 1,
+    &quot;cursor_num&quot;: 7479,
+    &quot;cursor_label&quot;: 4050849039,
+    &quot;lifetime&quot;: 1536571324,
+    &quot;sender&quot;: &quot;lyp&quot;,
+    &quot;contract&quot;: &quot;bottos&quot;,
+    &quot;method&quot;: &quot;cancelprevilige&quot;,
+    &quot;param&quot;: &quot;&quot;,
+    &quot;param_bin&quot;: &quot;&quot;,
+    &quot;sig_alg&quot;: 1,
+    &quot;signature&quot;: &quot;bb88393a4d1b526c079f2c3d0d38bbbc90f46084fb0c3e21cde9a5eaed5e0ce140a7a5dd30192ae63df489b46fa54d0ad4ff077c5f7286e559221e64c5d1ee9f&quot;
+}
+TrxHash: 794fb7f03c8d9ae0545660d66394f45e5cc261966fc66342dab72a70a6bbd2ea
+</code></pre><h4 id="6-bcli-&#x8F6C;&#x8D26;&#x529F;&#x80FD;&#x547D;&#x4EE4;&#x884C;">6. BCLI &#x8F6C;&#x8D26;&#x529F;&#x80FD;&#x547D;&#x4EE4;&#x884C;</h4>
+<p>BCLI&#x8F6C;&#x8D26;&#x529F;&#x80FD;&#x8D1F;&#x8D23;&#x7531;FROM&#x7528;&#x6237;&#x5411;TO&#x7528;&#x6237;&#x8FDB;&#x884C;BTO&#x8F6C;&#x8D26;&#x3002;</p>
+<h5 id="bcli&#x8F6C;&#x8D26;&#x547D;&#x4EE4;&#x884C;">BCLI&#x8F6C;&#x8D26;&#x547D;&#x4EE4;&#x884C;</h5>
+<p>&#x5E2E;&#x52A9;&#x4FE1;&#x606F;</p>
+<pre><code>./bcli transfer --help
+NAME:
+bcli transfer - for user transfering bto
+
+USAGE:
+    bcli transfer [command options] [arguments...]
+
+OPTIONS:
+    --from value    the from user account (default: &quot;bottos&quot;)
+    --to value      the [to] user account (default: &quot;bottos&quot;)
+    --amount value  the amount of bto (default: &quot;0&quot;)
+</code></pre><p>&#x53C2;&#x6570;&#x8BF4;&#x660E;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E3B;&#x547D;&#x4EE4;&#x884C;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x5217;&#x8868;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+<th style="text-align:center">&#x5FC5;&#x9009;&#x53C2;&#x6570;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>./bcli transfer</td>
+<td style="text-align:center">--from</td>
+<td style="text-align:center">&#x8F6C;&#x8D26;&#x8005;</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">--to</td>
+<td style="text-align:center">&#x8F6C;&#x8D26;&#x76EE;&#x7684;&#x4EBA;</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+<tr>
+<td></td>
+<td style="text-align:center">--amount</td>
+<td style="text-align:center">&#x8F6C;&#x8D26;BTO&#x4E2A;&#x6570;</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD4;&#x56DE;&#x4FE1;&#x606F;</p>
+<p>&#x8BE5;&#x547D;&#x4EE4;&#x6210;&#x529F;&#x540E;&#x5C06;&#x8FD4;&#x56DE;BCLI&#x63D0;&#x4EA4;&#x7684;Transaction&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x793A;&#x4F8B;</p>
+<pre><code>./bcli transfer --from bottos --to lyp --amount 2
+</code></pre><p>&#x8F93;&#x51FA;&#x7ED3;&#x679C;</p>
+<pre><code>Transfer Succeed
+    From: bottos
+    To: lyp
+    Amount: 200000000
+Trx: 
+{
+    &quot;version&quot;: 1,
+    &quot;cursor_num&quot;: 7762,
+    &quot;cursor_label&quot;: 117036287,
+    &quot;lifetime&quot;: 1536572206,
+    &quot;sender&quot;: &quot;bottos&quot;,
+    &quot;contract&quot;: &quot;bottos&quot;,
+    &quot;method&quot;: &quot;transfer&quot;,
+    &quot;param&quot;: {
+        &quot;from&quot;: &quot;bottos&quot;,
+        &quot;to&quot;: &quot;lyp&quot;,
+        &quot;value&quot;: 2
+    },
+    &quot;param_bin&quot;: &quot;dc0003da0006626f74746f73da00036c7970c50020000000000000000000000000000000000000000000000000000000000bebc200&quot;,
+    &quot;sig_alg&quot;: 1,
+    &quot;signature&quot;: &quot;3aa45652b368827fd5480721de1588ed08c2289de2cfa97ce352d65c8f1acc6e4f04b2c8492caacedb61097dea2728019d4c40c932d763ed7e26d051ca27a188&quot;
+}
+TrxHash: 86cbc8bd54d85fc817f3675103e62c5693fe7ef1520f2218f57c6406be05b46b
+</code></pre><h4 id="7-bcli-transaction-&#x63D0;&#x4EA4;&#x548C;&#x67E5;&#x8BE2;&#x547D;&#x4EE4;&#x884C;">7. BCLI Transaction &#x63D0;&#x4EA4;&#x548C;&#x67E5;&#x8BE2;&#x547D;&#x4EE4;&#x884C;</h4>
+<p>BCLI Transaction &#x63D0;&#x4EA4;&#x548C;&#x67E5;&#x8BE2;&#x547D;&#x4EE4;&#x884C;&#x8D1F;&#x8D23;&#x63D0;&#x4EA4;&#x4E00;&#x4E2A;&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x7684;Transaction&#x5230;&#x94FE;&#x4E0A;&#xFF0C;&#x6216;&#x6839;&#x636E;TrxHash&#x503C;&#x67E5;&#x8BE2;&#x4E00;&#x4E2A;&#x5DF2;&#x5B58;&#x5728;&#x7684;&#x5408;&#x7EA6;&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x603B;&#x4F53;&#x5E2E;&#x52A9;&#x4FE1;&#x606F;&#x5982;&#x4E0B;</p>
+<pre><code>./bcli transaction --help
+
+NAME:
+Bottos bcli tool transaction - get or push transactions
+
+USAGE:
+Bottos bcli tool transaction command [command options] [arguments...]
+
+COMMANDS:
+    get   get tx details
+    push  push transaction
+
+OPTIONS:
+--help, -h  show help
+</code></pre><p>&#x547D;&#x4EE4;&#x529F;&#x80FD;&#x8BF4;&#x660E;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E3B;&#x547D;&#x4EE4;&#x884C;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x5217;&#x8868;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>./bcli transaction</td>
+<td style="text-align:center">get</td>
+<td style="text-align:center">&#x83B7;&#x53D6;&#x6307;&#x5B9A;TRXHASH&#x5BF9;&#x5E94;&#x7684;transaction&#x4FE1;&#x606F;</td>
+</tr>
+<tr>
+<td>./bcli transaction</td>
+<td style="text-align:center">push</td>
+<td style="text-align:center">&#x63D0;&#x4EA4;&#x4E00;&#x4E2A;Transaction</td>
+</tr>
+</tbody>
+</table>
+<h5 id="bcli-transaction&#x67E5;&#x8BE2;&#x547D;&#x4EE4;&#x884C;">BCLI Transaction&#x67E5;&#x8BE2;&#x547D;&#x4EE4;&#x884C;</h5>
+<p>&#x5E2E;&#x52A9;&#x4FE1;&#x606F;</p>
+<pre><code>./bcli transaction get --help
+
+NAME:
+    Bottos bcli tool transaction get - get tx details
+
+USAGE:
+    Bottos bcli tool transaction get [command options] [arguments...]
+
+OPTIONS:
+    --trxhash value 
+</code></pre><p>&#x53C2;&#x6570;&#x8BF4;&#x660E;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E3B;&#x547D;&#x4EE4;&#x884C;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x5217;&#x8868;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+<th style="text-align:center">&#x5FC5;&#x9009;&#x53C2;&#x6570;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>./bcli transaction get</td>
+<td style="text-align:center">--trxhash</td>
+<td style="text-align:center">Transaction hash&#x7D22;&#x5F15;&#x503C;</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD4;&#x56DE;&#x4FE1;&#x606F;</p>
+<p>&#x8BE5;&#x547D;&#x4EE4;&#x6210;&#x529F;&#x540E;&#x5C06;&#x8FD4;&#x56DE;&#x6307;&#x5B9A;Trxhash&#x5BF9;&#x5E94;&#x7684;Transaction&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x793A;&#x4F8B;</p>
+<pre><code>./bcli transaction get --trxhash 86cbc8bd54d85fc817f3675103e62c5693fe7ef1520f2218f57c6406be05b46b
+</code></pre><p>&#x8F93;&#x51FA;&#x7ED3;&#x679C;</p>
+<pre><code>{
+    &quot;contract&quot;: &quot;bottos&quot;,
+    &quot;cursor_label&quot;: 117036287,
+    &quot;cursor_num&quot;: 7762,
+    &quot;lifetime&quot;: 1536572206,
+    &quot;method&quot;: &quot;transfer&quot;,
+    &quot;param&quot;: null,
+    &quot;sender&quot;: &quot;bottos&quot;,
+    &quot;sig_alg&quot;: 1,
+    &quot;signature&quot;: &quot;3aa45652b368827fd5480721de1588ed08c2289de2cfa97ce352d65c8f1acc6e4f04b2c8492caacedb61097dea2728019d4c40c932d763ed7e26d051ca27a188&quot;,
+    &quot;version&quot;: 1
+}
+</code></pre><h5 id="bcli-transaction&#x63D0;&#x4EA4;&#x547D;&#x4EE4;&#x884C;">BCLI Transaction&#x63D0;&#x4EA4;&#x547D;&#x4EE4;&#x884C;</h5>
+<p>&#x5E2E;&#x52A9;&#x4FE1;&#x606F;</p>
+<pre><code>./bcli transaction push --help
+NAME:
+    Bottos bcli tool transaction push - push transaction
+
+USAGE:
+    Bottos bcli tool transaction push [command options] [arguments...]
+
+OPTIONS:
+    --sender value    acocunt name
+    --contract value  contract name
+    --method value    method name
+    --param value     param value
+    --sign value      sign value
+</code></pre><p>&#x53C2;&#x6570;&#x8BF4;&#x660E;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E3B;&#x547D;&#x4EE4;&#x884C;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x5217;&#x8868;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+<th style="text-align:center">&#x5FC5;&#x9009;&#x53C2;&#x6570;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>./bcli transaction push</td>
+<td style="text-align:center">--sender</td>
+<td style="text-align:center">&#x7B7E;&#x540D;&#x53D1;&#x8D77;&#x8005;&#xFF08;&#x7F3A;&#x7701;&#x4E3A;&#x5185;&#x7F6E;bottos&#x7528;&#x6237;&#xFF09;</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+<tr>
+<td>./bcli transaction push</td>
+<td style="text-align:center">--contract</td>
+<td style="text-align:center">&#x5408;&#x7EA6;&#x540D;</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+<tr>
+<td>./bcli transaction push</td>
+<td style="text-align:center">--method</td>
+<td style="text-align:center">&#x5408;&#x7EA6;&#x65B9;&#x6CD5;&#x540D;</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+<tr>
+<td>./bcli transaction push</td>
+<td style="text-align:center">--param</td>
+<td style="text-align:center">&#x53C2;&#x6570;&#x952E;&#x503C;&#x5BF9;</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+<tr>
+<td>./bcli transaction push</td>
+<td style="text-align:center">--sign</td>
+<td style="text-align:center">&#x7528;&#x6237;&#x81EA;&#x5B9A;&#x4E49;&#x516C;&#x94A5;&#xFF08;&#x7F3A;&#x7701;&#x4E3A;&#x5185;&#x7F6E;&#x7F3A;&#x7701;&#x503C;&#xFF09;</td>
+<td style="text-align:center">&#x5426;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD4;&#x56DE;&#x4FE1;&#x606F;</p>
+<p>&#x8BE5;&#x547D;&#x4EE4;&#x6210;&#x529F;&#x540E;&#x5C06;&#x8FD4;&#x56DE;&#x6307;&#x5B9A;Trxhash&#x5BF9;&#x5E94;&#x7684;Transaction&#x4FE1;&#x606F;&#x3002;</p>
+<p>&#x793A;&#x4F8B;</p>
+<pre><code>&#xFF08;&#x7565;&#xFF09;
+</code></pre><h4 id="8-bcli&#x94B1;&#x5305;&#x547D;&#x4EE4;&#x884C;">8. BCLI&#x94B1;&#x5305;&#x547D;&#x4EE4;&#x884C;</h4>
+<p>&#x94B1;&#x5305;&#x529F;&#x80FD;&#x4E3B;&#x8981;&#x4E3A;&#x7528;&#x6237;&#x63D0;&#x4EA4;Transaction&#x63D0;&#x4F9B;&#x94B1;&#x5305;&#x521B;&#x5EFA;&#xFF0C;&#x7ED1;&#x5B9A;&#x7528;&#x6237;&#xFF0C;&#x89E3;&#x9501;&#x94B1;&#x5305;&#xFF0C;&#x9501;&#x5B9A;&#x94B1;&#x5305;&#xFF0C;&#x67E5;&#x8BE2;&#x94B1;&#x5305;&#x7B49;&#x529F;&#x80FD;&#x3002;</p>
+<p>&#x5E2E;&#x52A9;&#x4FE1;&#x606F;</p>
+<pre><code>./bcli wallet --help
+
+NAME:
+Bottos bcli tool wallet - For wallet operations
+
+USAGE:
+Bottos bcli tool wallet command [command options] [arguments...]
+
+COMMANDS:
+    generatekey  generate key pairs
+    create       create wallet
+    lock         lock wallet
+    unlock       unlock wallet
+    list         list wallet
+    listkey      listkey of wallet
+
+OPTIONS:
+--help, -h  show help
+</code></pre><p>&#x547D;&#x4EE4;&#x529F;&#x80FD;&#x8BF4;&#x660E;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E3B;&#x547D;&#x4EE4;&#x884C;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x5217;&#x8868;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>./bcli wallet</td>
+<td style="text-align:center">generatekey</td>
+<td style="text-align:center">&#x521B;&#x5EFA;&#x4E00;&#x5BF9;&#x65B0;&#x516C;&#x79C1;&#x94A5;&#x5BF9;</td>
+</tr>
+<tr>
+<td>./bcli wallet</td>
+<td style="text-align:center">create</td>
+<td style="text-align:center">&#x521B;&#x5EFA;&#x94B1;&#x5305;</td>
+</tr>
+<tr>
+<td>./bcli wallet</td>
+<td style="text-align:center">lock</td>
+<td style="text-align:center">&#x9501;&#x5B9A;&#x94B1;&#x5305;</td>
+</tr>
+<tr>
+<td>./bcli wallet</td>
+<td style="text-align:center">unlock</td>
+<td style="text-align:center">&#x89E3;&#x9501;&#x94B1;&#x5305;</td>
+</tr>
+<tr>
+<td>./bcli wallet</td>
+<td style="text-align:center">list</td>
+<td style="text-align:center">&#x5217;&#x51FA;&#x6240;&#x6709;&#x94B1;&#x5305;</td>
+</tr>
+<tr>
+<td>./bcli wallet</td>
+<td style="text-align:center">listkey</td>
+<td style="text-align:center">&#x5217;&#x51FA;&#x94B1;&#x5305;&#x5BF9;&#x5E94;&#x516C;&#x79C1;&#x94A5;&#x5BF9;&#xFF08;&#x5FC5;&#x987B;&#x94B1;&#x5305;&#x89E3;&#x9501;&#x540E;&#x4F7F;&#x7528;&#xFF09;</td>
+</tr>
+</tbody>
+</table>
+<h5 id="bcli-&#x521B;&#x5EFA;&#x94B1;&#x5305;&#x516C;&#x79C1;&#x94A5;&#x547D;&#x4EE4;&#x884C;">BCLI &#x521B;&#x5EFA;&#x94B1;&#x5305;&#x516C;&#x79C1;&#x94A5;&#x547D;&#x4EE4;&#x884C;</h5>
+<p>&#x5E2E;&#x52A9;&#x4FE1;&#x606F;
+./bcli wallet generatekey --help</p>
+<pre><code>NAME:
+    Bottos bcli tool wallet generatekey - generate key pairs
+
+USAGE:
+    Bottos bcli tool wallet generatekey [arguments...]
+</code></pre><p>&#x53C2;&#x6570;&#x8BF4;&#x660E;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E3B;&#x547D;&#x4EE4;&#x884C;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x5217;&#x8868;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+<th style="text-align:center">&#x5FC5;&#x9009;&#x53C2;&#x6570;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>./bcli wallet generatekey</td>
+<td style="text-align:center">(&#x65E0;)</td>
+<td style="text-align:center">&#xFF08;&#x65E0;&#xFF09;</td>
+<td style="text-align:center">&#xFF08;&#x65E0;&#xFF09;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD4;&#x56DE;&#x4FE1;&#x606F;</p>
+<p>&#x8BE5;&#x547D;&#x4EE4;&#x6210;&#x529F;&#x540E;&#x5C06;&#x8FD4;&#x56DE;&#x4E00;&#x5BF9;&#x65B0;&#x751F;&#x6210;&#x7684;&#x516C;&#x79C1;&#x94A5;&#x5BF9;&#x3002;</p>
+<p>&#x793A;&#x4F8B;</p>
+<pre><code> ./bcli wallet generatekey
+</code></pre><p>&#x8F93;&#x51FA;&#x7ED3;&#x679C;
+{
+    &quot;private_key&quot;: &quot;b8b890ebc315a8e1c3a6f7b78977d68ca1e9274c986314ccbe967b964cf68b66&quot;,
+    &quot;public_key&quot;: &quot;0485fccecf8c8e6260d8558e1a61adca3a888127e34ba0d052dfeb1c31d419bf0494482e7e8a447d63394cff713fc00aa8e64c24b73a8173661a91884b71407bce&quot;
+}</p>
+<h5 id="bcli-&#x521B;&#x5EFA;&#x94B1;&#x5305;&#x547D;&#x4EE4;&#x884C;">BCLI &#x521B;&#x5EFA;&#x94B1;&#x5305;&#x547D;&#x4EE4;&#x884C;</h5>
+<p>&#x5E2E;&#x52A9;&#x4FE1;&#x606F;</p>
+<pre><code>./bcli wallet create --help
+
+NAME:
+Bottos bcli tool wallet create - create wallet
+
+USAGE:
+Bottos bcli tool wallet create [command options] [arguments...]
+
+OPTIONS:
+--account value  account name
+</code></pre><p>&#x53C2;&#x6570;&#x8BF4;&#x660E;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E3B;&#x547D;&#x4EE4;&#x884C;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x5217;&#x8868;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+<th style="text-align:center">&#x5FC5;&#x9009;&#x53C2;&#x6570;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>./bcli wallet create</td>
+<td style="text-align:center">--account</td>
+<td style="text-align:center">&#x94B1;&#x5305;&#x7ED1;&#x5B9A;&#x7684;&#x7528;&#x6237;&#x540D;</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD4;&#x56DE;&#x4FE1;&#x606F;</p>
+<p>&#x8BE5;&#x547D;&#x4EE4;&#x6210;&#x529F;&#x540E;&#x5C06;&#x8FD4;&#x56DE;&#x7528;&#x6237;&#x7684;&#x94B1;&#x5305;&#x6587;&#x4EF6;keystore&#x4FE1;&#x606F;&#xFF0C;&#x8DEF;&#x5F84;&#x4F4D;&#x4E8E;/home/bottos/bot&#x4E0B;&#xFF0C; &#x6587;&#x4EF6;&#x683C;&#x5F0F;&#x4E3A; &#x7528;&#x6237;.keystore &#x6587;&#x4EF6;&#x3002;</p>
+<p>&#x793A;&#x4F8B;</p>
+<pre><code> ./bcli wallet create --account lyp
+</code></pre><p>&#x8F93;&#x51FA;&#x7ED3;&#x679C;</p>
+<p>Please input your password for your wallet: </p>
+<p>Please input your private key for your wallet: </p>
+<p>{
+    &quot;wallet_name&quot;: &quot;lyp.keystore&quot;
+}</p>
+<p>&#x6CE8;&#xFF1A;
+&#x672C;&#x4F8B;&#x4E2D;&#x9700;&#x8981;&#x7528;&#x6237;&#x624B;&#x5DE5;&#x8F93;&#x5165;&#x94B1;&#x5305;&#x5BC6;&#x7801;&#x548C;&#x4F7F;&#x7528;&#x7684;&#x79C1;&#x94A5;&#x3002;</p>
+<h5 id="bcli-&#x9501;&#x5B9A;&#x94B1;&#x5305;&#x547D;&#x4EE4;&#x884C;">BCLI &#x9501;&#x5B9A;&#x94B1;&#x5305;&#x547D;&#x4EE4;&#x884C;</h5>
+<p>&#x5E2E;&#x52A9;&#x4FE1;&#x606F;</p>
+<pre><code>./bcli wallet lock --help
+
+NAME:
+Bottos bcli tool wallet lock - lock wallet
+
+USAGE:
+Bottos bcli tool wallet lock [command options] [arguments...]
+
+OPTIONS:
+--account value  account name
+</code></pre><p>&#x53C2;&#x6570;&#x8BF4;&#x660E;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E3B;&#x547D;&#x4EE4;&#x884C;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x5217;&#x8868;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+<th style="text-align:center">&#x5FC5;&#x9009;&#x53C2;&#x6570;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>./bcli wallet lock</td>
+<td style="text-align:center">--account</td>
+<td style="text-align:center">&#x94B1;&#x5305;&#x7ED1;&#x5B9A;&#x7684;&#x7528;&#x6237;&#x540D;</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD4;&#x56DE;&#x4FE1;&#x606F;</p>
+<p>&#x8BE5;&#x547D;&#x4EE4;&#x6210;&#x529F;&#x540E;&#x5C06;&#x8FD4;&#x56DE;&#x94B1;&#x5305;&#x9501;&#x5B9A;&#x72B6;&#x6001;&#x6807;&#x5FD7;&#x3002;</p>
+<p>&#x793A;&#x4F8B;</p>
+<p>./bcli wallet lock --account lyp</p>
+<p>&#x8F93;&#x51FA;&#x7ED3;&#x679C;</p>
+<p>./bcli wallet lock --account lyp
+{
+    &quot;lock&quot;: true
+}</p>
+<h5 id="bcli-&#x89E3;&#x9501;&#x94B1;&#x5305;&#x547D;&#x4EE4;&#x884C;">BCLI &#x89E3;&#x9501;&#x94B1;&#x5305;&#x547D;&#x4EE4;&#x884C;</h5>
+<p>&#x5E2E;&#x52A9;&#x4FE1;&#x606F;</p>
+<pre><code>./bcli wallet unlock --help
+
+NAME:
+Bottos bcli tool wallet unlock - unlock wallet
+
+USAGE:
+Bottos bcli tool wallet unlock [command options] [arguments...]
+
+OPTIONS:
+--account value  account name
+</code></pre><p>&#x53C2;&#x6570;&#x8BF4;&#x660E;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E3B;&#x547D;&#x4EE4;&#x884C;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x5217;&#x8868;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+<th style="text-align:center">&#x5FC5;&#x9009;&#x53C2;&#x6570;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>./bcli wallet unlock</td>
+<td style="text-align:center">--account</td>
+<td style="text-align:center">&#x94B1;&#x5305;&#x7ED1;&#x5B9A;&#x7684;&#x7528;&#x6237;&#x540D;</td>
+<td style="text-align:center">&#x662F;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD4;&#x56DE;&#x4FE1;&#x606F;</p>
+<p>&#x8BE5;&#x547D;&#x4EE4;&#x6210;&#x529F;&#x540E;&#x5C06;&#x8FD4;&#x56DE;&#x94B1;&#x5305;&#x9501;&#x5B9A;&#x72B6;&#x6001;&#x6807;&#x5FD7;&#x3002;</p>
+<p>&#x793A;&#x4F8B;</p>
+<pre><code> ./bcli wallet unlock --account lyp
+</code></pre><p>&#x8F93;&#x51FA;&#x7ED3;&#x679C;</p>
+<pre><code>Please input your password for your wallet: 
+
+{
+    &quot;unlock&quot;: true
+}
+</code></pre><p>&#x6CE8;&#xFF1A;
+&#x672C;&#x4F8B;&#x8981;&#x6C42;&#x7528;&#x6237;&#x8F93;&#x5165;&#x5F53;&#x65F6;&#x521B;&#x5EFA;&#x94B1;&#x5305;&#x65F6;&#x7684;&#x5BC6;&#x7801;&#x3002;</p>
+<h5 id="bcli-&#x67E5;&#x770B;&#x6240;&#x6709;&#x94B1;&#x5305;&#x547D;&#x4EE4;&#x884C;">BCLI &#x67E5;&#x770B;&#x6240;&#x6709;&#x94B1;&#x5305;&#x547D;&#x4EE4;&#x884C;</h5>
+<p>&#x5E2E;&#x52A9;&#x4FE1;&#x606F;</p>
+<pre><code>./bcli wallet list --help
+
+NAME:
+Bottos bcli tool wallet list - list wallet
+
+USAGE:
+Bottos bcli tool wallet list [arguments...]
+</code></pre><p>&#x53C2;&#x6570;&#x8BF4;&#x660E;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E3B;&#x547D;&#x4EE4;&#x884C;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x5217;&#x8868;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+<th style="text-align:center">&#x5FC5;&#x9009;&#x53C2;&#x6570;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>./bcli wallet list</td>
+<td style="text-align:center">(&#x65E0;)</td>
+<td style="text-align:center">&#xFF08;&#x65E0;&#xFF09;</td>
+<td style="text-align:center">&#xFF08;&#x65E0;&#xFF09;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD4;&#x56DE;&#x4FE1;&#x606F;</p>
+<p>&#x8BE5;&#x547D;&#x4EE4;&#x6210;&#x529F;&#x540E;&#x5C06;&#x8FD4;&#x56DE;&#x94B1;&#x5305;&#x9501;&#x5B9A;&#x72B6;&#x6001;&#x6807;&#x5FD7;&#x3002;</p>
+<p>&#x793A;&#x4F8B;</p>
+<pre><code> ./bcli wallet list
+</code></pre><p>&#x8F93;&#x51FA;&#x7ED3;&#x679C;</p>
+<pre><code>[
+    {
+        &quot;account_name&quot;: &quot;lyp&quot;,
+        &quot;public_key&quot;: &quot;0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f&quot;,
+        &quot;wallet_path&quot;: &quot;/home/bottos/bot/lyp.keystore&quot;
+    }
+]
+</code></pre><h5 id="bcli-&#x67E5;&#x770B;&#x6240;&#x6709;&#x94B1;&#x5305;&#x516C;&#x79C1;&#x94A5;&#x547D;&#x4EE4;&#x884C;">BCLI &#x67E5;&#x770B;&#x6240;&#x6709;&#x94B1;&#x5305;&#x516C;&#x79C1;&#x94A5;&#x547D;&#x4EE4;&#x884C;</h5>
+<p>&#x6CE8;&#xFF1A;
+    &#x672C;&#x547D;&#x4EE4;&#x5FC5;&#x987B;&#x5728;&#x94B1;&#x5305;unlock&#x72B6;&#x6001;&#x524D;&#x63D0;&#x4E0B;&#x6267;&#x884C;&#x3002;</p>
+<p>&#x5E2E;&#x52A9;&#x4FE1;&#x606F;</p>
+<pre><code>./bcli wallet listkey --help
+
+NAME:
+Bottos bcli tool wallet listkey - listkey of wallet
+
+USAGE:
+    Bottos bcli tool wallet listkey [command options] [arguments...]
+
+OPTIONS:
+    --account value  account name
+</code></pre><p>&#x53C2;&#x6570;&#x8BF4;&#x660E;</p>
+<table>
+<thead>
+<tr>
+<th>&#x4E3B;&#x547D;&#x4EE4;&#x884C;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x5217;&#x8868;</th>
+<th style="text-align:center">&#x53C2;&#x6570;&#x8BF4;&#x660E;</th>
+<th style="text-align:center">&#x5FC5;&#x9009;&#x53C2;&#x6570;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>./bcli wallet listkey</td>
+<td style="text-align:center">--account</td>
+<td style="text-align:center">&#x94B1;&#x5305;&#x7ED1;&#x5B9A;&#x7684;&#x7528;&#x6237;</td>
+<td style="text-align:center">&#xFF08;&#x65E0;&#xFF09;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x8FD4;&#x56DE;&#x4FE1;&#x606F;</p>
+<p>&#x8BE5;&#x547D;&#x4EE4;&#x6210;&#x529F;&#x540E;&#x5C06;&#x8FD4;&#x56DE;&#x94B1;&#x5305;account&#x5BF9;&#x5E94;&#x516C;&#x79C1;&#x94A5;&#x5BF9;&#x3002;</p>
+<p>&#x793A;&#x4F8B;</p>
+<pre><code>./bcli wallet listkey --account lyp
+</code></pre><p>&#x8F93;&#x51FA;&#x7ED3;&#x679C;</p>
+<p>{
+    &quot;account_name&quot;: &quot;lyp&quot;,
+    &quot;private_key&quot;: &quot;b799ef616830cd7b8599ae7958fbee56d4c8168ffd5421a16025a398b8a4be45&quot;,
+    &quot;public_key&quot;: &quot;0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f&quot;
+}</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="网络拓扑结构.html" class="navigation navigation-prev " aria-label="Previous page: 网络拓扑结构">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../智能合约/Development/使用C++编写智能合约.html" class="navigation navigation-next " aria-label="Next page: 智能合约">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"BCLI使用说明","level":"1.2.3","depth":2,"next":{"title":"智能合约","level":"1.3","depth":1,"path":"智能合约/Development/使用C++编写智能合约.md","ref":"智能合约/Development/使用C++编写智能合约.md","articles":[{"title":"使用C++编写智能合约","level":"1.3.1","depth":2,"path":"智能合约/Development/使用C++编写智能合约.md","ref":"智能合约/Development/使用C++编写智能合约.md","articles":[]},{"title":"部署与测试","level":"1.3.2","depth":2,"path":"智能合约/部署与测试.md","ref":"智能合约/部署与测试.md","articles":[]},{"title":"公共REST接口","level":"1.3.3","depth":2,"path":"智能合约/API/公共REST接口.md","ref":"智能合约/API/公共REST接口.md","articles":[]},{"title":"钱包REST接口","level":"1.3.4","depth":2,"path":"智能合约/API/钱包REST接口.md","ref":"智能合约/API/钱包REST接口.md","articles":[]}]},"previous":{"title":"网络拓扑结构","level":"1.2.2","depth":2,"path":"Bottos节点/网络拓扑结构.md","ref":"Bottos节点/网络拓扑结构.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","multipart","livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"multipart":{},"livereload":{},"highlight":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*","description":"Bottos开发文档","theme-default":{"showLevel":true}},"file":{"path":"Bottos节点/BCLI使用说明.md","mtime":"2018-11-14T03:14:48.668Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-14T09:41:12.923Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,17 @@
+# Bottos系统架构
+
+Bottos 是聚焦于人工智能领域的基础设施，既有依据数据特性而专门设计的底层公链，又有服务于整个人工智能及其衍生产业的数据流转平台。Bottos 的数据流转是基于区块链技术的全球最大数据集合池，解决人工智能(AI)行业优 质数据获取难的痛点，独创智能数据入股合约，用数据挖矿方式实现个人数据财富共享，在个人数据和 AI 模型之间建立价值联系。
+
+因此，在Bottos系统设计时采用了分层架构的方式，便于系统的动态扩展和灵活部署。总体分为三层，如下：
+
+Core Layer： Chainbase层，提供区块链基础的链服务，构建信任公链基础结构，实现区块链基本功能；
+
+Service Layer： 基于Chainbase 提供基于铂链开发的基础服务，例如提供分布式身份服务、分布式存储、合约以及Token管理服务等，实现快速的Dapp开发；
+
+Application Layer： 基于Bottos开发的各种应用集合。
+
+本文目前主要介绍如何使用Core Layer即区块链基础服务，提供相应开发接口和使用案例，提供钱包基本接口和方式。
+
+Bottos系统的总体技术框架如下图所示：
+
+![](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LH6Wp7WxZSf9VDfH9F3%2F-LNFrRWMHgroD5S5zGIC%2F-LNFs6VkByTQrov1o_oU%2FBottosArchitecture.png?alt=media&token=b01a098c-23b2-454d-bb45-7d9ba6988e96)

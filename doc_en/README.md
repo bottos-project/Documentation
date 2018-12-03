@@ -1,0 +1,19 @@
+# Bottos System
+
+
+**Recommended Minimum System Requirements**
+- Ubuntu 16.04.5 Server (64-bit)
+- Install Python2.7
+- 2 GHz 8 core processor
+- 16 GiB RAM (system memory)
+- 1T GB of hard-drive space or more
+
+&nbsp;
+**Bottos Project Address on Github**
+- [Github Address](https://github.com/bottos-project)
+
+
+&nbsp;
+**Bottos Developer Documentation**
+- [English Version](http://47.74.187.9:4001/)
+- [中文版](http://47.74.187.9:4000/)

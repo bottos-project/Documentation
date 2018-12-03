@@ -1,0 +1,2020 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Common REST Interface · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="Wallet REST Interface.html" />
+    
+    
+    <link rel="prev" href="../Deploying and Testing.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    Bottos Introduction
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../../Bottos Basics/Bottos Architecture.html">
+            
+                <a href="../../Bottos Basics/Bottos Architecture.html">
+            
+                    
+                    Bottos Architecture
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../../Bottos Node/Node Introduction.html">
+            
+                <a href="../../Bottos Node/Node Introduction.html">
+            
+                    
+                    Bottos Node
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../../Bottos Node/Network Topology.html">
+            
+                <a href="../../Bottos Node/Network Topology.html">
+            
+                    
+                    Network Topology
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../../Bottos Node/BCLI.html">
+            
+                <a href="../../Bottos Node/BCLI.html">
+            
+                    
+                    BCLI
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../Development/Write smart contract in C++.html">
+            
+                <a href="../Development/Write smart contract in C++.html">
+            
+                    
+                    Smart Contract
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../Deploying and Testing.html">
+            
+                <a href="../Deploying and Testing.html">
+            
+                    
+                    Deploying and Testing
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.2" data-path="Common REST Interface.html">
+            
+                <a href="Common REST Interface.html">
+            
+                    
+                    Common REST Interface
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="Wallet REST Interface.html">
+            
+                <a href="Wallet REST Interface.html">
+            
+                    
+                    Wallet REST Interface
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../../Wallet SDK/Wallet SDK.html">
+            
+                <a href="../../Wallet SDK/Wallet SDK.html">
+            
+                    
+                    Wallet SDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../../DApp Development/How to set up the development environment.html">
+            
+                <a href="../../DApp Development/How to set up the development environment.html">
+            
+                    
+                    DApp Development
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../../DApp Development/Install and Run Bottos.html">
+            
+                <a href="../../DApp Development/Install and Run Bottos.html">
+            
+                    
+                    Install and Run Bottos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../../DApp Development/Development and deployment of Smart Contract.html">
+            
+                <a href="../../DApp Development/Development and deployment of Smart Contract.html">
+            
+                    
+                    Development and deployment of Smart Contract
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../../DApp Development/DApp developing and debugging.html">
+            
+                <a href="../../DApp Development/DApp developing and debugging.html">
+            
+                    
+                    DApp developing and debugging
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Common REST Interface</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="common-rest-interface">Common REST Interface</h1>
+<h2 id="get-the-block-information">Get the block information</h2>
+<p><strong>API Functions</strong></p>
+<blockquote>
+<p>API&#xFF1A; Get block information</p>
+<p><strong>API Address</strong>
+URL:  /v1/block/detail</p>
+<p><strong>Response Format</strong></p>
+<p>JSON</p>
+<p><strong>Request Method</strong></p>
+<p>POST</p>
+<p><strong>Request Parameters&#xFF1A;</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Mandatory</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>block_num</td>
+<td>FALSE</td>
+<td>uint64</td>
+<td>Null</td>
+<td>Block number</td>
+</tr>
+<tr>
+<td>block_hash</td>
+<td>FALSE</td>
+<td>string</td>
+<td>Null</td>
+<td>Block hash value</td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p>Note&#xFF1A;block_num&#x3001;block_hash can only choose one of them; If not given in either&#xFF0C;it will returns block information of &quot;block 0&quot; in default&#x3002;</p>
+<p><strong>Response Fields&#xFF1A;</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>errcode</td>
+<td>uint32</td>
+<td>Error code&#xFF0C;0-succeed&#xFF0C;others please refer to the error code chapter.</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td>response description</td>
+</tr>
+<tr>
+<td>result</td>
+<td>jsonObject</td>
+<td>response result</td>
+</tr>
+<tr>
+<td>block_num</td>
+<td>uint64</td>
+<td>Block number</td>
+</tr>
+<tr>
+<td>prev_block_hash</td>
+<td>string</td>
+<td>Previous Block hash value</td>
+</tr>
+<tr>
+<td>block_hash</td>
+<td>string</td>
+<td>Current Block hash value</td>
+</tr>
+<tr>
+<td>cursor_block_label</td>
+<td>uint32</td>
+<td>Current block identity</td>
+</tr>
+<tr>
+<td>block_time</td>
+<td>uint64</td>
+<td>Generate time of the block</td>
+</tr>
+<tr>
+<td>trx_merkle_root</td>
+<td>string</td>
+<td>Merkle root value&#xFF0C;The hash value of all transactions packaged by the block</td>
+</tr>
+<tr>
+<td>delegate</td>
+<td>string</td>
+<td>Producer name</td>
+</tr>
+<tr>
+<td>delegate_sign</td>
+<td>string</td>
+<td>Producer signature</td>
+</tr>
+<tr>
+<td>trxs</td>
+<td>jsonArray</td>
+<td>The list of transactions packaged in the current block, as described in the response field in the &quot;Query Transaction information&quot; section</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Field changes</strong></p>
+<ul>
+<li><p>Null</p>
+<p><strong>API Smple</strong></p>
+</li>
+</ul>
+<blockquote>
+<p>Address&#xFF1A;<a href="http://127.0.0.1:8689/v1/block/detail" target="_blank">http://127.0.0.1:8689/v1/block/detail</a></p>
+</blockquote>
+<ul>
+<li>Request:</li>
+</ul>
+<pre><code>  {
+      &quot;block_num&quot;: 32,
+      &quot;block_hash&quot;: &quot;405a6fb8b91a055a7a4cf007451ce0b31ea6626cb2d56ec050b126701fbf093d&quot;
+  }
+</code></pre><ul>
+<li>Response:</li>
+</ul>
+<pre><code>  HTTP/1.1 200 OK
+
+  {
+      &quot;errcode&quot;: 0,
+      &quot;msg&quot;: &quot;success&quot;,
+      &quot;result&quot;: {
+          &quot;prev_block_hash&quot;: &quot;1b345401d8f859c05e37b5ccacd39ff5b4a21615b63f9b96edb59352a3e54e82&quot;,
+          &quot;block_num&quot;: 32,
+          &quot;block_hash&quot;: &quot;405a6fb8b91a055a7a4cf007451ce0b31ea6626cb2d56ec050b126701fbf093d&quot;,
+          &quot;cursor_block_label&quot;: 532613437,
+          &quot;block_time&quot;: 1537259127,
+          &quot;trx_merkle_root&quot;: &quot;85f9d2fbe1d3c0a217e10932899b6f73b24fafe59a006406ed65d7e4a39a7416&quot;,
+          &quot;delegate&quot;: &quot;bottos&quot;,
+          &quot;delegate_sign&quot;: &quot;41c25998e7d432527f07ae5c10c5c30a4873e9519c29cb02e7f46e3a8e238baf47748efe3f24db3ff3630305441b1d24c5d0ba796b3332a8b8fd3fca4efc4cfb&quot;,
+          &quot;trxs&quot;: [
+              {
+                  &quot;version&quot;: 1,
+                  &quot;cursor_num&quot;: 31,
+                  &quot;cursor_label&quot;: 2749714050,
+                  &quot;lifetime&quot;: 1537259224,
+                  &quot;sender&quot;: &quot;bottos&quot;,
+                  &quot;contract&quot;: &quot;bottos&quot;,
+                  &quot;method&quot;: &quot;newaccount&quot;,
+                  &quot;param&quot;: {
+                      &quot;name&quot;: &quot;testtest&quot;,
+                      &quot;pubkey&quot;: &quot;0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f&quot;
+                  },
+                  &quot;sig_alg&quot;: 1,
+                  &quot;signature&quot;: &quot;c85fd25af493cbb6a79870ce0fc602acc892664ca17e2c646aff0332ca6db7787beeb7e5d8553de8e4b83bdf7b227762fedf9e3674888893f18bf31f0b05d622&quot;
+              }
+          ]
+      }
+  }
+</code></pre><h2 id="get-block-header-information">Get Block Header Information</h2>
+<p><strong>API Function</strong></p>
+<blockquote>
+<p>API Description&#xFF1A; Get block header information</p>
+<p><strong>APIAddress</strong></p>
+<p>URL:  /v1/block/height</p>
+<p><strong>Response Format</strong></p>
+<p>JSON</p>
+<p><strong>Request Format</strong></p>
+<p>GET</p>
+<p><strong>Request Parameter&#xFF1A;</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Mandatory</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Null</td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</blockquote>
+<p><strong>Response Fields&#xFF1A;</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>errcode</td>
+<td>uint32</td>
+<td>Error code&#xFF0C;0-Succeed&#xFF0C;others refer to error code chapter</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td>response description</td>
+</tr>
+<tr>
+<td>result</td>
+<td>jsonObject</td>
+<td>response result</td>
+</tr>
+<tr>
+<td>head_block_num</td>
+<td>uint64</td>
+<td>Block number</td>
+</tr>
+<tr>
+<td>head_block_hash</td>
+<td>string</td>
+<td>Previous Block hash value</td>
+</tr>
+<tr>
+<td>head_block_time</td>
+<td>uint64</td>
+<td>Generating time of block</td>
+</tr>
+<tr>
+<td>head_block_delegate</td>
+<td>string</td>
+<td>Producer of block</td>
+</tr>
+<tr>
+<td>cursor_label</td>
+<td>uint32</td>
+<td>Block identity</td>
+</tr>
+<tr>
+<td>last_consensus_block_num</td>
+<td>uint32</td>
+<td>Irreversible Block&apos;s number</td>
+</tr>
+<tr>
+<td>chain_id</td>
+<td>string</td>
+<td>Chain ID&#xFF0C;The chain_id must be the same for all nodes in the same chain</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fields Changes</strong></p>
+<ul>
+<li><p>Null</p>
+<p><strong>API Sample</strong></p>
+</li>
+</ul>
+<blockquote>
+<p>Address&#xFF1A;<a href="http://127.0.0.1:8689/v1/block/height" target="_blank">http://127.0.0.1:8689/v1/block/height</a></p>
+</blockquote>
+<ul>
+<li>Request:</li>
+</ul>
+<pre><code>  Null
+</code></pre><ul>
+<li>Response:</li>
+</ul>
+<pre><code>  HTTP/1.1 200 OK
+  {
+      &quot;errcode&quot;: 0,
+      &quot;msg&quot;: &quot;&quot;,
+      &quot;result&quot;: {
+          &quot;head_block_num&quot;: 87,
+          &quot;head_block_hash&quot;: &quot;b34806eefc77b88743ab447f43658bf229fd4e5cd9452340e21f3995a5d2054b&quot;,
+          &quot;head_block_time&quot;: 1534213225,
+          &quot;head_block_delegate&quot;: &quot;alsephina&quot;,
+          &quot;cursor_label&quot;: 2782004555,
+          &quot;last_consensus_block_num&quot;: 64,
+          &quot;chain_id&quot;: &quot;4b97b92d2c78bcffe95ebd3067565c73a2931b39d5eb7234b11816dcec54761a&quot;
+      }
+  }
+</code></pre><h2 id="send-the-transaction-information">Send the transaction information</h2>
+<p><strong>API Function</strong></p>
+<blockquote>
+<p>API Description&#xFF1A; Send the transaction information</p>
+<p><strong>APIAddress</strong></p>
+<p>URL:  /v1/transaction/send</p>
+<p><strong>Response Format</strong></p>
+<p>JSON</p>
+<p><strong>Request Format</strong></p>
+<p>POST</p>
+</blockquote>
+<p><strong>Request Parameter&#xFF1A;</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Mandatory</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>version</td>
+<td>TRUE</td>
+<td>uint32</td>
+<td>1</td>
+<td>Version number of block chain</td>
+</tr>
+<tr>
+<td>cursor_num</td>
+<td>TRUE</td>
+<td>uint64</td>
+<td>Null</td>
+<td>Latest block number&#xFF0C;getting by querying header block</td>
+</tr>
+<tr>
+<td>cursor_label</td>
+<td>TRUE</td>
+<td>uint32</td>
+<td>Null</td>
+<td>Latest block identity&#xFF0C;get by querying the block header</td>
+</tr>
+<tr>
+<td>lifetime</td>
+<td>TRUE</td>
+<td>uint64</td>
+<td>Null</td>
+<td>Transaction exipired time&#xFF0C;by ways of getting block header, plus a certain delay&#xFF0C;it is recommanded to delay by 100 seconds</td>
+</tr>
+<tr>
+<td>sender</td>
+<td>TRUE</td>
+<td>string</td>
+<td>Null</td>
+<td>Sender</td>
+</tr>
+<tr>
+<td>contract</td>
+<td>TRUE</td>
+<td>string</td>
+<td>Null</td>
+<td>Contract name</td>
+</tr>
+<tr>
+<td>method</td>
+<td>TRUE</td>
+<td>string</td>
+<td>Null</td>
+<td>Contract method</td>
+</tr>
+<tr>
+<td>param</td>
+<td>TRUE</td>
+<td>string</td>
+<td>Null</td>
+<td>Business parameter, hexadecimal string</td>
+</tr>
+<tr>
+<td>sig_alg</td>
+<td>TRUE</td>
+<td>uint32</td>
+<td>1</td>
+<td>Sign algorism</td>
+</tr>
+<tr>
+<td>signature</td>
+<td>TRUE</td>
+<td>string</td>
+<td>Null</td>
+<td>Signature value</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Fields&#xFF1A;</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>errcode</td>
+<td>uint32</td>
+<td>Error code&#xFF0C;0-Succeed&#xFF0C;others refer to error code chapter</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td>response description</td>
+</tr>
+<tr>
+<td>result</td>
+<td>jsonObject</td>
+<td>response result</td>
+</tr>
+<tr>
+<td>trx_hash</td>
+<td>string</td>
+<td>Hash value of each transaction</td>
+</tr>
+<tr>
+<td>trx</td>
+<td>jsonObject</td>
+<td>Transaction details</td>
+</tr>
+<tr>
+<td>version</td>
+<td>uint32</td>
+<td>Version number of block chain</td>
+</tr>
+<tr>
+<td>cursor_num</td>
+<td>uint64</td>
+<td>Latest block number&#xFF0C;get by querying the block header</td>
+</tr>
+<tr>
+<td>cursor_label</td>
+<td>uint32</td>
+<td>Latest block label&#xFF0C;get by querying the block header</td>
+</tr>
+<tr>
+<td>lifetime</td>
+<td>uint64</td>
+<td>Transaction exipired time&#xFF0C;by ways of getting block header, plus a certain delay</td>
+</tr>
+<tr>
+<td>sender</td>
+<td>string</td>
+<td>Sender</td>
+</tr>
+<tr>
+<td>contract</td>
+<td>string</td>
+<td>Contract name</td>
+</tr>
+<tr>
+<td>method</td>
+<td>string</td>
+<td>Contract method</td>
+</tr>
+<tr>
+<td>param</td>
+<td>string</td>
+<td>Business parameter&#xFF0C;hexadecimal string</td>
+</tr>
+<tr>
+<td>sig_alg</td>
+<td>uint32</td>
+<td>Sign algorism</td>
+</tr>
+<tr>
+<td>signature</td>
+<td>string</td>
+<td>Signature value</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fields Changes</strong></p>
+<ul>
+<li><p>Null</p>
+<p><strong>API Sample</strong></p>
+</li>
+</ul>
+<blockquote>
+<p>Address&#xFF1A;<a href="http://127.0.0.1:8689/v1/transaction/send" target="_blank">http://127.0.0.1:8689/v1/transaction/send</a></p>
+</blockquote>
+<ul>
+<li>Request:</li>
+</ul>
+<pre><code>  {
+      &quot;version&quot;: 1,
+      &quot;cursor_num&quot;: 719,
+      &quot;cursor_label&quot;: 2997806499,
+      &quot;lifetime&quot;: 1534143531,
+      &quot;sender&quot;: &quot;bottos&quot;,
+      &quot;contract&quot;: &quot;bottos&quot;,
+      &quot;method&quot;: &quot;newaccount&quot;,
+      &quot;param&quot;: &quot;dc0002da0009757365727465737431da008230346430373538383030353634383861393864613365643234623766613265633061623864383464343764623534366333663138316137363462613366613165383237396637363434303963343164653031623030383065623161616565623935303966373932333535323061373565333432343432393134346234336331303462&quot;,
+      &quot;sig_alg&quot;: 1,
+      &quot;signature&quot;: &quot;f0069bc363a55dc22207c75d15cc75524bf4950159130c6bf385f6f1ca877177362ad5ab51108e7f396043e3aee7058f1ca6a40fd6c79a8483e439d2e2bccf2c&quot;
+  }
+</code></pre><ul>
+<li>Response:</li>
+</ul>
+<pre><code>  HTTP/1.1 200 OK
+  {
+      &quot;errcode&quot;: 0,
+      &quot;msg&quot;: &quot;trx receive succ&quot;,
+      &quot;result&quot;: {
+          &quot;trx&quot;: {
+              &quot;version&quot;: 1,
+              &quot;cursor_num&quot;: 719,
+              &quot;cursor_label&quot;: 2997806499,
+              &quot;lifetime&quot;: 1534143531,
+              &quot;sender&quot;: &quot;delta&quot;,
+              &quot;contract&quot;: &quot;bottos&quot;,
+              &quot;method&quot;: &quot;newaccount&quot;,
+              &quot;param&quot;: &quot;dc0002da0009757365727465737431da008230346430373538383030353634383861393864613365643234623766613265633061623864383464343764623534366333663138316137363462613366613165383237396637363434303963343164653031623030383065623161616565623935303966373932333535323061373565333432343432393134346234336331303462&quot;,
+              &quot;sig_alg&quot;: 1,
+              &quot;signature&quot;: &quot;f0069bc363a55dc22207c75d15cc75524bf4950159130c6bf385f6f1ca877177362ad5ab51108e7f396043e3aee7058f1ca6a40fd6c79a8483e439d2e2bccf2c&quot;
+          },
+          &quot;trx_hash&quot;: &quot;1815f4d4dfb52b88fb445efc255a5be6275fc3ad694f802c01c40644f09b651f&quot;
+      }
+  }
+</code></pre><h2 id="query-transaction-information">Query Transaction Information</h2>
+<p><strong>API Function</strong></p>
+<blockquote>
+<p>API Description&#xFF1A; Query transaction information</p>
+<p><strong>APIAddress</strong></p>
+<p>URL:  /v1/transaction/get</p>
+<p><strong>Response Format</strong></p>
+<p>JSON</p>
+<p><strong>Request Format</strong></p>
+<p>POST</p>
+</blockquote>
+<p><strong>Request Parameter&#xFF1A;</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Mandatory</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>trx_hash</td>
+<td>TRUE</td>
+<td>string</td>
+<td>Null</td>
+<td>Hash value of each transaction</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Fields&#xFF1A;</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>errcode</td>
+<td>uint32</td>
+<td>Error code&#xFF0C;0-Succeed&#xFF0C;others refer to error code chapter</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td>response description</td>
+</tr>
+<tr>
+<td>result</td>
+<td>jsonObject</td>
+<td>response result</td>
+</tr>
+<tr>
+<td>version</td>
+<td>uint32</td>
+<td>Version number of block chain</td>
+</tr>
+<tr>
+<td>cursor_num</td>
+<td>uint64</td>
+<td>Latest block number&#xFF0C;get by querying the block header</td>
+</tr>
+<tr>
+<td>cursor_lab</td>
+<td>uint32</td>
+<td>Latest label of block&#xFF0C;get by querying the block header</td>
+</tr>
+<tr>
+<td>lifetime</td>
+<td>uint64</td>
+<td>Transaction exipired time&#xFF0C;by ways of getting block header, plus a certain delay</td>
+</tr>
+<tr>
+<td>sender</td>
+<td>string</td>
+<td>Sender</td>
+</tr>
+<tr>
+<td>contract</td>
+<td>string</td>
+<td>Contract name</td>
+</tr>
+<tr>
+<td>method</td>
+<td>string</td>
+<td>Contract method</td>
+</tr>
+<tr>
+<td>param</td>
+<td>jsonObject</td>
+<td>Business Parameter</td>
+</tr>
+<tr>
+<td>sig_alg</td>
+<td>uint32</td>
+<td>Sign algorism</td>
+</tr>
+<tr>
+<td>signature</td>
+<td>string</td>
+<td>Signature value</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fields Changes</strong></p>
+<ul>
+<li><p>Null</p>
+<p><strong>API Sample</strong></p>
+</li>
+</ul>
+<blockquote>
+<p>Address&#xFF1A;<a href="http://127.0.0.1:8689/v1/transaction/get" target="_blank">http://127.0.0.1:8689/v1/transaction/get</a></p>
+</blockquote>
+<ul>
+<li>Request:</li>
+</ul>
+<pre><code>  {
+      &quot;trx_hash&quot;: &quot;85f9d2fbe1d3c0a217e10932899b6f73b24fafe59a006406ed65d7e4a39a7416&quot;
+  }
+</code></pre><ul>
+<li>Response:</li>
+</ul>
+<pre><code>   HTTP/1.1 200 OK
+  {
+      &quot;errcode&quot;: 0,
+      &quot;msg&quot;: &quot;success&quot;,
+      &quot;result&quot;: {
+          &quot;version&quot;: 1,
+          &quot;cursor_num&quot;: 31,
+          &quot;cursor_label&quot;: 2749714050,
+          &quot;lifetime&quot;: 1537259224,
+          &quot;sender&quot;: &quot;bottos&quot;,
+          &quot;contract&quot;: &quot;bottos&quot;,
+          &quot;method&quot;: &quot;newaccount&quot;,
+          &quot;param&quot;: {
+              &quot;name&quot;: &quot;testtest&quot;,
+              &quot;pubkey&quot;: &quot;0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f&quot;
+          },
+          &quot;sig_alg&quot;: 1,
+          &quot;signature&quot;: &quot;c85fd25af493cbb6a79870ce0fc602acc892664ca17e2c646aff0332ca6db7787beeb7e5d8553de8e4b83bdf7b227762fedf9e3674888893f18bf31f0b05d622&quot;
+      }
+  }
+</code></pre><h2 id="query-data-based-on-keywords">Query Data Based on Keywords</h2>
+<p><strong>API Function</strong></p>
+<blockquote>
+<p>API Description&#xFF1A; Query data based on keywords</p>
+<p><strong>APIAddress</strong></p>
+<p>URL:  /v1/common/query</p>
+<p><strong>Response Format</strong></p>
+<p>JSON</p>
+<p><strong>Request Format</strong></p>
+<p>POST</p>
+</blockquote>
+<p><strong>Request Parameter&#xFF1A;</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Mandatory</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>contract</td>
+<td>TRUE</td>
+<td>string</td>
+<td>Null</td>
+<td>Contract name</td>
+</tr>
+<tr>
+<td>object</td>
+<td>TRUE</td>
+<td>string</td>
+<td>Null</td>
+<td>Contract table name</td>
+</tr>
+<tr>
+<td>key</td>
+<td>TRUE</td>
+<td>string</td>
+<td>Null</td>
+<td>The keyword for querying</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Fields&#xFF1A;</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>errcode</td>
+<td>uint32</td>
+<td>Error code&#xFF0C;0-Succeed&#xFF0C;others refer to error code chapter</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td>response description</td>
+</tr>
+<tr>
+<td>result</td>
+<td>jsonObject</td>
+<td>response result</td>
+</tr>
+<tr>
+<td>contract</td>
+<td>string</td>
+<td>Contract name</td>
+</tr>
+<tr>
+<td>object</td>
+<td>string</td>
+<td>Contract table name</td>
+</tr>
+<tr>
+<td>key</td>
+<td>string</td>
+<td>The keyword for querying</td>
+</tr>
+<tr>
+<td>value</td>
+<td>uint32</td>
+<td>Queried value</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fields Changes</strong></p>
+<ul>
+<li><p>Null</p>
+<p><strong>API Sample</strong></p>
+</li>
+</ul>
+<blockquote>
+<p>Address&#xFF1A;<a href="http://127.0.0.1:8689/v1/common/query" target="_blank">http://127.0.0.1:8689/v1/common/query</a></p>
+</blockquote>
+<ul>
+<li>Request:</li>
+</ul>
+<pre><code>  {
+      &quot;contract&quot;:&quot;bottostoken&quot;,
+      &quot;object&quot;:&quot;DTO&quot;,
+      &quot;key&quot;:&quot;aaa&quot;
+  }
+</code></pre><ul>
+<li>Response:</li>
+</ul>
+<pre><code>   HTTP/1.1 200 OK
+  {
+    &quot;errcode&quot;: 0,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;result&quot;: {
+          &quot;contract&quot;: &quot;bottostoken&quot;,
+          &quot;object&quot;: &quot;DTO&quot;,
+          &quot;key&quot;: &quot;aaa&quot;,
+          &quot;value&quot;: &quot;dc0001cf000000ba43b74000&quot;
+    }
+  }
+</code></pre><h2 id="serialization-of-business-data">Serialization Of Business Data</h2>
+<p><strong>API Function</strong></p>
+<blockquote>
+<p>API Description: Serialize the business data, and the JSON converts to a hexadecimal string as the Parm field value in the &quot;Send the transaction information request&quot;.</p>
+<p><strong>APIAddress</strong></p>
+<p>URL:  /v1/common/jsontobin</p>
+<p><strong>Response Format</strong></p>
+<p>JSON</p>
+<p><strong>Request Format</strong></p>
+<p>POST</p>
+</blockquote>
+<p><strong>Request Parameter&#xFF1A;</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Mandatory</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>contract</td>
+<td>TRUE</td>
+<td>string</td>
+<td>Null</td>
+<td>Contract name</td>
+</tr>
+<tr>
+<td>object</td>
+<td>TRUE</td>
+<td>string</td>
+<td>Null</td>
+<td>Contract table name</td>
+</tr>
+<tr>
+<td>key</td>
+<td>TRUE</td>
+<td>string</td>
+<td>Null</td>
+<td>The keyword for querying</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Fields&#xFF1A;</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>errcode</td>
+<td>uint32</td>
+<td>Error code&#xFF0C;0-Succeed&#xFF0C;others refer to error code chapter</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td>response description</td>
+</tr>
+<tr>
+<td>result</td>
+<td>jsonObject</td>
+<td>response result</td>
+</tr>
+<tr>
+<td>contract</td>
+<td>string</td>
+<td>Contract name</td>
+</tr>
+<tr>
+<td>object</td>
+<td>string</td>
+<td>Contract table name</td>
+</tr>
+<tr>
+<td>key</td>
+<td>string</td>
+<td>The keyword for querying</td>
+</tr>
+<tr>
+<td>value</td>
+<td>uint32</td>
+<td>Queried value</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fields Changes</strong></p>
+<ul>
+<li><p>Null</p>
+<p><strong>API Sample</strong></p>
+</li>
+</ul>
+<blockquote>
+<p>Address&#xFF1A;&lt;<a href="http://127.0.0.1:8689/v1/common/jsontobin" target="_blank">http://127.0.0.1:8689/v1/common/jsontobin</a></p>
+</blockquote>
+<ul>
+<li>Request:</li>
+</ul>
+<pre><code>  {
+      &quot;account_name&quot;: &quot;testtest&quot;,
+      &quot;public_key&quot;: &quot;0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f&quot;
+  }
+</code></pre><ul>
+<li>Response:</li>
+</ul>
+<pre><code>   HTTP/1.1 200 OK
+  {
+    &quot;errcode&quot;: 0,
+    &quot;msg&quot;: &quot;&quot;,
+    &quot;result&quot;: {
+          &quot;contract&quot;: &quot;bottostoken&quot;,
+          &quot;object&quot;: &quot;DTO&quot;,
+          &quot;key&quot;: &quot;aaa&quot;,
+          &quot;value&quot;: &quot;dc0001cf000000ba43b74000&quot;
+    }
+  }
+</code></pre><h2 id="query-accounts-information">Query Accounts Information**</h2>
+<p><strong>API Function</strong></p>
+<blockquote>
+<p>API Description&#xFF1A; Query accounts information</p>
+<p><strong>APIAddress</strong></p>
+<p>URL:  /v1/account/info</p>
+<p><strong>Response Format</strong></p>
+<p>JSON</p>
+<p><strong>Request Format</strong></p>
+<p>POST</p>
+</blockquote>
+<p><strong>Request Parameter&#xFF1A;</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Mandatory</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>account_name</td>
+<td>TRUE</td>
+<td>string</td>
+<td>Null</td>
+<td>Account name</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Fields&#xFF1A;</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>errcode</td>
+<td>uint32</td>
+<td>Error code&#xFF0C;0-Succeed&#xFF0C;others refer to error code chapter</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td>response description</td>
+</tr>
+<tr>
+<td>result</td>
+<td>jsonObject</td>
+<td>response result</td>
+</tr>
+<tr>
+<td>account_name</td>
+<td>string</td>
+<td>Account name</td>
+</tr>
+<tr>
+<td>pubkey</td>
+<td>string</td>
+<td>Public key</td>
+</tr>
+<tr>
+<td>balance</td>
+<td>string</td>
+<td>Token value&#xFF0C;</td>
+</tr>
+<tr>
+<td>staked_balance</td>
+<td>string</td>
+<td>Staked token value</td>
+</tr>
+<tr>
+<td>unStaking_balance</td>
+<td>string</td>
+<td>Under unstakeing token value</td>
+</tr>
+<tr>
+<td>unStaking_time</td>
+<td>uint64</td>
+<td>Unstake token timestamp&#xFF08; Unix timestamp &#xFF09;</td>
+</tr>
+</tbody>
+</table>
+<p>Note&#xFF1A;balance&#x3001;staked_balance&#x3001;unStaking_balance, the summary value of that three is the total token value of the change account.</p>
+<p><strong>Fields Changes</strong></p>
+<ul>
+<li><p>Null</p>
+<p><strong>API Sample</strong></p>
+</li>
+</ul>
+<blockquote>
+<p>Address&#xFF1A;<a href="http://127.0.0.1:8689/v1/account/info" target="_blank">http://127.0.0.1:8689/v1/account/info</a></p>
+</blockquote>
+<ul>
+<li>Request:</li>
+</ul>
+<pre><code>  {
+      &quot;account_name&quot;:&quot;delta&quot;
+  }
+</code></pre><ul>
+<li>Response:</li>
+</ul>
+<pre><code>   HTTP/1.1 200 OK
+  {
+      &quot;errcode&quot;: 0,
+      &quot;msg&quot;: &quot;success&quot;,
+      &quot;result&quot;: {
+          &quot;account_name&quot;: &quot;testtest&quot;,
+          &quot;pubkey&quot;: &quot;0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f&quot;,
+          &quot;balance&quot;: &quot;0&quot;,
+          &quot;staked_balance&quot;: &quot;0&quot;,
+          &quot;unStaking_balance&quot;: &quot;0&quot;,
+          &quot;unStaking_time&quot;: 0
+      }
+  }
+</code></pre><h2 id="query-contract-abi">Query Contract ABI</h2>
+<p><strong>API Function</strong></p>
+<blockquote>
+<p>API Description&#xFF1A; Query contract ABI</p>
+<p><strong>APIAddress</strong></p>
+<p>URL:  /v1/contract/abi </p>
+<p><strong>Response Format</strong></p>
+<p>JSON</p>
+<p><strong>Request Format</strong></p>
+<p>POST</p>
+</blockquote>
+<p><strong>Request Parameter&#xFF1A;</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Mandatory</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>contract</td>
+<td>TRUE</td>
+<td>string</td>
+<td>Null</td>
+<td>Contract name</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Fields&#xFF1A;</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>errcode</td>
+<td>uint32</td>
+<td>Error code&#xFF0C;0-Succeed&#xFF0C;others refer to error code chapter</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td>response description</td>
+</tr>
+<tr>
+<td>result</td>
+<td>jsonObject</td>
+<td>response result</td>
+</tr>
+<tr>
+<td>types</td>
+<td>jsonObject</td>
+<td>reserved field</td>
+</tr>
+<tr>
+<td>structs</td>
+<td>jsonArray</td>
+<td>The struct list of method which included in the contract</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>struct name&#xFF0C;typically the custom contract method name aliases</td>
+</tr>
+<tr>
+<td>base</td>
+<td>string</td>
+<td>Father method&#xFF0C;usually be Null</td>
+</tr>
+<tr>
+<td>fields</td>
+<td>jsonObject</td>
+<td>method&apos;s inputting parameters&apos; structs</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Parameter-1&#xFF0C;take a registered account as an example&#xFF1A;Account name</td>
+</tr>
+<tr>
+<td>pubkey</td>
+<td>string</td>
+<td>Parameter-2&#xFF0C;take a registered account as an example&#xFF1A;Public key</td>
+</tr>
+<tr>
+<td>actions</td>
+<td>jsonArray</td>
+<td>The method included in the contract</td>
+</tr>
+<tr>
+<td>action_name</td>
+<td>string</td>
+<td>Contract method name&#xFF0C;relate to &#x201C;Send the transaction information&#x201D;&apos;s request parameter&apos;s method value</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>Same as name, the struct name, typically the custom contract method name aliases</td>
+</tr>
+<tr>
+<td>tables</td>
+<td>jsonArray</td>
+<td>Describe how the contract data is stored, defining the table name, Type,key value, Type,value Type. Built-in contract the field is null</td>
+</tr>
+<tr>
+<td>table_name</td>
+<td>string</td>
+<td>Table name for contract storage</td>
+</tr>
+<tr>
+<td>index_type</td>
+<td>string</td>
+<td>Index Type&#xFF0C;default is string</td>
+</tr>
+<tr>
+<td>key_names</td>
+<td>jsonArray</td>
+<td>Key value for contract data storage</td>
+</tr>
+<tr>
+<td>key_types</td>
+<td>jsonArray</td>
+<td>key value&apos;s Type&#xFF0C;default is string</td>
+</tr>
+<tr>
+<td>type</td>
+<td>string</td>
+<td>Value values corresponding to contract data key, usually be structs</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fields Changes</strong></p>
+<ul>
+<li><p>Null</p>
+<p><strong>API Sample</strong></p>
+</li>
+</ul>
+<blockquote>
+<p>Address&#xFF1A;&lt;<a href="http://127.0.0.1:8689/v1/contract/abi" target="_blank">http://127.0.0.1:8689/v1/contract/abi</a> &gt;</p>
+</blockquote>
+<ul>
+<li>Request:</li>
+</ul>
+<pre><code>  {
+      &quot;contract&quot;:&quot;bottos&quot;
+  }
+</code></pre><ul>
+<li>Response:</li>
+</ul>
+<pre><code>   HTTP/1.1 200 OK
+  {
+      &quot;errcode&quot;: 0,
+      &quot;msg&quot;: &quot;success&quot;,
+      &quot;result&quot;: {
+          &quot;actions&quot;: [
+              {
+                  &quot;action_name&quot;: &quot;newaccount&quot;,
+                  &quot;type&quot;: &quot;NewAccount&quot;
+              },
+              {
+                  &quot;action_name&quot;: &quot;transfer&quot;,
+                  &quot;type&quot;: &quot;Transfer&quot;
+              },
+              {
+                  &quot;action_name&quot;: &quot;grantcredit&quot;,
+                  &quot;type&quot;: &quot;GrantCredit&quot;
+              },
+              {
+                  &quot;action_name&quot;: &quot;cancelcredit&quot;,
+                  &quot;type&quot;: &quot;CancelCredit&quot;
+              },
+              {
+                  &quot;action_name&quot;: &quot;transferfrom&quot;,
+                  &quot;type&quot;: &quot;TransferFrom&quot;
+              },
+              {
+                  &quot;action_name&quot;: &quot;deploycode&quot;,
+                  &quot;type&quot;: &quot;DeployCode&quot;
+              },
+              {
+                  &quot;action_name&quot;: &quot;deployabi&quot;,
+                  &quot;type&quot;: &quot;DeployABI&quot;
+              },
+              {
+                  &quot;action_name&quot;: &quot;regdelegate&quot;,
+                  &quot;type&quot;: &quot;RegDelegate&quot;
+              },
+              {
+                  &quot;action_name&quot;: &quot;unregdelegate&quot;,
+                  &quot;type&quot;: &quot;UnregDelegate&quot;
+              },
+              {
+                  &quot;action_name&quot;: &quot;votedelegate&quot;,
+                  &quot;type&quot;: &quot;VoteDelegate&quot;
+              },
+              {
+                  &quot;action_name&quot;: &quot;stake&quot;,
+                  &quot;type&quot;: &quot;Stake&quot;
+              },
+              {
+                  &quot;action_name&quot;: &quot;unstake&quot;,
+                  &quot;type&quot;: &quot;Unstake&quot;
+              },
+              {
+                  &quot;action_name&quot;: &quot;claim&quot;,
+                  &quot;type&quot;: &quot;Claim&quot;
+              },
+              {
+                  &quot;action_name&quot;: &quot;setdelegate&quot;,
+                  &quot;type&quot;: &quot;SetDelegate&quot;
+              },
+              {
+                  &quot;action_name&quot;: &quot;blkprodtrans&quot;,
+                  &quot;type&quot;: &quot;BlkProdTrans&quot;
+              }
+          ],
+          &quot;structs&quot;: [
+              {
+                  &quot;base&quot;: &quot;&quot;,
+                  &quot;fields&quot;: {
+                      &quot;name&quot;: &quot;string&quot;,
+                      &quot;pubkey&quot;: &quot;string&quot;
+                  },
+                  &quot;name&quot;: &quot;NewAccount&quot;
+              },
+              {
+                  &quot;base&quot;: &quot;&quot;,
+                  &quot;fields&quot;: {
+                      &quot;from&quot;: &quot;string&quot;,
+                      &quot;to&quot;: &quot;string&quot;,
+                      &quot;value&quot;: &quot;uint256&quot;
+                  },
+                  &quot;name&quot;: &quot;Transfer&quot;
+              },
+              {
+                  &quot;base&quot;: &quot;&quot;,
+                  &quot;fields&quot;: {
+                      &quot;description&quot;: &quot;string&quot;,
+                      &quot;location&quot;: &quot;string&quot;,
+                      &quot;name&quot;: &quot;string&quot;,
+                      &quot;pubkey&quot;: &quot;string&quot;
+                  },
+                  &quot;name&quot;: &quot;SetDelegate&quot;
+              },
+              {
+                  &quot;base&quot;: &quot;&quot;,
+                  &quot;fields&quot;: {
+                      &quot;limit&quot;: &quot;uint256&quot;,
+                      &quot;name&quot;: &quot;string&quot;,
+                      &quot;spender&quot;: &quot;string&quot;
+                  },
+                  &quot;name&quot;: &quot;GrantCredit&quot;
+              },
+              {
+                  &quot;base&quot;: &quot;&quot;,
+                  &quot;fields&quot;: {
+                      &quot;name&quot;: &quot;string&quot;,
+                      &quot;spender&quot;: &quot;string&quot;
+                  },
+                  &quot;name&quot;: &quot;CancelCredit&quot;
+              },
+              {
+                  &quot;base&quot;: &quot;&quot;,
+                  &quot;fields&quot;: {
+                      &quot;from&quot;: &quot;string&quot;,
+                      &quot;to&quot;: &quot;string&quot;,
+                      &quot;value&quot;: &quot;uint256&quot;
+                  },
+                  &quot;name&quot;: &quot;TransferFrom&quot;
+              },
+              {
+                  &quot;base&quot;: &quot;&quot;,
+                  &quot;fields&quot;: {
+                      &quot;contract&quot;: &quot;string&quot;,
+                      &quot;contract_code&quot;: &quot;bytes&quot;,
+                      &quot;vm_type&quot;: &quot;uint8&quot;,
+                      &quot;vm_version&quot;: &quot;uint8&quot;
+                  },
+                  &quot;name&quot;: &quot;DeployCode&quot;
+              },
+              {
+                  &quot;base&quot;: &quot;&quot;,
+                  &quot;fields&quot;: {
+                      &quot;contract&quot;: &quot;string&quot;,
+                      &quot;contract_abi&quot;: &quot;bytes&quot;
+                  },
+                  &quot;name&quot;: &quot;DeployABI&quot;
+              },
+              {
+                  &quot;base&quot;: &quot;&quot;,
+                  &quot;fields&quot;: {
+                      &quot;description&quot;: &quot;string&quot;,
+                      &quot;location&quot;: &quot;string&quot;,
+                      &quot;name&quot;: &quot;string&quot;,
+                      &quot;pubkey&quot;: &quot;string&quot;
+                  },
+                  &quot;name&quot;: &quot;RegDelegate&quot;
+              },
+              {
+                  &quot;base&quot;: &quot;&quot;,
+                  &quot;fields&quot;: {
+                      &quot;name&quot;: &quot;string&quot;
+                  },
+                  &quot;name&quot;: &quot;UnregDelegate&quot;
+              },
+              {
+                  &quot;base&quot;: &quot;&quot;,
+                  &quot;fields&quot;: {
+                      &quot;delegate&quot;: &quot;string&quot;,
+                      &quot;voteop&quot;: &quot;uint8&quot;,
+                      &quot;voter&quot;: &quot;string&quot;
+                  },
+                  &quot;name&quot;: &quot;VoteDelegate&quot;
+              },
+              {
+                  &quot;base&quot;: &quot;&quot;,
+                  &quot;fields&quot;: {
+                      &quot;amount&quot;: &quot;uint256&quot;
+                  },
+                  &quot;name&quot;: &quot;Stake&quot;
+              },
+              {
+                  &quot;base&quot;: &quot;&quot;,
+                  &quot;fields&quot;: {
+                      &quot;amount&quot;: &quot;uint256&quot;
+                  },
+                  &quot;name&quot;: &quot;Unstake&quot;
+              },
+              {
+                  &quot;base&quot;: &quot;&quot;,
+                  &quot;fields&quot;: {
+                      &quot;amount&quot;: &quot;uint256&quot;
+                  },
+                  &quot;name&quot;: &quot;Claim&quot;
+              },
+              {
+                  &quot;base&quot;: &quot;&quot;,
+                  &quot;fields&quot;: {
+                      &quot;actblknum&quot;: &quot;uint64&quot;
+                  },
+                  &quot;name&quot;: &quot;BlkProdTrans&quot;
+              }
+          ],
+          &quot;tables&quot;: null,
+          &quot;types&quot;: null
+      }
+  }
+</code></pre><h2 id="query-contract-code">Query contract code</h2>
+<p><strong>API Function</strong></p>
+<blockquote>
+<p>API Description&#xFF1A; Query contract code</p>
+<p><strong>APIAddress</strong></p>
+<p>URL:  /v1/contract/code</p>
+<p><strong>Response Format</strong></p>
+<p>JSON</p>
+<p><strong>Request Format</strong></p>
+<p>POST</p>
+</blockquote>
+<p><strong>Request Parameter&#xFF1A;</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Mandatory</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>contract</td>
+<td>TRUE</td>
+<td>string</td>
+<td>Null</td>
+<td>Contract name</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Fields&#xFF1A;</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>errcode</td>
+<td>uint32</td>
+<td>Error code&#xFF0C;0-succeed&#xFF0C;others refer to error code chapters</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td>response description</td>
+</tr>
+<tr>
+<td>result</td>
+<td>jsonObject</td>
+<td>response result</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fields Changes</strong></p>
+<ul>
+<li><p>Null</p>
+<p><strong>API sample</strong></p>
+</li>
+</ul>
+<blockquote>
+<p>Address&#xFF1A;&lt;<a href="http://127.0.0.1:8689/v1/contract/code" target="_blank">http://127.0.0.1:8689/v1/contract/code</a> &gt;</p>
+</blockquote>
+<ul>
+<li>Request:</li>
+</ul>
+<pre><code>  {
+      &quot;contract&quot;:&quot;usermng&quot;
+  }
+</code></pre><ul>
+<li>Response:</li>
+</ul>
+<pre><code>   HTTP/1.1 200 OK
+  {
+      &quot;errcode&quot;: 0,
+      &quot;msg&quot;: &quot;&quot;,
+      &quot;result&quot;: &quot;7b0a2020227479706573223a205b5d2c0a20202273747275637473223a205b7b0a202020202020226e616d65223a202255736572496e666f222c0a2020202020202262617365223a2022222c0a202020202020226669656c6473223a207b0a20202020202020202020226469646964223a2022737472696e67222c0a2020202020202020202022696e666f223a2022737472696e67220a20202020202020207d0a202020207d2c7b0a202020202020226e616d65223a2022557365724c6f67696e222c0a2020202020202262617365223a2022222c0a202020202020226669656c6473223a207b0a2020202020202020202022757365724e616d65223a2022737472696e67222c0a202020202020202020202272616e646f6d4e756d223a202275696e743332220a20202020202020207d0a202020207d2c7b0a202020202020226e616d65223a20225573657242617365496e666f222c0a2020202020202262617365223a2022222c0a202020202020226669656c6473223a207b0a2020202020202020202022696e666f223a2022737472696e67220a20202020202020207d0a202020207d0a20205d2c0a202022616374696f6e73223a205b7b0a20202020202022616374696f6e5f6e616d65223a202272656775736572222c0a2020202020202274797065223a202255736572496e666f220a202020207d2c7b0a20202020202022616374696f6e5f6e616d65223a2022757365726c6f67696e222c0a2020202020202274797065223a2022557365724c6f67696e220a202020207d0a20205d2c0a2020227461626c6573223a205b7b0a202020202020227461626c655f6e616d65223a202275736572726567696e666f222c0a20202020202022696e6465785f74797065223a2022737472696e67222c0a202020202020226b65795f6e616d6573223a205b0a2020202020202020226469646964220a2020202020205d2c0a202020202020226b65795f7479706573223a205b0a202020202020202022737472696e67220a2020202020205d2c0a2020202020202274797065223a20225573657242617365496e666f220a202020207d0a20205d0a7d0a&quot;
+  }
+</code></pre><h2 id="query-all-producers">Query All Producers</h2>
+<p><strong>API Functions</strong></p>
+<blockquote>
+<p>API Description&#xFF1A; Query all producers</p>
+<p><strong>APIAddress</strong></p>
+<p>URL:  /v1/delegate/getall</p>
+<p><strong>Response Format</strong></p>
+<p>JSON</p>
+<p><strong>Request Format</strong></p>
+<p>POST</p>
+</blockquote>
+<p><strong>Request Parameter&#xFF1A;</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Mandatory</th>
+<th>Type</th>
+<th>Default Value</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>limit</td>
+<td>TRUE</td>
+<td>uint32</td>
+<td>Null</td>
+<td>Query numbers</td>
+</tr>
+<tr>
+<td>start</td>
+<td>TRUE</td>
+<td>uint32</td>
+<td>0</td>
+<td>Query start number</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Response Fields&#xFF1A;</strong></p>
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>errcode</td>
+<td>uint32</td>
+<td>Error code&#xFF0C;0-Succeed&#xFF0C;others refer to error code chapter</td>
+</tr>
+<tr>
+<td>msg</td>
+<td>string</td>
+<td>response description</td>
+</tr>
+<tr>
+<td>result</td>
+<td>jsonArray</td>
+<td>response result</td>
+</tr>
+<tr>
+<td>account_name</td>
+<td>string</td>
+<td>Account name</td>
+</tr>
+<tr>
+<td>public_key</td>
+<td>string</td>
+<td>Public key</td>
+</tr>
+<tr>
+<td>location</td>
+<td>string</td>
+<td>Node geolocation information, such as &quot;shanghai,china&quot;</td>
+</tr>
+<tr>
+<td>desc</td>
+<td>string</td>
+<td>Node descriptions</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Fields Changes</strong></p>
+<ul>
+<li><p>Null</p>
+<p><strong>API Sample</strong></p>
+</li>
+</ul>
+<blockquote>
+<p>Address&#xFF1A;&lt;<a href="http://127.0.0.1:8689/v1/delegate/getall" target="_blank">http://127.0.0.1:8689/v1/delegate/getall</a> &gt;</p>
+</blockquote>
+<ul>
+<li>Request:</li>
+</ul>
+<pre><code>  {
+      &quot;limit&quot;: 10,
+      &quot;start&quot;: 0
+  }
+</code></pre><ul>
+<li>Response:</li>
+</ul>
+<pre><code>   HTTP/1.1 200 OK
+  {
+      &quot;errcode&quot;: 0,
+      &quot;msg&quot;: &quot;success&quot;,
+      &quot;result&quot;:  [
+          {
+              &quot;account_name&quot;: &quot;adhil&quot;,
+              &quot;report_key&quot;: &quot;0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f&quot;,
+              &quot;location&quot;: &quot;shanghai,china&quot;,
+              &quot;desc&quot;: &quot;&quot;,
+              &quot;last_slot&quot;: 1029945,
+              &quot;total_missed&quot;: 0,
+              &quot;last_confirmed_block_num&quot;: 32,
+              &quot;active&quot;: true
+          },
+          {
+              &quot;account_name&quot;: &quot;albireo&quot;,
+              &quot;report_key&quot;: &quot;0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f&quot;,
+              &quot;location&quot;: &quot;&quot;,
+              &quot;desc&quot;: &quot;&quot;,
+              &quot;last_slot&quot;: 1026356,
+              &quot;total_missed&quot;: 123,
+              &quot;last_confirmed_block_num&quot;: 10,
+              &quot;active&quot;: false
+          }
+      ]
+  }
+</code></pre>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="../Deploying and Testing.html" class="navigation navigation-prev " aria-label="Previous page: Deploying and Testing">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="Wallet REST Interface.html" class="navigation navigation-next " aria-label="Next page: Wallet REST Interface">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Common REST Interface","level":"1.3.2","depth":2,"next":{"title":"Wallet REST Interface","level":"1.3.3","depth":2,"path":"Smart Contract/API/Wallet REST Interface.md","ref":"Smart Contract/API/Wallet REST Interface.md","articles":[]},"previous":{"title":"Deploying and Testing","level":"1.3.1","depth":2,"path":"Smart Contract/Deploying and Testing.md","ref":"Smart Contract/Deploying and Testing.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*","description":"Bottos Development files","theme-default":{"showLevel":true}},"file":{"path":"Smart Contract/API/Common REST Interface.md","mtime":"2018-11-12T09:26:52.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-14T09:34:16.926Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

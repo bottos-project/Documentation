@@ -1,0 +1,632 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>DApp开发与调试 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-multipart/multipart.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    
+    <link rel="prev" href="智能合约的开发与部署.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    Bottos简介
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.1.1" data-path="../Bottos简介/Bottos系统架构.html">
+            
+                <a href="../Bottos简介/Bottos系统架构.html">
+            
+                    
+                    Bottos系统架构
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../Bottos节点/节点简介.html">
+            
+                <a href="../Bottos节点/节点简介.html">
+            
+                    
+                    Bottos节点
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../Bottos节点/节点简介.html">
+            
+                <a href="../Bottos节点/节点简介.html">
+            
+                    
+                    节点介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../Bottos节点/网络拓扑结构.html">
+            
+                <a href="../Bottos节点/网络拓扑结构.html">
+            
+                    
+                    网络拓扑结构
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.3" data-path="../Bottos节点/BCLI使用说明.html">
+            
+                <a href="../Bottos节点/BCLI使用说明.html">
+            
+                    
+                    BCLI使用说明
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../智能合约/Development/使用C++编写智能合约.html">
+            
+                <a href="../智能合约/Development/使用C++编写智能合约.html">
+            
+                    
+                    智能合约
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../智能合约/Development/使用C++编写智能合约.html">
+            
+                <a href="../智能合约/Development/使用C++编写智能合约.html">
+            
+                    
+                    使用C++编写智能合约
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../智能合约/部署与测试.html">
+            
+                <a href="../智能合约/部署与测试.html">
+            
+                    
+                    部署与测试
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../智能合约/API/公共REST接口.html">
+            
+                <a href="../智能合约/API/公共REST接口.html">
+            
+                    
+                    公共REST接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../智能合约/API/钱包REST接口.html">
+            
+                <a href="../智能合约/API/钱包REST接口.html">
+            
+                    
+                    钱包REST接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../钱包SDK/钱包SDK.html">
+            
+                <a href="../钱包SDK/钱包SDK.html">
+            
+                    
+                    钱包SDK
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../钱包SDK/钱包SDK.html">
+            
+                <a href="../钱包SDK/钱包SDK.html">
+            
+                    
+                    钱包SDK
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="搭建开发环境.html">
+            
+                <a href="搭建开发环境.html">
+            
+                    
+                    DApp开发
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="搭建开发环境.html">
+            
+                <a href="搭建开发环境.html">
+            
+                    
+                    搭建开发环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="安装运行Bottos.html">
+            
+                <a href="安装运行Bottos.html">
+            
+                    
+                    安装运行Bottos
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="智能合约的开发与部署.html">
+            
+                <a href="智能合约的开发与部署.html">
+            
+                    
+                    智能合约的开发与部署
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.4" data-path="DApp开发与调试.html">
+            
+                <a href="DApp开发与调试.html">
+            
+                    
+                    DApp开发与调试
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >DApp开发与调试</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="dapp&#x5F00;&#x53D1;&#x4E0E;&#x8C03;&#x8BD5;">DApp&#x5F00;&#x53D1;&#x4E0E;&#x8C03;&#x8BD5;</h1>
+<h2 id="&#x4E0B;&#x8F7D;&#x5E76;&#x5F15;&#x5165;sdk&#x5E93;&#x6587;&#x4EF6;">&#x4E0B;&#x8F7D;&#x5E76;&#x5F15;&#x5165;<code>sdk</code>&#x5E93;&#x6587;&#x4EF6;</h2>
+<p>&#x4E0B;&#x8F7D;&#x5E76;&#x5F15;&#x5165;<code>bottos-sdk-js.min.js</code>&#x5E93;&#x6587;&#x4EF6;</p>
+<p><code>bottos-sdk-js.min.js</code>&#x4E0B;&#x8F7D;&#x5730;&#x5740;:<a href="https://github.com/bottos-project/bottos-sdk-js" target="_blank">https://github.com/bottos-project/bottos-sdk-js</a></p>
+<h2 id="&#x521B;&#x5EFA;&#x57FA;&#x672C;&#x7684;&#x9879;&#x76EE;&#x7ED3;&#x6784;">&#x521B;&#x5EFA;&#x57FA;&#x672C;&#x7684;&#x9879;&#x76EE;&#x7ED3;&#x6784;</h2>
+<pre><code>/&#x9879;&#x76EE;&#x76EE;&#x5F55;
+    - index.html
+    - index.js
+    - bottos-sdk-js.min.js
+</code></pre><ul>
+<li>index.html</li>
+</ul>
+<p>index.html&#x4E2D;&#x5F15;&#x5165;<code>index.js</code>&#x548C;<code>bottos-sdk-js.min.js</code>&#xFF0C;&#x4EE3;&#x7801;&#x5982;&#x4E0B;</p>
+<pre><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=375px, initial-scale=1.0&quot;&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+    &lt;title&gt;Bottos Demo&lt;/title&gt;
+    &lt;script src=&quot;./bottos-sdk-js.min.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;./index.js&quot;&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div style=&quot;margin-top:50px&quot;&gt;
+        &lt;button style=&quot;width:100px;height:30px;background-color:coral&quot; onClick=&quot;createAccount()&quot;&gt;&#x521B;&#x5EFA;&#x8D26;&#x6237;&lt;/button&gt;
+        &lt;button style=&quot;width:100px;height:30px;background-color:coral&quot; onClick=&quot;pushTransaction()&quot;&gt;&#x53D1;&#x5E03;&#x8054;&#x7CFB;&#x4EBA;&lt;/button&gt;
+        &lt;button style=&quot;width:100px;height:30px;background-color:bisque&quot; onClick=&quot;getTransaction()&quot; &gt;&#x83B7;&#x53D6;&#x8054;&#x7CFB;&#x4EBA;&lt;/button&gt;
+    &lt;/div&gt;
+
+
+    &lt;div style=&quot;margin-top:100px&quot;&gt;
+        &lt;p&gt;&#x521B;&#x5EFA;&#x8D26;&#x6237;&#x6267;&#x884C;&#x7ED3;&#x679C;&lt;/p&gt;
+        &lt;div id=&quot;createAccount&quot; style=&quot;min-height:150px;background-color:#ccc&quot;&gt;
+
+        &lt;/div&gt;
+
+        &lt;p&gt;&#x53D1;&#x5E03;&#x8054;&#x7CFB;&#x4EBA;&#x6267;&#x884C;&#x7ED3;&#x679C;&lt;/p&gt;
+        &lt;div id=&quot;pushTransaction&quot; style=&quot;min-height:150px;background-color:#ccc&quot;&gt;
+
+        &lt;/div&gt;
+
+        &lt;p&gt;&#x83B7;&#x53D6;&#x8054;&#x7CFB;&#x4EBA;&#x6267;&#x884C;&#x7ED3;&#x679C;&lt;/p&gt;
+        &lt;div id=&quot;getTransaction&quot; style=&quot;min-height:150px;background-color:#ccc&quot;&gt;
+
+        &lt;/div&gt;
+    &lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre><ul>
+<li>index.js</li>
+</ul>
+<p><code>index.js</code>&#x4E2D;&#x5B9E;&#x73B0;&#x667A;&#x80FD;&#x5408;&#x7EA6;&#x5728;&#x94FE;&#x4E0A;&#x7684;&#x5199;&#x5165;&#x4E0E;&#x8BFB;&#x53D6;&#x64CD;&#x4F5C;,&#x4EE3;&#x7801;&#x5982;&#x4E0B;</p>
+<pre><code>var BottosWalletSDK = window.BottosWalletSDK
+const config = {
+    baseUrl:&apos;http://192.168.52.130:8689/v1&apos;,
+    version:1
+}
+var SDK = new BottosWalletSDK(config)
+var Tool = SDK.Tool
+var Wallet = SDK.Wallet
+var Contract = SDK.Contract
+var Api = SDK.Api
+
+let account = &apos;testaccount&apos;
+let password = &apos;testpassword&apos;
+let keystore = null
+
+// &#x521B;&#x5EFA;&#x8D26;&#x6237;
+function createAccount(){
+    console.log(&quot;createAccount&quot;)
+    let params = {account:account,password:password}
+    Wallet.createAccount(params)
+        .then(response=&gt;{
+            keystore = response
+            document.getElementById(&apos;createAccount&apos;).innerHTML = JSON.stringify(response)
+        }).catch(error=&gt;{
+            console.log({error})
+            document.getElementById(&apos;createAccount&apos;).innerHTML = JSON.stringify(error)
+
+        })
+}
+
+// &#x8C03;&#x7528;&#x5408;&#x7EA6;
+function callContract(requestParam){
+    let params = {
+        method:&apos;reguser&apos;,
+        contract:&apos;john&apos;,
+        sender:account,
+        param:{
+            userName:&apos;john&apos;,
+            userInfo:JSON.stringify({phone:&apos;110120&apos;,age:18})
+        }
+    }
+
+    if(keystore == null){
+        alert(&apos;&#x8BF7;&#x5148;&#x521B;&#x5EFA;&#x8D26;&#x6237;&apos;)
+        return
+    }
+    let privateKey = Wallet.recover(password,keystore)
+    let privateKeyStr = Tool.buf2hex(privateKey)
+
+    Contract.callContract(params,privateKeyStr)
+        .then(response=&gt;{
+            console.log({response})
+            document.getElementById(&apos;pushTransaction&apos;).innerHTML = JSON.stringify(response)
+        }).catch(error=&gt;{
+            console.log({error})
+            document.getElementById(&apos;pushTransaction&apos;).innerHTML = JSON.stringify(error)
+        })
+}
+
+// &#x53D1;&#x5E03;&#x8054;&#x7CFB;&#x4EBA;
+function pushTransaction(){
+    console.log(&quot;pushTransaction&quot;)
+    callContract()
+}
+
+// &#x8BFB;&#x53D6;&#x8054;&#x7CFB;&#x4EBA;
+function getTransaction(){
+    console.log(&quot;getTransaction&quot;)
+    // callContract()
+    let url =  config.baseUrl + &apos;/common/query&apos;
+    let params = {
+        contract:&apos;john&apos;,
+        object:&apos;userreginfo&apos;,
+        key:&apos;john&apos;
+
+    }
+
+    fetch(url,{
+        method:&apos;POST&apos;,
+        body:JSON.stringify(params)
+    }).then(function(response){return response.json()})   
+    .then(function(response){
+        document.getElementById(&apos;getTransaction&apos;).innerHTML = JSON.stringify(response)
+    }).catch(function(error){
+        document.getElementById(&apos;getTransaction&apos;).innerHTML = JSON.stringify(error)
+    })
+}
+</code></pre><h2 id="&#x9A8C;&#x8BC1;&#x5408;&#x7EA6;&#x6267;&#x884C;&#x7ED3;&#x679C;">&#x9A8C;&#x8BC1;&#x5408;&#x7EA6;&#x6267;&#x884C;&#x7ED3;&#x679C;</h2>
+<ul>
+<li>&#x9996;&#x5148;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x8D26;&#x6237;</li>
+</ul>
+<p>&#x70B9;&#x51FB;<code>&#x521B;&#x5EFA;&#x8D26;&#x6237;</code>,&#x5982;&#x679C;&#x8FD4;&#x56DE;&#x5982;&#x4E0B;&#x7ED3;&#x6784;&#xFF0C;&#x8BF4;&#x660E;&#x8D26;&#x6237;&#x521B;&#x5EFA;&#x6210;&#x529F;&#xFF0C;&#x8BE5;&#x8FD4;&#x56DE;&#x503C;&#x4E3A;&#x7528;&#x6237;&#x7684;<code>keystore</code>&#x6587;&#x4EF6;&#xFF0C;&#x9700;&#x8981;&#x5B89;&#x5168;&#x4FDD;&#x5B58;</p>
+<pre><code>{&quot;account&quot;:&quot;testaccount&quot;,&quot;crypto&quot;:{&quot;cipher&quot;:&quot;aes-128-ctr&quot;,&quot;ciphertext&quot;:&quot;4cd010eba51ff45d9a752f38d64a4def7697a142570253cc381afa2b04288e68&quot;,&quot;cipherparams&quot;:{&quot;iv&quot;:&quot;46b469bb1c87751852857114b928e6ad&quot;},&quot;mac&quot;:&quot;04051cce0379362c28d8027a19c8b79f03621602c2eff68d8b793f94ae6f58fb&quot;,&quot;kdf&quot;:&quot;scrypt&quot;,&quot;kdfparams&quot;:{&quot;dklen&quot;:32,&quot;n&quot;:1024,&quot;r&quot;:1,&quot;p&quot;:8,&quot;salt&quot;:&quot;cf9dbed2413764c640018b9fccb6629ed38dad72b333c7d12e89994523ec7857&quot;}},&quot;id&quot;:&quot;48a923c2-1c40-46aa-b0c1-8f24d8e1bc81&quot;,&quot;version&quot;:3}
+</code></pre><ul>
+<li>&#x6267;&#x884C;&#x5199;&#x5165;&#x5408;&#x7EA6;</li>
+</ul>
+<p>&#x70B9;&#x51FB;<code>&#x53D1;&#x5E03;&#x8054;&#x7CFB;&#x4EBA;</code>&#x6309;&#x94AE;&#xFF0C;&#x5982;&#x679C;&#x8FD4;&#x56DE;&#x5982;&#x4E0B;&#x7ED3;&#x679C;&#xFF0C;&#x8BF4;&#x660E;&#x5199;&#x5165;&#x5408;&#x7EA6;&#x6267;&#x884C;&#x6210;&#x529F;</p>
+<pre><code>{&quot;errcode&quot;:0,&quot;msg&quot;:&quot;trx receive succ&quot;,&quot;result&quot;:{&quot;trx&quot;:{&quot;version&quot;:1,&quot;cursor_num&quot;:286,&quot;cursor_label&quot;:423110953,&quot;lifetime&quot;:1537498176,&quot;sender&quot;:&quot;testaccount&quot;,&quot;contract&quot;:&quot;john&quot;,&quot;method&quot;:&quot;reguser&quot;,&quot;param&quot;:&quot;dc0002da00046a6f686eda001b7b2270686f6e65223a22313130313230222c22616765223a31387d&quot;,&quot;sig_alg&quot;:1,&quot;signature&quot;:&quot;4149cb35eab48415082081aee0ab3766b7a6730b1a2213c96638540227a8616f17cdf773ba90e3c515183c3fc5631fa53b65dcf93eed320d53ec78a672738675&quot;},&quot;trx_hash&quot;:&quot;eb79dc2d8a8461451ea55257fcbaa5897a9b9732e7cc3b0c8a8322ab4909789b&quot;}}
+</code></pre><ul>
+<li>&#x6267;&#x884C;&#x8BFB;&#x53D6;&#x5408;&#x7EA6;</li>
+</ul>
+<p>&#x70B9;&#x51FB;<code>&#x8BFB;&#x53D6;&#x8054;&#x7CFB;&#x4EBA;</code>&#x6309;&#x94AE;&#xFF0C;&#x5982;&#x679C;&#x8FD4;&#x56DE;&#x5982;&#x4E0B;&#x7ED3;&#x679C;&#xFF0C;&#x8BF4;&#x660E;&#x8BFB;&#x53D6;&#x5408;&#x7EA6;&#x6267;&#x884C;&#x6210;&#x529F;</p>
+<pre><code>{&quot;errcode&quot;:0,&quot;msg&quot;:&quot;success&quot;,&quot;result&quot;:{&quot;contract&quot;:&quot;john&quot;,&quot;object&quot;:&quot;userreginfo&quot;,&quot;key&quot;:&quot;john&quot;,&quot;value&quot;:&quot;dc0001da001b7b2270686f6e65223a22313130313230222c22616765223a31387d&quot;}}
+</code></pre><p>&#x81F3;&#x6B64;&#xFF0C;&#x6211;&#x4EEC;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x800C;&#x53C8;&#x5B8C;&#x6574;&#x7684;DApp&#x5C31;&#x5DF2;&#x7ECF;&#x5F00;&#x53D1;&#x5B8C;&#x6210;&#xFF0C;&#x5982;&#x679C;&#x60F3;&#x8981;&#x5F00;&#x53D1;&#x4E00;&#x4E2A;&#x66F4;&#x52A0;&#x5F3A;&#x5927;&#x7684;DApp&#x53EF;&#x4EE5;&#x67E5;&#x770B;&#x8BE6;&#x7EC6;&#x7684;&#x63A5;&#x53E3;&#x6587;&#x6863;</p>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="智能合约的开发与部署.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: 智能合约的开发与部署">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"DApp开发与调试","level":"1.5.4","depth":2,"previous":{"title":"智能合约的开发与部署","level":"1.5.3","depth":2,"path":"DApp开发/智能合约的开发与部署.md","ref":"DApp开发/智能合约的开发与部署.md","articles":[]},"dir":"ltr"},"config":{"plugins":["-lunr","multipart","livereload"],"root":".","styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"pluginsConfig":{"multipart":{},"livereload":{},"highlight":{},"search":{},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"gitbook":"*","description":"Bottos开发文档","theme-default":{"showLevel":true}},"file":{"path":"DApp开发/DApp开发与调试.md","mtime":"2018-09-27T12:01:38.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2018-11-14T09:41:12.923Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

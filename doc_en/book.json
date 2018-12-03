@@ -1,0 +1,13 @@
+{
+    "description" : "Bottos Development files",
+    "root": ".",
+    "pluginsConfig": {
+
+    },
+    "plugins": [
+        "-lunr"
+    ],
+    "theme-default": {
+        "showLevel": true
+    }
+}
