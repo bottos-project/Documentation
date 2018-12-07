@@ -64,7 +64,7 @@ The global help information
 | ./bcli   | transaction | Get / call a transaction                                                 |
 | ./bcli   | contract    | Query/deploy contract and ABI                                                    |
 | ./bcli   | p2p         | P2P commands are not supported                                                  |
-| ./bcli   | delegate    | Register/Unregieter a producer，vote for producer/cancel vote for a producer, etc.                          |
+| ./bcli   | delegate    | Register/cancel a delegate，vote for delegate/cancel vote for a delegate, etc.                          |
 | ./bcli   | wallet      | Create /lock/unlock/query a wallet                                          |
 | ./bcli   | genesis     | Operations relates to the genesis node, setting the original producers，transferring the authority of producing blocks，cancel the operation authority of node, etc,. |
 
@@ -549,7 +549,7 @@ Note：
         ],
         "actions": [
                 {
-                    "action_name": "reg",
+                    "action_name": "register",
                     "type": "NodeClusterReg"
                 }
         ],
@@ -761,7 +761,7 @@ Sample
 
 #### 3. BCLI Candidate Node Voting Command
 
-Bcli candidate node voting chiefly realize the functions of: register the node as the producer, unregister the producer node, let part/all the producer nodes' information, vote(vote one node as the producer), cancel vote, etc,.
+Bcli candidate node voting chiefly realize the functions of: register the node as the producer, cancel the producer node, let part/all the producer nodes' information, vote(vote one node as the producer), cancel vote, etc,.
 
 Help information
 
@@ -773,8 +773,8 @@ Help information
         Bottos bcli tool delegate command [command options] [arguments...]
     
     COMMANDS:
-        reg         reg delegate
-        unreg       unreg delegate
+        register    register delegate
+        cancel      cancel delegate
         list        list delegates
         vote        Vote for producers
         cancelvote  cancel vote for producers
@@ -786,8 +786,8 @@ Commandline Function Description
 
 | chief command   | parameter list | Parameter Description    |
 | --------------- | :------------: | :----------------------: |
-| ./bcli delegate | reg            | register as the producer |
-| ./bcli delegate | unreg          | unregister the producer  |
+| ./bcli delegate | register       | register as the producer |
+| ./bcli delegate | cancel         | cancel the producer  |
 | ./bcli delegate | list           | watch the producer list  |
 | ./bcli delegate | vote           | vote for the producer    |
 | ./bcli delegate | cancelvote     | cancel vote              |s
@@ -796,12 +796,12 @@ Commandline Function Description
 
 Help information
 
-    ./bcli delegate reg --help
+    ./bcli delegate register --help
     NAME:
-    Bottos bcli tool delegate reg - reg delegate
+    Bottos bcli tool delegate register - register delegate
     
     USAGE:
-        Bottos bcli tool delegate reg [command options] [arguments...]
+        Bottos bcli tool delegate register [command options] [arguments...]
     
     OPTIONS:
         --account value      account name
@@ -812,8 +812,8 @@ Help information
 Parameter Description
 
 | chief command     | parameter list | Parameter Description                                              | mandatory |
-| ----------------- | :------------: | :----------------------------------------------------------------: | :-------: |
-| bcli delegate reg | --account      | user name                                                          | Yes       |
+| -----------------| :------------: | :----------------------------------------------------------------: | :-------: |
+| bcli delegate register | --account      | user name                                                          | Yes       |
 |                   | --signkey      | Public key defined by user（Default is the inside default value）  | Yes       |
 |                   | --location     | The city name of voter                                             | No        |
 |                   | --description  | The description defined by user                                    | No        |
@@ -824,7 +824,7 @@ This will return the Transaction information sent by BCLI.
 
 Sample
 
-    ./bcli delegate reg --account user12345678 --location "SHANGHAI" --description "Reg user12345678 as a producer"
+    ./bcli delegate register --account user12345678 --location "SHANGHAI" --description "Reg user12345678 as a producer"
 
 Output
 
@@ -859,13 +859,13 @@ Please refer to the command ./bcli genesis blkprodtrans --sender user12345678 --
 
 Help information
 
-    ./bcli  delegate unreg  --help
+    ./bcli  delegate cancel  --help
     
     NAME:
-        Bottos bcli tool delegate unreg - unreg delegate
+        Bottos bcli tool delegate cancel - cancel delegate
     
     USAGE:
-        Bottos bcli tool delegate unreg [command options] [arguments...]
+        Bottos bcli tool delegate cancel [command options] [arguments...]
     
     OPTIONS:
         --account value  account
@@ -875,7 +875,7 @@ Parameter Description
 
 | chief command       | parameter list | Parameter Description | mandatory |
 | ------------------- | :------------: | :-------------------: | :-------: |
-| bcli delegate unreg | --account      | user name             | Yes       |
+| bcli delegate cancel | --account      | user name             | Yes       |
 
 
 Return Information
@@ -884,7 +884,7 @@ This will return the Transaction information sent by BCLI.
 
 Sample
 
-    ./bcli delegate unreg --account user12345678
+    ./bcli delegate cancel --account user12345678
 
 Output
 
