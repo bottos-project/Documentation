@@ -549,7 +549,7 @@ Note：
         ],
         "actions": [
                 {
-                    "action_name": "register",
+                    "action_name": "reg",
                     "type": "NodeClusterReg"
                 }
         ],
