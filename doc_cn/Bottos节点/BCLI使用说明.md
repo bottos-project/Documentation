@@ -781,8 +781,8 @@ BCLI候选节点功能选举命令行主线实现候选节点之：注册节点�
         Bottos bcli tool delegate command [command options] [arguments...]
 
     COMMANDS:
-        reg         reg delegate
-        unreg       unreg delegate
+        register    register delegate
+        cancel      cancel delegate
         list        list delegates
         vote        Vote for producers
         cancelvote  cancel vote for producers
@@ -795,8 +795,8 @@ BCLI候选节点功能选举命令行主线实现候选节点之：注册节点�
 
 | 主命令行        | 参数列表   | 参数说明       |
 | --------------- | :--------: | :------------: |
-| ./bcli delegate | reg        | 注册为生产者   |
-| ./bcli delegate | unreg      | 解注册生产者   |
+| ./bcli delegate | register   | 注册为生产者   |
+| ./bcli delegate | cancel     | 解注册生产者   |
 | ./bcli delegate | list       | 查看生产者列表 |
 | ./bcli delegate | vote       | 选举生产者     |
 | ./bcli delegate | cancelvote | 取消选举       |
@@ -806,12 +806,12 @@ BCLI候选节点功能选举命令行主线实现候选节点之：注册节点�
 
 帮助信息
 
-    ./bcli delegate reg --help
+    ./bcli delegate register --help
     NAME:
-    Bottos bcli tool delegate reg - reg delegate
+    Bottos bcli tool delegate register - register delegate
     
     USAGE:
-        Bottos bcli tool delegate reg [command options] [arguments...]
+        Bottos bcli tool delegate register [command options] [arguments...]
     
     OPTIONS:
         --account value      account name
@@ -824,7 +824,7 @@ BCLI候选节点功能选举命令行主线实现候选节点之：注册节点�
 
 | 主命令行          | 参数列表      | 参数说明                           | 必选参数 |
 | ----------------- | :-----------: | :--------------------------------: | :------: |
-| bcli delegate reg | --account     | 用户名                             | 是       |
+| bcli delegate register | --account     | 用户名                             | 是       |
 |                   | --signkey     | 用户自定义公钥（缺省为内置缺省值） | 是       |
 |                   | --location    | 投票地理城市名                     | 否       |
 |                   | --description | 用户自定义描述                     | 否       |
@@ -835,7 +835,7 @@ BCLI候选节点功能选举命令行主线实现候选节点之：注册节点�
 
 示例
 
-    ./bcli delegate reg --account user12345678 --location "SHANGHAI" --description "Reg user12345678 as a producer" --signkey 0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f
+    ./bcli delegate register --account user12345678 --location "SHANGHAI" --description "Reg user12345678 as a producer" --signkey 0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f
 
 输出结果
 
@@ -869,13 +869,13 @@ BCLI候选节点功能选举命令行主线实现候选节点之：注册节点�
 
 帮助信息
 
-    ./bcli  delegate unreg  --help
+    ./bcli  delegate cancel  --help
     
     NAME:
-        Bottos bcli tool delegate unreg - unreg delegate
+        Bottos bcli tool delegate cancel - cancel delegate
     
     USAGE:
-        Bottos bcli tool delegate unreg [command options] [arguments...]
+        Bottos bcli tool delegate cancel [command options] [arguments...]
     
     OPTIONS:
         --account value  account
@@ -885,7 +885,7 @@ BCLI候选节点功能选举命令行主线实现候选节点之：注册节点�
 
 | 主命令行            | 参数列表  | 参数说明 | 必选参数 |
 | ------------------- | :-------: | :------: | :------: |
-| bcli delegate unreg | --account | 用户名   | 是       |
+| bcli delegate cancel | --account | 用户名   | 是       |
 
 
 返回信息
@@ -894,7 +894,7 @@ BCLI候选节点功能选举命令行主线实现候选节点之：注册节点�
 
 示例
 
-    ./bcli delegate unreg --account user12345678
+    ./bcli delegate cancel --account user12345678
 
 输出结果
 
