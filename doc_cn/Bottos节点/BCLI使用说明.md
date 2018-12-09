@@ -25,47 +25,49 @@ Bottos BCLI 实现了一组人机交互命令行，主要基于RESTFUL API和链
     
     NAME:
     Bottos bcli tool - a tool that makes user communicate with bottos blockchain
-    
+
     USAGE:
     bcli [global options] command [command options] [arguments...]
-    
+
     VERSION:
     0.0.1
-    
+
     COMMANDS:
-        getinfo      get chian info
-        getblock     get block info
-        gettable     get table info
-        account      create or get account
-        transfer     for user transfering bto
-        transaction  get or push transactions
-        contract     get or deploy contract
-        p2p          for p2p connection
-        delegate     for delegate operations
-        wallet       For wallet operations
-        genesis      for genesis node operations
-        help, h      Shows a list of commands or help for one command
-    
+        getblkheader  get header block's information
+        getblock      get block information
+        gettable      get table information
+        account       create or get account
+        transfer      for user transferring bto
+        transaction   get or push transactions
+        contract      get or deploy contract
+        p2p           for p2p connection
+        delegate      for delegate operations
+        wallet        For wallet operations
+        genesis       for genesis node operations
+        log           for log operations
+        help, h       Shows a list of commands or help for one command
+
     GLOBAL OPTIONS:
-    --servaddr value  (default: "127.0.0.1:8689")
-    --help, -h        show help
-    --version, -v     print the version
+        --servaddr value  (default: "127.0.0.1:8689")
+        --help, -h        show help
+        --version, -v     print the version
+
 
 命令功能说明
 
-| 主命令行 | 参数列表    | 参数说明                                                           |
-| -------- | :---------: | :----------------------------------------------------------------: |
-| ./bcli   | getinfo     | 获取块头信息                                                       |
-| ./bcli   | getblock    | 获取指定BLOCK信息                                                  |
-| ./bcli   | gettable    | 获取合约表信息                                                     |
-| ./bcli   | account     | 创建/获取用户信息，质押/解质押/回收质押等                          |
-| ./bcli   | transfer    | BTO转账功能                                                        |
-| ./bcli   | transaction | 查询/发起 transaction                                              |
-| ./bcli   | contract    | 查询/部署合约和ABI                                                 |
-| ./bcli   | p2p         | P2P命令行暂不支持                                                  |
-| ./bcli   | delegate    | 注册/解注册生产者，生产者投票/取消投票等                           |
-| ./bcli   | wallet      | 钱包创建/锁定/解锁/查询等                                          |
-| ./bcli   | genesis     | 创世节点操作相关，设置初始生产者，移交出块权利，取消节点操作权限等 |
+| 主命令行 | 参数列表     | 参数说明                                                           |
+| -------- | :----------: | :----------------------------------------------------------------: |
+| ./bcli   | getblkheader | 获取块头信息                                                       |
+| ./bcli   | getblock     | 获取指定BLOCK信息                                                  |
+| ./bcli   | gettable     | 获取合约表信息                                                     |
+| ./bcli   | account      | 创建/获取用户信息，质押/解质押/回收质押等                          |
+| ./bcli   | transfer     | BTO转账功能                                                        |
+| ./bcli   | transaction  | 查询/发起 transaction                                              |
+| ./bcli   | contract     | 查询/部署合约和ABI                                                 |
+| ./bcli   | p2p          | P2P命令行暂不支持                                                  |
+| ./bcli   | delegate     | 注册/解注册生产者，生产者投票/取消投票等                           |
+| ./bcli   | wallet       | 钱包创建/锁定/解锁/查询等                                          |
+| ./bcli   | genesis      | 创世节点操作相关，设置初始生产者，移交出块权利，取消节点操作权限等 |
 
 
 #### 1. BCLI用户账户功能命令行
@@ -77,20 +79,21 @@ Bottos BCLI 实现了一组人机交互命令行，主要基于RESTFUL API和链
     ./bcli account --help
     
     NAME:
-        Bottos bcli tool account - create or get account
-    
+    Bottos bcli tool account - create or get account
+
     USAGE:
-        Bottos bcli tool account command [command options] [arguments...]
-    
+    Bottos bcli tool account command [command options] [arguments...]
+
     COMMANDS:
         create   create account
-        get      get account info
+        get      get account information
         stake    stake of account
         unstake  unstake of account
         claim    claim of stake
-    
+
     OPTIONS:
     --help, -h  show help
+
 
 命令功能说明
 
@@ -199,18 +202,19 @@ Please create wallet for your new account.
 ##### 用户质押BTO命令示例
 
 帮助信息
-
     ./bcli account stake --help
-    
+
     NAME:
-        Bottos bcli tool account stake - stake of account
-    
+    Bottos bcli tool account stake - stake of account
+
     USAGE:
-        Bottos bcli tool account stake [command options] [arguments...]
-    
+    Bottos bcli tool account stake [command options] [arguments...]
+
     OPTIONS:
         --account value  acocunt name
         --amount value   amount of bto
+        --target value   target of stake:vote,space,time (default: "vote")
+
 
 参数说明
 
@@ -218,6 +222,7 @@ Please create wallet for your new account.
 | --------   		    | :-----:     | :----:  | :----:    |
 | bcli account stake    | --account  | 用户名  |  是        |
 |                       | --amount   | 质押BTO个数  |  是        |
+--target value   target of stake:vote,space,time (default: "vote") | 质押参数选择  |  否        |
 
 返回信息
 
@@ -256,14 +261,16 @@ TrxHash: 2921e27bad80060580d508d2726a830b8a3970b70b56f28e93ae866846cd7296
     ./bcli account unstake --help
     
     NAME:
-        Bottos bcli tool account unstake - unstake of account
-    
+    Bottos bcli tool account unstake - unstake of account
+
     USAGE:
         Bottos bcli tool account unstake [command options] [arguments...]
-    
+
     OPTIONS:
         --account value  acocunt name
         --amount value   amount of bto
+        --source value   source of unStake:vote,space,time (default: "vote")
+
 
 
 
@@ -405,9 +412,12 @@ BCLI合约功能命令行主要实现用户主动部署一个合约及ABI文件�
         Bottos bcli tool contract deploycode [command options] [arguments...]
 
     OPTIONS:
-        --account value   we use the account name as the default contract name
+        --contract value  the contract's name
         --code value      the contract's wasm file path ( includes wasm file name )
         --filetype value  the contract's file type: wasm or js (default: "wasm")
+        --account value   the account name whom deploy the code
+   
+
 
 
 参数说明
@@ -417,6 +427,7 @@ BCLI合约功能命令行主要实现用户主动部署一个合约及ABI文件�
 | bcli contract deploycode | --account  | 合约名                    | 是       |
 |                          | --code     | 合约文件（.WASM）所在路径 | 是       |
 |                          | --filetype | 合约文件类型：wasm/js     | 否       |
+|                          | --contract | 合约名                    | 是       |
 
 
 返回信息
@@ -425,7 +436,7 @@ BCLI合约功能命令行主要实现用户主动部署一个合约及ABI文件�
 
 示例
 
-    ./bcli contract deploycode --account user12345678 --code try.wasm
+    ./bcli contract deploycode --account user12345678 --code try.wasm --contract test1
 
 输出结果
      
@@ -439,7 +450,7 @@ BCLI合约功能命令行主要实现用户主动部署一个合约及ABI文件�
         "cursor_label": 2953320580,
         "lifetime": 1542957715,
         "sender": "user12345678",
-        "contract": "bottos",
+        "contract": "test1",
         "method": "deploycode",
         "param": {
             "name": "user12345678",
@@ -467,9 +478,11 @@ BCLI合约功能命令行主要实现用户主动部署一个合约及ABI文件�
         Bottos bcli tool contract deployabi [command options] [arguments...]
 
     OPTIONS:
-    --account value   we use the account name as the abi's default contract name
-    --abi value       the contract's abi file path ( includes abi file name )
-    --filetype value  the contract's file type: wasm or js (default: "wasm")
+        --contract value  the contract's name
+        --abi value       the contract's abi file path ( includes abi file name )
+        --filetype value  the contract's file type: wasm or js (default: "wasm")
+        --account value   the account name whom deploy the code
+
 
 
 参数说明
@@ -479,6 +492,7 @@ BCLI合约功能命令行主要实现用户主动部署一个合约及ABI文件�
 | bcli contract deployabi | --account  | 合约账户名                  | 是       |
 |                         | --abi      | abi描述文件（.abi）所在路径 | 是       |
 |                         | --filetype | 合约文件类型 wasm/js        | 否       |
+|                         | --contract | 合约名                      | 是       |
 
 
 返回信息
@@ -487,11 +501,11 @@ BCLI合约功能命令行主要实现用户主动部署一个合约及ABI文件�
 
 示例
 
-    ./bcli contract deployabi --account user12345678 --abi try.abi
+    ./bcli contract deployabi --account user12345678 --abi try.abi --contract test1
 
 输出结果
 
-    ./bcli contract deployabi --account user12345678 --abi try.abi
+    ./bcli contract deployabi --account user12345678 --abi try.abi --contract test1
     {
         "errcode": 0,
         "msg": "trx receive succ",
@@ -502,7 +516,7 @@ BCLI合约功能命令行主要实现用户主动部署一个合约及ABI文件�
                 "cursor_label": 1285797565,
                 "lifetime": 1542957868,
                 "sender": "user12345678",
-                "contract": "bottos",
+                "contract": "test1",
                 "method": "deployabi",
                 "param": "dc0003da000c757365723132333435363738c502b67b227479706573223a5b5d2c2273747275637473223a5b7b226e616d65223a2255736572496e666f222c2262617365223a22222c226669656c6473223a7b22757365724e616d65223a22737472696e67222c2275736572526f6c65223a22737472696e67222c2272637648656c6c6f4e756d223a2275696e743634227d7d2c7b226e616d65223a2253617948656c6c6f222c2262617365223a22222c226669656c6473223a7b22757365724e616d65223a22737472696e67227d7d2c7b226e616d65223a225573657244657461696c222c2262617365223a22222c226669656c6473223a7b2275736572526f6c65223a22737472696e67222c2272637648656c6c6f4e756d223a2275696e743634227d7d2c7b226e616d65223a2255736572496e666f222c2262617365223a22222c226669656c6473223a7b2272637648656c6c6f4e756d223a2275696e743634227d7d2c7b226e616d65223a2253617948656c6c6f222c2262617365223a22222c226669656c6473223a7b22757365724e616d65223a22737472696e67227d7d2c7b226e616d65223a225573657244657461696c222c2262617365223a22222c226669656c6473223a7b2272637648656c6c6f4e756d223a2275696e743634227d7d5d2c22616374696f6e73223a5b7b22616374696f6e5f6e616d65223a2272656775736572222c2274797065223a2255736572496e666f227d2c7b22616374696f6e5f6e616d65223a2273617968656c6c6f222c2274797065223a2253617948656c6c6f227d5d2c227461626c6573223a5b7b22696e6465785f74797065223a22737472696e67222c226b65795f6e616d6573223a5b22757365724e616d65225d2c226b65795f7479706573223a5b22737472696e67225d2c227461626c655f6e616d65223a2275736572696e666f222c2274797065223a225573657244657461696c227d5d7dda00047761736d",
                 "sig_alg": 1,
@@ -577,6 +591,7 @@ BCLI合约功能命令行主要实现用户主动部署一个合约及ABI文件�
         Bottos bcli tool contract deploy [command options] [arguments...]
 
     OPTIONS:
+        --contract value  the contract's name
         --account value   we use the account name as the default contract name
         --code value      the contract's wasm file path ( includes wasm file name )
         --filetype value  the contract's file type: wasm or js (default: "wasm")
@@ -592,6 +607,7 @@ BCLI合约功能命令行主要实现用户主动部署一个合约及ABI文件�
 |                      | --code     | 合约名                      | 是       |
 |                      | --abi      | abi描述文件（.abi）所在路径 | 是       |
 |                      | --filetype | 合约文件类型 wasm/js        | 是       |
+|                      | --contract | 合约名                      | 是       |
 
 返回信息
 
@@ -599,7 +615,7 @@ BCLI合约功能命令行主要实现用户主动部署一个合约及ABI文件�
 
 示例
 
-    ./bcli contract deploy --account user12345678 --code try.wasm --abi test.abi
+    ./bcli contract deploy --account user12345678 --code try.wasm --abi test.abi --contract test1
 
 输出结果
 
@@ -611,7 +627,7 @@ BCLI合约功能命令行主要实现用户主动部署一个合约及ABI文件�
         "cursor_label": 2437718820,
         "lifetime": 1542958132,
         "sender": "user12345678",
-        "contract": "bottos",
+        "contract": "test1",
         "method": "deploycode",
         "param": {
             "name": "user12345678",
@@ -638,18 +654,19 @@ BCLI合约功能命令行主要实现用户主动部署一个合约及ABI文件�
         Bottos bcli tool contract get [command options] [arguments...]
 
     OPTIONS:
-        --account value  we use the account name as the default contract name
-        --code value     the contract's wasm file path ( includes wasm file name )
-        --abi value      the contract's abi file path ( includes abi file name )
+        --contract value  the contract's name
+        --code value      the contract's wasm file path ( includes wasm file name )
+        --abi value       the contract's abi file path ( includes abi file name )
+
 
 参数说明
 
-| 主命令行          | 参数列表  | 参数说明                        | 必选参数 |
-| ----------------- | :-------: | :-----------------------------: | :------: |
-| bcli contract get | --account | 合约账户名                      | 是       |
-|                   | --code    | 要保存的合约路径名              | 是       |
-|                   | --abi     | 要保存的abi描述文件（.abi）路径 | 是       |
-
+| 主命令行          | 参数列表   | 参数说明                                                | 必选参数 |
+| ----------------- | :--------: | :-----------------------------------------------------: | :------: |
+| bcli contract get | --account  | 合约账户名                                              | 是       |
+|                   | --code     | 要保存的合约路径名                                      | 是       |
+|                   | --abi      | 要保存的abi描述文件（.abi）路径                         | 是       |
+|                   | --contract | 所属某账户的合约名，为<contractname>@<account name>格式 | 是       |
 
 返回信息
 
@@ -657,7 +674,7 @@ BCLI合约功能命令行主要实现用户主动部署一个合约及ABI文件�
 
 示例
 
-    ./bcli contract get --account user12345678 --code ~/test.wasm --abi ~/test.abi
+    ./bcli contract get --account user12345678 --code ~/test.wasm --abi ~/test.abi --contract test1@user12345678
 
 输出结果
 
@@ -822,12 +839,12 @@ BCLI候选节点功能选举命令行主线实现候选节点之：注册节点�
 
 参数说明
 
-| 主命令行          | 参数列表      | 参数说明                           | 必选参数 |
-| ----------------- | :-----------: | :--------------------------------: | :------: |
+| 主命令行               | 参数列表      | 参数说明                           | 必选参数 |
+| ---------------------- | :-----------: | :--------------------------------: | :------: |
 | bcli delegate register | --account     | 用户名                             | 是       |
-|                   | --signkey     | 用户自定义公钥（缺省为内置缺省值） | 是       |
-|                   | --location    | 投票地理城市名                     | 否       |
-|                   | --description | 用户自定义描述                     | 否       |
+|                        | --signkey     | 用户自定义公钥（缺省为内置缺省值） | 是       |
+|                        | --location    | 投票地理城市名                     | 否       |
+|                        | --description | 用户自定义描述                     | 否       |
 
 返回信息
 
@@ -883,8 +900,8 @@ BCLI候选节点功能选举命令行主线实现候选节点之：注册节点�
 
 参数说明
 
-| 主命令行            | 参数列表  | 参数说明 | 必选参数 |
-| ------------------- | :-------: | :------: | :------: |
+| 主命令行             | 参数列表  | 参数说明 | 必选参数 |
+| -------------------- | :-------: | :------: | :------: |
 | bcli delegate cancel | --account | 用户名   | 是       |
 
 
@@ -1542,13 +1559,13 @@ BCLI Transaction 提交和查询命令行负责提交一个用户自定义的Tra
 
 参数说明
 
-| 主命令行                | 参数列表   | 参数说明                           | 必选参数 |
-| ----------------------- | :--------: | :--------------------------------: | :------: |
-| ./bcli transaction push | --sender   | 签名发起者（缺省为内置bottos用户） | 否       |
-| ./bcli transaction push | --contract | 合约名                             | 是       |
-| ./bcli transaction push | --method   | 合约方法名                         | 是       |
-| ./bcli transaction push | --param    | 参数键值对                         | 是       |
-| ./bcli transaction push | --sign     | 用户自定义公钥（缺省为内置缺省值） | 否       |
+| 主命令行                | 参数列表   | 参数说明                                                | 必选参数 |
+| ----------------------- | :--------: | :-----------------------------------------------------: | :------: |
+| ./bcli transaction push | --sender   | 签名发起者（缺省为内置bottos用户）                      | 否       |
+| ./bcli transaction push | --contract | 所属某账户的合约名，为<contractname>@<account name>格式 | 是       |
+| ./bcli transaction push | --method   | 合约方法名                                              | 是       |
+| ./bcli transaction push | --param    | 参数键值对                                              | 是       |
+| ./bcli transaction push | --sign     | 用户自定义公钥（缺省为内置缺省值）                      | 否       |
 
 返回信息
 
@@ -1556,7 +1573,7 @@ BCLI Transaction 提交和查询命令行负责提交一个用户自定义的Tra
 
 示例
 
-./bcli transaction push --sender lyp12345678 --contract lyp12345678 --method reguser --param
+./bcli transaction push --sender lyp12345678 --contract test1@lyp12345678 --method reguser --param
 
 输出结果
 
@@ -1574,7 +1591,7 @@ Trx:
     "cursor_label": 1803934300,
     "lifetime": 1543468945,
     "sender": "lyp12345678",
-    "contract": "lyp12345678",
+    "contract": "test1",
     "method": "reguser",
     "param": "dc0004da00036c7970da00036c7970cf0000000000000016c5001000000000000000000000000000000021",
     "param_bin": "dc0004da00036c7970da00036c7970cf0000000000000016c5001000000000000000000000000000000021",
