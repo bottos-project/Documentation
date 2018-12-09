@@ -222,7 +222,7 @@ Please create wallet for your new account.
 | --------   		    | :-----:     | :----:  | :----:    |
 | bcli account stake    | --account  | 用户名  |  是        |
 |                       | --amount   | 质押BTO个数  |  是        |
---target value   target of stake:vote,space,time (default: "vote") | 质押参数选择  |  否        |
+|                       | --target   | 类型：stake:vote,space,time (default: "vote")  质押参数选择  |  否        |
 
 返回信息
 
@@ -280,6 +280,7 @@ TrxHash: 2921e27bad80060580d508d2726a830b8a3970b70b56f28e93ae866846cd7296
 | --------   		    | :-----:     | :----:  | :----:    |
 | bcli account unstake  | --account  | 用户名  |  是        |
 |                       | --amount   | 解质押BTO个数  |  是        |
+|                       | --source   | 类型：stake:vote,space,time (default: "vote")  质押参数选择  |  否        |
 
 
 返回信息
@@ -592,10 +593,10 @@ BCLI合约功能命令行主要实现用户主动部署一个合约及ABI文件�
 
     OPTIONS:
         --contract value  the contract's name
-        --account value   we use the account name as the default contract name
         --code value      the contract's wasm file path ( includes wasm file name )
         --filetype value  the contract's file type: wasm or js (default: "wasm")
         --abi value       the contract's abi file path ( includes abi file name )
+        --account value   the account name whom deploy the code
    
 
 
@@ -750,18 +751,18 @@ BCLI合约功能命令行主要实现用户主动部署一个合约及ABI文件�
         bcli gettable [command options] [arguments...]
     
     OPTIONS:
-        --account value  contract name (default: "usermng")
+        --contract value  contract name 
         --table value     table name
         --key value       Key value
 
 
 参数说明
 
-| 主命令行      | 参数列表  | 参数说明                                          | 必选参数 |
-| ------------- | :-------: | :-----------------------------------------------: | :------: |
-| bcli gettable | --account | 合约账户名                                        | 是       |
-|               | --table   | 要向链上查询的TABLE名   （参考ABI文件TABLE描述）  | 是       |
-|               | --key     | 要向链上查询的key关键字值（参考ABI文件TABLE描述） | 是       |
+| 主命令行      | 参数列表   | 参数说明                                                | 必选参数 |
+| ------------- | :--------: | :-----------------------------------------------------: | :------: |
+| bcli gettable | --contract | 所属某账户的合约名，为<contractname>@<account name>格式 | 是       |
+|               | --table    | 要向链上查询的TABLE名   （参考ABI文件TABLE描述）        | 是       |
+|               | --key      | 要向链上查询的key关键字值（参考ABI文件TABLE描述）       | 是       |
 
 返回信息
 
@@ -769,7 +770,7 @@ BCLI合约功能命令行主要实现用户主动部署一个合约及ABI文件�
 
 示例
 
-./bcli gettable --table userdetail --account lyp12345678 --key lyp
+./bcli gettable --table userdetail --contract lyp12345678 --key lyp
 
 输出结果
 

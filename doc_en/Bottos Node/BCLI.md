@@ -26,37 +26,38 @@ The global help information
     
     NAME:
     Bottos bcli tool - a tool that makes user communicate with bottos blockchain
-    
+
     USAGE:
     bcli [global options] command [command options] [arguments...]
-    
+
     VERSION:
     0.0.1
-    
+
     COMMANDS:
-        getinfo      get chian info
-        getblock     get block info
-        gettable     get table info
-        account      create or get account
-        transfer     for user transfering bto
-        transaction  get or push transactions
-        contract     get or deploy contract
-        p2p          for p2p connection
-        delegate     for delegate operations
-        wallet       For wallet operations
-        genesis      for genesis node operations
-        help, h      Shows a list of commands or help for one command
-    
+        getblkheader  get header block's information
+        getblock      get block information
+        gettable      get table information
+        account       create or get account
+        transfer      for user transferring bto
+        transaction   get or push transactions
+        contract      get or deploy contract
+        p2p           for p2p connection
+        delegate      for delegate operations
+        wallet        For wallet operations
+        genesis       for genesis node operations
+        log           for log operations
+        help, h       Shows a list of commands or help for one command
+
     GLOBAL OPTIONS:
-    --servaddr value  (default: "127.0.0.1:8689")
-    --help, -h        show help
-    --version, -v     print the version
+        --servaddr value  (default: "127.0.0.1:8689")
+        --help, -h        show help
+        --version, -v     print the version
 
 命令功能说明
 
 | Command | Parameter list    | Parameter description                                                          |
 | -------- | :---------: | :----------------------------------------------------------------: |
-| ./bcli   | getinfo     | Get block header information                                                      |
+| ./bcli   | getblkheader     | Get block header information                                                      |
 | ./bcli   | getblock    | Get specific block                                                  |
 | ./bcli   | gettable    | Get table information of a contract                                                     |
 | ./bcli   | account     | Create / get user's information, stake/unstake/claim balances, etc,.                          |
@@ -78,18 +79,18 @@ Chief command help information
     ./bcli account --help
     
     NAME:
-        Bottos bcli tool account - create or get account
-    
+    Bottos bcli tool account - create or get account
+
     USAGE:
-        Bottos bcli tool account command [command options] [arguments...]
-    
+    Bottos bcli tool account command [command options] [arguments...]
+
     COMMANDS:
         create   create account
-        get      get account info
+        get      get account information
         stake    stake of account
         unstake  unstake of account
         claim    claim of stake
-    
+
     OPTIONS:
     --help, -h  show help
 
@@ -205,14 +206,15 @@ Help information
     ./bcli account stake --help
     
     NAME:
-        Bottos bcli tool account stake - stake of account
-    
+    Bottos bcli tool account stake - stake of account
+
     USAGE:
-        Bottos bcli tool account stake [command options] [arguments...]
-    
+    Bottos bcli tool account stake [command options] [arguments...]
+
     OPTIONS:
         --account value  acocunt name
         --amount value   amount of bto
+        --target value   target of stake:vote,space,time (default: "vote")
 
 Parameter Description
 
@@ -220,6 +222,7 @@ Parameter Description
 | --------              | :-----:     | :----:  | :----:    |
 | bcli account stake    | --account  | user name  |  Yes        |
 |                       | --amount   | amount of staking BTO  |  Yes        |
+|                       | --target   | Type：stake:vote,space,time (default: "vote")  stake parameters choices  |  No        |
 
 Return Information
 
@@ -258,14 +261,15 @@ Help information
     ./bcli account unstake --help
     
     NAME:
-        Bottos bcli tool account unstake - unstake of account
-    
+    Bottos bcli tool account unstake - unstake of account
+
     USAGE:
         Bottos bcli tool account unstake [command options] [arguments...]
-    
+
     OPTIONS:
         --account value  acocunt name
         --amount value   amount of bto
+        --source value   source of unStake:vote,space,time (default: "vote")
 
 
 
@@ -275,6 +279,7 @@ Parameter Description
 | --------              | :-----:     | :----:  | :----:    |
 | bcli account unstake  | --account  | user name  |  Yes        |
 |                       | --amount   | amount of unstaking BTO  |  Yes        |
+|                       | --source   | Type：stake:vote,space,time (default: "vote")  stake parameters choices  |  No        |
 
 
 Return Information
@@ -402,14 +407,15 @@ Help information
     ./bcli contract deploycode --help
     NAME:
         Bottos bcli tool contract deploycode - contract  deploycode
-    
+
     USAGE:
         Bottos bcli tool contract deploycode [command options] [arguments...]
-    
+
     OPTIONS:
-        --account value   we use the account name as the default contract name
+        --contract value  the contract's name
         --code value      the contract's wasm file path ( includes wasm file name )
         --filetype value  the contract's file type: wasm or js (default: "wasm")
+        --account value   the account name whom deploy the code
 
 
 
@@ -421,6 +427,7 @@ Parameter Description
 | bcli contract deploycode | --account         | contract name                 | Yes       |
 |                          | --code         | Contract file（.WASM）'s path | Yes       |
 |                          | --filetype         | user who signs the contract   | Yes       |
+|                          | --contract | contract's name                    | Yes       |
 
 Return Information
 
@@ -428,7 +435,7 @@ This will return the transaction information after the command successfully be  
 
 Sample
 
-    ./bcli contract deploycode --account user12345678 --code try.wasm
+    ./bcli contract deploycode --account user12345678 --code try.wasm --contract test1
 
 Output
 ​     
@@ -442,7 +449,7 @@ Output
         "cursor_label": 2953320580,
         "lifetime": 1542957715,
         "sender": "user12345678",
-        "contract": "bottos",
+        "contract": "test1",
         "method": "deploycode",
         "param": {
             "name": "user12345678",
@@ -464,14 +471,15 @@ Help information
     
     NAME:
         Bottos bcli tool contract deployabi - Contract  deployabi
-    
+
     USAGE:
         Bottos bcli tool contract deployabi [command options] [arguments...]
-    
+
     OPTIONS:
-    --account value   we use the account name as the abi's default contract name
-    --abi value       the contract's abi file path ( includes abi file name )
-    --filetype value  the contract's file type: wasm or js (default: "wasm")
+        --contract value  the contract's name
+        --abi value       the contract's abi file path ( includes abi file name )
+        --filetype value  the contract's file type: wasm or js (default: "wasm")
+        --account value   the account name whom deploy the code
 
 
 Parameter Description
@@ -481,6 +489,7 @@ Parameter Description
 | bcli contract deployabi | --account      | contract name                       | Yes       |
 |                         | --abi          | abi description file（.abi）'s path  | Yes       |
 |                         | --filetype     | Contract file type wasm/js          | No        |
+|                         | --contract | contract's name                      | Yes       |
 
 Return Information
 
@@ -488,7 +497,7 @@ This will return the transaction information after the command successfully sent
 
 Sample
 
-    ./bcli contract deployabi --account user12345678 --abi try.abi
+    ./bcli contract deployabi --account user12345678 --abi try.abi --contract test1
 
 Output
 
@@ -503,7 +512,7 @@ Output
                 "cursor_label": 1285797565,
                 "lifetime": 1542957868,
                 "sender": "user12345678",
-                "contract": "bottos",
+                "contract": "test1",
                 "method": "deployabi",
                 "param": "dc0003da000c757365723132333435363738c502b67b227479706573223a5b5d2c2273747275637473223a5b7b226e616d65223a2255736572496e666f222c2262617365223a22222c226669656c6473223a7b22757365724e616d65223a22737472696e67222c2275736572526f6c65223a22737472696e67222c2272637648656c6c6f4e756d223a2275696e743634227d7d2c7b226e616d65223a2253617948656c6c6f222c2262617365223a22222c226669656c6473223a7b22757365724e616d65223a22737472696e67227d7d2c7b226e616d65223a225573657244657461696c222c2262617365223a22222c226669656c6473223a7b2275736572526f6c65223a22737472696e67222c2272637648656c6c6f4e756d223a2275696e743634227d7d2c7b226e616d65223a2255736572496e666f222c2262617365223a22222c226669656c6473223a7b2272637648656c6c6f4e756d223a2275696e743634227d7d2c7b226e616d65223a2253617948656c6c6f222c2262617365223a22222c226669656c6473223a7b22757365724e616d65223a22737472696e67227d7d2c7b226e616d65223a225573657244657461696c222c2262617365223a22222c226669656c6473223a7b2272637648656c6c6f4e756d223a2275696e743634227d7d5d2c22616374696f6e73223a5b7b22616374696f6e5f6e616d65223a2272656775736572222c2274797065223a2255736572496e666f227d2c7b22616374696f6e5f6e616d65223a2273617968656c6c6f222c2274797065223a2253617948656c6c6f227d5d2c227461626c6573223a5b7b22696e6465785f74797065223a22737472696e67222c226b65795f6e616d6573223a5b22757365724e616d65225d2c226b65795f7479706573223a5b22737472696e67225d2c227461626c655f6e616d65223a2275736572696e666f222c2274797065223a225573657244657461696c227d5d7dda00047761736d",
                 "sig_alg": 1,
@@ -575,15 +584,16 @@ Help information
     ./bcli contract deploy --help
     NAME:
         Bottos bcli tool contract deploy - contract deploy
-    
+
     USAGE:
         Bottos bcli tool contract deploy [command options] [arguments...]
-    
+
     OPTIONS:
-        --account value   we use the account name as the default contract name
+        --contract value  the contract's name
         --code value      the contract's wasm file path ( includes wasm file name )
         --filetype value  the contract's file type: wasm or js (default: "wasm")
         --abi value       the contract's abi file path ( includes abi file name )
+        --account value   the account name whom deploy the code
 
 
 
@@ -595,6 +605,7 @@ Parameter Description
 |                      | --code         | contract name                       | Yes       |
 |                      | --abi          | abi description file（.abi）'s path  | Yes       |
 |                      | --filetype     | Contract file type wasm/js          | Yes       |
+|                      | --contract | contract's name                      | Yes       |
 
 Return Information
 
@@ -602,7 +613,7 @@ This will return the transaction information after the command successfully sent
 
 Sample
 
-    ./bcli contract deploy --account user12345678 --code try.wasm --abi test.abi
+    ./bcli contract deploy --account user12345678 --code try.wasm --abi test.abi --contract test1
 
 Output
 
@@ -614,7 +625,7 @@ Output
         "cursor_label": 2437718820,
         "lifetime": 1542958132,
         "sender": "user12345678",
-        "contract": "bottos",
+        "contract": "test1",
         "method": "deploycode",
         "param": {
             "name": "user12345678",
@@ -636,14 +647,14 @@ Help information
     ./bcli contract get --help
     NAME:
         Bottos bcli tool contract get - get contract
-    
+
     USAGE:
         Bottos bcli tool contract get [command options] [arguments...]
-    
+
     OPTIONS:
-        --account value  we use the account name as the default contract name
-        --code value     the contract's wasm file path ( includes wasm file name )
-        --abi value      the contract's abi file path ( includes abi file name )
+        --contract value  the contract's name
+        --code value      the contract's wasm file path ( includes wasm file name )
+        --abi value       the contract's abi file path ( includes abi file name )
 
 
 Parameter Description
@@ -653,6 +664,7 @@ Parameter Description
 | bcli contract deploy | --account      | contract name                         | Yes       |
 |                      | --code         | The path that save the contract       | Yes       |
 |                      | --abi          | The path that save the abi(.abi) file | Yes       |
+|                   | --contract | the contract owned by one account，and should be format of <contractname>@<account name> | Yes       |
 
 
 Return Information
@@ -661,7 +673,7 @@ The output gives the contract raw data and abi file information, and save the co
 
 Sample
 
-    ./bcli contract get --account user12345678 --code ~/test.wasm --abi ~/test.abi
+    ./bcli contract get --account user12345678 --code ~/test.wasm --abi ~/test.abi --contract test1@user12345678
 
 Output
 
@@ -737,7 +749,7 @@ Help information
         bcli gettable [command options] [arguments...]
     
     OPTIONS:
-        --account value  contract name (default: "usermng")
+        --contract value  contract name
         --table value     table name
         --key value       Key value
 
@@ -746,7 +758,7 @@ Parameter Description
 
 | chief command | parameter list | Parameter Description                                                                                 | mandatory |
 | ------------- | :------------: | :---------------------------------------------------------------------------------------------------: | :-------: |
-| bcli gettable | --account      | contract name                                                                                         | Yes       |
+| bcli gettable | --contract      | the contract owned by one account，and should be format of <contractname>@<account name>                                                                                         | Yes       |
 |               | --table        | Table name that is required to query block chain（refer to the description of 'table of abi file'）    | Yes       |
 |               | --key          | Keyword name that is required to query block chain（refer to the description of 'table of abi file'）  | Yes       |
 
@@ -756,7 +768,18 @@ This will return the Transaction information sent by BCLI.
 
 Sample
 
-    （No yet，the contract is under debugging）
+./bcli gettable --table userdetail --contract lyp12345678 --key lyp
+
+Output
+
+{
+    "contract": "lyp12345678",
+    "object": "userdetail",
+    "key": "lyp",
+    "value": "dc0003da00036c7970cf0000000000000016c5001000000000000000000000000000000021"
+}
+
+Table data is : map[lyp:33 userrole:lyp rcvhellonum:22] 
 
 
 #### 3. BCLI Candidate Node Voting Command
@@ -1537,7 +1560,7 @@ Parameter Description
 | chief command           | parameter list | Parameter Description                                           | mandatory |
 | ----------------------- | :------------: | :-------------------------------------------------------------: | :-------: |
 | ./bcli transaction push | --sender       | The signer（default value is the bottos account）               | No        |
-| ./bcli transaction push | --contract     | contract name                                                   | Yes       |
+| ./bcli transaction push | --contract     | the contract name owned by one account, should be format of <contractname>@<account name>                                                  | Yes       |
 | ./bcli transaction push | --method       | contract's method name                                          | Yes       |
 | ./bcli transaction push | --param        | parameter key value pair                                        | Yes       |
 | ./bcli transaction push | --sign         | public key defined by user（default value is defined by inside) | No        |
@@ -1548,7 +1571,32 @@ This will return the Transaction information of the designated Txhash sent by BC
 
 Sample
 
-    （Omitted.）
+    ./bcli transaction push --sender lyp12345678 --contract test1@lyp12345678 --method reguser --param
+
+Output
+
+    "userName:lyp, userRole:lyp, rcvHelloNum:22, lyp:33"
+    0 : {userName string} , KEY:  userName , VAL:  lyp
+    1 : {userRole string} , KEY:  userRole , VAL:  lyp
+    2 : {rcvHelloNum uint64} , KEY:  rcvHelloNum , VAL:  22
+    3 : {lyp uint128} , KEY:  lyp , VAL:  33
+
+    Push transaction done:
+    Trx: 
+    {
+        "version": 1,
+        "cursor_num": 2844,
+        "cursor_label": 1803934300,
+        "lifetime": 1543468945,
+        "sender": "lyp12345678",
+        "contract": "test1",
+        "method": "reguser",
+        "param": "dc0004da00036c7970da00036c7970cf0000000000000016c5001000000000000000000000000000000021",
+        "param_bin": "dc0004da00036c7970da00036c7970cf0000000000000016c5001000000000000000000000000000000021",
+        "sig_alg": 1,
+        "signature": "984d8b69595e6311ddbfa6214a0610ab13d79839427c441f54073d3aff9b7c27366f6c48508921a3d1c7535d5174134c201daaf4f5ea5f8e578ef804f7737305"
+    }
+    TrxHash: cb9a695f9f8dfa02e81caf58fc9def571d892b95fd168a9c2f7eb701ee802ed3
 
 #### 8. BCLI Wallet Command
 
