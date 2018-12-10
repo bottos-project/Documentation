@@ -1,4 +1,4 @@
-# 公共REST接口
+﻿# 公共REST接口
 
 ##  获取区块信息
 
@@ -561,12 +561,21 @@
 | result            | jsonObject | 响应结果                             |
 | account_name      | string     | 账号名称                             |
 | pubkey            | string     | 公钥                                 |
-| balance           | string     | Token值，                            |
-| staked_balance    | string     | 质押的Token值                        |
-| unStaking_balance | string     | 正解质押的Token值                    |
+| balance                 | string     | 账号可支配的BTO数量                   |
+| staked_balance          | string     | 质押投票的BTO数量                     |
+| staked_space_balance    | string     | 质押SPACE的BTO数量（交易需消耗SPACE） |
+| staked_time_balance     | string     | 质押TIME的BTO数量（交易需消耗TIME） |
+| unStaking_balance       | string     | 正解质押的BTO数量                     |
 | unStaking_time    | uint64     | 解质押的时间（ Unix时间戳 ）         |
+| vote                    | jsonObject | 投票信息                              |
+| delegate                | string     | 被投票生产者                          |
+| votes                   | string     | 投票数量                              |
+| available_space_balance | uint64     | 可使用的SPACE数量                     |
+| used_space_balance      | uint64     | 已用的SPACE数量                       |
+| available_time_balance  | uint64     | 可使用的TIME数量                      |
+| used_time_balance       | uint64     | 已使用的SPACE数量                     |
 
-备注：balance、staked_balance、unStaking_balance 三者之和为改账户总的Token值 。
+备注：balance、staked_balance、staked_space_balance、staked_time_balance、unStaking_balance 三者之和为改账户总的Token值 。
 
 **字段变化**
 
@@ -582,7 +591,7 @@
 
   ```
   {
-  	"account_name":"delta"
+  	"account_name":"bottostest"
   }
   ```
 
@@ -596,12 +605,22 @@
       "errcode": 0,
       "msg": "success",
       "result": {
-          "account_name": "testtest",
-          "pubkey": "0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f",
-          "balance": "0",
-          "staked_balance": "0",
+        "account_name": "bottostest",
+        "pubkey": "045f9402135fd2a8d43e9dd27ef6cd3b9569559c970de161e117e4cb34f99f31485e441e263acc2424fa4e2bf3681bfeee14145590f822a82ffb9f0db82d1939b7",
+        "balance": "9999990000000000",
+        "staked_balance": "10000000000",
+        "staked_space_balance": "0",
+        "staked_time_balance": "0",
           "unStaking_balance": "0",
-          "unStaking_time": 0
+        "unStaking_time": 0,
+        "vote": {
+            "delegate": "bottostest1",
+            "votes": "10000000000"
+        },
+        "available_space_balance": 199644,
+        "used_space_balance": 356,
+        "available_time_balance": 2000000,
+        "used_time_balance": 0
       }
   }
   ```

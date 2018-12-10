@@ -560,11 +560,20 @@ Note：block_num、block_hash can only choose one of them; If not given in eithe
 | account_name      | string     | Account name                             |
 | pubkey            | string     | Public key                                 |
 | balance           | string     | Token value，                            |
-| staked_balance    | string     | Staked token value                        |
-| unStaking_balance | string     | Under unstakeing token value                    |
+| staked_balance    | string     | Staked BTO value                        |
+| staked_space_balance | string | Staked BTO value for SPACE(Transactions need to consume SPACE) |
+| staked_time_balance | string | Staked BTO value for TIME(Transactions need to consume TIME) |
+| unStaking_balance | string     | Under unstakeing BTO value                    |
 | unStaking_time    | uint64     | Unstake token timestamp（ Unix timestamp ）         |
+| vote | jsonObject | vote information |
+| delegate | string | the delegate who were voted |
+| votes | string | Number of votes |
+| available_space_balance | uint64 | SPACE value of available |
+| used_space_balance | uint64 | SPACE value of used |
+| available_time_balance | uint64 | TIME value of available |
+| used_time_balance | uint64 | TIME value of used |
 
-Note：balance、staked_balance、unStaking_balance, the summary value of that three is the total token value of the change account.
+Note：balance、staked_balance、staked_space_balance、staked_time_balance、unStaking_balance, the summary value of that three is the total token value of the change account.
 
 **Fields Changes**
 
@@ -594,12 +603,22 @@ Note：balance、staked_balance、unStaking_balance, the summary value of that t
       "errcode": 0,
       "msg": "success",
       "result": {
-          "account_name": "testtest",
-          "pubkey": "0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f",
-          "balance": "0",
-          "staked_balance": "0",
+        "account_name": "bottostest",
+        "pubkey": "045f9402135fd2a8d43e9dd27ef6cd3b9569559c970de161e117e4cb34f99f31485e441e263acc2424fa4e2bf3681bfeee14145590f822a82ffb9f0db82d1939b7",
+        "balance": "9999990000000000",
+        "staked_balance": "10000000000",
+        "staked_space_balance": "0",
+        "staked_time_balance": "0",
           "unStaking_balance": "0",
-          "unStaking_time": 0
+        "unStaking_time": 0,
+        "vote": {
+            "delegate": "bottostest1",
+            "votes": "10000000000"
+        },
+        "available_space_balance": 199644,
+        "used_space_balance": 356,
+        "available_time_balance": 2000000,
+        "used_time_balance": 0
       }
   }
   ```
