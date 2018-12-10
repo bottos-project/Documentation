@@ -139,7 +139,7 @@
 | head_block_time          | uint64     | 块生成时间                               |
 | head_block_delegate      | string     | 块生产者                                 |
 | cursor_label             | uint32     | 块标识                                   |
-| last_consensus_block_num | uint32     | 不可逆块号                               |
+| last_consensus_block_num | uint64     | 不可逆块号                               |
 | chain_id                 | string     | 链ID，同一链的所有节点的Chain_id必须相同 |
 
 **字段变化**

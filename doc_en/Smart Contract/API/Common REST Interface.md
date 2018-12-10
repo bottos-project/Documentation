@@ -138,7 +138,7 @@ Note：block_num、block_hash can only choose one of them; If not given in eithe
 | head_block_time          | uint64     | Generating time of block                               |
 | head_block_delegate      | string     | Producer of block                                 |
 | cursor_label             | uint32     | Block identity                                   |
-| last_consensus_block_num | uint32     | Irreversible Block's number                               |
+| last_consensus_block_num | uint64   | Irreversible Block's number                               |
 | chain_id                 | string     | Chain ID，The chain_id must be the same for all nodes in the same chain |
 
 **Fields Changes**
