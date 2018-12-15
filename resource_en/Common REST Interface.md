@@ -695,8 +695,8 @@ Note：balance、staked_balance、staked_space_balance、staked_time_balance、u
 
 
   ```
-   HTTP/1.1 200 OK
-  {
+	HTTP/1.1 200 OK
+   {
     "errcode": 0,
     "msg": "{\n\t\"types\": [],\n\t\"structs\": [\n              {\n              \t\"name\": \"UserInfo\",\n              \t\"base\": \"\",\n              \t\"fields\": {\n              \t\t\"userName\": \"string\",\n              \t\t\"userInfo\": \"string\"\n                    }\n              \t},\n              {\n              \t\"name\": \"UserBaseInfo\",\n              \t\"base\": \"\",\n              \t\"fields\": {\n              \t\t\"userInfo\": \"string\"\n                    }\n              \t}\n       ],\n\t\"actions\": [\n              {\n              \t\"action_name\": \"reguser\",\n              \t\"type\": \"UserInfo\"\n              }\n       ],\n\t\"tables\": [\n              {\n              \t\"table_name\": \"userinfo\",\n              \t\"index_type\": \"string\",\n              \t\"key_names\":  [\n              \t\t\"userName\"\n              \t ],\n              \t\"key_types\":  [\n              \t\t\"string\"\n              \t ],\n              \t\"type\": \"UserBaseInfo\"\n              }\n       ]\n}\n",
     "result": {
@@ -751,8 +751,8 @@ Note：balance、staked_balance、staked_space_balance、staked_time_balance、u
                 "type": "UserBaseInfo"
             }
         ]
-    }
-}
+    	}
+ 	}
   ```
 
 ## Query contract code
