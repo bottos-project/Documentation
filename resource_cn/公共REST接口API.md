@@ -688,7 +688,7 @@
 
   ```
   {
-  	"contract":"bottos"
+  	"contract":"test1@tinaailian"
   }
   ```
 
@@ -699,202 +699,62 @@
   ```
    HTTP/1.1 200 OK
   {
-      "errcode": 0,
-      "msg": "success",
-      "result": {
-          "actions": [
-              {
-                  "action_name": "newaccount",
-                  "type": "NewAccount"
-              },
-              {
-                  "action_name": "transfer",
-                  "type": "Transfer"
-              },
-              {
-                  "action_name": "grantcredit",
-                  "type": "GrantCredit"
-              },
-              {
-                  "action_name": "cancelcredit",
-                  "type": "CancelCredit"
-              },
-              {
-                  "action_name": "transferfrom",
-                  "type": "TransferFrom"
-              },
-              {
-                  "action_name": "deploycode",
-                  "type": "DeployCode"
-              },
-              {
-                  "action_name": "deployabi",
-                  "type": "DeployABI"
-              },
-              {
-                  "action_name": "regdelegate",
-                  "type": "RegDelegate"
-              },
-              {
-                  "action_name": "unregdelegate",
-                  "type": "UnregDelegate"
-              },
-              {
-                  "action_name": "votedelegate",
-                  "type": "VoteDelegate"
-              },
-              {
-                  "action_name": "stake",
-                  "type": "Stake"
-              },
-              {
-                  "action_name": "unstake",
-                  "type": "Unstake"
-              },
-              {
-                  "action_name": "claim",
-                  "type": "Claim"
-              },
-              {
-                  "action_name": "setdelegate",
-                  "type": "SetDelegate"
-              },
-              {
-                  "action_name": "blkprodtrans",
-                  "type": "BlkProdTrans"
-              }
-          ],
-          "structs": [
-              {
-                  "base": "",
-                  "fields": {
-                      "name": "string",
-                      "pubkey": "string"
-                  },
-                  "name": "NewAccount"
-              },
-              {
-                  "base": "",
-                  "fields": {
-                      "from": "string",
-                      "to": "string",
-                      "value": "uint256"
-                  },
-                  "name": "Transfer"
-              },
-              {
-                  "base": "",
-                  "fields": {
-                      "description": "string",
-                      "location": "string",
-                      "name": "string",
-                      "pubkey": "string"
-                  },
-                  "name": "SetDelegate"
-              },
-              {
-                  "base": "",
-                  "fields": {
-                      "limit": "uint256",
-                      "name": "string",
-                      "spender": "string"
-                  },
-                  "name": "GrantCredit"
-              },
-              {
-                  "base": "",
-                  "fields": {
-                      "name": "string",
-                      "spender": "string"
-                  },
-                  "name": "CancelCredit"
-              },
-              {
-                  "base": "",
-                  "fields": {
-                      "from": "string",
-                      "to": "string",
-                      "value": "uint256"
-                  },
-                  "name": "TransferFrom"
-              },
-              {
-                  "base": "",
-                  "fields": {
-                      "contract": "string",
-                      "contract_code": "bytes",
-                      "vm_type": "uint8",
-                      "vm_version": "uint8"
-                  },
-                  "name": "DeployCode"
-              },
-              {
-                  "base": "",
-                  "fields": {
-                      "contract": "string",
-                      "contract_abi": "bytes"
-                  },
-                  "name": "DeployABI"
-              },
-              {
-                  "base": "",
-                  "fields": {
-                      "description": "string",
-                      "location": "string",
-                      "name": "string",
-                      "pubkey": "string"
-                  },
-                  "name": "RegDelegate"
-              },
-              {
-                  "base": "",
-                  "fields": {
-                      "name": "string"
-                  },
-                  "name": "UnregDelegate"
-              },
-              {
-                  "base": "",
-                  "fields": {
-                      "delegate": "string",
-                      "voteop": "uint8",
-                      "voter": "string"
-                  },
-                  "name": "VoteDelegate"
-              },
-              {
-                  "base": "",
-                  "fields": {
-                      "amount": "uint256"
-                  },
-                  "name": "Stake"
-              },
-              {
-                  "base": "",
-                  "fields": {
-                      "amount": "uint256"
-                  },
-                  "name": "Unstake"
-              },
-              {
-                  "base": "",
-                  "fields": {
-                      "amount": "uint256"
-                  },
-                  "name": "Claim"
-              },
-              {
-                  "base": "",
-                  "fields": {
-                      "actblknum": "uint64"
-                  },
-                  "name": "BlkProdTrans"
-              }
-          ],
-          "tables": null,
-          "types": null
-      }
-  }
+    "errcode": 0,
+    "msg": "{\n\t\"types\": [],\n\t\"structs\": [\n              {\n              \t\"name\": \"UserInfo\",\n              \t\"base\": \"\",\n              \t\"fields\": {\n              \t\t\"userName\": \"string\",\n              \t\t\"userInfo\": \"string\"\n                    }\n              \t},\n              {\n              \t\"name\": \"UserBaseInfo\",\n              \t\"base\": \"\",\n              \t\"fields\": {\n              \t\t\"userInfo\": \"string\"\n                    }\n              \t}\n       ],\n\t\"actions\": [\n              {\n              \t\"action_name\": \"reguser\",\n              \t\"type\": \"UserInfo\"\n              }\n       ],\n\t\"tables\": [\n              {\n              \t\"table_name\": \"userinfo\",\n              \t\"index_type\": \"string\",\n              \t\"key_names\":  [\n              \t\t\"userName\"\n              \t ],\n              \t\"key_types\":  [\n              \t\t\"string\"\n              \t ],\n              \t\"type\": \"UserBaseInfo\"\n              }\n       ]\n}\n",
+    "result": {
+        "types": [],
+        "structs": [
+            {
+                "name": "UserInfo",
+                "base": "",
+                "fields": {
+                    "userName": "string",
+                    "userInfo": "string"
+                }
+            },
+            {
+                "name": "UserBaseInfo",
+                "base": "",
+                "fields": {
+                    "userInfo": "string"
+                }
+            },
+            {
+                "name": "UserInfo",
+                "base": "",
+                "fields": {
+                    "userInfo": "string"
+                }
+            },
+            {
+                "name": "UserBaseInfo",
+                "base": "",
+                "fields": {
+                    "userInfo": "string"
+                }
+            }
+        ],
+        "actions": [
+            {
+                "action_name": "reguser",
+                "type": "UserInfo"
+            }
+        ],
+        "tables": [
+            {
+                "table_name": "userinfo",
+                "index_type": "string",
+                "key_names": [
+                    "userName"
+                ],
+                "key_types": [
+                    "string"
+                ],
+                "type": "UserBaseInfo"
+            }
+        ]
+    }
+}
   ```
 
 ## 查询合约代码
