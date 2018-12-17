@@ -1,5 +1,83 @@
 ﻿# 公共REST接口
 
+## 获取区块高度信息
+
+**接口功能**
+
+> 接口说明： 获取区块高度信息
+>
+> **接口地址**
+>
+> URL:  /v1/block/height
+>
+> **返回格式**
+>
+> JSON
+>
+> **请求方式**
+>
+> GET
+>
+> **请求参数：**
+>
+> | 参数 | 必选 | 类型 | 默认值 | 说明 |
+> | ---- | ---- | ---- | ------ | ---- |
+> | 无   |      |      |        |      |
+
+**响应字段：**
+
+| 参数                     | 类型       | 说明                                     |
+| ------------------------ | ---------- | ---------------------------------------- |
+| errcode                  | uint32     | 错误码，0-相应成功，其他见错误码章节     |
+| msg                      | string     | 响应描述                                 |
+| result                   | jsonObject | 响应结果                                 |
+| head_block_num           | uint64     | 块号                                     |
+| head_block_hash          | string     | 前一块哈希值                             |
+| head_block_time          | uint64     | 块生成时间                               |
+| head_block_delegate      | string     | 块生产者                                 |
+| cursor_label             | uint32     | 块标识                                   |
+| last_consensus_block_num | uint64     | 不可逆块号                               |
+| chain_id                 | string     | 链ID，同一链的所有节点的Chain_id必须相同 |
+
+**字段变化**
+
+- 无
+
+  **接口示例**
+
+> 地址：<http://127.0.0.1:8689/v1/block/height>
+
+- 请求：
+
+
+
+  ```
+  无
+  ```
+
+- 响应：
+
+
+
+  ```
+  HTTP/1.1 200 OK
+  {
+      "errcode": 0,
+      "msg": "",
+      "result": {
+          "head_block_num": 87,
+          "head_block_hash": "b34806eefc77b88743ab447f43658bf229fd4e5cd9452340e21f3995a5d2054b",
+          "head_block_time": 1534213225,
+          "head_block_delegate": "alsephina",
+          "cursor_label": 2782004555,
+          "last_consensus_block_num": 64,
+          "chain_id": "4b97b92d2c78bcffe95ebd3067565c73a2931b39d5eb7234b11816dcec54761a"
+      }
+  }
+  ```
+
+
+
 ##  获取区块信息
 
 **接口功能**
@@ -99,82 +177,6 @@
                   "signature": "c85fd25af493cbb6a79870ce0fc602acc892664ca17e2c646aff0332ca6db7787beeb7e5d8553de8e4b83bdf7b227762fedf9e3674888893f18bf31f0b05d622"
               }
           ]
-      }
-  }
-  ```
-
-## 获取区块高度信息
-
-**接口功能**
-
-> 接口说明： 获取区块高度信息
->
-> **接口地址**
->
-> URL:  /v1/block/height
->
-> **返回格式**
->
-> JSON
->
-> **请求方式**
->
-> GET
->
-> **请求参数：**
->
-> | 参数 | 必选 | 类型 | 默认值 | 说明 |
-> | ---- | ---- | ---- | ------ | ---- |
-> | 无   |      |      |        |      |
-
-**响应字段：**
-
-| 参数                     | 类型       | 说明                                     |
-| ------------------------ | ---------- | ---------------------------------------- |
-| errcode                  | uint32     | 错误码，0-相应成功，其他见错误码章节     |
-| msg                      | string     | 响应描述                                 |
-| result                   | jsonObject | 响应结果                                 |
-| head_block_num           | uint64     | 块号                                     |
-| head_block_hash          | string     | 前一块哈希值                             |
-| head_block_time          | uint64     | 块生成时间                               |
-| head_block_delegate      | string     | 块生产者                                 |
-| cursor_label             | uint32     | 块标识                                   |
-| last_consensus_block_num | uint64     | 不可逆块号                               |
-| chain_id                 | string     | 链ID，同一链的所有节点的Chain_id必须相同 |
-
-**字段变化**
-
-- 无
-
-  **接口示例**
-
-> 地址：<http://127.0.0.1:8689/v1/block/height>
-
-- 请求：
-
-  
-
-  ```
-  无
-  ```
-
-- 响应：
-
-  
-
-  ```
-  HTTP/1.1 200 OK
-  {
-      "errcode": 0,
-      "msg": "",
-      "result": {
-          "head_block_num": 87,
-          "head_block_hash": "b34806eefc77b88743ab447f43658bf229fd4e5cd9452340e21f3995a5d2054b",
-          "head_block_time": 1534213225,
-          "head_block_delegate": "alsephina",
-          "cursor_label": 2782004555,
-          "last_consensus_block_num": 64,
-          "chain_id": "4b97b92d2c78bcffe95ebd3067565c73a2931b39d5eb7234b11816dcec54761a"
       }
   }
   ```
@@ -369,6 +371,72 @@
           },
           "sig_alg": 1,
           "signature": "c85fd25af493cbb6a79870ce0fc602acc892664ca17e2c646aff0332ca6db7787beeb7e5d8553de8e4b83bdf7b227762fedf9e3674888893f18bf31f0b05d622"
+      }
+  }
+  ```
+
+## 查询交易状态
+
+**接口功能**
+
+> 接口说明： 查询交易状态
+>
+> **接口地址**
+>
+> URL:  /v1/transaction/status
+>
+> **返回格式**
+>
+> JSON
+>
+> **请求方式**
+>
+> POST
+
+**请求参数：**
+
+| 参数     | 必选 | 类型   | 默认值 | 说明       |
+| -------- | ---- | ------ | ------ | ---------- |
+| trx_hash | TRUE | string | 无     | 交易哈希值 |
+
+**响应字段：**
+
+| 参数    | 类型       | 说明                                                         |
+| ------- | ---------- | ------------------------------------------------------------ |
+| errcode | uint32     | 错误码，0-相应成功，其他见错误码章节                         |
+| msg     | string     | 响应描述                                                     |
+| result  | jsonObject | 响应结果                                                     |
+| status  | string     | 查询交易状态结果，<br />”commited“：交易已生效；<br />”not found“：交易执行失败；<br />”pending“：交易已提交，但未处理 |
+
+**字段变化**
+
+- 无
+
+  **接口示例**
+
+> 地址：<http://127.0.0.1:8689/v1/transaction/status
+
+- 请求：
+
+
+
+  ```
+  {
+  	"trx_hash": "e1ddadcb266f4973284f66f3f5002ddf7e1bbfad04095213f7d87d8f33f0b7e3"
+  }
+  ```
+
+- 响应：
+
+
+
+  ```
+   HTTP/1.1 200 OK
+  {
+      "errcode": 0,
+      "msg": "success",
+      "result": {
+          "status": "commited"
       }
   }
   ```

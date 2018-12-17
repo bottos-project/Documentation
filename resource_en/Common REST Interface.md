@@ -1,4 +1,80 @@
-# Common REST Interface
+﻿# Common REST Interface
+
+## Get Block Header Information
+
+**API Function**
+
+> API Description： Get block header information
+>
+> **APIAddress**
+>
+> URL:  /v1/block/height
+>
+> **Response Format**
+>
+> JSON
+>
+> **Request Format**
+>
+> GET
+>
+> **Request Parameter：**
+>
+> | Parameter | Mandatory | Type | Default Value | Description |
+> | --------- | --------- | ---- | ------------- | ----------- |
+> | Null      |           |      |               |             |
+
+**Response Fields：**
+
+| Parameter                | Type       | Description                                                  |
+| ------------------------ | ---------- | ------------------------------------------------------------ |
+| errcode                  | uint32     | Error code，0-Succeed，others refer to error code chapter    |
+| msg                      | string     | response description                                         |
+| result                   | jsonObject | response result                                              |
+| head_block_num           | uint64     | Block number                                                 |
+| head_block_hash          | string     | Previous Block hash value                                    |
+| head_block_time          | uint64     | Generating time of block                                     |
+| head_block_delegate      | string     | Producer of block                                            |
+| cursor_label             | uint32     | Block identity                                               |
+| last_consensus_block_num | uint64     | Irreversible Block's number                                  |
+| chain_id                 | string     | Chain ID，The chain_id must be the same for all nodes in the same chain |
+
+**Fields Changes**
+
+- Null
+
+  **API Sample**
+
+> Address：<http://127.0.0.1:8689/v1/block/height>
+
+- Request:
+
+
+
+  ```
+  Null
+  ```
+
+- Response:
+
+
+
+  ```
+  HTTP/1.1 200 OK
+  {
+      "errcode": 0,
+      "msg": "",
+      "result": {
+          "head_block_num": 87,
+          "head_block_hash": "b34806eefc77b88743ab447f43658bf229fd4e5cd9452340e21f3995a5d2054b",
+          "head_block_time": 1534213225,
+          "head_block_delegate": "alsephina",
+          "cursor_label": 2782004555,
+          "last_consensus_block_num": 64,
+          "chain_id": "4b97b92d2c78bcffe95ebd3067565c73a2931b39d5eb7234b11816dcec54761a"
+      }
+  }
+  ```
 
 ##  Get the block information
 
@@ -98,82 +174,6 @@ Note：block_num、block_hash can only choose one of them; If not given in eithe
                   "signature": "c85fd25af493cbb6a79870ce0fc602acc892664ca17e2c646aff0332ca6db7787beeb7e5d8553de8e4b83bdf7b227762fedf9e3674888893f18bf31f0b05d622"
               }
           ]
-      }
-  }
-  ```
-
-## Get Block Header Information
-
-**API Function**
-
-> API Description： Get block header information
->
-> **APIAddress**
->
-> URL:  /v1/block/height
->
-> **Response Format**
->
-> JSON
->
-> **Request Format**
->
-> GET
->
-> **Request Parameter：**
->
-> | Parameter | Mandatory | Type | Default Value | Description |
-> | ---- | ---- | ---- | ------ | ---- |
-> | Null   |      |      |        |      |
-
-**Response Fields：**
-
-| Parameter                     | Type       | Description                                     |
-| ------------------------ | ---------- | ---------------------------------------- |
-| errcode                  | uint32     | Error code，0-Succeed，others refer to error code chapter     |
-| msg                      | string     | response description                                 |
-| result                   | jsonObject | response result                                 |
-| head_block_num           | uint64     | Block number                                     |
-| head_block_hash          | string     | Previous Block hash value                             |
-| head_block_time          | uint64     | Generating time of block                               |
-| head_block_delegate      | string     | Producer of block                                 |
-| cursor_label             | uint32     | Block identity                                   |
-| last_consensus_block_num | uint64   | Irreversible Block's number                               |
-| chain_id                 | string     | Chain ID，The chain_id must be the same for all nodes in the same chain |
-
-**Fields Changes**
-
-- Null
-
-  **API Sample**
-
-> Address：<http://127.0.0.1:8689/v1/block/height>
-
-- Request:
-
-  
-
-  ```
-  Null
-  ```
-
-- Response:
-
-  
-
-  ```
-  HTTP/1.1 200 OK
-  {
-      "errcode": 0,
-      "msg": "",
-      "result": {
-          "head_block_num": 87,
-          "head_block_hash": "b34806eefc77b88743ab447f43658bf229fd4e5cd9452340e21f3995a5d2054b",
-          "head_block_time": 1534213225,
-          "head_block_delegate": "alsephina",
-          "cursor_label": 2782004555,
-          "last_consensus_block_num": 64,
-          "chain_id": "4b97b92d2c78bcffe95ebd3067565c73a2931b39d5eb7234b11816dcec54761a"
       }
   }
   ```
@@ -368,6 +368,72 @@ Note：block_num、block_hash can only choose one of them; If not given in eithe
           },
           "sig_alg": 1,
           "signature": "c85fd25af493cbb6a79870ce0fc602acc892664ca17e2c646aff0332ca6db7787beeb7e5d8553de8e4b83bdf7b227762fedf9e3674888893f18bf31f0b05d622"
+      }
+  }
+  ```
+
+## Query Transaction Status
+
+**API Function**
+
+> API Description： Query transaction status
+>
+> **APIAddress**
+>
+> URL:  /v1/transaction/status
+>
+> **Response Format**
+>
+> JSON
+>
+> **Request Format**
+>
+> POST
+
+**Request Parameter：**
+
+| Parameter | Mandatory | Type   | Default Value | Description                    |
+| --------- | --------- | ------ | ------------- | ------------------------------ |
+| trx_hash  | TRUE      | string | Null          | Hash value of each transaction |
+
+**Response Fields：**
+
+| Parameter | Type       | Description                                                  |
+| --------- | ---------- | ------------------------------------------------------------ |
+| errcode   | uint32     | Error code，0-Succeed，others refer to error code chapter    |
+| msg       | string     | response description                                         |
+| result    | jsonObject | response result                                              |
+| status    | string     | query transaction status result.<br />”commited“：Transaction has commited；<br />”not found“：Transaction execute failed；<br />”pending“：Transaction submitted but not processed |
+
+**Fields Changes**
+
+- Null
+
+  **API Sample**
+
+> Address：<http://127.0.0.1:8689/v1/transaction/status
+
+- Request:
+
+
+
+  ```
+  {
+  	"trx_hash": "85f9d2fbe1d3c0a217e10932899b6f73b24fafe59a006406ed65d7e4a39a7416"
+  }
+  ```
+
+- Response:
+
+
+
+  ```
+   HTTP/1.1 200 OK
+  {
+      "errcode": 0,
+      "msg": "success",
+      "result": {
+          "status": "commited"
       }
   }
   ```
