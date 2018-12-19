@@ -191,10 +191,25 @@ Please create wallet for your new account.
 输出结果
   
     Account: bottos
-    Balance: 999999998.00000000 BTO
-    StakedBalance: 2.00000000 BTO
+    Balance: 999770000.00000000 BTO
+    Pubkey: 0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f
+
+    StakedBalance: 0.00000000 BTO
     UnStakingBalance: 0.00000000 BTO
-    UnStakingTime: N/A
+    StakedSpaceBalance: 0.00000000 BTO
+    StakedTimeBalance: 0.00000000 BTO
+    UnStakingTimestamp: 0
+
+    AvailableSpaceBalance: 0
+    UsedSpaceBalance: 0
+    AvailableTimeBalance: 0
+    UsedTimeBalance: 0
+
+    UnClaimedReward: 0.00000000 BTO
+
+    Vote: N/A
+
+    Contracts: N/A
 
 ##### 用户质押BTO命令示例
 
