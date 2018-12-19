@@ -49,9 +49,28 @@ The global help information
         help, h       Shows a list of commands or help for one command
 
     GLOBAL OPTIONS:
-        --servaddr value  (default: "127.0.0.1:8689")
-        --help, -h        show help
-        --version, -v     print the version
+    --servaddr value    (default: "127.0.0.1:8689")
+    --walletport value  
+    --help, -h          show help
+    --version, -v       print the version
+
+命令功能说明
+
+| 主命令行 | 参数列表    | 参数说明                                                           |
+| -------- | :---------: | :----------------------------------------------------------------: |
+| ./bcli   | getinfo     | 获取块头信息                                                       |
+| ./bcli   | getblock    | 获取指定BLOCK信息                                                  |
+| ./bcli   | gettable    | 获取合约表信息                                                     |
+| ./bcli   | account     | 创建/获取用户信息，质押/解质押/回收质押等                          |
+| ./bcli   | transfer    | BTO转账功能                                                        |
+| ./bcli   | transaction | 查询/发起 transaction                                              |
+| ./bcli   | contract    | 查询/部署合约和ABI                                                 |
+| ./bcli   | p2p         | P2P命令行暂不支持                                                  |
+| ./bcli   | delegate    | 注册/解注册生产者，生产者投票/取消投票等                           |
+| ./bcli   | wallet      | 钱包创建/锁定/解锁/查询等                                          |
+| ./bcli   | genesis     | 创世节点操作相关，设置初始生产者，移交出块权利，取消节点操作权限等 |
+| ./bcli   | log         | log 开关，开启Debug log等日志级别                                  |
+
 
 命令功能说明
 
@@ -1883,3 +1902,42 @@ Output
 ​    "private_key": "b799ef616830cd7b8599ae7958fbee56d4c8168ffd5421a16025a398b8a4be45",
 ​    "public_key": "0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f"
 }
+
+##### BCLI Log Function Command
+
+Help information
+
+./bcli log setconfigitem --h
+NAME:
+   Bottos bcli tool log - for log operations
+
+USAGE:
+   Bottos bcli tool log command [command options] [arguments...]
+
+COMMANDS:
+     setconfigitem  set log config item. If you need change the log confiration in your configuration, please also input the --serveraddr <LogRESTHost>:<LogRESTPort> firstly in this command
+
+OPTIONS:
+   --help, -h  show help
+
+Parameter Description
+
+| chief command         | parameter list | Parameter Description          | mandatory |
+| ------------------------- | :------: | :----------------------------: | :------: |
+| ./bcli log  setconfigitem | --key    | log parameters, choose one to set：minlevel | maxlevel | levels | maxrolls | Yes |
+| ./bcli log  setconfigitem | --value  | the value setting accourding to the log parameter       | Yes       |
+
+Return Information
+
+The command will return the set result.
+
+Sample
+
+    ./bcli log  setconfigitem --key minlevel --value debug
+
+Output
+
+    {
+        "errcode": 0
+    }
+    setconfigitem successfully.

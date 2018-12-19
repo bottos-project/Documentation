@@ -22,34 +22,36 @@ Bottos BCLI 实现了一组人机交互命令行，主要基于RESTFUL API和链
 全局帮助信息
     
     ./bcli --help
-    
-    NAME:
-    Bottos bcli tool - a tool that makes user communicate with bottos blockchain
-    
+        
+        NAME:
+        Bottos bcli tool - a tool that makes user communicate with bottos blockchain
+
     USAGE:
     bcli [global options] command [command options] [arguments...]
-    
+
     VERSION:
     0.0.1
-    
+
     COMMANDS:
-        getinfo      get chian info
-        getblock     get block info
-        gettable     get table info
-        account      create or get account
-        transfer     for user transfering bto
-        transaction  get or push transactions
-        contract     get or deploy contract
-        p2p          for p2p connection
-        delegate     for delegate operations
-        wallet       For wallet operations
-        genesis      for genesis node operations
-        help, h      Shows a list of commands or help for one command
-    
+        getblkheader  get header block's information
+        getblock      get block information
+        gettable      get table information
+        account       create or get account
+        transfer      for user transferring bto
+        transaction   get or push transactions
+        contract      get or deploy contract
+        p2p           for p2p connection
+        delegate      for delegate operations
+        wallet        For wallet operations
+        genesis       for genesis node operations
+        log           for log operations
+        help, h       Shows a list of commands or help for one command
+
     GLOBAL OPTIONS:
-    --servaddr value  (default: "127.0.0.1:8689")
-    --help, -h        show help
-    --version, -v     print the version
+    --servaddr value    (default: "127.0.0.1:8689")
+    --walletport value  
+    --help, -h          show help
+    --version, -v       print the version
 
 命令功能说明
 
@@ -66,6 +68,9 @@ Bottos BCLI 实现了一组人机交互命令行，主要基于RESTFUL API和链
 | ./bcli   | delegate    | 注册/解注册生产者，生产者投票/取消投票等                           |
 | ./bcli   | wallet      | 钱包创建/锁定/解锁/查询等                                          |
 | ./bcli   | genesis     | 创世节点操作相关，设置初始生产者，移交出块权利，取消节点操作权限等 |
+| ./bcli   | log         | log 开关，开启Debug log等日志级别                                  |
+
+
 
 
 #### 1. BCLI用户账户功能命令行
@@ -1827,3 +1832,42 @@ Please input your private key for your wallet:
             "wallet_path": "/home/bottos/bot/user12345678.keystore"
         }
     ]
+
+##### BCLI 日志功能命令行
+
+帮助信息
+
+./bcli log setconfigitem --h
+NAME:
+   Bottos bcli tool log - for log operations
+
+USAGE:
+   Bottos bcli tool log command [command options] [arguments...]
+
+COMMANDS:
+     setconfigitem  set log config item. If you need change the log confiration in your configuration, please also input the --serveraddr <LogRESTHost>:<LogRESTPort> firstly in this command
+
+OPTIONS:
+   --help, -h  show help
+
+参数说明
+
+| 主命令行                  | 参数列表 | 参数说明                       | 必选参数 |
+| ------------------------- | :------: | :----------------------------: | :------: |
+| ./bcli log  setconfigitem | --key    | 日志参数，选其一设置：minlevel | maxlevel | levels | maxrolls | 是 |
+| ./bcli log  setconfigitem | --value  | 按日志参数，填写对应项值       | 是       |
+
+返回信息
+
+该命令成功后将返回执行结果。
+
+示例
+
+    ./bcli log  setconfigitem --key minlevel --value debug
+
+输出结果
+
+    {
+        "errcode": 0
+    }
+    setconfigitem successfully.
