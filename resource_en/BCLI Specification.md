@@ -56,7 +56,7 @@ The global help information
 
 命令功能说明
 
-| 主命令行 | 参数列表    | 参数说明                                                           |
+| chief command | parameter list    | Parameter Description                                                           |
 | -------- | :---------: | :----------------------------------------------------------------: |
 | ./bcli   | getinfo     | 获取块头信息                                                       |
 | ./bcli   | getblock    | 获取指定BLOCK信息                                                  |
@@ -1238,16 +1238,19 @@ Help information
     ./bcli genesis --help
     
     NAME:
-    Bottos bcli tool genesis - for genesis node operations
-    
+        Bottos bcli tool genesis - for genesis node operations
+
     USAGE:
         Bottos bcli tool genesis command [command options] [arguments...]
-    
+
     COMMANDS:
         setdelegate      set delegate
+        unsetdelegate    unset delegate
         blkprodtrans     for genesis node transfering the permission of producing blocks
         cancelprevilige  cancel genesis node permission
-    
+        settransitvote   set transit vote
+        newstkaccount    transfer erc20
+
     OPTIONS:
         --help, -h  show help
 
@@ -1258,8 +1261,11 @@ Commandline Function Description
 | ./bcli genesis | setdelegate     | The original procuders be designated in genesis node |
 | ./bcli genesis | blkprodtrans    | transfer the authority of generating blocks          |
 | ./bcli genesis | cancelprevilige | cancel the operation authority of genesis node       |
+| ./bcli genesis | unsetdelegate   | genesis node cancel vote for one producer |
+| ./bcli genesis | settransitvote  | genesis node vote for producer in transition period       |
+| ./bcli genesis | newstkaccount   |                              |
 
-##### ##### BCLI Genesis Node Adding Original Producer Functions Command
+##### BCLI Genesis Node Adding Original Producer Functions Command
 
 Help information
 
@@ -1428,6 +1434,110 @@ Output
     }
     TrxHash: 42e93f4a6f3a631d469449e418a624ede196b2e4d096b29bd1ccaaca1e83ee10
 
+##### BCLI Genesis Node Cancel Vote for one Producer
+
+Help information
+
+    ./bcli genesis unsetdelegate --h
+    NAME:
+        Bottos bcli tool genesis unsetdelegate - unset delegate
+
+    USAGE:
+        Bottos bcli tool genesis unsetdelegate [command options] [arguments...]
+
+    OPTIONS:
+        --sender value   sender account
+        --account value  account name
+
+
+Parameter Description
+
+| chief command                     | parameter list  | Parameter Description                 | mandatory |
+| ---------------------------- | :-------: | :----------------------: | :------: |
+| ./bcli genesis unsetdelegate | --sender  | sender should be bottos     | Yes       |
+| ./bcli genesis unsetdelegate | --account | The producer which has been voted before | Yes       |
+
+Return Information
+
+This will return the Transaction information sent by BCLI.
+
+Sample
+
+./bcli genesis unsetdelegate --sender bottos --account lyp12345678
+
+Output
+
+Push transaction done:
+Trx: 
+{
+    "version": 197632,
+    "cursor_num": 1150,
+    "cursor_label": 1151977351,
+    "lifetime": 1545210346,
+    "sender": "bottos",
+    "contract": "bottos",
+    "method": "unsetdelegate",
+    "param": {
+        "name": "lyp12345678"
+    },
+    "param_bin": "dc0001da000b6c79703132333435363738",
+    "sig_alg": 1,
+    "signature": "c909e76c9c4176fc487e6054537a7e077930b3d3ce15718b83306f1a6763e6365fe71d9516abc85917c091cd2925eb9910f6b1afd0b5795e0564bae9c2279672"
+}
+TrxHash: 602ceed3970de1948a3a0d76ee8e5b82dc29a7ec741d576327938d883d06cc18
+
+##### BCLI Genesis Node Vote for Producer in Transition Period
+
+Help information
+
+    ./bcli genesis settransitvote --h
+    NAME:
+        Bottos bcli tool genesis settransitvote - set transit vote
+
+    USAGE:
+        Bottos bcli tool genesis settransitvote [command options] [arguments...]
+
+    OPTIONS:
+        --sender value   sender account
+        --account value  account name
+        --vote value     election votes (default: 0)
+
+Parameter Description
+
+| chief command                      | parameter list  | Parameter Description             | mandatory |
+| ----------------------------- | :-------: | :------------------: | :------: |
+| ./bcli genesis settransitvote | --sender  | sender should be bottos | Yes       |
+| ./bcli genesis settransitvote | --account | voute for the producer's name   | Yes       |
+| ./bcli genesis settransitvote | --vote    | amount of votes             | Yes       |
+
+Return Information
+
+This will return the Transaction information sent by BCLI.
+
+Sample
+./bcli genesis settransitvote --sender bottos --account lyp12345678 --vote 100
+
+Output
+
+Push transaction done:
+Trx: 
+{
+    "version": 197632,
+    "cursor_num": 1202,
+    "cursor_label": 4128090569,
+    "lifetime": 1545210505,
+    "sender": "bottos",
+    "contract": "bottos",
+    "method": "settransitvote",
+    "param": {
+        "name": "lyp12345678",
+        "vote": 100
+    },
+    "param_bin": "dc0002da000b6c79703132333435363738cf0000000000000064",
+    "sig_alg": 1,
+    "signature": "f8d84ac9485044ead68a7d32cc902a757b7422b1a626ced59faa0f210edcb5e76f4ef87281f2a43f6cbd861adf8ff3b6cd31371ec26cf7f50c557ff4a62a1929"
+}
+TrxHash: 545d8ce9032756dd9305fd2ce14cce5c18aaa39f94eff1791fbc1fe41bf9e4a0
 
 
 #### 6. BCLI Transferring Function Command
@@ -1695,7 +1805,7 @@ Sample
 
      ./bcli wallet generatekey
 
-输出结果
+Output
 {
 ​    "private_key": "b8b890ebc315a8e1c3a6f7b78977d68ca1e9274c986314ccbe967b964cf68b66",
 ​    "public_key": "0485fccecf8c8e6260d8558e1a61adca3a888127e34ba0d052dfeb1c31d419bf0494482e7e8a447d63394cff713fc00aa8e64c24b73a8173661a91884b71407bce"

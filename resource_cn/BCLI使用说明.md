@@ -1208,27 +1208,34 @@ BCLI创世节点功能命令行主要包括： 添加初始生产者， 移交�
     ./bcli genesis --help
     
     NAME:
-    Bottos bcli tool genesis - for genesis node operations
-    
+        Bottos bcli tool genesis - for genesis node operations
+
     USAGE:
         Bottos bcli tool genesis command [command options] [arguments...]
-    
+
     COMMANDS:
         setdelegate      set delegate
+        unsetdelegate    unset delegate
         blkprodtrans     for genesis node transfering the permission of producing blocks
         cancelprevilige  cancel genesis node permission
-    
+        settransitvote   set transit vote
+        newstkaccount    transfer erc20
+
     OPTIONS:
         --help, -h  show help
 
 
 命令功能说明
 
-| 主命令行       | 参数列表        | 参数说明                 |
-| -------------- | :-------------: | :----------------------: |
-| ./bcli genesis | setdelegate     | 创世节点上指定初始生产者 |
-| ./bcli genesis | blkprodtrans    | 创世节点移交出块权利     |
-| ./bcli genesis | cancelprevilige | 创世节点取消操作权限     |
+| 主命令行       | 参数列表        | 参数说明                     |
+| -------------- | :-------------: | :--------------------------: |
+| ./bcli genesis | setdelegate     | 创世节点上指定初始生产者     |
+| ./bcli genesis | blkprodtrans    | 创世节点移交出块权利         |
+| ./bcli genesis | cancelprevilige | 创世节点取消操作权限         |
+| ./bcli genesis | unsetdelegate   | 创世节点上取消指定初始生产者 |
+| ./bcli genesis | settransitvote  | 过渡期为生产者节点投票       |
+| ./bcli genesis | newstkaccount   |                              |
+
 
 
 ##### BCLI创世节点添加初始生产者功能命令行
@@ -1376,7 +1383,7 @@ BCLI创世节点功能命令行主要包括： 添加初始生产者， 移交�
 
 示例
 
-      ./bcli genesis cancelprevilige --sender bottos
+    ./bcli genesis cancelprevilige --sender bottos
 
 输出结果
   
@@ -1397,7 +1404,110 @@ BCLI创世节点功能命令行主要包括： 添加初始生产者， 移交�
     }
     TrxHash: 42e93f4a6f3a631d469449e418a624ede196b2e4d096b29bd1ccaaca1e83ee10
 
+##### BCLI创世节点上取消指定初始生产者
 
+帮助信息
+
+    ./bcli genesis unsetdelegate --h
+    NAME:
+        Bottos bcli tool genesis unsetdelegate - unset delegate
+
+    USAGE:
+        Bottos bcli tool genesis unsetdelegate [command options] [arguments...]
+
+    OPTIONS:
+        --sender value   sender account
+        --account value  account name
+
+
+参数说明
+
+| 主命令行                     | 参数列表  | 参数说明                 | 必选参数 |
+| ---------------------------- | :-------: | :----------------------: | :------: |
+| ./bcli genesis unsetdelegate | --sender  | sender需要指定bottos     | 是       |
+| ./bcli genesis unsetdelegate | --account | 之前被投过票的某个生产者 | 是       |
+
+返回信息
+
+该命令成功后将返回BCLI提交的Transaction信息。
+
+示例
+
+./bcli genesis unsetdelegate --sender bottos --account lyp12345678
+
+输出结果
+
+Push transaction done:
+Trx: 
+{
+    "version": 197632,
+    "cursor_num": 1150,
+    "cursor_label": 1151977351,
+    "lifetime": 1545210346,
+    "sender": "bottos",
+    "contract": "bottos",
+    "method": "unsetdelegate",
+    "param": {
+        "name": "lyp12345678"
+    },
+    "param_bin": "dc0001da000b6c79703132333435363738",
+    "sig_alg": 1,
+    "signature": "c909e76c9c4176fc487e6054537a7e077930b3d3ce15718b83306f1a6763e6365fe71d9516abc85917c091cd2925eb9910f6b1afd0b5795e0564bae9c2279672"
+}
+TrxHash: 602ceed3970de1948a3a0d76ee8e5b82dc29a7ec741d576327938d883d06cc18
+
+##### BCLI创世节点上过渡期为生产者投票
+
+帮助信息
+
+    ./bcli genesis settransitvote --h
+    NAME:
+        Bottos bcli tool genesis settransitvote - set transit vote
+
+    USAGE:
+        Bottos bcli tool genesis settransitvote [command options] [arguments...]
+
+    OPTIONS:
+        --sender value   sender account
+        --account value  account name
+        --vote value     election votes (default: 0)
+
+参数说明
+
+| 主命令行                      | 参数列表  | 参数说明             | 必选参数 |
+| ----------------------------- | :-------: | :------------------: | :------: |
+| ./bcli genesis settransitvote | --sender  | sender需要指定bottos | 是       |
+| ./bcli genesis settransitvote | --account | 投票给某个生产者名   | 是       |
+| ./bcli genesis settransitvote | --vote    | 投票数量             | 是       |
+
+返回信息
+
+该命令成功后将返回BCLI提交的Transaction信息。
+
+示例
+./bcli genesis settransitvote --sender bottos --account lyp12345678 --vote 100
+
+输出结果
+
+Push transaction done:
+Trx: 
+{
+    "version": 197632,
+    "cursor_num": 1202,
+    "cursor_label": 4128090569,
+    "lifetime": 1545210505,
+    "sender": "bottos",
+    "contract": "bottos",
+    "method": "settransitvote",
+    "param": {
+        "name": "lyp12345678",
+        "vote": 100
+    },
+    "param_bin": "dc0002da000b6c79703132333435363738cf0000000000000064",
+    "sig_alg": 1,
+    "signature": "f8d84ac9485044ead68a7d32cc902a757b7422b1a626ced59faa0f210edcb5e76f4ef87281f2a43f6cbd861adf8ff3b6cd31371ec26cf7f50c557ff4a62a1929"
+}
+TrxHash: 545d8ce9032756dd9305fd2ce14cce5c18aaa39f94eff1791fbc1fe41bf9e4a0
 
 #### 6. BCLI 转账功能命令行
 
@@ -1462,8 +1572,6 @@ Trx:
     "sig_alg": 1,
     "signature": "8b883beaa3f7f6980d0d432264aaa77c4a7f22fca6c26dda0c53de649f379ab3629af968c117562361bb7d1b4495a9b5068919e6a9b0b3538fe96372521054dd"
 }
-
-
 
 #### 7. BCLI Transaction 提交和查询命令行
 
