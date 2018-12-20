@@ -160,27 +160,11 @@ Sample
 
 Outputs
 
-Push transaction done for creating account user12345678
-Trx: 
-{
-​    "version": 1,
-​    "cursor_num": 139,
-​    "cursor_label": 3010882075,
-​    "lifetime": 1542956731,
-​    "sender": "bottos",
-​    "contract": "bottos",
-​    "method": "newaccount",
-​    "param": {
-​        "name": "user12345678",
-​        "pubkey": "0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f"
-​    },
-​    "param_bin": "dc0002da000c757365723132333435363738da008230343534663163323232336435353361613665653533656131636365613862376266373862386361393966336666363232613362623365363264656463373132303839303333643630393164373732393635343762633037313032326361323833386339653836646563323936363763663734306535633965363534623631323766",
-​    "sig_alg": 1,
-​    "signature": "faed90881a57b7068c4ed5e4dad6e87706fc6ef6265f18e0a0e10ce5f11c64001e48e6cbce8f423d3f39618686070e1b3f639911a7f063d752f8953cf76ffe6f"
-}
-TrxHash: 7bdc7aca33233d1ed2407f2d217aa9580f30d2aaf68f60270dd24c934a0a1d29
+    TrxHash: 7bdc7aca33233d1ed2407f2d217aa9580f30d2aaf68f60270dd24c934a0a1d29
 
-Please create wallet for your new account.
+    This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
+
+    Please create wallet for your new account.
 
 ##### Sample of getting user information
 
@@ -268,25 +252,9 @@ Sample
 
 Output result
 
-Push transaction done:
-Trx: 
-{
-​    "version": 1,
-​    "cursor_num": 234,
-​    "cursor_label": 2675151514,
-​    "lifetime": 1542957016,
-​    "sender": "user12345678",
-​    "contract": "bottos",
-​    "method": "stake",
-​    "param": {
-​        "amount": "2.00000000"
-​    },
-​    "param_bin": "dc0001c50020000000000000000000000000000000000000000000000000000000000bebc200",
-​    "sig_alg": 1,
-​    "signature": "43175b7d8b6bcec0c8864588f07da2e1a54bd181bdf91a5582fe42bb09408088300611d39dff061099d5b177a2d9fa2839b97ecc2599864ef31ba1be80c22a09"
-}
-TrxHash: 2921e27bad80060580d508d2726a830b8a3970b70b56f28e93ae866846cd7296
+    TrxHash: 2921e27bad80060580d508d2726a830b8a3970b70b56f28e93ae866846cd7296
 
+    This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 ##### Sample of user unstaking BTO
 
@@ -324,26 +292,11 @@ Sample
 
     ./bcli account unstake --account user12345678 --amount 2
 
-Output result
+Output
 
-Push transaction done:
-Trx: 
-{
-​    "version": 1,
-​    "cursor_num": 265,
-​    "cursor_label": 510868978,
-​    "lifetime": 1542957109,
-​    "sender": "user12345678",
-​    "contract": "bottos",
-​    "method": "unstake",
-​    "param": {
-​        "amount": "2.00000000"
-​    },
-​    "param_bin": "dc0001c50020000000000000000000000000000000000000000000000000000000000bebc200",
-​    "sig_alg": 1,
-​    "signature": "0a48ec205a83dc2fed6c381723fd2a66ab331ef133238f13f061bd8490fd3156055cb5362bd0dc5159ad762c8431118bbc2bf0d811058dd22a9059edd1d2c468"
-}
-TrxHash: c1e99e03957c8222479513bef9916368754a4549312ef4481bdc687729d7698c
+    TrxHash: c1e99e03957c8222479513bef9916368754a4549312ef4481bdc687729d7698c
+
+    This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 ##### Sample of user claiming BTO
 
@@ -377,27 +330,11 @@ Sample
 
     ./bcli account claim --account user12345678 --amount 2
 
-Outputs
+Output
 
-    Push transaction done:
-    Trx: 
-    {
-        "version": 1,
-        "cursor_num": 287,
-        "cursor_label": 2457219411,
-        "lifetime": 1542957175,
-        "sender": "user12345678",
-        "contract": "bottos",
-        "method": "claim",
-        "param": {
-            "Amount": "2.00000000"
-        },
-        "param_bin": "dc0001c50020000000000000000000000000000000000000000000000000000000000bebc200",
-        "sig_alg": 1,
-        "signature": "cbcd3bed6a6fbae41fcde494e762b7b2a4b23302b3e8d860e19511067d16312120d6e1655f75e4182d06640cb2fc5095e624f4647dc89856a26c1a901d9b9a3f"
-    }
     TrxHash: b39e46a180c4d9d465efd77a42e08f9590726d761c70b7ae34c64e3359ab6ce4
 
+    This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 
 #### 2. BCLI contract function command
@@ -471,29 +408,9 @@ Sample
 
 Output
 ​  
-​    
-
-    Push transaction done for deploying contract user12345678
-    Trx: 
-    {
-        "version": 197632,
-        "cursor_num": 467,
-        "cursor_label": 2953320580,
-        "lifetime": 1542957715,
-        "sender": "tina123456789",
-        "contract": "test1",
-        "method": "deploycontract",
-        "param": {
-            "name": "tina123456789",
-            "vm_type": 1,
-            "vm_version": 1,
-            "contract_code": "0061736d01000000013d0960027f7f0060067f7f7f7f7f7f017f60027f7f017f60087f7f7f7f7f7f7f7f017f60037f7f7f017f6000006000017f60017f017f60047f7f7f7f017f025f0603656e760b67657442696e56616c7565000303656e760a676574..."
-        },
-        "param_bin": "dc0004da000c757365723132333435363738cc01cc01c514320061736d01000000013d0960027f7f0060067f7f7f7f7f7f017f60027f7f017f60087f7f7f7f7f7f7f7f017f60037f7f7f017f6000006000017f60017f017f60047f7f7f7f017f025f0603...",
-        "sig_alg": 1,
-        "signature": "345d5fede2a45b27713ee961ef3287c35bf438d11711faf9c169cf41813b28963c74e23296f0065f491cad6b816e07e15ccba07896b316813ec266561ede22d6"
-    }
     TrxHash: 596441807df736fc15ae32a59a38bc9324620ca2945a0633c033e7d0370e3638
+
+    This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 Note： 
 ​    BOTTOS ABI file describes the Apis and structs needed by contract, for instances, in this case, the nodeclustermng.abi file's information is shown as following.
@@ -763,27 +680,9 @@ Sample
 
 Output
 
-    Push transaction done:
-    Trx: 
-    {
-        "version": 1,
-        "cursor_num": 777,
-        "cursor_label": 2376139732,
-        "lifetime": 1542958645,
-        "sender": "user12345678",
-        "contract": "bottos",
-        "method": "regdelegate",
-        "param": {
-            "name": "user12345678",
-            "pubkey": "0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f",
-            "location": "SHANGHAI",
-            "description": "Reg user12345678 as a producer"
-        },
-        "param_bin": "dc0004da000c757365723132333435363738da008230343534663163323232336435353361613665653533656131636365613862376266373862386361393966336666363232613362623365363264656463373132303839303333643630393164373732393635343762633037313032326361323833386339653836646563323936363763663734306535633965363534623631323766da00085348414e47484149da0015526567206c797020617320612070726f6475636572",
-        "sig_alg": 1,
-        "signature": "10cc7d00a994fc566db1b48582a75f877c89a12e12e8609e0fe9e26dd2ea3bf02b70aeec871c1df5fe61f70e7f278fd539436eb28d870bd057b3ac0ac8f863e3"
-    }
     TrxHash: 53e25c2b281251e44bf24e2f552b101daf60399b7a44adcc9810fd10908ff23e
+
+    This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 Note：
 The precondition before this command be used is: the genesis node must transfer the generating block authority in secceed. 
@@ -823,24 +722,9 @@ Sample
 
 Output
 
-    Push transaction done:
-    Trx: 
-    {
-        "version": 1,
-        "cursor_num": 823,
-        "cursor_label": 1889557398,
-        "lifetime": 1542958783,
-        "sender": "user12345678",
-        "contract": "bottos",
-        "method": "unregdelegate",
-        "param": {
-            "name": "user12345678"
-        },
-        "param_bin": "dc0001da000c757365723132333435363738",
-        "sig_alg": 1,
-        "signature": "e34d3cffa5a00d6014dd7bdc3550e8cfec5cc5aebe02563634a0ebfd53292b007c230c6245ebfaf9e56a72708f5403ab09d9ff3b6d4912a71c7f6006fc8efd3f"
-    }
     TrxHash: 3ff592e51ff483d7a6409aab2f54b52d7bd721ce009b73ac59544443074d8802
+
+    This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 ##### ##### BCLI Listing Current Producer Nodes Command
 
@@ -936,26 +820,9 @@ Sample
 
 Output
 
-    Push transaction done:
-    Trx: 
-    {
-        "version": 1,
-        "cursor_num": 868,
-        "cursor_label": 4033954626,
-        "lifetime": 1542958918,
-        "sender": "bottos",
-        "contract": "bottos",
-        "method": "votedelegate",
-        "param": {
-            "voteop": 1,
-            "voter": "bottos",
-            "delegate": "user12345678"
-        },
-        "param_bin": "dc0003cc01da0006626f74746f73da000c757365723132333435363738",
-        "sig_alg": 1,
-        "signature": "ef3d453cec3c0d23386dcb098118dbd7d5da07e444201a4c25fd2da999c14dd9610fe7a8cf8cbbc6acf3a5f12ad83f4e96e1f21ef53ce8a91861c30dc3aec286"
-    }
     TrxHash: bb6dde5aba1db736495e864a4fa085640cbeb7d88aef11958f764a1423ba3f90
+
+    This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 ##### BCLI Producer Cancel Voting Command
 
@@ -992,26 +859,9 @@ Sample
 
 Output
 
-    Push transaction done:
-    Trx: 
-    {
-        "version": 1,
-        "cursor_num": 889,
-        "cursor_label": 3870258141,
-        "lifetime": 1542958981,
-        "sender": "bottos",
-        "contract": "bottos",
-        "method": "votedelegate",
-        "param": {
-            "voteop": 0,
-            "voter": "bottos",
-            "delegate": "user12345678"
-        },
-        "param_bin": "dc0003cc00da0006626f74746f73da000c757365723132333435363738",
-        "sig_alg": 1,
-        "signature": "6556f31964e9b9499024de66535fe7bc36a56cf4c26bea7e7353984be2857efe47eb0baa135cb6c8adda0af10b7f3904da41ba0aad92274023acc942e944a79d"
-    }
     TrxHash: 86a503abd101f3473d5e121fa3e7665ff0f274fc5739ea649bf070177ffb2091
+
+    This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 #### 4. BCLI Block Information Getting Command
 
@@ -1182,29 +1032,9 @@ Sample
 
 Output
 
-    Push transaction done:
-    Trx: 
-    {
-        "version": 1,
-        "cursor_num": 917,
-        "cursor_label": 2298802669,
-        "lifetime": 1542959065,
-        "sender": "bottos",
-        "contract": "bottos",
-        "method": "setdelegate",
-        "param": {
-            "name": "user12345678",
-            "pubkey": "0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f",
-            "location": "",
-            "description": ""
-        },
-        "param_bin": "dc0004da000c757365723132333435363738da008230343534663163323232336435353361613665653533656131636365613862376266373862386361393966336666363232613362623365363264656463373132303839303333643630393164373732393635343762633037313032326361323833386339653836646563323936363763663734306535633965363534623631323766da0000da0000",
-        "sig_alg": 1,
-        "signature": "3b8273581b51f3b0a14eaa3a85d7635502573250bac1c2cb20b152e841a92cac2f566bf14052ddc7d2a12ac610f423322d5a01adac644d7f235a97d19ab25fb0"
-    }
     TrxHash: e453df77a6f1a2049e79dd9853e8f16945968ffe8e3c168e5fe29788fb8dc898
 
-
+    This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 ##### BCLI Genesis Node Transfer the Authority Function Command
 
@@ -1239,28 +1069,10 @@ Sample
      ./bcli genesis blkprodtrans --sender bottos --actblknum 2000
 
 Output
-
-    ./bcli genesis blkprodtrans --sender bottos --actblknum 2000
     
-    Push transaction done:
-    Trx: 
-    {
-        "version": 1,
-        "cursor_num": 35,
-        "cursor_label": 3383839142,
-        "lifetime": 1542961120,
-        "sender": "bottos",
-        "contract": "bottos",
-        "method": "blkprodtrans",
-        "param": {
-            "actblknum": 2000
-        },
-        "param_bin": "dc0001cf00000000000007d0",
-        "sig_alg": 1,
-        "signature": "07cfe2ba53d8f9f2da43956e49f05a48dbb11bb5040a11b6135f129ec7f978f942faecb4891889a0089f0c033f3a0988474b995a5c79eb0b2d3b34cff3ea3ad9"
-    }
     TrxHash: 29267535acadefb100113915652a4ba9d9b00dafbefbe61bc9f1f5fdd24249c0
 
+    This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 
 ##### BCLI Cancel the Genesis Node Operation Authority Command
@@ -1295,22 +1107,9 @@ Sample
 
 Output
 
-    Push transaction done:
-    Trx: 
-    {
-        "version": 1,
-        "cursor_num": 48,
-        "cursor_label": 2570198302,
-        "lifetime": 1542961159,
-        "sender": "bottos",
-        "contract": "bottos",
-        "method": "cancelgsperm",
-        "param": "",
-        "param_bin": "",
-        "sig_alg": 1,
-        "signature": "03a29fe460d6e74a718d0c352caf24788afda6bdfada63ffd717af3fe41adca145dc0a1bce349872d7a06951e8e4308449b694de1632ca253e201da31792cccb"
-    }
     TrxHash: 42e93f4a6f3a631d469449e418a624ede196b2e4d096b29bd1ccaaca1e83ee10
+
+    This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 ##### BCLI Genesis Node Cancel Vote for one Producer
 
@@ -1341,28 +1140,13 @@ This will return the Transaction information sent by BCLI.
 
 Sample
 
-./bcli genesis unsetdelegate --sender bottos --account lyp12345678
+    ./bcli genesis unsetdelegate --sender bottos --account lyp12345678
 
 Output
 
-Push transaction done:
-Trx: 
-{
-​    "version": 197632,
-​    "cursor_num": 1150,
-​    "cursor_label": 1151977351,
-​    "lifetime": 1545210346,
-​    "sender": "bottos",
-​    "contract": "bottos",
-​    "method": "unsetdelegate",
-​    "param": {
-​        "name": "lyp12345678"
-​    },
-​    "param_bin": "dc0001da000b6c79703132333435363738",
-​    "sig_alg": 1,
-​    "signature": "c909e76c9c4176fc487e6054537a7e077930b3d3ce15718b83306f1a6763e6365fe71d9516abc85917c091cd2925eb9910f6b1afd0b5795e0564bae9c2279672"
-}
-TrxHash: 602ceed3970de1948a3a0d76ee8e5b82dc29a7ec741d576327938d883d06cc18
+    TrxHash: 602ceed3970de1948a3a0d76ee8e5b82dc29a7ec741d576327938d883d06cc18
+
+    This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 ##### BCLI Genesis Node Vote for Producer in Transition Period
 
@@ -1393,30 +1177,14 @@ Return Information
 This will return the Transaction information sent by BCLI.
 
 Sample
-./bcli genesis settransitvote --sender bottos --account lyp12345678 --vote 100
+
+    ./bcli genesis settransitvote --sender bottos --account lyp12345678 --vote 100
 
 Output
 
-Push transaction done:
-Trx: 
-{
-​    "version": 197632,
-​    "cursor_num": 1202,
-​    "cursor_label": 4128090569,
-​    "lifetime": 1545210505,
-​    "sender": "bottos",
-​    "contract": "bottos",
-​    "method": "settransitvote",
-​    "param": {
-​        "name": "lyp12345678",
-​        "vote": 100
-​    },
-​    "param_bin": "dc0002da000b6c79703132333435363738cf0000000000000064",
-​    "sig_alg": 1,
-​    "signature": "f8d84ac9485044ead68a7d32cc902a757b7422b1a626ced59faa0f210edcb5e76f4ef87281f2a43f6cbd861adf8ff3b6cd31371ec26cf7f50c557ff4a62a1929"
-}
-TrxHash: 545d8ce9032756dd9305fd2ce14cce5c18aaa39f94eff1791fbc1fe41bf9e4a0
+    TrxHash: 545d8ce9032756dd9305fd2ce14cce5c18aaa39f94eff1791fbc1fe41bf9e4a0
 
+    This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 #### 6. BCLI Transferring Function Command
 
@@ -1457,31 +1225,9 @@ Sample
 
 Output
 
-    Push transaction done
-    From: bottos
-    To: bottos
-    Amount: 2.00000000
-    Memo: 
-Trx: 
-{
-​    "version": 1,
-​    "cursor_num": 971,
-​    "cursor_label": 4055218391,
-​    "lifetime": 1542966310,
-​    "sender": "bottos",
-​    "contract": "bottos",
-​    "method": "transfer",
-​    "param": {
-​        "from": "bottos",
-​        "to": "user12345678",
-​        "value": "2.00000000",
-​        "memo": ""
-​    },
-​    "param_bin": "dc0004da0006626f74746f73da0006626f74746f73c50020000000000000000000000000000000000000000000000000000000000bebc200da0000",
-​    "sig_alg": 1,
-​    "signature": "8b883beaa3f7f6980d0d432264aaa77c4a7f22fca6c26dda0c53de649f379ab3629af968c117562361bb7d1b4495a9b5068919e6a9b0b3538fe96372521054dd"
-}
+    TrxHash: 33004bf950b3af9c2b515654e570755baa8db9e40a57a826812a0f71129a49d2
 
+    This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 
 #### 7. BCLI Transaction Committing and Querying Commands
@@ -1603,22 +1349,9 @@ Output
     2 : {rcvHelloNum uint64} , KEY:  rcvHelloNum , VAL:  22
     3 : {lyp uint128} , KEY:  lyp , VAL:  33
     
-    Push transaction done:
-    Trx: 
-    {
-        "version": 1,
-        "cursor_num": 2844,
-        "cursor_label": 1803934300,
-        "lifetime": 1543468945,
-        "sender": "lyp12345678",
-        "contract": "test1",
-        "method": "reguser",
-        "param": "dc0004da00036c7970da00036c7970cf0000000000000016c5001000000000000000000000000000000021",
-        "param_bin": "dc0004da00036c7970da00036c7970cf0000000000000016c5001000000000000000000000000000000021",
-        "sig_alg": 1,
-        "signature": "984d8b69595e6311ddbfa6214a0610ab13d79839427c441f54073d3aff9b7c27366f6c48508921a3d1c7535d5174134c201daaf4f5ea5f8e578ef804f7737305"
-    }
     TrxHash: cb9a695f9f8dfa02e81caf58fc9def571d892b95fd168a9c2f7eb701ee802ed3
+
+    This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 #### 8. BCLI Wallet Command
 
