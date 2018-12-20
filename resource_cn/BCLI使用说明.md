@@ -220,17 +220,17 @@ Please create wallet for your new account.
 
 帮助信息
 
-    ./bcli account stake --help
-    
+    ./bcli account stake --h
     NAME:
         Bottos bcli tool account stake - stake of account
-    
+
     USAGE:
         Bottos bcli tool account stake [command options] [arguments...]
-    
+
     OPTIONS:
         --account value  acocunt name
         --amount value   amount of bto
+        --target value   target of stake:vote,space,time (default: "vote"
 
 参数说明
 
@@ -238,6 +238,7 @@ Please create wallet for your new account.
 | --------   		    | :-----:     | :----:  | :----:    |
 | bcli account stake    | --account  | 用户名  |  是        |
 |                       | --amount   | 质押BTO个数  |  是        |
+|                       | --target   | 资源配置类型：vote,space,time (缺省: "vote"), stake 参数选择  |  否        |
 
 返回信息
 
@@ -404,10 +405,10 @@ BCLI合约功能命令行主要实现用户主动部署一个合约及ABI文件�
 
 命令功能说明
 
-| 主命令行        | 参数列表 |           参数说明            |
+| 主命令行        | 参数列表 | 参数说明                      |
 | --------------- | :------: | :---------------------------: |
-| ./bcli contract |  deploy  |    部署ABI文件以及WASM合约    |
-| ./bcli contract |   get    | 获取指定合约和ABI信息并存文件 |
+| ./bcli contract | deploy   | 部署ABI文件以及WASM合约       |
+| ./bcli contract | get      | 获取指定合约和ABI信息并存文件 |
 
 ##### BCLI 合约部署命令行
 
@@ -430,13 +431,13 @@ BCLI合约功能命令行主要实现用户主动部署一个合约及ABI文件�
 
 参数说明
 
-| 主命令行                 |  参数列表  |         参数说明          | 必选参数 |
+| 主命令行                 | 参数列表   | 参数说明                  | 必选参数 |
 | ------------------------ | :--------: | :-----------------------: | :------: |
-| bcli contract deploycode | --contract |          合约名           |    是    |
-|                          |   --code   | 合约文件（.WASM）所在路径 |    是    |
-|                          | --filetype |   合约文件类型：wasm/js   |    否    |
-|                          |   --abi    |     合约文件（.abi）      |    是    |
-|                          | --account  |      部署合约的账户       |    是    |
+| bcli contract deploycode | --contract | 合约名                    | 是       |
+|                          | --code     | 合约文件（.WASM）所在路径 | 是       |
+|                          | --filetype | 合约文件类型：wasm/js     | 否       |
+|                          | --abi      | 合约文件（.abi）          | 是       |
+|                          | --account  | 部署合约的账户            | 是       |
 
 
 返回信息
