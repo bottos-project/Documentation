@@ -24,9 +24,9 @@ The global help information
 ​    
 ​    ./bcli --help
 ​    
-    NAME:
-    Bottos bcli tool - a tool that makes user communicate with bottos blockchain
-    
+​    NAME:
+​    Bottos bcli tool - a tool that makes user communicate with bottos blockchain
+​    
     USAGE:
     bcli [global options] command [command options] [arguments...]
     
@@ -161,9 +161,9 @@ Sample
 Outputs
 
     TrxHash: 7bdc7aca33233d1ed2407f2d217aa9580f30d2aaf68f60270dd24c934a0a1d29
-
+    
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
-
+    
     Please create wallet for your new account.
 
 ##### Sample of getting user information
@@ -253,7 +253,7 @@ Sample
 Output result
 
     TrxHash: 2921e27bad80060580d508d2726a830b8a3970b70b56f28e93ae866846cd7296
-
+    
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 ##### Sample of user unstaking BTO
@@ -295,7 +295,7 @@ Sample
 Output
 
     TrxHash: c1e99e03957c8222479513bef9916368754a4549312ef4481bdc687729d7698c
-
+    
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 ##### Sample of user claiming BTO
@@ -333,7 +333,7 @@ Sample
 Output
 
     TrxHash: b39e46a180c4d9d465efd77a42e08f9590726d761c70b7ae34c64e3359ab6ce4
-
+    
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 
@@ -408,7 +408,7 @@ Sample
 
 Output
 ​  
-    TrxHash: 596441807df736fc15ae32a59a38bc9324620ca2945a0633c033e7d0370e3638
+​    TrxHash: 596441807df736fc15ae32a59a38bc9324620ca2945a0633c033e7d0370e3638
 
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
@@ -681,7 +681,7 @@ Sample
 Output
 
     TrxHash: 53e25c2b281251e44bf24e2f552b101daf60399b7a44adcc9810fd10908ff23e
-
+    
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 Note：
@@ -723,7 +723,7 @@ Sample
 Output
 
     TrxHash: 3ff592e51ff483d7a6409aab2f54b52d7bd721ce009b73ac59544443074d8802
-
+    
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 ##### ##### BCLI Listing Current Producer Nodes Command
@@ -821,7 +821,7 @@ Sample
 Output
 
     TrxHash: bb6dde5aba1db736495e864a4fa085640cbeb7d88aef11958f764a1423ba3f90
-
+    
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 ##### BCLI Producer Cancel Voting Command
@@ -860,7 +860,7 @@ Sample
 Output
 
     TrxHash: 86a503abd101f3473d5e121fa3e7665ff0f274fc5739ea649bf070177ffb2091
-
+    
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 #### 4. BCLI Block Information Getting Command
@@ -1033,7 +1033,7 @@ Sample
 Output
 
     TrxHash: e453df77a6f1a2049e79dd9853e8f16945968ffe8e3c168e5fe29788fb8dc898
-
+    
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 ##### BCLI Genesis Node Transfer the Authority Function Command
@@ -1069,9 +1069,9 @@ Sample
      ./bcli genesis blkprodtrans --sender bottos --actblknum 2000
 
 Output
-    
+​    
     TrxHash: 29267535acadefb100113915652a4ba9d9b00dafbefbe61bc9f1f5fdd24249c0
-
+    
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 
@@ -1108,7 +1108,7 @@ Sample
 Output
 
     TrxHash: 42e93f4a6f3a631d469449e418a624ede196b2e4d096b29bd1ccaaca1e83ee10
-
+    
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 ##### BCLI Genesis Node Cancel Vote for one Producer
@@ -1145,7 +1145,7 @@ Sample
 Output
 
     TrxHash: 602ceed3970de1948a3a0d76ee8e5b82dc29a7ec741d576327938d883d06cc18
-
+    
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 ##### BCLI Genesis Node Vote for Producer in Transition Period
@@ -1183,7 +1183,7 @@ Sample
 Output
 
     TrxHash: 545d8ce9032756dd9305fd2ce14cce5c18aaa39f94eff1791fbc1fe41bf9e4a0
-
+    
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 #### 6. BCLI Transferring Function Command
@@ -1226,7 +1226,7 @@ Sample
 Output
 
     TrxHash: 33004bf950b3af9c2b515654e570755baa8db9e40a57a826812a0f71129a49d2
-
+    
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 
@@ -1350,7 +1350,7 @@ Output
     3 : {lyp uint128} , KEY:  lyp , VAL:  33
     
     TrxHash: cb9a695f9f8dfa02e81caf58fc9def571d892b95fd168a9c2f7eb701ee802ed3
-
+    
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 #### 8. BCLI Wallet Command
@@ -1510,9 +1510,9 @@ Help information
 ​    
 ​    ./bcli wallet unlock --help
 ​    
-    NAME:
-    Bottos bcli tool wallet unlock - unlock wallet
-    
+​    NAME:
+​    Bottos bcli tool wallet unlock - unlock wallet
+​    
     USAGE:
     Bottos bcli tool wallet unlock [command options] [arguments...]
     
@@ -1553,9 +1553,9 @@ Help information
 ​    
 ​    ./bcli wallet list --help
 ​    
-    NAME:
-    Bottos bcli tool wallet list - list wallet
-    
+​    NAME:
+​    Bottos bcli tool wallet list - list wallet
+​    
     USAGE:
     Bottos bcli tool wallet list [arguments...]
 
@@ -1592,9 +1592,9 @@ Help information
 ​    
 ​    ./bcli wallet listkey --help
 ​    
-    NAME:
-    Bottos bcli tool wallet listkey - listkey of wallet
-    
+​    NAME:
+​    Bottos bcli tool wallet listkey - listkey of wallet
+​    
     USAGE:
         Bottos bcli tool wallet listkey [command options] [arguments...]
     
@@ -1662,3 +1662,95 @@ Output
         "errcode": 0
     }
     setconfigitem successfully.
+#### 9. BCLI P2P Command
+
+P2P functions take the chief responsibilities for user to connect the bottos net : disconnect the bottos net, query node's status, query node's peers, etc,.
+
+Help information
+
+```
+ ./bcli p2p --help
+NAME:
+   Bottos bcli tool p2p - for p2p connection
+
+USAGE:
+   Bottos bcli tool p2p command [command options] [arguments...]
+
+COMMANDS:
+     connect     connect address or port
+     disconnect
+     status      p2p status
+     peers       peers information
+
+OPTIONS:
+   --help, -h  show help
+
+```
+
+##### ##### BCLI Listing Current Node Peer
+
+Help information
+
+```
+./bcli p2p peers --help
+NAME:
+   Bottos bcli tool p2p peers - peers information
+
+USAGE:
+   Bottos bcli tool p2p peers [command options] [arguments...]
+
+OPTIONS:
+   --limit value  (default: 100)
+   --start value  (default: 0)
+```
+
+Parameter Description
+
+| chief command  | parameter list |                Parameter Description                 | mandatory |
+| -------------- | :------------: | :--------------------------------------------------: | :-------: |
+| bcli p2p peers |    --limit     |              Output the head N records               |    No     |
+|                |    --start     | Output from head N record and stop within the limits |    No     |
+
+
+
+Return Information
+
+This will return the peer information sent by BCLI.
+
+Sample
+
+```
+./bcli p2p peers
+
+```
+
+Output
+
+```
+{
+    "data": [
+        {
+            "addr": "127.0.0.1",
+            "chain_id": "4b97b92d2c78bcffe95ebd3067565c73a2931b39d5eb7234b11816d    cec54761a",
+            "head_block_num": 1215,
+            "last_consensus_block_num": 1215,
+            "port": "9871",
+            "version": 197632
+        },
+        {
+            "addr": "127.0.0.1",
+            "chain_id": "4b97b92d2c78bcffe95ebd3067565c73a2931b39d5eb7234b11816d     cec54761a",
+            "head_block_num": 1215,
+            "last_consensus_block_num": 1215,
+            "port": "9872",
+            "version": 197632
+        },
+        
+    ],
+    "peerCount": 2
+}
+
+```
+
+
+

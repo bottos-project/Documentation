@@ -21,8 +21,8 @@ Bottos BCLI 实现了一组人机交互命令行，主要基于RESTFUL API和链
 
 全局帮助信息
 ​    
-    ./bcli --help
-        
+​    ./bcli --help
+​        
         NAME:
         Bottos bcli tool - a tool that makes user communicate with bottos blockchain
     
@@ -144,9 +144,9 @@ Bottos BCLI 实现了一组人机交互命令行，主要基于RESTFUL API和链
 输出结果
 
     TrxHash: 7bdc7aca33233d1ed2407f2d217aa9580f30d2aaf68f60270dd24c934a0a1d29
-
+    
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
-
+    
     Please create wallet for your new account.
 
 ##### 获取用户信息命令示例
@@ -207,10 +207,10 @@ Bottos BCLI 实现了一组人机交互命令行，主要基于RESTFUL API和链
     ./bcli account stake --h
     NAME:
         Bottos bcli tool account stake - stake of account
-
+    
     USAGE:
         Bottos bcli tool account stake [command options] [arguments...]
-
+    
     OPTIONS:
         --account value  acocunt name
         --amount value   amount of bto
@@ -235,7 +235,7 @@ Bottos BCLI 实现了一组人机交互命令行，主要基于RESTFUL API和链
 输出结果
 
     TrxHash: 2921e27bad80060580d508d2726a830b8a3970b70b56f28e93ae866846cd7296
-
+    
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 
@@ -276,7 +276,7 @@ Bottos BCLI 实现了一组人机交互命令行，主要基于RESTFUL API和链
 输出结果
 
     TrxHash: c1e99e03957c8222479513bef9916368754a4549312ef4481bdc687729d7698c
-
+    
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 ##### 用户回收质押BTO命令示例
@@ -314,7 +314,7 @@ Bottos BCLI 实现了一组人机交互命令行，主要基于RESTFUL API和链
 输出结果
 
     TrxHash: b39e46a180c4d9d465efd77a42e08f9590726d761c70b7ae34c64e3359ab6ce4
-
+    
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 
@@ -388,7 +388,7 @@ BCLI合约功能命令行主要实现用户主动部署一个合约及ABI文件�
 
 输出结果
 ​     
-    TrxHash: 596441807df736fc15ae32a59a38bc9324620ca2945a0633c033e7d0370e3638
+​    TrxHash: 596441807df736fc15ae32a59a38bc9324620ca2945a0633c033e7d0370e3638
 
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
@@ -662,7 +662,7 @@ BCLI候选节点功能选举命令行主线实现候选节点之：注册节点�
 输出结果
 
     TrxHash: 53e25c2b281251e44bf24e2f552b101daf60399b7a44adcc9810fd10908ff23e
-
+    
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 注：
@@ -703,7 +703,7 @@ BCLI候选节点功能选举命令行主线实现候选节点之：注册节点�
 输出结果
 
     TrxHash: 3ff592e51ff483d7a6409aab2f54b52d7bd721ce009b73ac59544443074d8802
-
+    
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 ##### BCLI列举当前生产节点列表
@@ -724,15 +724,15 @@ BCLI候选节点功能选举命令行主线实现候选节点之：注册节点�
 
 参数说明
 
-| 主命令行           | 参数列表 | 参数说明                   | 必选参数 |
+| 主命令行           | 参数列表 |          参数说明          | 必选参数 |
 | ------------------ | :------: | :------------------------: | :------: |
-| bcli delegate list | --limit  | 输出前N条记录              | 否       |
-|                    | --limit  | 从第几条开始输出和统计条数 | 否       |
+| bcli delegate list | --limit  |       输出前N条记录        |    否    |
+|                    | --start  | 从第几条开始输出和统计条数 |    否    |
 
 
 返回信息
 
-该命令成功后将返回BCLI发送的Transaction信息。
+该命令成功后将返回BCLI发送的delegate list信息。
 
 示例
 
@@ -800,7 +800,7 @@ BCLI候选节点功能选举命令行主线实现候选节点之：注册节点�
 输出结果
 
     TrxHash: bb6dde5aba1db736495e864a4fa085640cbeb7d88aef11958f764a1423ba3f90
-
+    
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 ##### BCLI生产者取消投票命令行
@@ -837,7 +837,7 @@ BCLI候选节点功能选举命令行主线实现候选节点之：注册节点�
 输出结果
 
     TrxHash: 86a503abd101f3473d5e121fa3e7665ff0f274fc5739ea649bf070177ffb2091
-
+    
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 #### 4. BCLI 块信息获取命令行
@@ -1012,7 +1012,7 @@ BCLI创世节点功能命令行主要包括： 添加初始生产者， 移交�
 输出结果
 
     TrxHash: e453df77a6f1a2049e79dd9853e8f16945968ffe8e3c168e5fe29788fb8dc898
-
+    
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 ##### BCLI创世节点移交出块权利功能命令行
@@ -1047,9 +1047,9 @@ BCLI创世节点功能命令行主要包括： 添加初始生产者， 移交�
      ./bcli genesis blkprodtrans --sender bottos --actblknum 2000
 
 输出结果
-    
+​    
     TrxHash: 29267535acadefb100113915652a4ba9d9b00dafbefbe61bc9f1f5fdd24249c0
-
+    
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 
@@ -1085,7 +1085,7 @@ BCLI创世节点功能命令行主要包括： 添加初始生产者， 移交�
 输出结果
 
     TrxHash: 42e93f4a6f3a631d469449e418a624ede196b2e4d096b29bd1ccaaca1e83ee10
-
+    
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 ##### BCLI创世节点上取消指定初始生产者
@@ -1122,7 +1122,7 @@ BCLI创世节点功能命令行主要包括： 添加初始生产者， 移交�
 输出结果
 
     TrxHash: 602ceed3970de1948a3a0d76ee8e5b82dc29a7ec741d576327938d883d06cc18
-
+    
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 ##### BCLI创世节点上过渡期为生产者投票
@@ -1154,12 +1154,12 @@ BCLI创世节点功能命令行主要包括： 添加初始生产者， 移交�
 该命令成功后将返回BCLI提交的Transaction信息。
 
 示例
-    ./bcli genesis settransitvote --sender bottos --account lyp12345678 --vote 100
+​    ./bcli genesis settransitvote --sender bottos --account lyp12345678 --vote 100
 
 输出结果
 
     TrxHash: 545d8ce9032756dd9305fd2ce14cce5c18aaa39f94eff1791fbc1fe41bf9e4a0
-
+    
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 #### 6. BCLI 转账功能命令行
@@ -1202,7 +1202,7 @@ BCLI转账功能负责由FROM用户向TO用户进行BTO转账。
 输出结果
 
     TrxHash: 33004bf950b3af9c2b515654e570755baa8db9e40a57a826812a0f71129a49d2
-
+    
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 #### 7. BCLI Transaction 提交和查询命令行
@@ -1325,9 +1325,9 @@ BCLI Transaction 提交和查询命令行负责提交一个用户自定义的Tra
     1 : {userRole string} , KEY:  userRole , VAL:  lyp
     2 : {rcvHelloNum uint64} , KEY:  rcvHelloNum , VAL:  22
     3 : {lyp uint128} , KEY:  lyp , VAL:  33
-
+    
     TrxHash: cb9a695f9f8dfa02e81caf58fc9def571d892b95fd168a9c2f7eb701ee802ed3
-
+    
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 #### 8. BCLI钱包命令行
@@ -1353,8 +1353,8 @@ BCLI Transaction 提交和查询命令行负责提交一个用户自定义的Tra
 
 
 ​    
-    OPTIONS:
-    --help, -h  show help
+​    OPTIONS:
+​    --help, -h  show help
 
 
 命令功能说明
@@ -1485,8 +1485,8 @@ Please input your private key for your wallet:
 
 帮助信息
 ​    
-    ./bcli wallet unlock --help
-    
+​    ./bcli wallet unlock --help
+​    
     NAME:
     Bottos bcli tool wallet unlock - unlock wallet
     
@@ -1528,8 +1528,8 @@ Please input your private key for your wallet:
 
 帮助信息
 ​    
-    ./bcli wallet list --help
-    
+​    ./bcli wallet list --help
+​    
     NAME:
     Bottos bcli tool wallet list - list wallet
     
@@ -1598,3 +1598,93 @@ OPTIONS:
         "errcode": 0
     }
     setconfigitem successfully.
+
+
+#### 9. BCLI P2P命令行
+
+P2P功能主要为用户提供连接网络、断开网络、查询状态、查询邻居信息等功能。
+
+帮助信息
+
+```
+ ./bcli p2p --help
+NAME:
+   Bottos bcli tool p2p - for p2p connection
+
+USAGE:
+   Bottos bcli tool p2p command [command options] [arguments...]
+
+COMMANDS:
+     connect     connect address or port
+     disconnect
+     status      p2p status
+     peers       peers information
+
+OPTIONS:
+   --help, -h  show help
+
+```
+
+##### BCLI列举本节点连接的邻居信息列表
+
+帮助信息
+
+```
+./bcli p2p peers --help
+NAME:
+   Bottos bcli tool p2p peers - peers information
+
+USAGE:
+   Bottos bcli tool p2p peers [command options] [arguments...]
+
+OPTIONS:
+   --limit value  (default: 100)
+   --start value  (default: 0)
+```
+
+参数说明
+
+| 主命令行       | 参数列表 |          参数说明          | 必选参数 |
+| -------------- | :------: | :------------------------: | :------: |
+| bcli p2p peers | --limit  |       输出前N条记录        |    否    |
+|                | --start  | 从第几条开始输出和统计条数 |    否    |
+
+返回信息
+
+该命令成功后将返回BCLI发送的peer信息。
+
+示例
+
+```
+./bcli p2p peers
+
+```
+
+输出结果
+
+```
+{
+    "data": [
+        {
+            "addr": "127.0.0.1",
+            "chain_id": "4b97b92d2c78bcffe95ebd3067565c73a2931b39d5eb7234b11816d    cec54761a",
+            "head_block_num": 1215,
+            "last_consensus_block_num": 1215,
+            "port": "9871",
+            "version": 197632
+        },
+        {
+            "addr": "127.0.0.1",
+            "chain_id": "4b97b92d2c78bcffe95ebd3067565c73a2931b39d5eb7234b11816d     cec54761a",
+            "head_block_num": 1215,
+            "last_consensus_block_num": 1215,
+            "port": "9872",
+            "version": 197632
+        },
+        
+    ],
+    "peerCount": 2
+}
+
+```
+
