@@ -410,22 +410,7 @@ Table data is : map[valueA:2 valueB:3]
 | valueBufLen | uint32_t | Length of Buffers used to store data                           |
 
   The Return Value：Get the length of data.
-
-- uint32_t removeBinValue(char* object, uint32_t objLen, char* key, uint32_t keyLen);
-
-  Functions: remove the data from chain
-
-  Parameter Description：
-
-| Parameters | Type     | Description                                                |
-| ---------- | -------- | ---------------------------------------------------------- |
-| object     | char*    | The table name corresponding to the deleted data           |
-| objLen     | uint32_t | Length of the table name corresponding to the deleted data |
-| key        | char*    | The key value name of the deleted data                     |
-| keyLen     | uint32_t | Length of the key value name of the deleted data           |
-
-  The Return Value：Length of the removed data.
-
+  
 - uint32_t getParam(char *param, uint32_t bufLen);
 
   Functions: Get the parameters from invoking a contract
