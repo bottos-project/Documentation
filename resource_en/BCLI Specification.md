@@ -613,7 +613,7 @@ Table data is : map[lyp:33 userrole:lyp rcvhellonum:22]
 
 #### 3. BCLI Candidate Node Voting Command
 
-Bcli candidate node voting chiefly realize the functions of: register the node as the producer, cancel the producer node, let part/all the producer nodes' information, vote(vote one node as the producer), cancel vote, etc,.
+Bcli candidate node voting chiefly realize the functions of: register the node as the producer, cancel the producer node, let part/all the producer nodes' information, vote(vote one node as the producer), cancel vote, claim reward etc,.
 
 Help information
 
@@ -630,6 +630,7 @@ Help information
         list        list delegates
         vote        Vote for producers
         cancelvote  cancel vote for producers
+        claimreward claim reward for producers
     
     OPTIONS:
         --help, -h  show help
@@ -642,7 +643,8 @@ Commandline Function Description
 | ./bcli delegate | cancel         | cancel the producer  |
 | ./bcli delegate | list           | watch the producer list  |
 | ./bcli delegate | vote           | vote for the producer    |
-| ./bcli delegate | cancelvote     | cancel vote              |s
+| ./bcli delegate | cancelvote     | cancel vote              |
+| ./bcli delegate | claimreward    | producer claim block reward|
 
 ##### BCLI Registing as Producer Command
 
@@ -863,6 +865,39 @@ Output
     
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
+##### BCLI Producer claim block reward
+
+Help information
+    ./bcli delegate claimreward -h
+    NAME:
+        Bottos bcli tool delegate claimreward - claim reward for producers
+
+    USAGE:
+        Bottos bcli tool delegate claimreward [command options] [arguments...]
+
+    OPTIONS:
+        --account value  account name
+
+Parameter Description
+
+| chief command  | parameter list| Parameter Description | mandatory|
+| -------------- | :------: | :------: | :------: |
+| ./bcli delegate claimreward| --account| producer account name| YES |
+
+Return Information
+
+This will return the Transaction information sent by BCLI.
+
+Sample
+
+    ./bcli delegate claimreward --account delegatecreate2
+
+Output
+
+    TrxHash: de8dcdbcd92c88250801a96a4db9260455c16c595abb7328b5e0a638695a0bdb
+
+    This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
+
 #### 4. BCLI Block Information Getting Command
 
 The BCLI block information chiefly includes: Getting current block information, block head information.
@@ -984,14 +1019,14 @@ Help information
 
 Commandline Function Description
 
-| chief command  | parameter list  | Parameter Description                                |
-| -------------- | :-------------: | :--------------------------------------------------: |
-| ./bcli genesis | setdelegate     | The original procuders be designated in genesis node |
-| ./bcli genesis | blkprodtrans    | transfer the authority of generating blocks          |
-| ./bcli genesis | cancelprevilige | cancel the operation authority of genesis node       |
-| ./bcli genesis | unsetdelegate   | genesis node cancel vote for one producer |
-| ./bcli genesis | settransitvote  | genesis node vote for producer in transition period       |
-| ./bcli genesis | newstkaccount   |                              |
+| chief command  | parameter list  |                    Parameter Description                     |
+| -------------- | :-------------: | :----------------------------------------------------------: |
+| ./bcli genesis |   setdelegate   |     The original procuders be designated in genesis node     |
+| ./bcli genesis |  blkprodtrans   |         transfer the authority of generating blocks          |
+| ./bcli genesis | cancelprevilige |        cancel the operation authority of genesis node        |
+| ./bcli genesis |  unsetdelegate  |          genesis node cancel vote for one producer           |
+| ./bcli genesis | settransitvote  |     genesis node vote for producer in transition period      |
+| ./bcli genesis |  newstkaccount  | New genesis account and transfer amount of BTO in transition period |
 
 ##### BCLI Genesis Node Adding Original Producer Functions Command
 
@@ -1185,6 +1220,82 @@ Output
     TrxHash: 545d8ce9032756dd9305fd2ce14cce5c18aaa39f94eff1791fbc1fe41bf9e4a0
     
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
+
+##### BCLI Genesis Node new account, transfer and stake amount of BTO
+
+Help information
+
+```
+./bcli genesis newstkaccount -h
+NAME:
+   Bottos bcli tool genesis newstkaccount - transfer erc20
+
+USAGE:
+   Bottos bcli tool genesis newstkaccount [command options] [arguments...]
+
+OPTIONS:
+   --sender value       sender account
+   --account value      account name
+   --pubkey value       account public key
+   --transfer value     the amount of bto
+   --stake-space value  the amount of bto
+   --stake-time value   the amount of bto
+   --stake-vote value   the amount of bto
+```
+
+Parameter Description
+
+| chief command                | parameter list| Parameter Description    | mandatory |
+| ---------------------------- | ------------- | ------------------------------- | -------- |
+| ./bcli genesis newstkaccount | --sender      | sender should be bottos       | YES    |
+| ./bcli genesis newstkaccount | --account     | new account name              | YES      |
+| ./bcli genesis newstkaccount | --pubkey      | public key of account         | YES     |
+| ./bcli genesis newstkaccount | --transfer    | total amount of transfer BTO  | YES    |
+| ./bcli genesis newstkaccount | --stake-space | the amount of stake space | YES    |
+| ./bcli genesis newstkaccount | --stake-time  | the amount of stake time  | YES       |
+| ./bcli genesis newstkaccount | --stake-vote  | the amount of stake vote  | YES      |
+
+Return Information
+
+This will return the Transaction information sent by BCLI.
+
+Sample
+
+    ./bcli genesis newstkaccount --account delegatecreate5  --transfer 490000 --stake-space 100000 --stake-time 100000 --stake-vote 100000 --sender bottos --pubkey 04ecec203a98be1d27d38d189a8f16f65a24e6ba813e139fdd82bf84c44bef36ffe5813f5cd9a8ab34b4a0c8f490beda68d81b22897f436a24a1ca1cec7c064e06
+
+f1017b6303171b1b919a986f98dc191d3a3af54fbbcae6f30340436e234ea0b0
+
+Output
+
+TrxHash: f1017b6303171b1b919a986f98dc191d3a3af54fbbcae6f30340436e234ea0b0
+
+    This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
+
+query account info：
+```
+./bcli account get --account delegatecreate5
+Account: delegatecreate5
+    Balance: 190000.00000000 BTO
+    Pubkey: 04ecec203a98be1d27d38d189a8f16f65a24e6ba813e139fdd82bf84c44bef36ffe5813f5cd9a8ab34b4a0c8f490beda68d81b22897f436a24a1ca1cec7c064e06
+
+    StakedBalance: 100000.00000000 BTO
+    UnStakingBalance: 0.00000000 BTO
+    StakedSpaceBalance: 100000.00000000 BTO
+    StakedTimeBalance: 100000.00000000 BTO
+    UnStakingTimestamp: 0
+
+    AvailableSpaceBalance: 151142400800
+    UsedSpaceBalance: 0
+    AvailableTimeBalance: 28800000400
+    UsedTimeBalance: 0
+
+    UnClaimedReward: 0.00000000 BTO
+
+    Vote: N/A
+
+    Contracts: N/A
+```
+
 
 #### 6. BCLI Transferring Function Command
 

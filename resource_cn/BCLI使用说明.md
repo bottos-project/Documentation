@@ -591,7 +591,7 @@ Table data is : map[lyp:33 userrole:lyp rcvhellonum:22]
 
 #### 3. BCLI 候选节点选举功能命令行
 
-BCLI候选节点功能选举命令行主线实现候选节点之：注册节点为生产节点，解注册生产节点，列举所有（部分）生产节点信息，投票（投某节点成为生产节点），取消投票等。
+BCLI候选节点功能选举命令行主线实现候选节点之：注册节点为生产节点，解注册生产节点，列举所有（部分）生产节点信息，投票（投某节点成为生产节点），取消投票，领取出块奖励等。
 
 总体帮助信息如下
 
@@ -608,6 +608,7 @@ BCLI候选节点功能选举命令行主线实现候选节点之：注册节点�
         list        list delegates
         vote        Vote for producers
         cancelvote  cancel vote for producers
+        claimreward claim reward for producers
     
     OPTIONS:
         --help, -h  show help
@@ -622,6 +623,7 @@ BCLI候选节点功能选举命令行主线实现候选节点之：注册节点�
 | ./bcli delegate | list       | 查看生产者列表 |
 | ./bcli delegate | vote       | 选举生产者     |
 | ./bcli delegate | cancelvote | 取消选举       |
+| ./bcli delegate | claimreward| 生产者领取出块奖励|
 
 
 ##### BCLI注册生产节点命令行
@@ -840,6 +842,38 @@ BCLI候选节点功能选举命令行主线实现候选节点之：注册节点�
     
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
+##### BCLI生产者领取出块奖励
+
+帮助信息
+    ./bcli delegate claimreward -h
+    NAME:
+        Bottos bcli tool delegate claimreward - claim reward for producers
+
+    USAGE:
+        Bottos bcli tool delegate claimreward [command options] [arguments...]
+
+    OPTIONS:
+        --account value  account name
+
+参数说明
+
+| 主命令行         | 参数列表  | 参数说明  | 必选参数  |
+| -------------- | :------: | :------: | :------: |
+| ./bcli delegate claimreward| --account| 生产者账号名| 是 |
+
+返回信息
+
+该命令成功后将返回BCLI发送的Transaction信息。
+
+示例
+    ./bcli delegate claimreward --account delegatecreate2
+
+输出结果
+    TrxHash: de8dcdbcd92c88250801a96a4db9260455c16c595abb7328b5e0a638695a0bdb
+
+    This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
+
+
 #### 4. BCLI 块信息获取命令行
 
 BCLI块信息获取主要包括： 获取当前块信息，块头信息。
@@ -962,14 +996,14 @@ BCLI创世节点功能命令行主要包括： 添加初始生产者， 移交�
 
 命令功能说明
 
-| 主命令行       | 参数列表        | 参数说明                     |
-| -------------- | :-------------: | :--------------------------: |
-| ./bcli genesis | setdelegate     | 创世节点上指定初始生产者     |
-| ./bcli genesis | blkprodtrans    | 创世节点移交出块权利         |
-| ./bcli genesis | cancelprevilige | 创世节点取消操作权限         |
-| ./bcli genesis | unsetdelegate   | 创世节点上取消指定初始生产者 |
-| ./bcli genesis | settransitvote  | 过渡期为生产者节点投票       |
-| ./bcli genesis | newstkaccount   |                              |
+| 主命令行       |    参数列表     |               参数说明                |
+| -------------- | :-------------: | :-----------------------------------: |
+| ./bcli genesis |   setdelegate   |       创世节点上指定初始生产者        |
+| ./bcli genesis |  blkprodtrans   |         创世节点移交出块权利          |
+| ./bcli genesis | cancelprevilige |         创世节点取消操作权限          |
+| ./bcli genesis |  unsetdelegate  |     创世节点上取消指定初始生产者      |
+| ./bcli genesis | settransitvote  |        过渡期为生产者节点投票         |
+| ./bcli genesis |  newstkaccount  | 过渡期创建生产者账号，并质押一定量BTO |
 
 
 
@@ -1161,6 +1195,81 @@ BCLI创世节点功能命令行主要包括： 添加初始生产者， 移交�
     TrxHash: 545d8ce9032756dd9305fd2ce14cce5c18aaa39f94eff1791fbc1fe41bf9e4a0
     
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
+
+##### BCLI创世节点创建生产者账号，并迁移和质押一定量的BTO
+
+帮助信息
+
+```
+./bcli genesis newstkaccount -h
+NAME:
+   Bottos bcli tool genesis newstkaccount - transfer erc20
+
+USAGE:
+   Bottos bcli tool genesis newstkaccount [command options] [arguments...]
+
+OPTIONS:
+   --sender value       sender account
+   --account value      account name
+   --pubkey value       account public key
+   --transfer value     the amount of bto
+   --stake-space value  the amount of bto
+   --stake-time value   the amount of bto
+   --stake-vote value   the amount of bto
+```
+
+参数说明
+
+| 主命令行                     | 参数列表      | 参数说明                        | 必选参数 |
+| ---------------------------- | ------------- | ------------------------------- | -------- |
+| ./bcli genesis newstkaccount | --sender      | sender需要指定bottos            | 是       |
+| ./bcli genesis newstkaccount | --account     | 创建账户的名字                  | 是       |
+| ./bcli genesis newstkaccount | --pubkey      | 账户的公钥                      | 是       |
+| ./bcli genesis newstkaccount | --transfer    | 迁移代币的总数量                | 是       |
+| ./bcli genesis newstkaccount | --stake-space | 迁移代币中，用于质押space的数量 | 是       |
+| ./bcli genesis newstkaccount | --stake-time  | 迁移代币中，用于质押time的数量  | 是       |
+| ./bcli genesis newstkaccount | --stake-vote  | 迁移代币中，用于质押vote的数量  | 是       |
+
+返回信息
+
+该命令成功后将返回BCLI提交的Transaction信息。
+
+示例
+    ./bcli genesis newstkaccount --account delegatecreate5  --transfer 490000 --stake-space 100000 --stake-time 100000 --stake-vote 100000 --sender bottos --pubkey 04ecec203a98be1d27d38d189a8f16f65a24e6ba813e139fdd82bf84c44bef36ffe5813f5cd9a8ab34b4a0c8f490beda68d81b22897f436a24a1ca1cec7c064e06
+
+输出结果
+
+    TrxHash: f1017b6303171b1b919a986f98dc191d3a3af54fbbcae6f30340436e234ea0b0
+
+    This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
+
+查看创建的账户信息：
+
+```
+./bcli account get --account delegatecreate5
+Account: delegatecreate5
+    Balance: 190000.00000000 BTO
+    Pubkey: 04ecec203a98be1d27d38d189a8f16f65a24e6ba813e139fdd82bf84c44bef36ffe5813f5cd9a8ab34b4a0c8f490beda68d81b22897f436a24a1ca1cec7c064e06
+
+    StakedBalance: 100000.00000000 BTO
+    UnStakingBalance: 0.00000000 BTO
+    StakedSpaceBalance: 100000.00000000 BTO
+    StakedTimeBalance: 100000.00000000 BTO
+    UnStakingTimestamp: 0
+
+    AvailableSpaceBalance: 151142400800
+    UsedSpaceBalance: 0
+    AvailableTimeBalance: 28800000400
+    UsedTimeBalance: 0
+
+    UnClaimedReward: 0.00000000 BTO
+
+    Vote: N/A
+
+    Contracts: N/A
+```
+
+
 
 #### 6. BCLI 转账功能命令行
 
