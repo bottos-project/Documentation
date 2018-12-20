@@ -425,21 +425,6 @@ Table data is : map[valueA:2 valueB:3]
 
   返回值：获取的数据的长度
 
-- uint32_t removeBinValue(char* object, uint32_t objLen, char* key, uint32_t keyLen);
-
-  功能：从链上删除数据
-
-  参数说明：
-
-| 参数   | 类型     | 说明                         |
-| ------ | -------- | ---------------------------- |
-| object | char*    | 删除的数据对应的表名称       |
-| objLen | uint32_t | 删除的数据对应的表名称的长度 |
-| key    | char*    | 删除的数据的键值名称         |
-| keyLen | uint32_t | 删除的数据的键值名称的长度   |
-
-  返回值：删除的数据的长度
-
 - uint32_t getParam(char *param, uint32_t bufLen);
 
   功能：获取调用合约时参数
