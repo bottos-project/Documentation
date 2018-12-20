@@ -869,6 +869,7 @@ BCLI候选节点功能选举命令行主线实现候选节点之：注册节点�
     ./bcli delegate claimreward --account delegatecreate2
 
 输出结果
+
     TrxHash: de8dcdbcd92c88250801a96a4db9260455c16c595abb7328b5e0a638695a0bdb
 
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
@@ -1235,6 +1236,7 @@ OPTIONS:
 该命令成功后将返回BCLI提交的Transaction信息。
 
 示例
+
     ./bcli genesis newstkaccount --account delegatecreate5  --transfer 490000 --stake-space 100000 --stake-time 100000 --stake-vote 100000 --sender bottos --pubkey 04ecec203a98be1d27d38d189a8f16f65a24e6ba813e139fdd82bf84c44bef36ffe5813f5cd9a8ab34b4a0c8f490beda68d81b22897f436a24a1ca1cec7c064e06
 
 输出结果

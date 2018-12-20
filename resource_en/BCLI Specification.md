@@ -1267,7 +1267,7 @@ f1017b6303171b1b919a986f98dc191d3a3af54fbbcae6f30340436e234ea0b0
 
 Output
 
-TrxHash: f1017b6303171b1b919a986f98dc191d3a3af54fbbcae6f30340436e234ea0b0
+    TrxHash: f1017b6303171b1b919a986f98dc191d3a3af54fbbcae6f30340436e234ea0b0
 
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
