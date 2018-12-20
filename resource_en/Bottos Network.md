@@ -1,13 +1,72 @@
-# Network Topology
+Bottos Network
+--------
+&nbsp;
+&nbsp;
+&nbsp;
 
-### Super node network
 
-The super node undertakes the implementation and the writing of the records of all transactions in the whole network, it is the fundation of the overall stability of the global network. Therefore,  Bottos uses a fully connected mode of networking by its super node's network-building design, shown as the following figure (for instance, the full connection of 10 super nodes. The actual number of super nodes is 49, amnong which 29 members will be elected in each round, the other 20 nodes are spare nodes)
+# 1. Netwok structure
 
-![img](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LH6Wp7WxZSf9VDfH9F3%2F-LNFsMwxpkehp5G84MpF%2F-LNFt6rikMtnZR-ewDXR%2Ffullnode.png?alt=media&token=f3b32adf-c4ea-424e-84b2-1cc837de0d86)
+Bottos网络中的典型角色有三种：
+- 终端用户
+- 终端用户接入服务的提供者
+- 超级节点（区块生产者）
 
-### Connection diagram among genernal and super nodes
+&nbsp;
 
-The network among the nodes other than super nodes are loosely organized, just similar to the mesh-structure-connected way in the following figure.
+这三类角色将Bottos网络分成了三层，如下图所示。分别是
+- 终端用户所在的接入层，这些终端用户有可能形成的终端网络
+- 接入服务的提供者节点之间形成的服务层
+- 超级节点之间组成的生产者网络
 
-![img](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LH6Wp7WxZSf9VDfH9F3%2F-LNFsMwxpkehp5G84MpF%2F-LNFt9lL7_UCtBXbKdKT%2Fmesh.png?alt=media&token=0ed782ab-355c-4413-898b-e3bd56fed278)
+&nbsp;
+&nbsp;
+![](../common/net_hierarchy.png)
+
+
+&nbsp;
+&nbsp;
+## 1.1. Super Node Network
+
+超级节点承担全网所有Transaction的执行和记录，是全网络稳定的基础，因此铂链在超级节点网络设计采用了全连接方式组网。如下图所示（以10个超级节点的全连接为例。实际的超级节点个数为49个，其中每轮选中29个出块，另外20个节点备选）
+
+![](../common/fullmesh.png)
+
+&nbsp;
+&nbsp;
+
+## 1.2. Connections with Other Nodes
+
+除超级节点外的其它类型节点，是组织松散的网络，类似下图中的mesh结构的连接方式
+
+![](../common/mesh.png)
+
+
+&nbsp;
+&nbsp;
+
+# 2. Node Layers
+
+Bottos nodes are divided into: basic service nodes, application-oriented nodes, light nodes and ultra-light nodes. Each node checks and balances and complements each other, forming a dynamic balance of the self-consistent node system.
+
+-  **Basic service nodes**
+
+```
+The Basic Service node provides the fundamental  service of the whole Bottos blockchain system, in addition to supporting the core functions of the blockchain core, such as transaction consensus, contract deployment, block production, etc., it also supports the main functions that provided by the Bottos service layer, such as unified identity system, storage management services, credit services, Token management and contract management and other key functions, to provide the most important production services for the overall Bottos network.
+```
+
+-  **Application nodes**
+```
+The kind of application node primarily serves different Dapps’ deployments in the ecosystem, and application node can be deployed on itself, or be deployed on the fundamental nodes. (Logical applications on each fundamental node can charge a certain deployment threshold fee in future.)
+```
+
+-  **Lightweight nodes**
+```
+The lightweight node chiefly works as the data verification node of Bottos, and it does not provide the corresponding function of the service layer. It only carries on the block data’s synchronization and so on, and can also support the Bottos core Layer basic service.
+```
+
+
+-  **Ultra lightweight nodes**
+```
+The ultra lightweight node chiefly handles the block correlation head verification, and synchronizes the key hash data, etc.
+```
