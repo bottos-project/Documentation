@@ -11,11 +11,11 @@
     - [1.2. System Architecture](#12-system-architecture)
     - [1.3. Network Structure](#13-network-structure)
 - [2. 入门体验](#2-入门体验)
-    - [2.1. 使用区块浏览器总览Bottos链](#21-使用区块浏览器总览bottos链)
-        - [2.1.1. Bottos链状态总览](#211-bottos链状态总览)
-        - [2.1.2. 链上操作汇总](#212-链上操作汇总)
-        - [2.1.3. 超级节点分布](#213-超级节点分布)
-    - [2.2. 本地运行Bottos链](#22-本地运行bottos链)
+    - [2.1. Browser Bottos Chain](#21-browser-bottos-chain)
+        - [2.1.1. Bottos Chain Overview](#211-bottos-chain-overview)
+        - [2.1.2. Activities on Bottos Chain](#212-activities-on-bottos-chain)
+        - [2.1.3. Locations of Super Nodes](#213-locations-of-super-nodes)
+    - [2.2. Run Bottos Chain on Local Machine](#22-run-bottos-chain-on-local-machine)
     - [2.3. 准备Bottos可执行版本](#23-准备bottos可执行版本)
     - [2.4. 准备运行环境](#24-准备运行环境)
         - [2.4.1. 启动本地单节点环境](#241-启动本地单节点环境)
@@ -66,13 +66,13 @@
 # 1. Bottos Introduction
 
 ## 1.1. Project Brief
-[Project Brief](./resource_en/Project Brief.md)
+[Project Brief](./resource_en/Project_Brief.md)
 
 ## 1.2. System Architecture
-[System Architecture](./resource_en/System Architecture.md)
+[System Architecture](./resource_en/System_Architecture.md)
 
 ## 1.3. Network Structure
-[Bottos Network Structure](./resource_en/Bottos Network.md)
+[Bottos Network Structure](./resource_en/Bottos_Network.md)
 
 
 
@@ -83,22 +83,22 @@
 
 
 
-## 2.1. 使用区块浏览器总览Bottos链
+## 2.1. Browser Bottos Chain
 
-[Bottos区块浏览器](http://exblock.bottos.org:8888/#/home)地址 为 http://exblock.bottos.org:8888/#/home
+[Bottos Browser](http://exblock.bottos.org:8888/#/home) link is http://exblock.bottos.org:8888/#/home
 
-### 2.1.1. Bottos链状态总览
+### 2.1.1. Bottos Chain Overview
 ![](./common/bottos_browser.png)
 
-### 2.1.2. 链上操作汇总
+### 2.1.2. Activities on Bottos Chain
 ![](./common/activities.png)
 
 
-### 2.1.3. 超级节点分布
+### 2.1.3. Locations of Super Nodes
 ![](./common/supernodes.png)
 
 
-## 2.2. 本地运行Bottos链
+## 2.2. Run Bottos Chain on Local Machine
 
 ## 2.3. 准备Bottos可执行版本
 [准备Bottos可执行版本](./resource_en/准备Bottos版本.md)
