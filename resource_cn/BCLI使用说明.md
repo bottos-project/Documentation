@@ -20,18 +20,18 @@ Bottos BCLI 实现了一组人机交互命令行，主要基于RESTFUL API和链
 
 
 全局帮助信息
-    
+​    
     ./bcli --help
         
         NAME:
         Bottos bcli tool - a tool that makes user communicate with bottos blockchain
-
+    
     USAGE:
     bcli [global options] command [command options] [arguments...]
-
+    
     VERSION:
     0.0.1
-
+    
     COMMANDS:
         getblkheader  get header block's information
         getblock      get block information
@@ -46,7 +46,7 @@ Bottos BCLI 实现了一组人机交互命令行，主要基于RESTFUL API和链
         genesis       for genesis node operations
         log           for log operations
         help, h       Shows a list of commands or help for one command
-
+    
     GLOBAL OPTIONS:
     --servaddr value    (default: "127.0.0.1:8689")
     --walletport value  
@@ -112,13 +112,13 @@ Bottos BCLI 实现了一组人机交互命令行，主要基于RESTFUL API和链
 帮助信息
 
     ./bcli account create --help
-
+    
     NAME:
         Bottos bcli tool account create - create account
-
+    
     USAGE:
         Bottos bcli tool account create [command options] [arguments...]
-
+    
     OPTIONS:
     --account value   acocunt name
     --pubkey value    account public key
@@ -146,20 +146,20 @@ Bottos BCLI 实现了一组人机交互命令行，主要基于RESTFUL API和链
 Push transaction done for creating account user12345678
 Trx: 
 {
-    "version": 1,
-    "cursor_num": 139,
-    "cursor_label": 3010882075,
-    "lifetime": 1542956731,
-    "sender": "bottos",
-    "contract": "bottos",
-    "method": "newaccount",
-    "param": {
-        "name": "user12345678",
-        "pubkey": "0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f"
-    },
-    "param_bin": "dc0002da000c757365723132333435363738da008230343534663163323232336435353361613665653533656131636365613862376266373862386361393966336666363232613362623365363264656463373132303839303333643630393164373732393635343762633037313032326361323833386339653836646563323936363763663734306535633965363534623631323766",
-    "sig_alg": 1,
-    "signature": "faed90881a57b7068c4ed5e4dad6e87706fc6ef6265f18e0a0e10ce5f11c64001e48e6cbce8f423d3f39618686070e1b3f639911a7f063d752f8953cf76ffe6f"
+​    "version": 1,
+​    "cursor_num": 139,
+​    "cursor_label": 3010882075,
+​    "lifetime": 1542956731,
+​    "sender": "bottos",
+​    "contract": "bottos",
+​    "method": "newaccount",
+​    "param": {
+​        "name": "user12345678",
+​        "pubkey": "0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f"
+​    },
+​    "param_bin": "dc0002da000c757365723132333435363738da008230343534663163323232336435353361613665653533656131636365613862376266373862386361393966336666363232613362623365363264656463373132303839303333643630393164373732393635343762633037313032326361323833386339653836646563323936363763663734306535633965363534623631323766",
+​    "sig_alg": 1,
+​    "signature": "faed90881a57b7068c4ed5e4dad6e87706fc6ef6265f18e0a0e10ce5f11c64001e48e6cbce8f423d3f39618686070e1b3f639911a7f063d752f8953cf76ffe6f"
 }
 TrxHash: 7bdc7aca33233d1ed2407f2d217aa9580f30d2aaf68f60270dd24c934a0a1d29
 
@@ -172,10 +172,10 @@ Please create wallet for your new account.
     ./bcli account get --help
     NAME:
         Bottos bcli tool account get - get account information
-
+    
     USAGE:
         Bottos bcli tool account get [command options] [arguments...]
-
+    
     OPTIONS:
         --account value  acocunt name
 
@@ -194,26 +194,26 @@ Please create wallet for your new account.
     ./bcli account get --account bottos
 
 输出结果
-  
+
     Account: bottos
     Balance: 999770000.00000000 BTO
     Pubkey: 0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f
-
+    
     StakedBalance: 0.00000000 BTO
     UnStakingBalance: 0.00000000 BTO
     StakedSpaceBalance: 0.00000000 BTO
     StakedTimeBalance: 0.00000000 BTO
     UnStakingTimestamp: 0
-
+    
     AvailableSpaceBalance: 0
     UsedSpaceBalance: 0
     AvailableTimeBalance: 0
     UsedTimeBalance: 0
-
+    
     UnClaimedReward: 0.00000000 BTO
-
+    
     Vote: N/A
-
+    
     Contracts: N/A
 
 ##### 用户质押BTO命令示例
@@ -252,19 +252,19 @@ Please create wallet for your new account.
 Push transaction done:
 Trx: 
 {
-    "version": 1,
-    "cursor_num": 234,
-    "cursor_label": 2675151514,
-    "lifetime": 1542957016,
-    "sender": "user12345678",
-    "contract": "bottos",
-    "method": "stake",
-    "param": {
-        "amount": "2.00000000"
-    },
-    "param_bin": "dc0001c50020000000000000000000000000000000000000000000000000000000000bebc200",
-    "sig_alg": 1,
-    "signature": "43175b7d8b6bcec0c8864588f07da2e1a54bd181bdf91a5582fe42bb09408088300611d39dff061099d5b177a2d9fa2839b97ecc2599864ef31ba1be80c22a09"
+​    "version": 1,
+​    "cursor_num": 234,
+​    "cursor_label": 2675151514,
+​    "lifetime": 1542957016,
+​    "sender": "user12345678",
+​    "contract": "bottos",
+​    "method": "stake",
+​    "param": {
+​        "amount": "2.00000000"
+​    },
+​    "param_bin": "dc0001c50020000000000000000000000000000000000000000000000000000000000bebc200",
+​    "sig_alg": 1,
+​    "signature": "43175b7d8b6bcec0c8864588f07da2e1a54bd181bdf91a5582fe42bb09408088300611d39dff061099d5b177a2d9fa2839b97ecc2599864ef31ba1be80c22a09"
 }
 TrxHash: 2921e27bad80060580d508d2726a830b8a3970b70b56f28e93ae866846cd7296
 
@@ -308,19 +308,19 @@ TrxHash: 2921e27bad80060580d508d2726a830b8a3970b70b56f28e93ae866846cd7296
 Push transaction done:
 Trx: 
 {
-    "version": 1,
-    "cursor_num": 265,
-    "cursor_label": 510868978,
-    "lifetime": 1542957109,
-    "sender": "user12345678",
-    "contract": "bottos",
-    "method": "unstake",
-    "param": {
-        "amount": "2.00000000"
-    },
-    "param_bin": "dc0001c50020000000000000000000000000000000000000000000000000000000000bebc200",
-    "sig_alg": 1,
-    "signature": "0a48ec205a83dc2fed6c381723fd2a66ab331ef133238f13f061bd8490fd3156055cb5362bd0dc5159ad762c8431118bbc2bf0d811058dd22a9059edd1d2c468"
+​    "version": 1,
+​    "cursor_num": 265,
+​    "cursor_label": 510868978,
+​    "lifetime": 1542957109,
+​    "sender": "user12345678",
+​    "contract": "bottos",
+​    "method": "unstake",
+​    "param": {
+​        "amount": "2.00000000"
+​    },
+​    "param_bin": "dc0001c50020000000000000000000000000000000000000000000000000000000000bebc200",
+​    "sig_alg": 1,
+​    "signature": "0a48ec205a83dc2fed6c381723fd2a66ab331ef133238f13f061bd8490fd3156055cb5362bd0dc5159ad762c8431118bbc2bf0d811058dd22a9059edd1d2c468"
 }
 TrxHash: c1e99e03957c8222479513bef9916368754a4549312ef4481bdc687729d7698c
 
@@ -395,8 +395,6 @@ BCLI合约功能命令行主要实现用户主动部署一个合约及ABI文件�
     
     COMMANDS:
         deploy      contract deploy
-        deploycode  contract  deploycode
-        deployabi   Contract  deployabi
         get         get contract
     
     OPTIONS:
@@ -406,12 +404,10 @@ BCLI合约功能命令行主要实现用户主动部署一个合约及ABI文件�
 
 命令功能说明
 
-| 主命令行        | 参数列表   | 参数说明                      |
-| --------------- | :--------: | :---------------------------: |
-| ./bcli contract | deploy     | 部署ABI文件以及WASM合约       |
-| ./bcli contract | deploycode | 部署合约                      |
-| ./bcli contract | deployabi  | 部署ABI文件                   |
-| ./bcli contract | get        | 获取指定合约和ABI信息并存文件 |
+| 主命令行        | 参数列表 |           参数说明            |
+| --------------- | :------: | :---------------------------: |
+| ./bcli contract |  deploy  |    部署ABI文件以及WASM合约    |
+| ./bcli contract |   get    | 获取指定合约和ABI信息并存文件 |
 
 ##### BCLI 合约部署命令行
 
@@ -420,23 +416,27 @@ BCLI合约功能命令行主要实现用户主动部署一个合约及ABI文件�
     ./bcli contract deploycode --help
     NAME:
         Bottos bcli tool contract deploycode - contract  deploycode
-
+    
     USAGE:
         Bottos bcli tool contract deploycode [command options] [arguments...]
-
+    
     OPTIONS:
-        --account value   we use the account name as the default contract name
+        --contract value  the contract's name
         --code value      the contract's wasm file path ( includes wasm file name )
         --filetype value  the contract's file type: wasm or js (default: "wasm")
+        --abi value       the contract's abi file path ( includes abi file name )
+        --account value   the account name whom deploy the code
 
 
 参数说明
 
-| 主命令行                 | 参数列表   | 参数说明                  | 必选参数 |
+| 主命令行                 |  参数列表  |         参数说明          | 必选参数 |
 | ------------------------ | :--------: | :-----------------------: | :------: |
-| bcli contract deploycode | --account  | 合约名                    | 是       |
-|                          | --code     | 合约文件（.WASM）所在路径 | 是       |
-|                          | --filetype | 合约文件类型：wasm/js     | 否       |
+| bcli contract deploycode | --contract |          合约名           |    是    |
+|                          |   --code   | 合约文件（.WASM）所在路径 |    是    |
+|                          | --filetype |   合约文件类型：wasm/js   |    否    |
+|                          |   --abi    |     合约文件（.abi）      |    是    |
+|                          | --account  |      部署合约的账户       |    是    |
 
 
 返回信息
@@ -445,24 +445,24 @@ BCLI合约功能命令行主要实现用户主动部署一个合约及ABI文件�
 
 示例
 
-    ./bcli contract deploycode --account user12345678 --code try.wasm
+    ./bcli contract deploy --account tina123456789 --code testvm1/testVM1.wasm --abi testvm1/testVM1.abi --contract testvm1
 
 输出结果
-     
-    
+​     
+​    
 
     Push transaction done for deploying contract user12345678
     Trx: 
     {
-        "version": 1,
+        "version": 197632,
         "cursor_num": 467,
         "cursor_label": 2953320580,
         "lifetime": 1542957715,
-        "sender": "user12345678",
+        "sender": "tina123456789",
         "contract": "bottos",
-        "method": "deploycode",
+        "method": "deploycontract",
         "param": {
-            "name": "user12345678",
+            "name": "testvm1",
             "vm_type": 1,
             "vm_version": 1,
             "contract_code": "0061736d01000000013d0960027f7f0060067f7f7f7f7f7f017f60027f7f017f60087f7f7f7f7f7f7f7f017f60037f7f7f017f6000006000017f60017f017f60047f7f7f7f017f025f0603656e760b67657442696e56616c7565000303656e760a676574..."
@@ -473,68 +473,10 @@ BCLI合约功能命令行主要实现用户主动部署一个合约及ABI文件�
     }
     TrxHash: 596441807df736fc15ae32a59a38bc9324620ca2945a0633c033e7d0370e3638
 
-
-##### BCLI ABI部署命令行
-
-帮助信息
-
-    ./bcli contract deployabi --help
-
-    NAME:
-        Bottos bcli tool contract deployabi - Contract  deployabi
-
-    USAGE:
-        Bottos bcli tool contract deployabi [command options] [arguments...]
-
-    OPTIONS:
-    --account value   we use the account name as the abi's default contract name
-    --abi value       the contract's abi file path ( includes abi file name )
-    --filetype value  the contract's file type: wasm or js (default: "wasm")
-
-
-参数说明
-
-| 主命令行                | 参数列表   | 参数说明                    | 必选参数 |
-| ----------------------- | :--------: | :-------------------------: | :------: |
-| bcli contract deployabi | --account  | 合约账户名                  | 是       |
-|                         | --abi      | abi描述文件（.abi）所在路径 | 是       |
-|                         | --filetype | 合约文件类型 wasm/js        | 否       |
-
-
-返回信息
-
-该命令成功后将返回BCLI成功发送的Transaction信息。
-
-示例
-
-    ./bcli contract deployabi --account user12345678 --abi try.abi
-
-输出结果
-
-    ./bcli contract deployabi --account user12345678 --abi try.abi
-    {
-        "errcode": 0,
-        "msg": "trx receive succ",
-        "result": {
-            "trx": {
-                "version": 1,
-                "cursor_num": 518,
-                "cursor_label": 1285797565,
-                "lifetime": 1542957868,
-                "sender": "user12345678",
-                "contract": "bottos",
-                "method": "deployabi",
-                "param": "dc0003da000c757365723132333435363738c502b67b227479706573223a5b5d2c2273747275637473223a5b7b226e616d65223a2255736572496e666f222c2262617365223a22222c226669656c6473223a7b22757365724e616d65223a22737472696e67222c2275736572526f6c65223a22737472696e67222c2272637648656c6c6f4e756d223a2275696e743634227d7d2c7b226e616d65223a2253617948656c6c6f222c2262617365223a22222c226669656c6473223a7b22757365724e616d65223a22737472696e67227d7d2c7b226e616d65223a225573657244657461696c222c2262617365223a22222c226669656c6473223a7b2275736572526f6c65223a22737472696e67222c2272637648656c6c6f4e756d223a2275696e743634227d7d2c7b226e616d65223a2255736572496e666f222c2262617365223a22222c226669656c6473223a7b2272637648656c6c6f4e756d223a2275696e743634227d7d2c7b226e616d65223a2253617948656c6c6f222c2262617365223a22222c226669656c6473223a7b22757365724e616d65223a22737472696e67227d7d2c7b226e616d65223a225573657244657461696c222c2262617365223a22222c226669656c6473223a7b2272637648656c6c6f4e756d223a2275696e743634227d7d5d2c22616374696f6e73223a5b7b22616374696f6e5f6e616d65223a2272656775736572222c2274797065223a2255736572496e666f227d2c7b22616374696f6e5f6e616d65223a2273617968656c6c6f222c2274797065223a2253617948656c6c6f227d5d2c227461626c6573223a5b7b22696e6465785f74797065223a22737472696e67222c226b65795f6e616d6573223a5b22757365724e616d65225d2c226b65795f7479706573223a5b22737472696e67225d2c227461626c655f6e616d65223a2275736572696e666f222c2274797065223a225573657244657461696c227d5d7dda00047761736d",
-                "sig_alg": 1,
-                "signature": "40eebd0db8a10e91a7cbbe80f7a732f28fbda047ca116085bc62336364fcff51380de14a80ae520499041ad001092736b83ee602c1f3712c935fc78012477a0b"
-            },
-            "trx_hash": "d151325bebcb384afd8b72e04cbf7751e551bfdbced4f309691b0198c392df23"
-        }
-    }
-
 注：
-    BOTTOS ABI 文件是对合约一些方法所需的接口和结构以及参数的信息描述，例如本例中try.abi文件内容如下。
-    
+​    BOTTOS ABI 文件是对合约一些方法所需的接口和结构以及参数的信息描述，例如本例中try.abi文件内容如下。
+​    
+
     "structs" 代表本合约所有方法需要使用到的所有结构体定义；
     "actions" 代表本合约所有合约支持的所有合约方法名以及所需的对应结构名
     "tables" 代表查询合约被调用后（生效后）合约信息会写入链上，tables代表查询链上的某条信息所需要的入参，包含关键字和所对应的结构信息。
@@ -585,65 +527,6 @@ BCLI合约功能命令行主要实现用户主动部署一个合约及ABI文件�
         ]
     }
 
-##### BCLI CODE和ABI同时部署命令行
-
-帮助信息
-
-    ./bcli contract deploy --help
-    NAME:
-        Bottos bcli tool contract deploy - contract deploy
-
-    USAGE:
-        Bottos bcli tool contract deploy [command options] [arguments...]
-
-    OPTIONS:
-        --account value   we use the account name as the default contract name
-        --code value      the contract's wasm file path ( includes wasm file name )
-        --filetype value  the contract's file type: wasm or js (default: "wasm")
-        --abi value       the contract's abi file path ( includes abi file name )
-   
-
-
-参数说明
-
-| 主命令行             | 参数列表   | 参数说明                    | 必选参数 |
-| -------------------- | :--------: | :-------------------------: | :------: |
-| bcli contract deploy | --account  | 合约名                      | 是       |
-|                      | --code     | 合约名                      | 是       |
-|                      | --abi      | abi描述文件（.abi）所在路径 | 是       |
-|                      | --filetype | 合约文件类型 wasm/js        | 是       |
-
-返回信息
-
-该命令成功后将返回BCLI成功发送的Transaction信息。
-
-示例
-
-    ./bcli contract deploy --account user12345678 --code try.wasm --abi test.abi
-
-输出结果
-
-    Push transaction done for deploying contract user12345678
-    Trx: 
-    {
-        "version": 1,
-        "cursor_num": 606,
-        "cursor_label": 2437718820,
-        "lifetime": 1542958132,
-        "sender": "user12345678",
-        "contract": "bottos",
-        "method": "deploycode",
-        "param": {
-            "name": "user12345678",
-            "vm_type": 1,
-            "vm_version": 1,
-            "contract_code": "0061736d01000000013d0960027f7f0060067f7f7f7f7f7f017f60027f7f017f60087f7f7f7f7f7f7f7f017f60037f7f7f017f6000006000017f60017f017f60047f7f7f7f017f025f0603656e760b67657442696e56616c7565000303656e760a676574..."
-        },
-        "param_bin": "dc0004da000c757365723132333435363738cc01cc01c514320061736d01000000013d0960027f7f0060067f7f7f7f7f7f017f60027f7f017f60087f7f7f7f7f7f7f7f017f60037f7f7f017f6000006000017f60017f017f60047f7f7f7f017f025f0603...",
-        "sig_alg": 1,
-        "signature": "079c8ce13c0291d8d2b642d34065e07e2e2997acddd41c106979ff8b04cec2b12f6d850c49b1bc5a5cc19b7db0ebc2f6c16b809ef30cc82aafe350b06d2000cc"
-    }
-    TrxHash: 5c690fd8e8a4c647f1ac22070c6b4375b2fb5ba655cdff3b4afaf7da54f8fb3c
 
 
 ##### BCLI获取合约CODE文件和ABI文件
@@ -653,10 +536,10 @@ BCLI合约功能命令行主要实现用户主动部署一个合约及ABI文件�
     ./bcli contract get --help
     NAME:
         Bottos bcli tool contract get - get contract
-
+    
     USAGE:
         Bottos bcli tool contract get [command options] [arguments...]
-
+    
     OPTIONS:
         --account value  we use the account name as the default contract name
         --code value     the contract's wasm file path ( includes wasm file name )
@@ -682,62 +565,62 @@ BCLI合约功能命令行主要实现用户主动部署一个合约及ABI文件�
 输出结果
 
 ============CONTRACTCODE===============
- 
+
 "0061736d01000000013d0960027f7f0060067f7f7f7f7f7f017f60027f7f017f60087f7f7f7f7f7f7f7f017f60037f7f7f017f6000006000017f60017f017f60047f7f7f7f017f025f0603656e760b67657442696e56616c7565000303656e760a6765744374784e616d65000203656e7608676574506172616d000203656e76066d656d736574000403656e76067072696e7473000003656e760b73657442696e56616c75650001030a090502060704020607080404017000000503010001074505066d656d6f727902000869734d6574686f640007077265677573657200080873617968656c6c6f000c185f474c4f42414c5f5f7375625f495f74636173652e63707000060afb2409f202004100420037028c4041004200370294404100420037029c40410042003702a440410042003702ac40410041003602b440410041003602b840410041003602bc40410041003602c040410041003602c440410041003602c840410041003602cc40410041003602d040410041003602d440410041003602d840410041003602dc40410041003602e040410041003602e440410041003602e840410041003602ec40410041003602f040410041003602f440410041003602f840410041003602fc404100410036028041410041003602844141004100360288414100410036028c414100410036029041410041003602944141004100360298414100410036029c41410041003602a041410041003602a441410041003602a841410041003602ac41410041003602b041410041003602b441410041003602b841410041003602bc41410041003602c041410041003602c441410041003602c841410041003602cc41410041003602d041410041003602d4410b5b01027f0240024020012d0000220320002d0000470d00200141016a2101200041016a21000340200341ff0171450d0220002d0000210220012d00002103200141016a2101200041016a210020032002460d000b0b41000f0b41010be00101047f4100410028020441f0006b220336020441002102200341c0006a4100413010031a200341386a4200370300200341206a41106a4200370300200341286a420037030020034200370320200341106a4100280290453602002003410029038845370308200341002903804537030002400240200341c0006a1009450d00200341d4006a21000340200341206a20026a200020026a2d000022013a0000200241016a210220010d000b2003200329036837033841004103200341206a2003200341c0006a100a1b21020c010b410221020b4100200341f0006a36020420020bf90401057f4100410028020441a0106b220536020441002104200541106a410041801010031a200541106a41801010022102200541003a0000200520023602082005410036020c2005200541106a3602040240200520054190106a100b450d0002400240024020052d0090104106470d00410021042005280298104103470d03200520054190106a100b450d0320052d0090104105470d01200528029810220141016a4116490d02200541013a00000c030b200541063a00000c020b200541063a00000c010b0240024020052802042203450d002005410c6a280200220220016a200541086a2802004d0d010b200541043a00000c010b02402001450d00200320026a210420002102200121030340200220042d00003a0000200241016a2102200441016a21042003417f6a22030d000b2005410c6a28020021020b41002104200020016a41003a00002005410c6a200220016a360200200520054190106a100b450d000240024020052d0090104105470d00200528029810220141016a4116490d01200541013a0000410021040c020b200541063a00000c010b0240024020052802042203450d002005410c6a280200220220016a200541086a2802004d0d010b200541043a0000410021040c010b02402001450d00200041146a2104200320026a2102200121030340200420022d00003a0000200441016a2104200241016a21022003417f6a22030d000b2005410c6a28020021020b2005410c6a200220016a36020041002104200020016a41146a41003a0000200520054190106a100b450d00024020052d0090104104470d00200041286a200529039810370300410121040c010b200541063a00000b4100200541a0106a36020420040baf0603037f017e047f410041002802044190106b220a36020441002104200a41106a410041801010031a200a41023a0012200a41dc013b0110024020002d00002203450d00200041016a2105410021090340200520096a2107200941016a2204210920072d00000d000b0b200a41da013a0013200a20043a0015200a2004410874418080fc07714110763a0014024002400240024002400240200441ffff03712205450d00200541066a22084180104b0d02200a20033a0016024020054101460d00410120056b2104200041016a2109200a41106a41077221070340200720092d00003a0000200741016a2107200941016a2109200441016a22040d000b0b200541076a4180104d0d010c020b410621080b200a41106a20086a220941cf013a0000200841096a2208418110490d010b41002109200a41086a41002800a845360200200a41002900a045370200200a41017221040340200420096a2107200941016a2205210920072d00000d000b200a200510040c010b200941026a20002903182206423886200642288642808080808080c0ff0083842006421886428080808080e03f8320064208864280808080f01f838484200642088842808080f80f832006421888428080fc07838420064228884280fe0383200642388884848422064208883c0000200941016a20063c0000200941036a20064210883c0000200941046a20064218883c0000200941056a20064220883c0000200941066a20064228883c0000200941076a20064230883c0000200941086a20064238883c00004100210441002105024020012d0000450d00200141016a2100410021090340200020096a2107200941016a2205210920072d00000d000b0b024020022d0000450d00200241016a2100410021090340200020096a2107200941016a2204210920072d00000d000b0b410121092001200520022004200a41106a200810050d0141002109200a410e6a41002d00be453a0000200a410c6a41002f00bc453b0100200a41086a41002800b845360200200a41002900b045370200200a41017221040340200420096a2107200941016a2205210920072d00000d000b200a200510040b410021090b4100200a4190106a36020420090bf20902047f017e0240024020002802042202450d00200028020c220341016a220420002802084d0d010b200041023a000041000f0b200220036a2d000021022000410c6a200436020002400240024002400240024002400240024002400240024002400240200241bb7e6a220241174b0d00024020020e18000101010101010203040501010101010101010101060107000b200141003a00000240200041046a2802002202450d002000410c6a2203280200220441026a2205200041086a2802004d0d080b200041073a000041000f0b200041063a000041000f0b200141013a00000240200041046a2802002202450d002000410c6a2203280200220441016a200041086a2802004d0d070b200041043a000041000f0b200141023a00000240200041046a2802002202450d002000410c6a2203280200220441026a200041086a2802004d0d070b200041043a000041000f0b200141033a00000240200041046a2802002202450d002000410c6a2203280200220441046a200041086a2802004d0d070b200041043a000041000f0b200141043a00000240200041046a2802002202450d002000410c6a2203280200220441086a200041086a2802004d0d070b200041043a000041000f0b200141053a00000240200041046a2802002202450d002000410c6a2203280200220441026a2205200041086a2802004d0d070b200041043a000041000f0b200141063a00000240200041046a2802002202450d002000410c6a2203280200220441026a2205200041086a2802004d0d070b200041043a000041000f0b200220046a22002d0000210220002d0001210020032005360200200141086a200220004108747222004118742000410874418080fc07717241107636020041010f0b200141086a200220046a2d00003a00002003200328020041016a36020041010f0b200141086a2200200220046a22022d00003a0000200141096a20022d00013a00002003200328020041026a360200200020002f010022014118742001410874418080fc0771724110763b010041010f0b200141086a2205200220046a22002d00003a0000200141096a20002d00013a00002001410a6a200041026a2d00003a00002001410b6a200041036a2d00003a00002003200328020041046a3602002005200528020022004118742000410874418080fc07717220004108764180fe03712000411876727236020041010f0b200141086a2205200220046a22002d00003a0000200141096a20002d00013a00002001410a6a200041026a2d00003a00002001410b6a200041036a2d00003a00002001410c6a200041046a2d00003a00002001410d6a200041056a2d00003a00002001410e6a200041066a2d00003a00002001410f6a200041076a2d00003a00002003200328020041086a360200200520052903002206423886200642288642808080808080c0ff0083842006421886428080808080e03f8320064208864280808080f01f838484200642088842808080f80f832006421888428080fc07838420064228884280fe0383200642388884848437030041010f0b200220046a22002d0000210220002d0001210020032005360200200141086a200220004108747222004118742000410874418080fc07717241107636020041010f0b200220046a22002d0000210220002d0001210020032005360200200141086a200220004108747222004118742000410874418080fc07717241107636020041010bdc0201057f4100410028020441f0006b220436020441002103200441e0006a41003602002004420037035820044200370350200441d0006a411410011a024002400240024020042d0050450d00200441d0006a41017221000340200020036a2102200341016a2201210320022d00000d000b2001450d00200441386a41106a4100360200200441386a41086a420037030020044200370338200441306a4200370300200441186a41106a4200370300200441186a41086a420037030020044200370318200441106a41002802904536020020044100290388453703082004410029038045370300200441386a100d450d01200441d0006a2004200441386a200441186a100e450d022004200429033042017c37033041004103200441186a2004200441386a100a1b21030c030b41c0c50041231004410521030c020b410221030c010b41f0c500410f1004410621030b4100200441f0006a36020420030be40201057f4100410028020441a0106b220536020441002104200541106a410041801010031a200541106a41801010022102200541003a0000200520023602082005410036020c2005200541106a3602040240200520054190106a100b450d0002400240024020052d0090104106470d00410021042005280298104101470d03200520054190106a100b450d0320052d0090104105470d01200528029810220141016a4116490d02200541013a00000c030b200541063a00000c020b200541063a00000c010b0240024020052802042203450d002005410c6a280200220220016a200541086a2802004d0d010b200541043a00000c010b02402001450d00200320026a210420002102200121030340200220042d00003a0000200241016a2102200441016a21042003417f6a22030d000b2005410c6a28020021020b200020016a41003a00002005410c6a200220016a360200410121040b4100200541a0106a36020420040be20401077f4100410028020441a0106b220736020441002109200741004180101003210441002108024020002d0000450d00200041016a210a410021070340200a20076a2106200741016a2208210720062d00000d000b0b024020012d0000450d00200141016a210a410021070340200a20076a2106200741016a2209210720062d00000d000b0b4100210a024020022d0000450d00200241016a2105410021070340200520076a2106200741016a220a210720062d00000d000b0b20002008200120092002200a200441801010002106200441003a0080102004418010360288102004410036028c1020042004360284100240024020044180106a20044190106a100b450d0002400240024020042d0090104106470d002004280298104102470d0320044180106a20044190106a100b450d0320042d0090104105470d01200428029810220a41016a4116490d02200441013a0080100c030b200441063a0080100c020b200441063a0080100c010b024002402004280284102207450d002004418c106a2802002209200a6a20044188106a2802004d0d010b200441043a0080100c010b0240200a450d00200720096a210720032109200a21080340200920072d00003a0000200941016a2109200741016a21072008417f6a22080d000b2004418c106a28020021090b410021072003200a6a41003a00002004418c106a2009200a6a36020020044180106a20044190106a100b450d01024020042d0090104104470d00200341186a2004290398103703004101210720060d024180c600411310040c010b200441063a0080100c010b410021070b4100200441a0106a36020420070b0bab01070041040b0420630000004180c5000b147573657264657461696c000000000000000000000041a0c5000b0c7061636b206661696c6564000041b0c5000b0f73617665206462206661696c6564000041c0c5000b244552524f523a20476574206d7920636f6e7472616374206e616d65206661696c65642e000041f0c5000b1067657444617461206661696c65642100004180c6000b1467657442696e56616c7565206661696c65642100"
 
 ============ABI===============
- 
+
 {
-	"types": [],
-	"structs": [
-              {
-              	"name": "UserInfo",
-              	"base": "",
-              	"fields": {
-              		"userName": "string",
-              		"userRole": "string",
-              		"rcvHelloNum": "uint64"
-                    }
-              	},
-              {
-              	"name": "SayHello",
-              	"base": "",
-              	"fields": {
-              		"userName": "string"
-                    }
-              	},
-              {
-              	"name": "UserDetail",
-              	"base": "",
-              	"fields": {
-              		"userRole": "string",
-              		"rcvHelloNum": "uint64"
-                    }
-              	}
-       ],
-	"actions": [
-              {
-              	"action_name": "reguser",
-              	"type": "UserInfo"
-              },
-              {
-              	"action_name": "sayhello",
-              	"type": "SayHello"
-              }
-       ],
-	"tables": [
-              {
-              	"table_name": "userinfo",
-              	"index_type": "string",
-              	"key_names":  [
-              		"userName"
-              	 ],
-              	"key_types":  [
-              		"string"
-              	 ],
-              	"type": "UserDetail"
-              }
-       ]
+​	"types": [],
+​	"structs": [
+​              {
+​              	"name": "UserInfo",
+​              	"base": "",
+​              	"fields": {
+​              		"userName": "string",
+​              		"userRole": "string",
+​              		"rcvHelloNum": "uint64"
+​                    }
+​              	},
+​              {
+​              	"name": "SayHello",
+​              	"base": "",
+​              	"fields": {
+​              		"userName": "string"
+​                    }
+​              	},
+​              {
+​              	"name": "UserDetail",
+​              	"base": "",
+​              	"fields": {
+​              		"userRole": "string",
+​              		"rcvHelloNum": "uint64"
+​                    }
+​              	}
+​       ],
+​	"actions": [
+​              {
+​              	"action_name": "reguser",
+​              	"type": "UserInfo"
+​              },
+​              {
+​              	"action_name": "sayhello",
+​              	"type": "SayHello"
+​              }
+​       ],
+​	"tables": [
+​              {
+​              	"table_name": "userinfo",
+​              	"index_type": "string",
+​              	"key_names":  [
+​              		"userName"
+​              	 ],
+​              	"key_types":  [
+​              		"string"
+​              	 ],
+​              	"type": "UserDetail"
+​              }
+​       ]
 }
 
 
@@ -777,10 +660,10 @@ BCLI合约功能命令行主要实现用户主动部署一个合约及ABI文件�
 输出结果
 
 {
-    "contract": "lyp12345678",
-    "object": "userdetail",
-    "key": "lyp",
-    "value": "dc0003da00036c7970cf0000000000000016c5001000000000000000000000000000000021"
+​    "contract": "lyp12345678",
+​    "object": "userdetail",
+​    "key": "lyp",
+​    "value": "dc0003da00036c7970cf0000000000000016c5001000000000000000000000000000000021"
 }
 
 Table data is : map[lyp:33 userrole:lyp rcvhellonum:22] 
@@ -796,17 +679,17 @@ BCLI候选节点功能选举命令行主线实现候选节点之：注册节点�
     ./bcli delegate --help
     NAME:
         Bottos bcli tool delegate - for delegate operations
-
+    
     USAGE:
         Bottos bcli tool delegate command [command options] [arguments...]
-
+    
     COMMANDS:
         reg         reg delegate
         unreg       unreg delegate
         list        list delegates
         vote        Vote for producers
         cancelvote  cancel vote for producers
-
+    
     OPTIONS:
         --help, -h  show help
 
@@ -1209,10 +1092,10 @@ BCLI创世节点功能命令行主要包括： 添加初始生产者， 移交�
     
     NAME:
         Bottos bcli tool genesis - for genesis node operations
-
+    
     USAGE:
         Bottos bcli tool genesis command [command options] [arguments...]
-
+    
     COMMANDS:
         setdelegate      set delegate
         unsetdelegate    unset delegate
@@ -1220,7 +1103,7 @@ BCLI创世节点功能命令行主要包括： 添加初始生产者， 移交�
         cancelprevilige  cancel genesis node permission
         settransitvote   set transit vote
         newstkaccount    transfer erc20
-
+    
     OPTIONS:
         --help, -h  show help
 
@@ -1334,7 +1217,7 @@ BCLI创世节点功能命令行主要包括： 添加初始生产者， 移交�
 输出结果
 
     ./bcli genesis blkprodtrans --sender bottos --actblknum 2000
-
+    
     Push transaction done:
     Trx: 
     {
@@ -1386,7 +1269,7 @@ BCLI创世节点功能命令行主要包括： 添加初始生产者， 移交�
     ./bcli genesis cancelprevilige --sender bottos
 
 输出结果
-  
+
     Push transaction done:
     Trx: 
     {
@@ -1411,10 +1294,10 @@ BCLI创世节点功能命令行主要包括： 添加初始生产者， 移交�
     ./bcli genesis unsetdelegate --h
     NAME:
         Bottos bcli tool genesis unsetdelegate - unset delegate
-
+    
     USAGE:
         Bottos bcli tool genesis unsetdelegate [command options] [arguments...]
-
+    
     OPTIONS:
         --sender value   sender account
         --account value  account name
@@ -1440,19 +1323,19 @@ BCLI创世节点功能命令行主要包括： 添加初始生产者， 移交�
 Push transaction done:
 Trx: 
 {
-    "version": 197632,
-    "cursor_num": 1150,
-    "cursor_label": 1151977351,
-    "lifetime": 1545210346,
-    "sender": "bottos",
-    "contract": "bottos",
-    "method": "unsetdelegate",
-    "param": {
-        "name": "lyp12345678"
-    },
-    "param_bin": "dc0001da000b6c79703132333435363738",
-    "sig_alg": 1,
-    "signature": "c909e76c9c4176fc487e6054537a7e077930b3d3ce15718b83306f1a6763e6365fe71d9516abc85917c091cd2925eb9910f6b1afd0b5795e0564bae9c2279672"
+​    "version": 197632,
+​    "cursor_num": 1150,
+​    "cursor_label": 1151977351,
+​    "lifetime": 1545210346,
+​    "sender": "bottos",
+​    "contract": "bottos",
+​    "method": "unsetdelegate",
+​    "param": {
+​        "name": "lyp12345678"
+​    },
+​    "param_bin": "dc0001da000b6c79703132333435363738",
+​    "sig_alg": 1,
+​    "signature": "c909e76c9c4176fc487e6054537a7e077930b3d3ce15718b83306f1a6763e6365fe71d9516abc85917c091cd2925eb9910f6b1afd0b5795e0564bae9c2279672"
 }
 TrxHash: 602ceed3970de1948a3a0d76ee8e5b82dc29a7ec741d576327938d883d06cc18
 
@@ -1463,10 +1346,10 @@ TrxHash: 602ceed3970de1948a3a0d76ee8e5b82dc29a7ec741d576327938d883d06cc18
     ./bcli genesis settransitvote --h
     NAME:
         Bottos bcli tool genesis settransitvote - set transit vote
-
+    
     USAGE:
         Bottos bcli tool genesis settransitvote [command options] [arguments...]
-
+    
     OPTIONS:
         --sender value   sender account
         --account value  account name
@@ -1492,20 +1375,20 @@ TrxHash: 602ceed3970de1948a3a0d76ee8e5b82dc29a7ec741d576327938d883d06cc18
 Push transaction done:
 Trx: 
 {
-    "version": 197632,
-    "cursor_num": 1202,
-    "cursor_label": 4128090569,
-    "lifetime": 1545210505,
-    "sender": "bottos",
-    "contract": "bottos",
-    "method": "settransitvote",
-    "param": {
-        "name": "lyp12345678",
-        "vote": 100
-    },
-    "param_bin": "dc0002da000b6c79703132333435363738cf0000000000000064",
-    "sig_alg": 1,
-    "signature": "f8d84ac9485044ead68a7d32cc902a757b7422b1a626ced59faa0f210edcb5e76f4ef87281f2a43f6cbd861adf8ff3b6cd31371ec26cf7f50c557ff4a62a1929"
+​    "version": 197632,
+​    "cursor_num": 1202,
+​    "cursor_label": 4128090569,
+​    "lifetime": 1545210505,
+​    "sender": "bottos",
+​    "contract": "bottos",
+​    "method": "settransitvote",
+​    "param": {
+​        "name": "lyp12345678",
+​        "vote": 100
+​    },
+​    "param_bin": "dc0002da000b6c79703132333435363738cf0000000000000064",
+​    "sig_alg": 1,
+​    "signature": "f8d84ac9485044ead68a7d32cc902a757b7422b1a626ced59faa0f210edcb5e76f4ef87281f2a43f6cbd861adf8ff3b6cd31371ec26cf7f50c557ff4a62a1929"
 }
 TrxHash: 545d8ce9032756dd9305fd2ce14cce5c18aaa39f94eff1791fbc1fe41bf9e4a0
 
@@ -1555,22 +1438,22 @@ BCLI转账功能负责由FROM用户向TO用户进行BTO转账。
     Memo: 
 Trx: 
 {
-    "version": 1,
-    "cursor_num": 971,
-    "cursor_label": 4055218391,
-    "lifetime": 1542966310,
-    "sender": "bottos",
-    "contract": "bottos",
-    "method": "transfer",
-    "param": {
-        "from": "bottos",
-        "to": "user12345678",
-        "value": "2.00000000",
-        "memo": ""
-    },
-    "param_bin": "dc0004da0006626f74746f73da0006626f74746f73c50020000000000000000000000000000000000000000000000000000000000bebc200da0000",
-    "sig_alg": 1,
-    "signature": "8b883beaa3f7f6980d0d432264aaa77c4a7f22fca6c26dda0c53de649f379ab3629af968c117562361bb7d1b4495a9b5068919e6a9b0b3538fe96372521054dd"
+​    "version": 1,
+​    "cursor_num": 971,
+​    "cursor_label": 4055218391,
+​    "lifetime": 1542966310,
+​    "sender": "bottos",
+​    "contract": "bottos",
+​    "method": "transfer",
+​    "param": {
+​        "from": "bottos",
+​        "to": "user12345678",
+​        "value": "2.00000000",
+​        "memo": ""
+​    },
+​    "param_bin": "dc0004da0006626f74746f73da0006626f74746f73c50020000000000000000000000000000000000000000000000000000000000bebc200da0000",
+​    "sig_alg": 1,
+​    "signature": "8b883beaa3f7f6980d0d432264aaa77c4a7f22fca6c26dda0c53de649f379ab3629af968c117562361bb7d1b4495a9b5068919e6a9b0b3538fe96372521054dd"
 }
 
 #### 7. BCLI Transaction 提交和查询命令行
@@ -1646,7 +1529,7 @@ BCLI Transaction 提交和查询命令行负责提交一个用户自定义的Tra
         "signature": "3aa45652b368827fd5480721de1588ed08c2289de2cfa97ce352d65c8f1acc6e4f04b2c8492caacedb61097dea2728019d4c40c932d763ed7e26d051ca27a188",
         "version": 1
     }
-
+    
     <<<Transaction Status>>> : commited
 
 ##### BCLI Transaction提交命令行
@@ -1697,17 +1580,17 @@ BCLI Transaction 提交和查询命令行负责提交一个用户自定义的Tra
 Push transaction done:
 Trx: 
 {
-    "version": 1,
-    "cursor_num": 2844,
-    "cursor_label": 1803934300,
-    "lifetime": 1543468945,
-    "sender": "lyp12345678",
-    "contract": "lyp12345678",
-    "method": "reguser",
-    "param": "dc0004da00036c7970da00036c7970cf0000000000000016c5001000000000000000000000000000000021",
-    "param_bin": "dc0004da00036c7970da00036c7970cf0000000000000016c5001000000000000000000000000000000021",
-    "sig_alg": 1,
-    "signature": "984d8b69595e6311ddbfa6214a0610ab13d79839427c441f54073d3aff9b7c27366f6c48508921a3d1c7535d5174134c201daaf4f5ea5f8e578ef804f7737305"
+​    "version": 1,
+​    "cursor_num": 2844,
+​    "cursor_label": 1803934300,
+​    "lifetime": 1543468945,
+​    "sender": "lyp12345678",
+​    "contract": "lyp12345678",
+​    "method": "reguser",
+​    "param": "dc0004da00036c7970da00036c7970cf0000000000000016c5001000000000000000000000000000000021",
+​    "param_bin": "dc0004da00036c7970da00036c7970cf0000000000000016c5001000000000000000000000000000000021",
+​    "sig_alg": 1,
+​    "signature": "984d8b69595e6311ddbfa6214a0610ab13d79839427c441f54073d3aff9b7c27366f6c48508921a3d1c7535d5174134c201daaf4f5ea5f8e578ef804f7737305"
 }
 TrxHash: cb9a695f9f8dfa02e81caf58fc9def571d892b95fd168a9c2f7eb701ee802ed3
 
@@ -1732,8 +1615,9 @@ TrxHash: cb9a695f9f8dfa02e81caf58fc9def571d892b95fd168a9c2f7eb701ee802ed3
         lock         lock wallet
         unlock       unlock wallet
         list         list wallet
-  
-    
+
+
+​    
     OPTIONS:
     --help, -h  show help
 
@@ -1776,8 +1660,8 @@ TrxHash: cb9a695f9f8dfa02e81caf58fc9def571d892b95fd168a9c2f7eb701ee802ed3
 
 输出结果
 {
-    "private_key": "b8b890ebc315a8e1c3a6f7b78977d68ca1e9274c986314ccbe967b964cf68b66",
-    "public_key": "0485fccecf8c8e6260d8558e1a61adca3a888127e34ba0d052dfeb1c31d419bf0494482e7e8a447d63394cff713fc00aa8e64c24b73a8173661a91884b71407bce"
+​    "private_key": "b8b890ebc315a8e1c3a6f7b78977d68ca1e9274c986314ccbe967b964cf68b66",
+​    "public_key": "0485fccecf8c8e6260d8558e1a61adca3a888127e34ba0d052dfeb1c31d419bf0494482e7e8a447d63394cff713fc00aa8e64c24b73a8173661a91884b71407bce"
 }
 
 ##### BCLI 创建钱包命令行
@@ -1817,7 +1701,7 @@ Please input your password for your wallet:
 Please input your private key for your wallet: 
 
 {
-    "wallet_name": "user12345678.keystore"
+​    "wallet_name": "user12345678.keystore"
 }
 
 注：
@@ -1859,13 +1743,13 @@ Please input your private key for your wallet:
 
 ./bcli wallet lock --account user12345678
 {
-    "lock": true
+​    "lock": true
 }
 
 ##### BCLI 解锁钱包命令行
 
 帮助信息
-    
+​    
     ./bcli wallet unlock --help
     
     NAME:
@@ -1908,7 +1792,7 @@ Please input your private key for your wallet:
 ##### BCLI 查看所有钱包命令行
 
 帮助信息
-    
+​    
     ./bcli wallet list --help
     
     NAME:
@@ -1953,7 +1837,7 @@ USAGE:
    Bottos bcli tool log command [command options] [arguments...]
 
 COMMANDS:
-     setconfigitem  set log config item. If you need change the log confiration in your configuration, please also input the --serveraddr <LogRESTHost>:<LogRESTPort> firstly in this command
+​     setconfigitem  set log config item. If you need change the log confiration in your configuration, please also input the --serveraddr <LogRESTHost>:<LogRESTPort> firstly in this command
 
 OPTIONS:
    --help, -h  show help

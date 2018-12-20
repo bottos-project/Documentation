@@ -22,17 +22,17 @@ The Global Option Parameter Description
 
 The global help information
 ​    
-    ./bcli --help
-    
+​    ./bcli --help
+​    
     NAME:
     Bottos bcli tool - a tool that makes user communicate with bottos blockchain
-
+    
     USAGE:
     bcli [global options] command [command options] [arguments...]
-
+    
     VERSION:
     0.0.1
-
+    
     COMMANDS:
         getblkheader  get header block's information
         getblock      get block information
@@ -47,7 +47,7 @@ The global help information
         genesis       for genesis node operations
         log           for log operations
         help, h       Shows a list of commands or help for one command
-
+    
     GLOBAL OPTIONS:
     --servaddr value    (default: "127.0.0.1:8689")
     --walletport value  
@@ -99,17 +99,17 @@ Chief command help information
     
     NAME:
     Bottos bcli tool account - create or get account
-
+    
     USAGE:
     Bottos bcli tool account command [command options] [arguments...]
-
+    
     COMMANDS:
         create   create account
         get      get account information
         stake    stake of account
         unstake  unstake of account
         claim    claim of stake
-
+    
     OPTIONS:
     --help, -h  show help
 
@@ -215,22 +215,22 @@ Outputs
     Account: bottos
     Balance: 999770000.00000000 BTO
     Pubkey: 0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f
-
+    
     StakedBalance: 0.00000000 BTO
     UnStakingBalance: 0.00000000 BTO
     StakedSpaceBalance: 0.00000000 BTO
     StakedTimeBalance: 0.00000000 BTO
     UnStakingTimestamp: 0
-
+    
     AvailableSpaceBalance: 0
     UsedSpaceBalance: 0
     AvailableTimeBalance: 0
     UsedTimeBalance: 0
-
+    
     UnClaimedReward: 0.00000000 BTO
-
+    
     Vote: N/A
-
+    
     Contracts: N/A
 
 ##### Sample of user staking BTO
@@ -241,10 +241,10 @@ Help information
     
     NAME:
     Bottos bcli tool account stake - stake of account
-
+    
     USAGE:
     Bottos bcli tool account stake [command options] [arguments...]
-
+    
     OPTIONS:
         --account value  acocunt name
         --amount value   amount of bto
@@ -296,10 +296,10 @@ Help information
     
     NAME:
     Bottos bcli tool account unstake - unstake of account
-
+    
     USAGE:
         Bottos bcli tool account unstake [command options] [arguments...]
-
+    
     OPTIONS:
         --account value  acocunt name
         --amount value   amount of bto
@@ -416,8 +416,6 @@ Chief Help information
     
     COMMANDS:
         deploy      contract deploy
-        deploycode  contract  deploycode
-        deployabi   Contract  deployabi
         get         get contract
     
     OPTIONS:
@@ -427,12 +425,10 @@ Chief Help information
 
 Commandline Function Description
 
-| chief command   | parameter list | Parameter Description                                   |
+| chief command   | parameter list |                  Parameter Description                  |
 | --------------- | :------------: | :-----------------------------------------------------: |
-| ./bcli contract | deploy         | Deploy the ABI file and WASM contract                   |
-| ./bcli contract | deploycode     | Deploy contract                                         |
-| ./bcli contract | deployabi      | Deploy ABI file                                         |
-| ./bcli contract | get            | Get specific contract and abi info , then save to files |
+| ./bcli contract |     deploy     |          Deploy the ABI file and WASM contract          |
+| ./bcli contract |      get       | Get specific contract and abi info , then save to files |
 
 ##### BCLI Contract Deployment Command
 
@@ -441,14 +437,15 @@ Help information
     ./bcli contract deploycode --help
     NAME:
         Bottos bcli tool contract deploycode - contract  deploycode
-
+    
     USAGE:
         Bottos bcli tool contract deploycode [command options] [arguments...]
-
+    
     OPTIONS:
         --contract value  the contract's name
         --code value      the contract's wasm file path ( includes wasm file name )
         --filetype value  the contract's file type: wasm or js (default: "wasm")
+        --abi value       the contract's abi file path ( includes abi file name )
         --account value   the account name whom deploy the code
 
 
@@ -458,10 +455,11 @@ Parameter Description
 
 | chief command            | parameter list | Parameter Description         | mandatory |
 | ------------------------ | :------------: | :---------------------------: | :-------: |
-| bcli contract deploycode | --account         | contract name                 | Yes       |
+| bcli contract deploycode | --contract | contract name                 | Yes       |
 |                          | --code         | Contract file（.WASM）'s path | Yes       |
-|                          | --filetype         | user who signs the contract   | Yes       |
-|                          | --contract | contract's name                    | Yes       |
+|                          | --filetype         | user who signs the contract   | No       |
+|                          | --abi | Contract file（.abi）'s path | Yes       |
+| | --account | the account who deploy the contract | Yes |
 
 Return Information
 
@@ -469,24 +467,24 @@ This will return the transaction information after the command successfully be  
 
 Sample
 
-    ./bcli contract deploycode --account user12345678 --code try.wasm --contract test1
+    ./bcli contract deploy --account tina123456789 --code testvm1/testVM1.wasm --abi testvm1/testVM1.abi --contract testvm1
 
 Output
-​     
+​  
 ​    
 
     Push transaction done for deploying contract user12345678
     Trx: 
     {
-        "version": 1,
+        "version": 197632,
         "cursor_num": 467,
         "cursor_label": 2953320580,
         "lifetime": 1542957715,
-        "sender": "user12345678",
+        "sender": "tina123456789",
         "contract": "test1",
-        "method": "deploycode",
+        "method": "deploycontract",
         "param": {
-            "name": "user12345678",
+            "name": "tina123456789",
             "vm_type": 1,
             "vm_version": 1,
             "contract_code": "0061736d01000000013d0960027f7f0060067f7f7f7f7f7f017f60027f7f017f60087f7f7f7f7f7f7f7f017f60037f7f7f017f6000006000017f60017f017f60047f7f7f7f017f025f0603656e760b67657442696e56616c7565000303656e760a676574..."
@@ -497,70 +495,12 @@ Output
     }
     TrxHash: 596441807df736fc15ae32a59a38bc9324620ca2945a0633c033e7d0370e3638
 
-##### BCLI ABI deploy commands
-
-Help information
-
-    ./bcli contract deployabi --help
-    
-    NAME:
-        Bottos bcli tool contract deployabi - Contract  deployabi
-
-    USAGE:
-        Bottos bcli tool contract deployabi [command options] [arguments...]
-
-    OPTIONS:
-        --contract value  the contract's name
-        --abi value       the contract's abi file path ( includes abi file name )
-        --filetype value  the contract's file type: wasm or js (default: "wasm")
-        --account value   the account name whom deploy the code
-
-
-Parameter Description
-
-| Chief Command           | Parameter List | Parameter Description               | Mandatory |
-| ----------------------- | :------------: | :---------------------------------: | :-------: |
-| bcli contract deployabi | --account      | contract name                       | Yes       |
-|                         | --abi          | abi description file（.abi）'s path  | Yes       |
-|                         | --filetype     | Contract file type wasm/js          | No        |
-|                         | --contract | contract's name                      | Yes       |
-
-Return Information
-
-This will return the transaction information after the command successfully sent.
-
-Sample
-
-    ./bcli contract deployabi --account user12345678 --abi try.abi --contract test1
-
-Output
-
-    ./bcli contract deployabi --account user12345678 --abi try.abi
-    {
-        "errcode": 0,
-        "msg": "trx receive succ",
-        "result": {
-            "trx": {
-                "version": 1,
-                "cursor_num": 518,
-                "cursor_label": 1285797565,
-                "lifetime": 1542957868,
-                "sender": "user12345678",
-                "contract": "test1",
-                "method": "deployabi",
-                "param": "dc0003da000c757365723132333435363738c502b67b227479706573223a5b5d2c2273747275637473223a5b7b226e616d65223a2255736572496e666f222c2262617365223a22222c226669656c6473223a7b22757365724e616d65223a22737472696e67222c2275736572526f6c65223a22737472696e67222c2272637648656c6c6f4e756d223a2275696e743634227d7d2c7b226e616d65223a2253617948656c6c6f222c2262617365223a22222c226669656c6473223a7b22757365724e616d65223a22737472696e67227d7d2c7b226e616d65223a225573657244657461696c222c2262617365223a22222c226669656c6473223a7b2275736572526f6c65223a22737472696e67222c2272637648656c6c6f4e756d223a2275696e743634227d7d2c7b226e616d65223a2255736572496e666f222c2262617365223a22222c226669656c6473223a7b2272637648656c6c6f4e756d223a2275696e743634227d7d2c7b226e616d65223a2253617948656c6c6f222c2262617365223a22222c226669656c6473223a7b22757365724e616d65223a22737472696e67227d7d2c7b226e616d65223a225573657244657461696c222c2262617365223a22222c226669656c6473223a7b2272637648656c6c6f4e756d223a2275696e743634227d7d5d2c22616374696f6e73223a5b7b22616374696f6e5f6e616d65223a2272656775736572222c2274797065223a2255736572496e666f227d2c7b22616374696f6e5f6e616d65223a2273617968656c6c6f222c2274797065223a2253617948656c6c6f227d5d2c227461626c6573223a5b7b22696e6465785f74797065223a22737472696e67222c226b65795f6e616d6573223a5b22757365724e616d65225d2c226b65795f7479706573223a5b22737472696e67225d2c227461626c655f6e616d65223a2275736572696e666f222c2274797065223a225573657244657461696c227d5d7dda00047761736d",
-                "sig_alg": 1,
-                "signature": "40eebd0db8a10e91a7cbbe80f7a732f28fbda047ca116085bc62336364fcff51380de14a80ae520499041ad001092736b83ee602c1f3712c935fc78012477a0b"
-            },
-            "trx_hash": "d151325bebcb384afd8b72e04cbf7751e551bfdbced4f309691b0198c392df23"
-        }
-    }
-
 Note： 
 ​    BOTTOS ABI file describes the Apis and structs needed by contract, for instances, in this case, the nodeclustermng.abi file's information is shown as following.
 ​    
-     "structs" represents for the definition of structs which be used in this contract
-    
+​     "structs" represents for the definition of structs which be used in this contract
+​    
+
     "actions" represents for all the contract methods nane and the corresponding struct names which will be used in this contract
     
     "tables" represents that the contract information will be written to the block chain after the contract is called(take the effect).  It represents for the inputting parameters from querying the block chain, which includes the keywords and the corresponding structs' information.
@@ -611,68 +551,6 @@ Note：
         ]
     }
 
-##### Both Deploy BCLI CODE and ABI's command
-
-Help information
-
-    ./bcli contract deploy --help
-    NAME:
-        Bottos bcli tool contract deploy - contract deploy
-
-    USAGE:
-        Bottos bcli tool contract deploy [command options] [arguments...]
-
-    OPTIONS:
-        --contract value  the contract's name
-        --code value      the contract's wasm file path ( includes wasm file name )
-        --filetype value  the contract's file type: wasm or js (default: "wasm")
-        --abi value       the contract's abi file path ( includes abi file name )
-        --account value   the account name whom deploy the code
-
-
-
-Parameter Description
-
-| chief command        | parameter list | Parameter Description               | mandatory |
-| -------------------- | :------------: | :---------------------------------: | :-------: |
-| bcli contract deploy | --account      | contract name                       | Yes       |
-|                      | --code         | contract name                       | Yes       |
-|                      | --abi          | abi description file（.abi）'s path  | Yes       |
-|                      | --filetype     | Contract file type wasm/js          | Yes       |
-|                      | --contract | contract's name                      | Yes       |
-
-Return Information
-
-This will return the transaction information after the command successfully sent.
-
-Sample
-
-    ./bcli contract deploy --account user12345678 --code try.wasm --abi test.abi --contract test1
-
-Output
-
-    Push transaction done for deploying contract user12345678
-    Trx: 
-    {
-        "version": 1,
-        "cursor_num": 606,
-        "cursor_label": 2437718820,
-        "lifetime": 1542958132,
-        "sender": "user12345678",
-        "contract": "test1",
-        "method": "deploycode",
-        "param": {
-            "name": "user12345678",
-            "vm_type": 1,
-            "vm_version": 1,
-            "contract_code": "0061736d01000000013d0960027f7f0060067f7f7f7f7f7f017f60027f7f017f60087f7f7f7f7f7f7f7f017f60037f7f7f017f6000006000017f60017f017f60047f7f7f7f017f025f0603656e760b67657442696e56616c7565000303656e760a676574..."
-        },
-        "param_bin": "dc0004da000c757365723132333435363738cc01cc01c514320061736d01000000013d0960027f7f0060067f7f7f7f7f7f017f60027f7f017f60087f7f7f7f7f7f7f7f017f60037f7f7f017f6000006000017f60017f017f60047f7f7f7f017f025f0603...",
-        "sig_alg": 1,
-        "signature": "079c8ce13c0291d8d2b642d34065e07e2e2997acddd41c106979ff8b04cec2b12f6d850c49b1bc5a5cc19b7db0ebc2f6c16b809ef30cc82aafe350b06d2000cc"
-    }
-    TrxHash: 5c690fd8e8a4c647f1ac22070c6b4375b2fb5ba655cdff3b4afaf7da54f8fb3c
-
 
 ##### ##### BCLI Getting CODE file and ABI File
 
@@ -681,10 +559,10 @@ Help information
     ./bcli contract get --help
     NAME:
         Bottos bcli tool contract get - get contract
-
+    
     USAGE:
         Bottos bcli tool contract get [command options] [arguments...]
-
+    
     OPTIONS:
         --contract value  the contract's name
         --code value      the contract's wasm file path ( includes wasm file name )
@@ -807,10 +685,10 @@ Sample
 Output
 
 {
-    "contract": "lyp12345678",
-    "object": "userdetail",
-    "key": "lyp",
-    "value": "dc0003da00036c7970cf0000000000000016c5001000000000000000000000000000000021"
+​    "contract": "lyp12345678",
+​    "object": "userdetail",
+​    "key": "lyp",
+​    "value": "dc0003da00036c7970cf0000000000000016c5001000000000000000000000000000000021"
 }
 
 Table data is : map[lyp:33 userrole:lyp rcvhellonum:22] 
@@ -1239,10 +1117,10 @@ Help information
     
     NAME:
         Bottos bcli tool genesis - for genesis node operations
-
+    
     USAGE:
         Bottos bcli tool genesis command [command options] [arguments...]
-
+    
     COMMANDS:
         setdelegate      set delegate
         unsetdelegate    unset delegate
@@ -1250,7 +1128,7 @@ Help information
         cancelprevilige  cancel genesis node permission
         settransitvote   set transit vote
         newstkaccount    transfer erc20
-
+    
     OPTIONS:
         --help, -h  show help
 
@@ -1441,10 +1319,10 @@ Help information
     ./bcli genesis unsetdelegate --h
     NAME:
         Bottos bcli tool genesis unsetdelegate - unset delegate
-
+    
     USAGE:
         Bottos bcli tool genesis unsetdelegate [command options] [arguments...]
-
+    
     OPTIONS:
         --sender value   sender account
         --account value  account name
@@ -1470,19 +1348,19 @@ Output
 Push transaction done:
 Trx: 
 {
-    "version": 197632,
-    "cursor_num": 1150,
-    "cursor_label": 1151977351,
-    "lifetime": 1545210346,
-    "sender": "bottos",
-    "contract": "bottos",
-    "method": "unsetdelegate",
-    "param": {
-        "name": "lyp12345678"
-    },
-    "param_bin": "dc0001da000b6c79703132333435363738",
-    "sig_alg": 1,
-    "signature": "c909e76c9c4176fc487e6054537a7e077930b3d3ce15718b83306f1a6763e6365fe71d9516abc85917c091cd2925eb9910f6b1afd0b5795e0564bae9c2279672"
+​    "version": 197632,
+​    "cursor_num": 1150,
+​    "cursor_label": 1151977351,
+​    "lifetime": 1545210346,
+​    "sender": "bottos",
+​    "contract": "bottos",
+​    "method": "unsetdelegate",
+​    "param": {
+​        "name": "lyp12345678"
+​    },
+​    "param_bin": "dc0001da000b6c79703132333435363738",
+​    "sig_alg": 1,
+​    "signature": "c909e76c9c4176fc487e6054537a7e077930b3d3ce15718b83306f1a6763e6365fe71d9516abc85917c091cd2925eb9910f6b1afd0b5795e0564bae9c2279672"
 }
 TrxHash: 602ceed3970de1948a3a0d76ee8e5b82dc29a7ec741d576327938d883d06cc18
 
@@ -1493,10 +1371,10 @@ Help information
     ./bcli genesis settransitvote --h
     NAME:
         Bottos bcli tool genesis settransitvote - set transit vote
-
+    
     USAGE:
         Bottos bcli tool genesis settransitvote [command options] [arguments...]
-
+    
     OPTIONS:
         --sender value   sender account
         --account value  account name
@@ -1522,20 +1400,20 @@ Output
 Push transaction done:
 Trx: 
 {
-    "version": 197632,
-    "cursor_num": 1202,
-    "cursor_label": 4128090569,
-    "lifetime": 1545210505,
-    "sender": "bottos",
-    "contract": "bottos",
-    "method": "settransitvote",
-    "param": {
-        "name": "lyp12345678",
-        "vote": 100
-    },
-    "param_bin": "dc0002da000b6c79703132333435363738cf0000000000000064",
-    "sig_alg": 1,
-    "signature": "f8d84ac9485044ead68a7d32cc902a757b7422b1a626ced59faa0f210edcb5e76f4ef87281f2a43f6cbd861adf8ff3b6cd31371ec26cf7f50c557ff4a62a1929"
+​    "version": 197632,
+​    "cursor_num": 1202,
+​    "cursor_label": 4128090569,
+​    "lifetime": 1545210505,
+​    "sender": "bottos",
+​    "contract": "bottos",
+​    "method": "settransitvote",
+​    "param": {
+​        "name": "lyp12345678",
+​        "vote": 100
+​    },
+​    "param_bin": "dc0002da000b6c79703132333435363738cf0000000000000064",
+​    "sig_alg": 1,
+​    "signature": "f8d84ac9485044ead68a7d32cc902a757b7422b1a626ced59faa0f210edcb5e76f4ef87281f2a43f6cbd861adf8ff3b6cd31371ec26cf7f50c557ff4a62a1929"
 }
 TrxHash: 545d8ce9032756dd9305fd2ce14cce5c18aaa39f94eff1791fbc1fe41bf9e4a0
 
@@ -1724,7 +1602,7 @@ Output
     1 : {userRole string} , KEY:  userRole , VAL:  lyp
     2 : {rcvHelloNum uint64} , KEY:  rcvHelloNum , VAL:  22
     3 : {lyp uint128} , KEY:  lyp , VAL:  33
-
+    
     Push transaction done:
     Trx: 
     {
@@ -1897,8 +1775,8 @@ Output
 
 Help information
 ​    
-    ./bcli wallet unlock --help
-    
+​    ./bcli wallet unlock --help
+​    
     NAME:
     Bottos bcli tool wallet unlock - unlock wallet
     
@@ -1940,8 +1818,8 @@ In this case, user should input the wallet password and his used private key fro
 
 Help information
 ​    
-    ./bcli wallet list --help
-    
+​    ./bcli wallet list --help
+​    
     NAME:
     Bottos bcli tool wallet list - list wallet
     
@@ -1979,8 +1857,8 @@ Note：
 
 Help information
 ​    
-    ./bcli wallet listkey --help
-    
+​    ./bcli wallet listkey --help
+​    
     NAME:
     Bottos bcli tool wallet listkey - listkey of wallet
     
@@ -2025,7 +1903,7 @@ USAGE:
    Bottos bcli tool log command [command options] [arguments...]
 
 COMMANDS:
-     setconfigitem  set log config item. If you need change the log confiration in your configuration, please also input the --serveraddr <LogRESTHost>:<LogRESTPort> firstly in this command
+​     setconfigitem  set log config item. If you need change the log confiration in your configuration, please also input the --serveraddr <LogRESTHost>:<LogRESTPort> firstly in this command
 
 OPTIONS:
    --help, -h  show help
