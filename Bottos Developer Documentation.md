@@ -10,7 +10,7 @@
     - [1.1. Project Brief](#11-project-brief)
     - [1.2. System Architecture](#12-system-architecture)
     - [1.3. Network Structure](#13-network-structure)
-- [2. 入门体验](#2-入门体验)
+- [2. Getting Started](#2-getting-started)
     - [2.1. Browser Bottos Chain](#21-browser-bottos-chain)
         - [2.1.1. Bottos Chain Overview](#211-bottos-chain-overview)
         - [2.1.2. Activities on Bottos Chain](#212-activities-on-bottos-chain)
@@ -76,10 +76,7 @@
 
 
 
-# 2. 入门体验
-本章节将向读者展示如何把 Bottos 链在本地运行起来，并在链上体验 register/transfer 等基本操作。
-
->  当然，也可以下载手机钱包，体验Bottos链的基本功能。([Android Wallet](https://dapp.botfans.org/wallet/BottosWallet.apk): https://dapp.botfans.org/wallet/BottosWallet.apk)
+And you can download mobile wallet to experience Bottos Chain. ([Android Wallet](https://dapp.botfans.org/wallet/BottosWallet.apk): https://dapp.botfans.org/wallet/BottosWallet.apk)
 
 
 
