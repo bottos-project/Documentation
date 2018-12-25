@@ -15,6 +15,6 @@ Currently, this article chiefly introduces how to use the services of core layer
 
 The overall technical architecture of the Bottos system is shown in the following figure.
 
-![](https://blobscdn.gitbook.com/v0/b/gitbook-28427.appspot.com/o/assets%2F-LH6Wp7WxZSf9VDfH9F3%2F-LNFrRWMHgroD5S5zGIC%2F-LNFs6VkByTQrov1o_oU%2FBottosArchitecture.png?alt=media&token=b01a098c-23b2-454d-bb45-7d9ba6988e96)
- 
+![](../common/BottosArchitecture.png)
+
 
