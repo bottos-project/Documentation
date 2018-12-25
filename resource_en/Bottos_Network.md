@@ -7,17 +7,22 @@ Bottos Network
 
 # 1. Netwok structure
 
-Bottos网络中的典型角色有三种：
-- 终端用户
-- 终端用户接入服务的提供者
-- 超级节点（区块生产者）
+## 1.1 The overall of network
+
+There are three typical roles in Bottos networks：
+- The end user
+- The provider of end-user access services
+- The super node (block producer)
 
 &nbsp;
 
-这三类角色将Bottos网络分成了三层，如下图所示。分别是
-- 终端用户所在的接入层，这些终端用户有可能形成的终端网络
-- 接入服务的提供者节点之间形成的服务层
-- 超级节点之间组成的生产者网络
+These three roles divide the Bottos network into three layers, as shown in the figure below respectively:
+
+- The access layer where the end users are located, and the terminal network that these end users may form
+
+- A service layer formed between provider nodes which provide the accessing services
+
+- A producer network that consisting of supernodes
 
 &nbsp;
 &nbsp;
@@ -26,16 +31,16 @@ Bottos网络中的典型角色有三种：
 
 &nbsp;
 &nbsp;
-## 1.1. Super Node Network
+## 1.2. Super Node Network
 
-超级节点承担全网所有Transaction的执行和记录，是全网络稳定的基础，因此铂链在超级节点网络设计采用了全连接方式组网。如下图所示（以10个超级节点的全连接为例。实际的超级节点个数为49个，其中每轮选中29个出块，另外20个节点备选）
+Supernodes undertake the execution and recording of all transactions in the whole network, which is the fundation for the stability of the whole network. Therefore, Bottos adopts the full-connection networking in the design of the supernode network, as shown in the figure below (take a full connection of 10 supernodes as an example. The actual number of super nodes is 49, among which 29 are selected for each round and the other 20 nodes are optional)
 
 ![](../common/fullmesh.png)
 
 &nbsp;
 &nbsp;
 
-## 1.2. Connections with Other Nodes
+## 1.3. Connections with Other Nodes
 
 除超级节点外的其它类型节点，是组织松散的网络，类似下图中的mesh结构的连接方式
 

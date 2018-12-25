@@ -484,7 +484,7 @@ Table data is : map[valueA:2 valueB:3]
 
 ## 5.2. Attachment 2：Marshal for MessagePack
 
-### 5.2.1 概述
+### 5.2.1 Abstract
 
 In order to facilitate the parameters transmission when the contract is invoked, and to read the persistent data of the contract, we have selected Messagepack this lightweight codec method, detailed specification reference:
 

@@ -31,9 +31,9 @@ By injecting the `Index.js` and ` bottos-sdk-js.min.js` in index.html, the code 
 </head>
 <body>
     <div style="margin-top:50px">
-        <button style="width:100px;height:30px;background-color:coral" onClick="createAccount()">创建账户</button>
-        <button style="width:100px;height:30px;background-color:coral" onClick="pushTransaction()">发布联系人</button>
-        <button style="width:100px;height:30px;background-color:bisque" onClick="getTransaction()" >获取联系人</button>
+        <button style="width:100px;height:30px;background-color:coral" onClick="createAccount()">Create Account</button>
+        <button style="width:100px;height:30px;background-color:coral" onClick="pushTransaction()">Publish the contacts</button>
+        <button style="width:100px;height:30px;background-color:bisque" onClick="getTransaction()" >Get the contacts</button>
     </div>
 
 
