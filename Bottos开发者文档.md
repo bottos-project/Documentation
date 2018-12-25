@@ -84,7 +84,7 @@
 
 ## 2.1. 使用区块浏览器总览Bottos链
 
-[Bottos区块浏览器](http://exblock.bottos.org:8888/#/home)地址 为 http://exblock.bottos.org:8888/#/home
+[Bottos区块浏览器](http://exblock.bottos.org:8888/#/home)地址 为 http://explorer.bottos.org
 
 ### 2.1.1. Bottos链状态总览
 ![](./common/bottos_browser.png)
