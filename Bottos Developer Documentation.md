@@ -4,7 +4,61 @@
 
 <div style="page-break-after: always;"></div>
 
-<!-- TOC -->autoauto- [1. Bottos Introduction](#1-bottos-introduction)auto    - [1.1. Project Brief](#11-project-brief)auto    - [1.2. System Architecture](#12-system-architecture)auto    - [1.3. Network Structure](#13-network-structure)auto- [2. Getting Started](#2-getting-started)auto    - [2.1. Browser Bottos Chain](#21-browser-bottos-chain)auto        - [2.1.1. Bottos Chain Overview](#211-bottos-chain-overview)auto        - [2.1.2. Activities on Bottos Chain](#212-activities-on-bottos-chain)auto        - [2.1.3. Locations of Super Nodes](#213-locations-of-super-nodes)auto    - [2.2. Run Bottos Chain on Local Machine](#22-run-bottos-chain-on-local-machine)auto    - [2.3. 准备Bottos可执行版本](#23-准备bottos可执行版本)auto    - [2.4. 准备运行环境](#24-准备运行环境)auto        - [2.4.1. 启动本地单节点环境](#241-启动本地单节点环境)auto        - [2.4.2. 加入已存在的测试网络](#242-加入已存在的测试网络)auto    - [2.5. 体验基本操作](#25-体验基本操作)auto        - [2.5.1. 创建钱包](#251-创建钱包)auto        - [2.5.2. 创建account](#252-创建account)auto        - [2.5.3. 体验转账](#253-体验转账)auto- [3. 操作进阶](#3-操作进阶)auto    - [3.1. 质押](#31-质押)auto    - [3.2. 赎回](#32-赎回)auto    - [3.3. 投票资源](#33-投票资源)auto    - [3.4. 空间资源](#34-空间资源)auto    - [3.5. 时间资源](#35-时间资源)auto- [4. 开发指引](#4-开发指引)auto    - [4.1. 环境搭建](#41-环境搭建)auto        - [4.1.1. 基础环境准备](#411-基础环境准备)auto        - [4.1.2. 单节点开发环境](#412-单节点开发环境)auto        - [4.1.3. 多节点开发环境](#413-多节点开发环境)auto    - [4.2. 智能合约](#42-智能合约)auto        - [4.2.1. 智能合约简介（也包含合约书写规则和abi介绍）](#421-智能合约简介也包含合约书写规则和abi介绍)auto        - [4.2.2. C++智能合约开发示例](#422-c智能合约开发示例)auto        - [4.2.3. JavaScript智能合约开发示例](#423-javascript智能合约开发示例)auto    - [4.4. BCLI命令](#44-bcli命令)auto    - [4.5. DAPP开发](#45-dapp开发)auto        - [4.5.1. JavaScript合约开发示例](#451-javascript合约开发示例)auto    - [4.6. 开发工具集](#46-开发工具集)auto        - [4.6.1. 钱包SDK](#461-钱包sdk)auto        - [4.6.2. C++合约开发SDK](#462-c合约开发sdk)auto        - [4.6.3. JavaScript合约开发SDK](#463-javascript合约开发sdk)auto- [5. 超级节点启动指引](#5-超级节点启动指引)auto    - [5.1. 基础准备](#51-基础准备)auto    - [5.2. 安全提升](#52-安全提升)auto- [6. 资源库](#6-资源库)auto    - [6.1. C++合约开发SDK](#61-c合约开发sdk)auto    - [6.2. JavaScript合约开发SDK](#62-javascript合约开发sdk)auto    - [6.3. 钱包开发SDK](#63-钱包开发sdk)auto    - [6.4. 公共REST API](#64-公共rest-api)auto    - [6.5. 钱包API](#65-钱包api)autoauto<!-- /TOC -->
+<!-- TOC -->
+
+- [1. Bottos Introduction](#1-bottos-introduction)
+  - [1.1. Project Brief](#11-project-brief)
+  - [1.2. System Architecture](#12-system-architecture)
+  - [1.3. Network Structure](#13-network-structure)
+- [2. Getting Started](#2-getting-started)
+  - [2.1. Browser Bottos Chain](#21-browser-bottos-chain)
+    - [2.1.1. Bottos Chain Overview](#211-bottos-chain-overview)
+    - [2.1.2. Activities on Bottos Chain](#212-activities-on-bottos-chain)
+    - [2.1.3. Locations of Super Nodes](#213-locations-of-super-nodes)
+  - [2.2. Run Bottos Chain on Local Machine](#22-run-bottos-chain-on-local-machine)
+  - [2.3. Prepare the Bottos Version](#23-prepare-the-bottos-version)
+  - [2.4. Ready to run environment](#24-ready-to-run-environment)
+    - [2.4.1. Start the local single-node environment](#241-start-the-local-single-node-environment)
+    - [2.4.2. Join an existing test network](#242-join-an-existing-test-network)
+  - [2.5. Experience basic operations](#25-experience-basic-operations)
+    - [2.5.1. Create the Wallet](#251-create-the-wallet)
+    - [2.5.2. Create Account](#252-create-account)
+    - [2.5.3. Experience the BTO transfer](#253-experience-the-bto-transfer)
+- [3. The advanced operation](#3-the-advanced-operation)
+  - [3.1. Stake](#31-stake)
+  - [3.2. Claim](#32-claim)
+  - [3.3. Vote Resources](#33-vote-resources)
+  - [3.4. Space Resources](#34-space-resources)
+  - [3.5. Time Resources](#35-time-resources)
+- [4. Developing Guide](#4-developing-guide)
+  - [4.1. Set up Environment](#41-set-up-environment)
+    - [4.1.1. Basic environment preparation](#411-basic-environment-preparation)
+      - [4.1.1.1. Operating System](#4111-operating-system)
+      - [4.1.1.2. Node base version package installation](#4112-node-base-version-package-installation)
+    - [4.1.2. Single node developing environment](#412-single-node-developing-environment)
+    - [4.1.3. Multi-Nodes developing environment](#413-multi-nodes-developing-environment)
+  - [4.2. Smart Contract](#42-smart-contract)
+    - [4.2.1. Introduction to Smart Contract (also includes the introduction to contract writing rules and ABI)](#421-introduction-to-smart-contract-also-includes-the-introduction-to-contract-writing-rules-and-abi)
+    - [4.2.2. C++ intelligent contract developing example](#422-c-intelligent-contract-developing-example)
+    - [4.2.3. JavaScript intelligent contract developing example](#423-javascript-intelligent-contract-developing-example)
+  - [4.3. BCLI Command](#43-bcli-command)
+  - [4.4. DAPP Development](#44-dapp-development)
+    - [4.4.1. JavaScript contract development example](#441-javascript-contract-development-example)
+  - [4.5. Development tools](#45-development-tools)
+    - [4.5.1. Wallet SDK](#451-wallet-sdk)
+    - [4.5.2. C++ Smart Contract Development SDK](#452-c-smart-contract-development-sdk)
+    - [4.5.3. JavaScript Smart Contract Development SDK](#453-javascript-smart-contract-development-sdk)
+- [5. Supernode startup guide](#5-supernode-startup-guide)
+  - [5.1. Basis of preparation](#51-basis-of-preparation)
+  - [5.2. Safe lifting](#52-safe-lifting)
+- [6. Resource repository](#6-resource-repository)
+  - [6.1. C++ Contract Development SDK](#61-c-contract-development-sdk)
+  - [6.2. JavaScript Contract Development SDK](#62-javascript-contract-development-sdk)
+  - [6.3. Wallet Development SDK](#63-wallet-development-sdk)
+  - [6.4. Common REST API](#64-common-rest-api)
+  - [6.5. Wallet API](#65-wallet-api)
+
+<!-- /TOC -->
 
 
 
@@ -29,7 +83,7 @@ And you can download mobile wallet to experience Bottos Chain. ([Android Wallet]
 
 ## 2.1. Browser Bottos Chain
 
-[Bottos Browser](http://exblock.bottos.org:8888/#/home) link is http://exblock.bottos.org:8888/#/home
+[Bottos Browser](http://explorer.bottos.org) link is http://explorer.bottos.org
 
 ### 2.1.1. Bottos Chain Overview
 ![](./common/bottos_browser.png)
@@ -435,8 +489,8 @@ For multi-nodes developing environment please refer to： [multi-nodes developin
 
 ## 6.4. Common REST API
 
-[Common REST API](./resource_en/公共REST接口API.md) already on Github
+[Common REST API](./resource_en/Common_REST_Interface.md) already on Github
 
 ## 6.5. Wallet API
 
-[Wallet REST API](./resource_en/钱包REST接口API.md) already on Github
+[Wallet REST API](./resource_en/Wallet_REST_Interface.md) already on Github
