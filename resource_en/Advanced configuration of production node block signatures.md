@@ -1,15 +1,15 @@
 
-生产节点区块签名高级配置
+Advanced configuration of production node block signatures
 -----------
 
-# 1. 启动钱包服务
+# 1. Start the Wallet service
 
 ```
 # ./wallet 
 Start wallet REST service. Listen IP: 127.0.0.1  Port: 6869
 ```
 
-# 2. 创建区块签名钱包
+# 2. Create a block signature wallet
 
 ```
 bcli wallet create --account bottos --type delegate
@@ -31,14 +31,16 @@ Create wallet done. Now unlock the wallet within 300 seconds.
 ```
 
 
-若钱包已经创建，则先解锁钱包
+If the wallet is already created, unlock it first
+
 ```
 # ./bcli wallet unlock --account bottos --type delegate
 ```
 
-# 3. 配置config.toml
+# 3. Configure for config.toml
 
-config.toml中生产者签名默认配置为公私钥的方式
+The producer signature in config.toml is configured in "public - private key" way by default
+
 ```
 [Delegate.Signature]
 Type = "key"
@@ -46,15 +48,15 @@ PrivateKey = "b799ef616830cd7b8599ae7958fbee56d4c8168ffd5421a16025a398b8a4be45"
 PublicKey = "0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f"
 URL = ""
 ```
+So we need change above parts into:
 
-修改为
 ```
 [Delegate.Signature]
 Type = "wallet"
 PublicKey = "0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f"
 URL = "http://127.0.0.1:6869/v1/wallet/signhash"
 ```
-# 4. 启动
+# 4. Start
 ```
 # ./bottos --delegate bottos
 InsertBlock, number:1, time:2018-11-22 08:07:54, delegate:bottos, trxn:0, hash:5f920c93c55096a936ee33c07563526a7f0c03cf5cd430dcbfaeae33beedb782, prevHash:caf2bae84f70412354211dd5028142eca6901b06b9a65dfbe9df065bcf56e291
