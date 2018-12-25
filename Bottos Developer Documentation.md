@@ -4,62 +4,7 @@
 
 <div style="page-break-after: always;"></div>
 
-<!-- TOC -->
-
-- [1. Bottos Introduction](#1-bottos-introduction)
-    - [1.1. Project Brief](#11-project-brief)
-    - [1.2. System Architecture](#12-system-architecture)
-    - [1.3. Network Structure](#13-network-structure)
-- [2. Getting Started](#2-getting-started)
-    - [2.1. Browser Bottos Chain](#21-browser-bottos-chain)
-        - [2.1.1. Bottos Chain Overview](#211-bottos-chain-overview)
-        - [2.1.2. Activities on Bottos Chain](#212-activities-on-bottos-chain)
-        - [2.1.3. Locations of Super Nodes](#213-locations-of-super-nodes)
-    - [2.2. Run Bottos Chain on Local Machine](#22-run-bottos-chain-on-local-machine)
-    - [2.3. 准备Bottos可执行版本](#23-准备bottos可执行版本)
-    - [2.4. 准备运行环境](#24-准备运行环境)
-        - [2.4.1. 启动本地单节点环境](#241-启动本地单节点环境)
-        - [2.4.2. 加入已存在的测试网络](#242-加入已存在的测试网络)
-    - [2.5. 体验基本操作](#25-体验基本操作)
-        - [2.5.1. 创建钱包](#251-创建钱包)
-        - [2.5.2. 创建account](#252-创建account)
-        - [2.5.3. 体验转账](#253-体验转账)
-- [3. 操作进阶](#3-操作进阶)
-    - [3.1. 质押](#31-质押)
-    - [3.2. 赎回](#32-赎回)
-    - [3.3. 投票资源](#33-投票资源)
-    - [3.4. 空间资源](#34-空间资源)
-    - [3.5. 时间资源](#35-时间资源)
-- [4. 开发指引](#4-开发指引)
-    - [4.1. 环境搭建](#41-环境搭建)
-        - [4.1.1. 基础环境准备](#411-基础环境准备)
-        - [4.1.2. 单节点开发环境](#412-单节点开发环境)
-        - [4.1.3. 多节点开发环境](#413-多节点开发环境)
-    - [4.2. 智能合约](#42-智能合约)
-        - [4.2.1. 智能合约简介（也包含合约书写规则和abi介绍）](#421-智能合约简介也包含合约书写规则和abi介绍)
-        - [4.2.2. C++智能合约开发示例](#422-c智能合约开发示例)
-        - [4.2.3. JavaScript智能合约开发示例](#423-javascript智能合约开发示例)
-    - [4.3. 钱包](#43-钱包)
-        - [4.3.1. 钱包工具集](#431-钱包工具集)
-        - [4.3.2. 钱包客户端](#432-钱包客户端)
-    - [4.4. BCLI命令](#44-bcli命令)
-    - [4.5. DAPP开发](#45-dapp开发)
-        - [4.5.1. JavaScript合约开发示例](#451-javascript合约开发示例)
-    - [4.6. 开发工具集](#46-开发工具集)
-        - [4.6.1. 钱包SDK](#461-钱包sdk)
-        - [4.6.2. C++合约开发SDK](#462-c合约开发sdk)
-        - [4.6.3. JavaScript合约开发SDK](#463-javascript合约开发sdk)
-- [5. 超级节点启动指引](#5-超级节点启动指引)
-    - [5.1. 基础准备](#51-基础准备)
-    - [5.2. 安全提升](#52-安全提升)
-- [6. 资源库](#6-资源库)
-    - [6.1. C++合约开发SDK](#61-c合约开发sdk)
-    - [6.2. JavaScript合约开发SDK](#62-javascript合约开发sdk)
-    - [6.3. 钱包开发SDK](#63-钱包开发sdk)
-    - [6.4. 公共REST API](#64-公共rest-api)
-    - [6.5. 钱包API](#65-钱包api)
-
-<!-- /TOC -->
+<!-- TOC -->autoauto- [1. Bottos Introduction](#1-bottos-introduction)auto    - [1.1. Project Brief](#11-project-brief)auto    - [1.2. System Architecture](#12-system-architecture)auto    - [1.3. Network Structure](#13-network-structure)auto- [2. Getting Started](#2-getting-started)auto    - [2.1. Browser Bottos Chain](#21-browser-bottos-chain)auto        - [2.1.1. Bottos Chain Overview](#211-bottos-chain-overview)auto        - [2.1.2. Activities on Bottos Chain](#212-activities-on-bottos-chain)auto        - [2.1.3. Locations of Super Nodes](#213-locations-of-super-nodes)auto    - [2.2. Run Bottos Chain on Local Machine](#22-run-bottos-chain-on-local-machine)auto    - [2.3. 准备Bottos可执行版本](#23-准备bottos可执行版本)auto    - [2.4. 准备运行环境](#24-准备运行环境)auto        - [2.4.1. 启动本地单节点环境](#241-启动本地单节点环境)auto        - [2.4.2. 加入已存在的测试网络](#242-加入已存在的测试网络)auto    - [2.5. 体验基本操作](#25-体验基本操作)auto        - [2.5.1. 创建钱包](#251-创建钱包)auto        - [2.5.2. 创建account](#252-创建account)auto        - [2.5.3. 体验转账](#253-体验转账)auto- [3. 操作进阶](#3-操作进阶)auto    - [3.1. 质押](#31-质押)auto    - [3.2. 赎回](#32-赎回)auto    - [3.3. 投票资源](#33-投票资源)auto    - [3.4. 空间资源](#34-空间资源)auto    - [3.5. 时间资源](#35-时间资源)auto- [4. 开发指引](#4-开发指引)auto    - [4.1. 环境搭建](#41-环境搭建)auto        - [4.1.1. 基础环境准备](#411-基础环境准备)auto        - [4.1.2. 单节点开发环境](#412-单节点开发环境)auto        - [4.1.3. 多节点开发环境](#413-多节点开发环境)auto    - [4.2. 智能合约](#42-智能合约)auto        - [4.2.1. 智能合约简介（也包含合约书写规则和abi介绍）](#421-智能合约简介也包含合约书写规则和abi介绍)auto        - [4.2.2. C++智能合约开发示例](#422-c智能合约开发示例)auto        - [4.2.3. JavaScript智能合约开发示例](#423-javascript智能合约开发示例)auto    - [4.4. BCLI命令](#44-bcli命令)auto    - [4.5. DAPP开发](#45-dapp开发)auto        - [4.5.1. JavaScript合约开发示例](#451-javascript合约开发示例)auto    - [4.6. 开发工具集](#46-开发工具集)auto        - [4.6.1. 钱包SDK](#461-钱包sdk)auto        - [4.6.2. C++合约开发SDK](#462-c合约开发sdk)auto        - [4.6.3. JavaScript合约开发SDK](#463-javascript合约开发sdk)auto- [5. 超级节点启动指引](#5-超级节点启动指引)auto    - [5.1. 基础准备](#51-基础准备)auto    - [5.2. 安全提升](#52-安全提升)auto- [6. 资源库](#6-资源库)auto    - [6.1. C++合约开发SDK](#61-c合约开发sdk)auto    - [6.2. JavaScript合约开发SDK](#62-javascript合约开发sdk)auto    - [6.3. 钱包开发SDK](#63-钱包开发sdk)auto    - [6.4. 公共REST API](#64-公共rest-api)auto    - [6.5. 钱包API](#65-钱包api)autoauto<!-- /TOC -->
 
 
 
@@ -99,24 +44,24 @@ And you can download mobile wallet to experience Bottos Chain. ([Android Wallet]
 
 ## 2.2. Run Bottos Chain on Local Machine
 
-## 2.3. 准备Bottos可执行版本
-[准备Bottos可执行版本](./resource_en/准备Bottos版本.md)
+## 2.3. Prepare the Bottos Version
+[Prepare the Bottos version](./resource_en/Prepare_the_Bottos_Version.md)
 
-## 2.4. 准备运行环境
+## 2.4. Ready to run environment
 
-### 2.4.1. 启动本地单节点环境
+### 2.4.1. Start the local single-node environment
 
-使用如下指令启动Bottos单节点
+Start the Bottos single node with the following instructions
 
 ```
 ./bottos --delegate bottos --enable-wallet
 ```
-> 参数含义:
-> `--delegate`: 指定区块生产者的account是bottos
-> `--enable-wallet`: 指定链启动时把wallet服务一并启动
+> Parameter meaning:
+> `--delegate`: Specifies that the account for the block producer is bottos
+> `--enable-wallet`: Specifies that the wallet service should be started with the chain
 
 
-如果返回如下信息说明节点启动成功
+The node starts successfully if the following information is returned
 
 ```
 CommitBlock by p2p: lib: 1
@@ -126,35 +71,35 @@ InsertBlock: number:2, delegate:bottos, trxn:0, time=1537948302, hash: 8abe6aef2
 ```
 &nbsp;
 
-### 2.4.2. 加入已存在的测试网络
+### 2.4.2. Join an existing test network
 
 
-将上述启动的单节点连接到Bottos测试网络。需要做如下配置：
+Connect the single node started the Bottos test network. The following configuration needs to be done：
 
 
-修改`config-testnet.toml`文件
+Modify file `config-testnet.toml`
 
-- P2PServAddr:修改成当前节点的外网IP
+- P2PServAddr: Changes to the current node's extranet IP
 
 ```
-P2PServAddr = "192.168.1.1"   // 修改成当前节点的外网IP
+P2PServAddr = "192.168.1.1"   // Changes to the current node's extranet IP
 ```
 
-然后运行如下命令即可将当前节点连接到测试网络
+Then run the following command to connect the current node to the test network
 
-`注`：如果项目目录下有`datadir`缓存目录，我们首先需要运行如下命令删除缓存
+`Note`：If the project directory exists the directory of `datadir`, we need to run the following commands to delete it at first.
 
 ```
 rm -rf datadir
 ```
 
-启动节点，连接到测试网络
+Start node and connect the node to Bottos test network
 
 ```
 ./bottos --config="./config-testnet.toml" --genesis="./genesis-testnet.toml"
 ```
 
-等一会儿如果出现大量如下打印信息，说明在自动同步区块.已经成功连接到了测试网络
+Wait a moment and if a large amount of the following printed information appears, it indicates that the automatic synchronization block has been successfully connected to the test network
 
 ```
 CommitBlock by p2p: lib: 1
@@ -168,22 +113,24 @@ CommitBlock by p2p: lib: 4
 
 
 
-## 2.5. 体验基本操作
+## 2.5. Experience basic operations
 
-### 2.5.1. 创建钱包
+### 2.5.1. Create the Wallet
 
-准备钱包账户、密码和私钥。
+Prepare your wallet account, password, and private key
 
-这里以创建bottos钱包举例，私钥取config.toml里面的bottos私钥
+For example, to create a bottos wallet, the private key takes the bottos private key in config.toml
 
 ```
-进入项目代码路径
-cd ~/bottos-node/bottos/
-创建bottos钱包
- ./bcli wallet create --account bottos
-```
+cd to bottos project directory:
 
-这样bottos钱包就创建好了，会创建包含私钥和密码的bottos.keystore文件，存放在bot目录下。
+     cd ~/bottos-node/bottos/
+
+Create bottos wallet:
+
+     ./bcli wallet create --account bottos
+```
+This creates the bottos wallet, which creates a bottos.keystore file containing the private key and password, and stores it in the bot directory.
 
 ```
 root@node:~/bottos-node/bottos#bcli wallet create --account bottos
@@ -204,22 +151,29 @@ Create wallet done. Now unlock the wallet within 300 seconds.
 }
 ```
 
-### 2.5.2. 创建account
+### 2.5.2. Create Account
 
-在项目代码路径下执行如下操作：
+Perform the following actions under the project code path：
 
 ```
-进入项目代码路径
-cd bottos-node/bottos/
-生成一对公私钥（保存下来）
-./bcli wallet  generatekey
-输入密码解锁钱包
-./bcli wallet unlock --account bottos
-创建账户名为test001、上述保存的公钥、引荐人为bottos 的用户
-./bcli account create --account test1234567890  --pubkey 0411c2d1679d2b40e9bb7060eab34edc5e6fa69d4142728fad131d141fa6c61452b747c88dd0bc9584024a58787646a06e7c798211eed24f4e4687732747fbe79c --referrer bottos
+cd to bottos project directory
+
+    cd bottos-node/bottos/
+
+Generate a pair of public and private keys and save them please
+
+    ./bcli wallet  generatekey
+
+Enter your password to unlock your wallet
+
+    ./bcli wallet unlock --account bottos
+
+Create the account name test001 using the public key saved above, and the referrals is 'bottos'
+
+    ./bcli account create --account test1234567890  --pubkey 0411c2d1679d2b40e9bb7060eab34edc5e6fa69d4142728fad131d141fa6c61452b747c88dd0bc9584024a58787646a06e7c798211eed24f4e4687732747fbe79c --referrer bottos
 ```
 
-example：执行成功会返回交易的哈希
+example：A successful execution returns a hash of the transaction
 
 ```
 root@node:~/bottos-node/bottos# ./bcli wallet  generatekey
@@ -249,20 +203,23 @@ TrxHash: cde9db1ec6ed4622104acc81cac94c9765b9de3e997b1b4f46b1e83ed94163da
 Please create wallet for your new account.
 ```
 
-### 2.5.3. 体验转账
+### 2.5.3. Experience the BTO transfer
 
- 在项目代码路径下执行如下操作：
+Do the following under the bottos project path：
 
 ```
-进入项目代码路径
-cd bottos-node/bottos/
-输入密码解锁钱包
-./bcli wallet unlock --account bottos
-转账：bottos向test001转账1000BTO
-./bcli transfer --from bottos --to test1234567890 --amount 1000
+cd to bottos project path:
+    cd bottos-node/bottos/
+
+Enter your password to unlock your wallet
+    ./bcli wallet unlock --account bottos
+
+Bottos transfers 1000 BTO to test001:
+
+    ./bcli transfer --from bottos --to test1234567890 --amount 1000
 ```
 
-example：执行成功会返回交易的哈希
+example：A successful execution returns a hash of the transaction
 
 ```
 root@node:~/bottos-node/bottos# ./bcli wallet unlock --account bottos
@@ -301,149 +258,185 @@ TrxHash: 83d5042570b666f2eba9e5cdbbab735444c93f4cb41a64e3b132dbba7fda6b43
 
 
 
-# 3. 操作进阶
-## 3.1. 质押
+# 3. The advanced operation
+## 3.1. Stake
 
-## 3.2. 赎回
+Users need to stake a certain number of BTO in order to have sufficient authority to vote on the production node or to make transactions such as transfer or other contracts.
 
-## 3.3. 投票资源
+For users who have not staked BTO:
 
-对资源进行质押有两种渠道：
-
-普通用户使用手机端钱包为本账号资源进行质押：
-
-1.登录用户或导入用户；
-
-2.在“资产详情”界面，点击 BTO 资产行，进入质押界面；
-
-3.点击“质押”按钮，在“质押BTO数”，输入质押数量，“质押目标”根据需要，选择“空间”或“时间”；
-
-4.输入密码进行质押操作。
+Users will not be able to perform voting operations (voting will fail), and the number of times they will perform contract transactions is very limited (free quota) : after 3 times of operation of transfer or other contracts, they will lose the operation permission on the same day (the same number of permissions will be restored on the next day).
 
 
+For users who have staked BTO:
 
-如果是开发者，也可使用BCLI命令行进行质押操作；
+
+Open to users will vote more certain amount and the power of use of resources (depending on the stake count how many), if operating within 1 days more than the staking right number of operation (after voting, transfer or other contracts), the user also has a certain operation permissions (lines) for free, if after 1 days use these lines, then the day will lose operation permissions (the next day will return to a certain number of times permissions).
+
+
+Operation mode of stake:
+
+See section 3.3
+
+## 3.2. Claim
+
+In order to claim the staked BTO, the unstake operation should be done at first (in section 3.3, "unstake" operation shall be adopted on the mobile phone APP).
+
+After the unstaking operation is completed, the user shall wait for 3 days before "claim his/her BTO", then the BTO will immediately return to the user's account after the claim operation.
+
+## 3.3. Vote Resources
+
+There are two ways to stake resources:
+
+General users use mobile wallet to stake the resources of this account:
+
+1. Login or import users;
+
+2. In the "asset details" interface, click the BTO asset line to enter the pledge interface;
+
+3. Click the "stake" button, enter the "stake number" in the "stake BTO number", and select "space" or "time" according to the need of the "pledge target";
+
+
+4. Enter the password for pledge operation.
+
+If you are a developer, you can also use the BCLI command line to pledge;
+
 
 \# ./bcli account stake --account bottostest --amount 100 --target space
 
+
 \# ./bcli account stake --account bottostest --amount 100 --target time
 
+Directions: each account has a free push transaction limit of 3 push transactions every 24 hours (the measurement standard of a single push transaction is the amount of resources consumed by the transfer transaction)
 
 
-说明：每个账号每24小时拥有3次 PUSTH transaction的免费额度（单次衡量标准为 转账交易 所消耗的资源量）
+## 3.4. Space Resources
+
+Space resources include network resources and storage resources consumption, free space limit of 800Bytes. After the user stakes BTO to space, every vote/cancelvote and any transaction and transaction will consume certain space resources. It should be noted that when the user's space resources are used up, there will be 3 transactions, 800 Bytes of space and 400 microseconds of time. When any of the three transactions and space and time resources are consumed over, the quota will be stopped (vote will not be executed in the case of occupying free quota), and the quota will be restored the next day.
 
 
+## 3.5. Time Resources
 
-## 3.4. 空间资源
-
-## 3.5. 时间资源
+The time resource contains the total transaction time cost, typically 800 Bytes per day for free. After the user stakes BTO to space, every vote/cancelvote and any transaction and transaction will consume certain space resources. It should be noted that when the user's space resources are used up, there will be 3 transactions, 800Bytes of space and 400 microseconds of time. When any of the three transactions and space and time resources are exhausted, the quota will be stopped (a vote cannot be executed if only the free quota is left) and the quota will be restored the next day.
 
 &nbsp;
 
 
 
-# 4. 开发指引
+# 4. Developing Guide
 
-## 4.1. 环境搭建
-### 4.1.1. 基础环境准备
+## 4.1. Set up Environment 
+### 4.1.1. Basic environment preparation
 
-[Golang语言环境安装](./resource_en/Golang语言环境安装.md)
+#### 4.1.1.1. Operating System
 
-### 4.1.2. 单节点开发环境
+UBUNTU16.04 LTS (or higher) is recommended
 
+[Set_up_the_Golang_Developping_environment.md](./resource_en/Set_up_the_Golang_Developping_environment.md)
 
+#### 4.1.1.2. Node base version package installation
 
-### 4.1.3. 多节点开发环境
+Enter the following command to install the tool and bottos to specify the release version package.
 
+```
+apt-get update && apt-get install -y wget vim
+wget https://github.com/bottos-project/bottos/releases/download/tag_bottos3.4/bottos_ubuntu_v3.4.tar.gz
+```
+Note：
+Please focus on https://github.com/bottos-project/bottos/releases information, timely access to the latest version of the package.
 
+Unpack the downloaded version package: 
 
+(After unpack the release package, the folder bottos_v3.4 will be generated in the current directory)
+```    
+tar zvxf bottos_ubuntu_v3.4.tar.gz
+```
 
-## 4.2. 智能合约
-### 4.2.1. 智能合约简介（也包含合约书写规则和abi介绍）
+Release package file description
+   
+    bottos        Node master program
+    bcli          Node supporting tools, details can be found in the bcli user description document on the official website
+    config.toml   The node configuration file is described in detail in the next section
+    genesis.toml  This file is used to uniquely identify an identified chain
+    Other 2 toml files  The file is prepared for the node to connect to the test network, which the user does not need to care about.
 
+### 4.1.2. Single node developing environment
 
+Refer to the documentation for a single-node developing environment： [Single node developing environment](./resource_cn/Single_Node_mode_developing_environment.MD)
 
+### 4.1.3. Multi-Nodes developing environment
 
-
-
-
-### 4.2.2. C++智能合约开发示例
-
-[使用C++编写智能合约](./resource_en/使用C++编写智能合约.md)
-
-### 4.2.3. JavaScript智能合约开发示例
-
-[使用JavaScript编写智能合约](./resource_en/使用JavaScript编写智能合约.md)
-
-
-## 4.3. 钱包
-
-### 4.3.1. 钱包工具集
-
-
-
-### 4.3.2. 钱包客户端
-
-
-
-## 4.4. BCLI命令
-
-[BCLI使用说明](./resource_en/BCLI使用说明.md)请参考链接文档。
+For multi-nodes developing environment please refer to： [multi-nodes developing environment](./resource_cn/Multi-Nodes_Developping_environment.MD)
 
 
+## 4.2. Smart Contract
+### 4.2.1. Introduction to Smart Contract (also includes the introduction to contract writing rules and ABI)
 
-## 4.5. DAPP开发
+### 4.2.2. C++ intelligent contract developing example
 
-### 4.5.1. JavaScript合约开发示例
+[Writting Smart Contracts Using C++](./resource_en/Development_and_deployment_of_Smart_Contract(C++_Version).md)
 
-[DApp开发与调试(JavaScript版本)](./resource_en/DApp开发与调试(JavaScript版本).md)
+### 4.2.3. JavaScript intelligent contract developing example
+
+[Writting Smart Contracts Using JavaScript](./resource_en/Development_and_deployment_of_Smart_Contract(JavaScript_Version).md)
+
+## 4.3. BCLI Command
+
+[BCLI Specification](./resource_en/BCLI_Specification.md)
 
 
+## 4.4. DAPP Development
 
-## 4.6. 开发工具集
+### 4.4.1. JavaScript contract development example
 
-### 4.6.1. 钱包SDK
-
-[钱包SDK](https://github.com/bottos-project/bottos-js-crypto)已在Github上提供
-
-### 4.6.2. C++合约开发SDK
-
-[C++开发SDK](https://github.com/bottos-project/contract-tool-cpp)已在Github上提供
-
-### 4.6.3. JavaScript合约开发SDK
-
-[JavaScript开发SDK](https://github.com/bottos-project/contract-tool-js)已在Github上提供
+[DApp developing and debugging (JavaScript version)](./resource_en/DApp_developing_and_debugging(Java_Script_Version).md)
 
 
 
-# 5. 超级节点启动指引
+## 4.5. Development tools
 
-## 5.1. 基础准备
+### 4.5.1. Wallet SDK
+
+[Wallet SDK](https://github.com/bottos-project/bottos-js-crypto) already on Github
+
+### 4.5.2. C++ Smart Contract Development SDK
+
+[C++ Development SDK](https://github.com/bottos-project/contract-tool-cpp) already on Github
+
+### 4.5.3. JavaScript Smart Contract Development SDK
+
+[JavaScript Development SDK](https://github.com/bottos-project/contract-tool-js) already on Github
 
 
-## 5.2. 安全提升
-[生产节点区块签名高级配置](./resource_en/生产节点区块签名高级配置.md)
+
+# 5. Supernode startup guide
+
+## 5.1. Basis of preparation
+
+
+## 5.2. Safe lifting
+[Advanced configuration of production node block signatures](./resource_en/Advanced_configuration_of_production_node_block_signatures.md)
 
 
 
-# 6. 资源库
+# 6. Resource repository
 
-## 6.1. C++合约开发SDK
+## 6.1. C++ Contract Development SDK
 
-[C++合约开发SDK](https://github.com/bottos-project/contract-tool-cpp)已在Github上提供
+[C++ Contract Development SDK](https://github.com/bottos-project/contract-tool-cpp) already on Github
 
-## 6.2. JavaScript合约开发SDK
+## 6.2. JavaScript Contract Development SDK
 
-[JavaScript合约开发SDK](https://github.com/bottos-project/contract-tool-js)已在Github上提供
+[JavaScript Contract Development SDK](https://github.com/bottos-project/contract-tool-js) already on Github
 
-## 6.3. 钱包开发SDK
+## 6.3. Wallet Development SDK
 
-[钱包SDK](https://github.com/bottos-project/bottos-js-crypto)已在Github上提供
+[Wallet SDK](https://github.com/bottos-project/bottos-js-crypto) already on Github
 
-## 6.4. 公共REST API
+## 6.4. Common REST API
 
-[公共REST接口API](./resource_en/公共REST接口API.md) 已提供
+[Common REST API](./resource_en/公共REST接口API.md) already on Github
 
-## 6.5. 钱包API
+## 6.5. Wallet API
 
-[钱包REST接口API](./resource_en/钱包REST接口API.md)已提供
+[Wallet REST API](./resource_en/钱包REST接口API.md) already on Github
