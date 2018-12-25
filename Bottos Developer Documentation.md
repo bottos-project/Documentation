@@ -75,6 +75,8 @@
 [Bottos Network Structure](./resource_en/Bottos_Network.md)
 
 
+# 2. Getting Started
+This chapter is an introduction to show you how to run the Bottos Chain, and how to use the basic instructions like register/transfer etc.
 
 And you can download mobile wallet to experience Bottos Chain. ([Android Wallet](https://dapp.botfans.org/wallet/BottosWallet.apk): https://dapp.botfans.org/wallet/BottosWallet.apk)
 
