@@ -349,7 +349,8 @@ wget https://github.com/bottos-project/bottos/releases/download/tag_bottos3.4/bo
 
 Unpack the downloaded version package: 
 
-(After unpack the release package, the folder bottos_v3.4 will be generated in the current directory)
+(After unpack the release package, the folder corresponding to the release version will be generated in the current directory. In this sample the generated folder is bottos_v3.4，the release package is bottos_ubuntu_v3.4.tar.gz)
+
 ```    
 tar zvxf bottos_ubuntu_v3.4.tar.gz
 ```
