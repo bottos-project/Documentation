@@ -4,19 +4,74 @@
 
 <div style="page-break-after: always;"></div>
 
+<!-- TOC -->
 
-<!-- TOC -->autoauto- [1. Bottos Introduction](#1-bottos-introduction)auto    - [1.1. Project Brief](#11-project-brief)auto    - [1.2. System Architecture](#12-system-architecture)auto    - [1.3. Network Structure](#13-network-structure)auto- [2. Getting Started](#2-getting-started)auto    - [2.1. Browser Bottos Chain](#21-browser-bottos-chain)auto        - [2.1.1. Bottos Chain Overview](#211-bottos-chain-overview)auto        - [2.1.2. Activities on Bottos Chain](#212-activities-on-bottos-chain)auto        - [2.1.3. Locations of Super Nodes](#213-locations-of-super-nodes)auto    - [2.2. Run Bottos Chain on Local Machine](#22-run-bottos-chain-on-local-machine)auto    - [2.3. Prepare the Bottos Version](#23-prepare-the-bottos-version)auto    - [2.4. Ready to run environment](#24-ready-to-run-environment)auto        - [2.4.1. Start the local single-node environment](#241-start-the-local-single-node-environment)auto        - [2.4.2. Join an existing test network](#242-join-an-existing-test-network)auto    - [2.5. Experience basic operations](#25-experience-basic-operations)auto        - [2.5.1. Create the Wallet](#251-create-the-wallet)auto        - [2.5.2. Create Account](#252-create-account)auto        - [2.5.3. Experience the BTO transfer](#253-experience-the-bto-transfer)auto- [3. The advanced operation](#3-the-advanced-operation)auto    - [3.1. Stake](#31-stake)auto    - [3.2. Claim](#32-claim)auto    - [3.3. Vote Resources](#33-vote-resources)auto    - [3.4. Space Resources](#34-space-resources)auto    - [3.5. Time Resources](#35-time-resources)auto- [4. Developing Guide](#4-developing-guide)auto    - [4.1. Set up Environment](#41-set-up-environment)auto        - [4.1.1. Basic environment preparation](#411-basic-environment-preparation)auto            - [4.1.1.1. Operating System](#4111-operating-system)auto            - [4.1.1.2. Node base version package installation](#4112-node-base-version-package-installation)auto        - [4.1.2. Single node developing environment](#412-single-node-developing-environment)auto        - [4.1.3. Multi-Nodes developing environment](#413-multi-nodes-developing-environment)auto    - [4.2. Smart Contract](#42-smart-contract)auto        - [4.2.1. Introduction to Smart Contract](#421-introduction-to-smart-contract)auto        - [4.2.2. C++ smart contract developing example](#422-c-smart-contract-developing-example)auto        - [4.2.3. JavaScript smart contract developing example](#423-javascript-smart-contract-developing-example)auto    - [4.3. BCLI Command](#43-bcli-command)auto    - [4.4. DAPP Development](#44-dapp-development)auto        - [4.4.1. JavaScript contract development example](#441-javascript-contract-development-example)auto    - [4.5. Development tools](#45-development-tools)auto        - [4.5.1. Wallet SDK](#451-wallet-sdk)auto        - [4.5.2. C++ Smart Contract Development SDK](#452-c-smart-contract-development-sdk)auto        - [4.5.3. JavaScript Smart Contract Development SDK](#453-javascript-smart-contract-development-sdk)auto- [5. Supernode startup guide](#5-supernode-startup-guide)auto    - [5.1. Basis of preparation](#51-basis-of-preparation)auto    - [5.2. Safe lifting](#52-safe-lifting)auto- [6. Resource repository](#6-resource-repository)auto    - [6.1. C++ Contract Development SDK](#61-c-contract-development-sdk)auto    - [6.2. JavaScript Contract Development SDK](#62-javascript-contract-development-sdk)auto    - [6.3. Wallet Development SDK](#63-wallet-development-sdk)auto    - [6.4. Common REST API](#64-common-rest-api)auto    - [6.5. Wallet API](#65-wallet-api)autoauto<!-- /TOC -->
+- [1. Bottos Introduction](#1-bottos-introduction)
+  - [1.1. Project Brief](#11-project-brief)
+  - [1.2. System Architecture](#12-system-architecture)
+  - [1.3. Network Structure](#13-network-structure)
+- [2. Getting Started](#2-getting-started)
+  - [2.1. Browser Bottos Chain](#21-browser-bottos-chain)
+    - [2.1.1. Bottos Chain Overview](#211-bottos-chain-overview)
+    - [2.1.2. Activities on Bottos Chain](#212-activities-on-bottos-chain)
+    - [2.1.3. Locations of Super Nodes](#213-locations-of-super-nodes)
+  - [2.2. Run Bottos Chain on Local Machine](#22-run-bottos-chain-on-local-machine)
+  - [2.3. Prepare the Bottos Version](#23-prepare-the-bottos-version)
+  - [2.4. Ready to run environment](#24-ready-to-run-environment)
+    - [2.4.1. Start the local single-node environment](#241-start-the-local-single-node-environment)
+    - [2.4.2. Join an existing test network](#242-join-an-existing-test-network)
+  - [2.5. Experience basic operations](#25-experience-basic-operations)
+    - [2.5.1. Create the Wallet](#251-create-the-wallet)
+    - [2.5.2. Create Account](#252-create-account)
+    - [2.5.3. Experience the BTO transfer](#253-experience-the-bto-transfer)
+- [3. The advanced operation](#3-the-advanced-operation)
+  - [3.1. Stake](#31-stake)
+  - [3.2. Claim](#32-claim)
+  - [3.3. Vote Resources](#33-vote-resources)
+  - [3.4. Space Resources](#34-space-resources)
+  - [3.5. Time Resources](#35-time-resources)
+- [4. Developing Guide](#4-developing-guide)
+  - [4.1. Setup Environment](#41-setup-environment)
+    - [4.1.1. Basic environment preparation](#411-basic-environment-preparation)
+      - [4.1.1.1. Operating System](#4111-operating-system)
+      - [4.1.1.2. Node base version package installation](#4112-node-base-version-package-installation)
+    - [4.1.2. Single node developing environment](#412-single-node-developing-environment)
+    - [4.1.3. Multi-Nodes developing environment](#413-multi-nodes-developing-environment)
+  - [4.2. Smart Contract](#42-smart-contract)
+    - [4.2.1. Introduction to Smart Contract](#421-introduction-to-smart-contract)
+    - [4.2.2. C++ smart contract developing example](#422-c-smart-contract-developing-example)
+    - [4.2.3. JavaScript smart contract developing example](#423-javascript-smart-contract-developing-example)
+  - [4.3. BCLI Command](#43-bcli-command)
+  - [4.4. DAPP Development](#44-dapp-development)
+    - [4.4.1. JavaScript contract development example](#441-javascript-contract-development-example)
+  - [4.5. Development tools](#45-development-tools)
+    - [4.5.1. Wallet SDK](#451-wallet-sdk)
+    - [4.5.2. C++ Smart Contract Development SDK](#452-c-smart-contract-development-sdk)
+    - [4.5.3. JavaScript Smart Contract Development SDK](#453-javascript-smart-contract-development-sdk)
+- [5. Supernode startup guide](#5-supernode-startup-guide)
+  - [5.1. Basis of preparation](#51-basis-of-preparation)
+  - [5.2. Safe lifting](#52-safe-lifting)
+- [6. Resource repository](#6-resource-repository)
+  - [6.1. C++ Contract Development SDK](#61-c-contract-development-sdk)
+  - [6.2. JavaScript Contract Development SDK](#62-javascript-contract-development-sdk)
+  - [6.3. Wallet Development SDK](#63-wallet-development-sdk)
+  - [6.4. Common REST API](#64-common-rest-api)
+  - [6.5. Wallet API](#65-wallet-api)
 
+<!-- /TOC -->
 
 # 1. Bottos Introduction
 
 ## 1.1. Project Brief
+
 [Project Brief](./resource_en/Project_Brief.md)
 
 ## 1.2. System Architecture
+
 [System Architecture](./resource_en/System_Architecture.md)
 
 ## 1.3. Network Structure
+
 [Bottos Network Structure](./resource_en/Bottos_Network.md)
 
 
@@ -32,19 +87,23 @@ And you can download mobile wallet to experience Bottos Chain. ([Android Wallet]
 [Bottos Browser](http://explorer.bottos.org) link is http://explorer.bottos.org
 
 ### 2.1.1. Bottos Chain Overview
+
 ![](./common/bottos_browser.png)
 
 ### 2.1.2. Activities on Bottos Chain
+
 ![](./common/activities.png)
 
 
 ### 2.1.3. Locations of Super Nodes
+
 ![](./common/supernodes.png)
 
 
 ## 2.2. Run Bottos Chain on Local Machine
 
 ## 2.3. Prepare the Bottos Version
+
 [Prepare the Bottos version](./resource_en/Prepare_the_Bottos_Version.md)
 
 ## 2.4. Ready to run environment
@@ -54,8 +113,9 @@ And you can download mobile wallet to experience Bottos Chain. ([Android Wallet]
 Start the Bottos single node with the following instructions
 
 ```
-./bottos --delegate bottos --enable-wallet
+    ./bottos --delegate bottos --enable-wallet
 ```
+
 > Parameter meaning:
 > `--delegate`: Specifies that the account for the block producer is bottos
 > `--enable-wallet`: Specifies that the wallet service should be started with the chain
@@ -69,6 +129,7 @@ InsertBlock: number:1, delegate:bottos, trxn:0, time=1537948299, hash: 566fb29ab
 CommitBlock by p2p: lib: 2
 InsertBlock: number:2, delegate:bottos, trxn:0, time=1537948302, hash: 8abe6aef22249ab58d6c7cd3970f909571c4e818f3757d9de7d86870bfc7465b, prevHash=566fb29ab982c128bf6c71297bc4e7d558e0f86ae89a7f3955ea46b04689fb5a
 ```
+
 &nbsp;
 
 ### 2.4.2. Join an existing test network
@@ -259,6 +320,7 @@ TrxHash: 83d5042570b666f2eba9e5cdbbab735444c93f4cb41a64e3b132dbba7fda6b43
 
 
 # 3. The advanced operation
+
 ## 3.1. Stake
 
 Users need to stake a certain number of BTO in order to have sufficient authority to vote on the production node or to make transactions such as transfer or other contracts.
@@ -272,7 +334,6 @@ For users who have staked BTO:
 
 
 Open to users will vote more certain amount and the power of use of resources (depending on the stake count how many), if operating within 1 days more than the staking right number of operation (after voting, transfer or other contracts), the user also has a certain operation permissions (lines) for free, if after 1 days use these lines, then the day will lose operation permissions (the next day will return to a certain number of times permissions).
-
 
 Operation mode of stake:
 
@@ -325,20 +386,21 @@ The time resource contains the total transaction time cost, typically 800 Bytes 
 
 # 4. Developing Guide
 
-## 4.1. Set up Environment 
+## 4.1. Setup Environment
+
 ### 4.1.1. Basic environment preparation
 
 #### 4.1.1.1. Operating System
 
 UBUNTU16.04 LTS (or higher) is recommended
 
-[Set_up_the_Golang_Developping_environment.md](./resource_en/Set_up_the_Golang_Developping_environment.md)
+[Set_up_the_Golang_Developing_environment.md](./resource_en/Set_up_the_Golang_Developping_environment.md)
 
 #### 4.1.1.2. Node base version package installation
 
 Bottos release packages' URL is under path of https://github.com/bottos-project/bottos/releases , it is recommended that users download the latest release package to test or verify it.
 
-In this sample, the latest version of package is v3.4. 
+In this sample, the version of package is v3.4.
 
 Enter the following command to install the tool and bottos to get the specific release version package.
 
@@ -347,16 +409,16 @@ apt-get update && apt-get install -y wget vim
 wget https://github.com/bottos-project/bottos/releases/download/tag_bottos3.4/bottos_ubuntu_v3.4.tar.gz
 ```
 
-Unpack the downloaded version package: 
+Unpack the downloaded version package:
 
 (After unpack the release package, the folder corresponding to the release version will be generated in the current directory. In this sample the generated folder is bottos_v3.4，the release package is bottos_ubuntu_v3.4.tar.gz)
 
-```    
+```
 tar zvxf bottos_ubuntu_v3.4.tar.gz
 ```
 
 Release package file description
-   
+
     bottos        Node master program
     bcli          Node supporting tools, details can be found in the bcli user description document on the official website
     config.toml   The node configuration file is described in detail in the next section
@@ -373,6 +435,7 @@ For multi-nodes developing environment please refer to： [multi-nodes developin
 
 
 ## 4.2. Smart Contract
+
 ### 4.2.1. Introduction to Smart Contract
 
 ### 4.2.2. C++ smart contract developing example
@@ -418,6 +481,7 @@ For multi-nodes developing environment please refer to： [multi-nodes developin
 
 
 ## 5.2. Safe lifting
+
 [Advanced configuration of production node block signatures](./resource_en/Advanced_configuration_of_production_node_block_signatures.md)
 
 
