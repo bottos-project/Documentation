@@ -428,7 +428,7 @@ tar zvxf bottos_ubuntu_v3.4.tar.gz
 
 ### 4.2.1. 智能合约简介（也包含合约书写规则和abi介绍）
 
-BOTTOS智能合约支持C++和JavaScript两种语言编写，编码规则和ABI下文会为用户分别介绍。
+BOTTOS智能合约支持C++和JavaScript两种语言编写，支持c++语言的智能合约的是基于wagon/wasm开发的虚拟机上运行的。 编码规则和ABI下文会为用户分别介绍。
 
 ### 4.2.2. C++智能合约开发示例
 
