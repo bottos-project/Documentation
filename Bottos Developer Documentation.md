@@ -378,7 +378,7 @@ Space resources include network resources and storage resources consumption, fre
 
 ## 3.5. Time Resources
 
-The time resource contains the total transaction time cost, typically 800 Bytes per day for free. After the user stakes BTO to space, every vote/cancelvote and any transaction and transaction will consume certain space resources. It should be noted that when the user's space resources are used up, there will be 3 transactions, 800Bytes of space and 400 microseconds of time. When any of the three transactions and space and time resources are exhausted, the quota will be stopped (a vote cannot be executed if only the free quota is left) and the quota will be restored the next day.
+The time resource contains the total transaction time cost, typically 400 microseconds of time for free  per day.(Accordingly, the space resource is 800 Bytes for free per day). After the user stakes BTO to space, every vote/cancelvote and any transaction and transaction will consume certain space resources. It should be noted that when the user's space resources are used up, there will be 3 transactions, 800Bytes of space and 400 microseconds of time. When any of the three transactions and space and time resources are exhausted, the quota will be stopped (a vote cannot be executed if only the free quota is left) and the quota will be restored the next day.
 
 &nbsp;
 
