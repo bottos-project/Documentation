@@ -368,7 +368,7 @@ TrxHash: 83d5042570b666f2eba9e5cdbbab735444c93f4cb41a64e3b132dbba7fda6b43
 
 ## 3.5. 时间资源
 
-time资源包含transaction总体上时间的开销，一般为用户提供的一天内免费额度为800Bytes。当用户质押了BTO给空间(space)后，每次投票vote/cancelvote 以及发任何transaction和交易等行为，都会消耗一定的空间资源，需注意当用户的空间资源所质押的BTO消耗完毕后，当天内还有3次的Transaction和800Bytes的space及400微秒的time使用额度，当3次Transaction和空间及时间资源任一耗尽则停止额度（vote投票在只留下免费额度的情形下将无法执行），并于次日恢复额度。
+time资源包含transaction总体上时间的开销，一般为用户提供的一天内免费额度为400微秒的time使用额度 (相应的，空间资源对应的免费额度为800Bytes)。当用户质押了BTO给空间(space)后，每次投票vote/cancelvote 以及发任何transaction和交易等行为，都会消耗一定的空间资源，需注意当用户的空间资源所质押的BTO消耗完毕后，当天内还有3次的Transaction和800Bytes的space及400微秒的time使用额度，当3次Transaction和空间及时间资源任一耗尽则停止额度（vote投票在只留下免费额度的情形下将无法执行），并于次日恢复额度。
 
 &nbsp;
 
