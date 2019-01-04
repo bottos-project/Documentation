@@ -1,4 +1,4 @@
-# 使用C++编写智能合约
+﻿# 使用C++编写智能合约
 # １.合约编写
 
 我们主要以　https://github.com/bottos-project/contract-tool-cpp.git　里的[testDbSaveAndRead](https://github.com/bottos-project/contract-tool-cpp/tree/master/testDbSaveAndRead)的例子来说明基本合约的编写及编译。这个例子提供了两个方法，分别是helloworld和start：(以下说明问题可能只截取部分代码，全部代码请参考git库)：
@@ -50,6 +50,12 @@ int start() // method start
 
 ```
 curl  http://RESTHost:RESTPort/v1/transaction/status -X POST -d '{"trx_hash": "trxhash"}'
+```
+
+或者通过如下bcli命令:
+
+```
+ bcli transaction get --trxhash  <hash>
 ```
 
 - 方法名对应的函数需要按C语言进行编译，如下：
@@ -189,7 +195,7 @@ static bool unpack_struct(MsgPackCtx *ctx, TestStruct *info)
 合约的编译相关工具链是https://github.com/bottos-project/contract-tool-cpp.git, 一份合约新建一个文件夹，如[testDbSaveAndRead](https://github.com/bottos-project/contract-tool-cpp/tree/master/testDbSaveAndRead)，编译合约的时候进入该文件夹，执行：
 
 ```
-python ../gentool.py wasm dbSaveRead.cpp
+python ../gentool.py --type wasm --file dbSaveRead.cpp
 ```
 
 命令执行完后将会生成对应的wasm文件：dbSaveRead.wasm
@@ -213,7 +219,7 @@ abi文件是通过扫描hpp文件生成， 在hpp文件里通过注释来告诉�
 在testDbSaveAndRead文件夹下通过如下命令就可以扫描出hpp文件对应的abi文件：
 
 ```
-python ../gentool testRegUser.hpp
+python ../gentool --file testRegUser.hpp
 ```
 
 命令执行完后将会生成对应的abi文件dbSaveRead.abi。
@@ -224,55 +230,18 @@ python ../gentool testRegUser.hpp
 
 我们再来看一下合约如何部署：
 
-部署可以使用提供的bcli命令来进行，假设账号testdbsaveread已经存在，并且其对应的钱包已经解锁，则可以按如下命令部署合约，详细请参考bcli命合约部署相关描述
+部署可以使用提供的bcli命令来进行，假设账号testdbsaveread已经存在，并且其对应的钱包已经解锁，则可以按如下命令部署合约，其中“dbcontract”是给要部署的合约所取的名字，详细请参考bcli命令合约部署相关描述：
 
 ```
-./bcli contract deploy --account testdbsaveread --code $filepath/dbSaveRead.wasm --abi $filepath/dbSaveRead.abi
+./bcli contract deploy --contract dbcontract --code $filepath/dbSaveRead.wasm --abi $filepath/dbSaveRead.abi --account testdbsaveread
 ```
 
 参考的回显：
 
 ```
-Push transaction done for deploying contract testdbsaveread
-Trx: 
-{
-    "version": 1,
-    "cursor_num": 5517,
-    "cursor_label": 3051494823,
-    "lifetime": 1542971302,
-    "sender": "testdbsaveread",
-    "contract": "bottos",
-    "method": "deploycode",
-    "param": {
-        "name": "testdbsaveread",
-        "vm_type": 1,
-        "vm_version": 1,
-        "contract_code": "0061736d010000000......"
-    },
-    "param_bin": "dc0004......",
-    "sig_alg": 1,
-    "signature": "949ffe......"
-}
-TrxHash: a5c86aa93c5889c1176ff3e36b7c5c372424c525d85dbe4a0d7ec2881f4eec53
-{
-    "errcode": 0,
-    "msg": "trx receive succ",
-    "result": {
-        "trx": {
-            "version": 1,
-            "cursor_num": 5517,
-            "cursor_label": 3051494823,
-            "lifetime": 1542971302,
-            "sender": "testdbsaveread",
-            "contract": "bottos",
-            "method": "deployabi",
-            "param": "dc0003......",
-            "sig_alg": 1,
-            "signature": "286f8......"
-        },
-        "trx_hash": "160f500e2bec9ec2f817d96158f512d2ba741aa35a0133408e43dad4188b9be9"
-    }
-}
+TrxHash: 274f7a984c189a27de6f36f6ab87df55cb166873ed042639a854ae07e1a30781
+
+This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 ```
 
 以上信息显示链已接收到请求，我们可以过一段时间通过如下命令输入transaction hash查看是否成功执行：
@@ -281,7 +250,7 @@ TrxHash: a5c86aa93c5889c1176ff3e36b7c5c372424c525d85dbe4a0d7ec2881f4eec53
 ./bcli transaction  get --trxhash 160f500e2bec9ec2f817d96158f512d2ba741aa35a0133408e43dad4188b9be9
 ```
 
-如果以上命令长时间查不到该transaction信息，说明transaction执行失败，可以通过如下一个调试用rest接口查询错误码：
+或者:
 
 ```
 curl  http://RESTHost:RESTPort/v1/transaction/status -X POST -d '{"trx_hash": "160f500e2bec9ec2f817d96158f512d2ba741aa35a0133408e43dad4188b9be9"}'
@@ -293,13 +262,13 @@ curl  http://RESTHost:RESTPort/v1/transaction/status -X POST -d '{"trx_hash": "1
 
 合约部署完后，我们再来看一下如何调用合约。
 
-目前bcli也提供了调用合约的方式，比如我们要调用上面合约的start方法：（假设callaccount账户已经创建，并且钱包已经解锁）
+目前bcli也提供了调用合约的方式，被调用的合约名格式为“合约名@部署账户”，比如我们要调用上面合约的start方法：（假设callaccount账户已经创建，并且钱包已经解锁）
 
 ```
-./bcli transaction push --sender callaccount --method start --contract testdbsaveread --param "valueA:1, valueB:2"
+./bcli transaction push --sender callaccount --method start --contract dbcontract@testdbsaveread --param "valueA:1, valueB:2"
 ```
 
-上面是用callaccount发起一次调用，调用testdbsaveread账户下合约的start方法，参数valueA和valueB分别为1和2，参数格式来源于abi的定义，如下，里面定义了start方法的参数是TestStruct结构，里面的两个变量名分别为valueA和valueB：
+上面是用callaccount发起一次调用，调用testdbsaveread账户下dbcontract合约的start方法，参数valueA和valueB分别为1和2，参数格式来源于abi的定义，如下，里面定义了start方法的参数是TestStruct结构，里面的两个变量名分别为valueA和valueB：
 
 ```
 {

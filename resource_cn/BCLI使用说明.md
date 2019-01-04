@@ -352,30 +352,30 @@ BCLI合约功能命令行主要实现用户主动部署一个合约及ABI文件�
 
 帮助信息
 
-    ./bcli contract deploycode --help
+    ./bcli contract deploy --help
     NAME:
-        Bottos bcli tool contract deploycode - contract  deploycode
+       Bottos bcli tool contract deploy - contract deploy
     
     USAGE:
-        Bottos bcli tool contract deploycode [command options] [arguments...]
+       Bottos bcli tool contract deploy [command options] [arguments...]
     
     OPTIONS:
-        --contract value  the contract's name
-        --code value      the contract's wasm file path ( includes wasm file name )
-        --filetype value  the contract's file type: wasm or js (default: "wasm")
-        --abi value       the contract's abi file path ( includes abi file name )
-        --account value   the account name whom deploy the code
+       --contract value  the contract's name
+       --code value      the contract's wasm file path ( includes wasm file name )
+       --filetype value  the contract's file type: wasm or js (default: "wasm")
+       --abi value       the contract's abi file path ( includes abi file name )
+       --account value   the account name whom deploy the code
 
 
 参数说明
 
-| 主命令行                 | 参数列表   | 参数说明                  | 必选参数 |
-| ------------------------ | :--------: | :-----------------------: | :------: |
-| bcli contract deploycode | --contract | 合约名                    | 是       |
-|                          | --code     | 合约文件（.WASM）所在路径 | 是       |
-|                          | --filetype | 合约文件类型：wasm/js     | 否       |
-|                          | --abi      | 合约文件（.abi）          | 是       |
-|                          | --account  | 部署合约的账户            | 是       |
+| 主命令行             |  参数列表  |         参数说明          | 必选参数 |
+| -------------------- | :--------: | :-----------------------: | :------: |
+| bcli contract deploy | --contract |          合约名           |    是    |
+|                      |   --code   | 合约文件（.WASM）所在路径 |    是    |
+|                      | --filetype |   合约文件类型：wasm/js   |    否    |
+|                      |   --abi    |     合约文件（.abi）      |    是    |
+|                      | --account  |      部署合约的账户       |    是    |
 
 
 返回信息
@@ -384,7 +384,7 @@ BCLI合约功能命令行主要实现用户主动部署一个合约及ABI文件�
 
 示例
 
-    ./bcli contract deploy --account tina123456789 --code testvm1/testVM1.wasm --abi testvm1/testVM1.abi --contract testvm1
+    ./bcli contract deploy --contract testvm1 --code testvm1/testVM1.wasm --abi testvm1/testVM1.abi  --account tina123456789
 
 输出结果
 ​     
@@ -851,7 +851,7 @@ BCLI候选节点功能选举命令行主线实现候选节点之：注册节点�
 
     USAGE:
         Bottos bcli tool delegate claimreward [command options] [arguments...]
-
+    
     OPTIONS:
         --account value  account name
 
@@ -871,7 +871,7 @@ BCLI候选节点功能选举命令行主线实现候选节点之：注册节点�
 输出结果
 
     TrxHash: de8dcdbcd92c88250801a96a4db9260455c16c595abb7328b5e0a638695a0bdb
-
+    
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 
@@ -1242,7 +1242,7 @@ OPTIONS:
 输出结果
 
     TrxHash: f1017b6303171b1b919a986f98dc191d3a3af54fbbcae6f30340436e234ea0b0
-
+    
     This transaction is sent. Please check its result by command : bcli transaction get --trxhash  <hash>
 
 查看创建的账户信息：
