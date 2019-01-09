@@ -153,11 +153,11 @@
 
 **请求参数：**
 
-| 参数         | 必选  | 类型   | 默认值 | 说明                                   |
-| ------------ | ----- | ------ | ------ | -------------------------------------- |
-| account_name | TRUE  | string | 无     | 账号名称                               |
-| public_key   | TRUE  | string | 无     | 公钥                                   |
-| referrer     | FALSE | string | bottos | 引荐人账号，若无，默认为系统bottos账号 |
+| 参数         | 必选 | 类型   | 默认值 | 说明       |
+| ------------ | ---- | ------ | ------ | ---------- |
+| account_name | TRUE | string | 无     | 账号名称   |
+| public_key   | TRUE | string | 无     | 公钥       |
+| referrer     | TRUE | string | 无     | 引荐人账号 |
 
 **响应字段：**
 

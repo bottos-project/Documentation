@@ -157,7 +157,7 @@
 | ------------ | ----- | ------ | ------ | -------------------------------------- |
 | account_name | TRUE  | string | Null     | Account name                               |
 | public_key   | TRUE  | string | Null     | Public key                                   |
-| referrer     | FALSE | string | bottos | Referrer account, if is set to null, it is bottos account by default |
+| referrer     | TRUE | string | Null | Referrer account |
 
 **Response Field:**
 
