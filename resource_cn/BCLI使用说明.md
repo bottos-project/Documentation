@@ -1482,7 +1482,7 @@ BCLI Transaction 提交和查询命令行负责提交一个用户自定义的Tra
 | ./bcli wallet | lock        | 锁定钱包           |
 | ./bcli wallet | unlock      | 解锁钱包           |
 | ./bcli wallet | list        | 列出所有钱包       |
-| ./bcli wallet | listkey     | 列出所有指定用户的钱包和公钥       |
+| ./bcli wallet | listkey     | 列出所有指定用户的钱包和公钥 （钱包必须先解除锁定才可查得）      |
 
 ##### BCLI 创建钱包公私钥命令行
 
@@ -1657,7 +1657,7 @@ Please input your private key for your wallet:
 
 | 主命令行           | 参数列表 | 参数说明 | 必选参数 |
 | ------------------ | :------: | :------: | :------: |
-| ./bcli wallet list | --account | 钱包绑定的用户名     | 是       |
+| ./bcli wallet list | (无) | (无)     | 否       |
 
 返回信息
 
@@ -1677,7 +1677,7 @@ Please input your private key for your wallet:
         }
     ]
 
-##### BCLI 查看用户钱包和公钥命令行
+##### BCLI 查看用户钱包公钥命令行
 
 帮助信息
 ​    

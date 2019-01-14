@@ -958,18 +958,22 @@ Help information
     OPTIONS:
         --num value   get block by number (default: 100)
         --hash value  get block by hash
+        --start value  get specific block from start num(do not use with --num or --hash) (default: 0)
+        --end value    get specific block to end num (do not use with --num or --hash) (default: 0)
 
 Parameter Description
 
 | chief command   | parameter list | Parameter Description | mandatory |
 | --------------- | :------------: | :-------------------: | :-------: |
-| ./bcli getblock | (Null)         | (Null)                | (Null)    |
-|                 | (Null)         | (Null)                | (Null)    |
+| ./bcli getblock | --num     | get the specific block according to block number     | No    |
+|                 | --hash     | get the specific block according to block hash      | No    |
+|                 | --start     | Get several blocks according to block number duration from "start" number. The most blocks to be quired are 10 blocks.    | No    |
+|                 | --end     | Get several blocks according to block number duration until "end" number. The most blocks to be quired are 10 blocks.    | No    |
 
 
 Return Information
 
-    The output gives the latest block information of realtime.
+    The output gives the latest block information of realtime. If no options are given(according to above options), the latest block information will be given then.
 
 Sample
 
@@ -1482,8 +1486,9 @@ Help information
         generatekey  generate key pairs
         create       create wallet
         lock         lock wallet
-        unlock       unlock wallet
+        unlock       unlock wallet: only one account can be unlocked at same time(if one account is unlocked, the another previous unlocked account will be locked itself.)
         list         list wallet
+        listkey      listkey of wallet
         listkey      listkey of wallet
     
     OPTIONS:
@@ -1499,7 +1504,7 @@ Commandline Function Description
 | ./bcli wallet | lock           | Lock wallet                                                    |
 | ./bcli wallet | unlock         | Unlock wallet                                                  |
 | ./bcli wallet | list           | List all wallet                                                |
-| ./bcli wallet | listkey        | List the key pair of wallet（Wallet must be unlocked firstly） |
+| ./bcli wallet | listkey        | List the wallet and its public key according to the account（Wallet must be unlocked firstly） |
 
 ##### BCLI Create Wallet's Public and Private Key Command
 
@@ -1694,7 +1699,7 @@ Output
         }
     ]
 
-##### BCLI Watching All the Public and Private Key Command
+##### BCLI Watching wallet's Public Key Command
 
 Note：
 ​    This command must be used after the wallet be under the unlocked state.
@@ -1734,6 +1739,9 @@ Output
 ​    "private_key": "b799ef616830cd7b8599ae7958fbee56d4c8168ffd5421a16025a398b8a4be45",
 ​    "public_key": "0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f"
 }
+
+Note:
+This command requires user to unlock account's wallet first, otherwise the command returns the empty result such as '{}'.
 
 ##### BCLI Log Function Command
 
