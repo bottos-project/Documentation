@@ -239,7 +239,7 @@ The above information shows that the chain has received the request, we can afte
 ./bcli transaction  get --trxhash 160f500e2bec9ec2f817d96158f512d2ba741aa35a0133408e43dad4188b9be9
 ```
 
-If the above command does not find the transaction information for a long time, it means that the transaction execution is failed; You can query the error code with the rest interface with the following debugging:
+Or, you can also inquiry the transaction by following restful api:
 
 ```
 curl  http://RESTHost:RESTPort/v1/transaction/status -X POST -d '{"trx_hash": "160f500e2bec9ec2f817d96158f512d2ba741aa35a0133408e43dad4188b9be9"}'
@@ -251,12 +251,12 @@ curl  http://RESTHost:RESTPort/v1/transaction/status -X POST -d '{"trx_hash": "1
 
 After the contract is deployed, let's take a look at how to invoke the contract.
 
-BCLI also provides a way to invoke contracts, such as the Start method we want to invoke the contract above: (assuming that the Callaccount account has been created and the wallet has been unlocked)
+BCLI also provides a way to invoke contracts (The invoked contract's name format should be "contract name@deployed account"), such as the Start method we want to invoke the contract above: (assuming that the Callaccount account has been created and the wallet has been unlocked)
 
 ```
-./bcli transaction push --sender callaccount --method start --contract testdbsaveread --param "valueA:1, valueB:2"
+./bcli transaction push --sender callaccount --method start --contract dbcontract@testdbsaveread --param "valueA:1, valueB:2"
 ```
-Above is a invoking initiated with callaccount, invoking the start method of the contract under Testdbsaveread account, the parameters Valuea and Valueb are 1 and 2, respectively, and the parameter format is derived from the definition of ABI, such as the following, The parameters that define the Start method are the TESTSTRUCT structure, and the two variable names inside are Valuea and VALUEB, respectively:
+Above is a invoking initiated with callaccount, invoking the start method of the contract of "dbcontract" under the Testdbsaveread account, the parameters Valuea and Valueb are 1 and 2, respectively, and the parameter format is derived from the definition of ABI, such as the following, The parameters that define the Start method are the TESTSTRUCT structure, and the two variable names inside are Valuea and VALUEB, respectively:
 
 ```
 {
