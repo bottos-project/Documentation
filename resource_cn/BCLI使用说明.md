@@ -935,18 +935,22 @@ BCLI块信息获取主要包括： 获取当前块信息，块头信息。
     OPTIONS:
         --num value   get block by number (default: 100)
         --hash value  get block by hash
+        --start value  get specific block from start num(do not use with --num or --hash) (default: 0)
+        --end value    get specific block to end num (do not use with --num or --hash) (default: 0)
 
 参数说明
 
 | 主命令行        | 参数列表 | 参数说明 | 必选参数 |
 | --------------- | :------: | :------: | :------: |
-| ./bcli getblock | (无)     | (无)     | (无)     |
-|                 | (无)     | (无)     | (无)     |
+| ./bcli getblock | --num     | 查看指定块号对应的块     | 否    |
+|                 | --hash     | 查看指定查询的BLOCK HASH对应的块     | 否    |
+|                 | --start     | 查看指定范围的若干个块信息, start 为查看的起始块号，最多只能查看10个块     | 否    |
+|                 | --end     | 查看指定范围的若干个块信息, end 为查看的终止块号, 最多只能查看10个块     | 否    |
 
 
 返回信息
 
-    该命令成功后将返回实时最新块信息。
+    该命令成功后将返回实时最新块信息。不指定上述可选项时总是返回当前最新块。
 
 示例
 
@@ -1459,8 +1463,9 @@ BCLI Transaction 提交和查询命令行负责提交一个用户自定义的Tra
         generatekey  generate key pairs
         create       create wallet
         lock         lock wallet
-        unlock       unlock wallet
+        unlock       unlock wallet: only one account can be unlocked at same time(if one account is unlocked, the another previous unlocked account will be locked itself.)
         list         list wallet
+        listkey      listkey of wallet
 
 
 ​    
@@ -1477,6 +1482,7 @@ BCLI Transaction 提交和查询命令行负责提交一个用户自定义的Tra
 | ./bcli wallet | lock        | 锁定钱包           |
 | ./bcli wallet | unlock      | 解锁钱包           |
 | ./bcli wallet | list        | 列出所有钱包       |
+| ./bcli wallet | listkey     | 列出所有指定用户的钱包和公钥       |
 
 ##### BCLI 创建钱包公私钥命令行
 
@@ -1651,7 +1657,7 @@ Please input your private key for your wallet:
 
 | 主命令行           | 参数列表 | 参数说明 | 必选参数 |
 | ------------------ | :------: | :------: | :------: |
-| ./bcli wallet list | (无)     | （无）   | （无）   |
+| ./bcli wallet list | --account | 钱包绑定的用户名     | 是       |
 
 返回信息
 
@@ -1670,6 +1676,44 @@ Please input your private key for your wallet:
             "wallet_path": "/home/bottos/bot/user12345678.keystore"
         }
     ]
+
+##### BCLI 查看用户钱包和公钥命令行
+
+帮助信息
+​    
+​    ./bcli wallet listkey --help
+    NAME:
+        Bottos bcli tool wallet listkey - listkey of wallet
+
+    USAGE:
+        Bottos bcli tool wallet listkey [command options] [arguments...]
+
+    OPTIONS:
+        --account value  account name
+
+参数说明
+
+| 主命令行           | 参数列表 | 参数说明 | 必选参数 |
+| ------------------ | :------: | :------: | :------: |
+| ./bcli wallet listkey | --account | 钱包绑定的用户名  | 是       |
+
+返回信息
+
+该命令成功后将返回钱包锁定状态标志。
+
+示例
+
+     ./bcli wallet listkey --account bottos
+
+输出结果
+
+    {
+        "account_name": "bottos",
+        "public_key": "0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f"
+    }
+
+注：
+此命令要求账户钱包处于解锁状态，否则listkey将会显示为空｛｝
 
 ##### BCLI 日志功能命令行
 
