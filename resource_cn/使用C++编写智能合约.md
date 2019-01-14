@@ -247,13 +247,13 @@ This transaction is sent. Please check its result by command : bcli transaction 
 以上信息显示链已接收到请求，我们可以过一段时间通过如下命令输入transaction hash查看是否成功执行：
 
 ```
-./bcli transaction  get --trxhash 160f500e2bec9ec2f817d96158f512d2ba741aa35a0133408e43dad4188b9be9
+./bcli transaction  get --trxhash 274f7a984c189a27de6f36f6ab87df55cb166873ed042639a854ae07e1a30781
 ```
 
 或者:
 
 ```
-curl  http://RESTHost:RESTPort/v1/transaction/status -X POST -d '{"trx_hash": "160f500e2bec9ec2f817d96158f512d2ba741aa35a0133408e43dad4188b9be9"}'
+curl  http://RESTHost:RESTPort/v1/transaction/status -X POST -d '{"trx_hash": "274f7a984c189a27de6f36f6ab87df55cb166873ed042639a854ae07e1a30781"}'
 ```
 
 
