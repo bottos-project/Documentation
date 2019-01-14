@@ -56,20 +56,20 @@ The global help information
 
 命令功能说明
 
-| chief command | parameter list    | Parameter Description                                                           |
+| chief command | parameter list    | Parameter Description                                  |
 | -------- | :---------: | :----------------------------------------------------------------: |
-| ./bcli   | getinfo     | 获取块头信息                                                       |
-| ./bcli   | getblock    | 获取指定BLOCK信息                                                  |
-| ./bcli   | gettable    | 获取合约表信息                                                     |
-| ./bcli   | account     | 创建/获取用户信息，质押/解质押/回收质押等                          |
-| ./bcli   | transfer    | BTO转账功能                                                        |
-| ./bcli   | transaction | 查询/发起 transaction                                              |
-| ./bcli   | contract    | 查询/部署合约和ABI                                                 |
-| ./bcli   | p2p         | P2P命令行暂不支持                                                  |
-| ./bcli   | delegate    | 注册/解注册生产者，生产者投票/取消投票等                           |
-| ./bcli   | wallet      | 钱包创建/锁定/解锁/查询等                                          |
-| ./bcli   | genesis     | 创世节点操作相关，设置初始生产者，移交出块权利，取消节点操作权限等 |
-| ./bcli   | log         | log 开关，开启Debug log等日志级别                                  |
+| ./bcli   | getinfo     | Get block header information                                      |
+| ./bcli   | getblock    | Get latest block information                                      |
+| ./bcli   | gettable    | Get contract table information                                    |
+| ./bcli   | account     | Create/Get account's information, stake/unstake/claim BTO, etc.   |
+| ./bcli   | transfer    | Transfer BTO                                                     |
+| ./bcli   | transaction | Inquiry/Send transaction                                         |
+| ./bcli   | contract    | Inquiry/Deploy contract and abi                                  |
+| ./bcli   | p2p         | P2P commands                                                     |
+| ./bcli   | delegate    | Register/Unregister producers，producer vote/cancel vote, etc.   |
+| ./bcli   | wallet      | Create wallet/lock/unlock/inquiry wallet, etc.                   |
+| ./bcli   | genesis     | Genesis node operations，set initial producers，transfer producing blocks rights，cancel the node's operation priviledges |
+| ./bcli   | log         | log settings，eg. Open Debug log levels                    |
 
 
 命令功能说明
@@ -1057,8 +1057,7 @@ Parameter Description
 
 | chief command              | parameter list | Parameter Description                               | mandatory |
 | -------------------------- | :------------: | :-------------------------------------------------: | :-------: |
-| ./bcli genesis setdelegate | --sender       | The signer（user name must be regietered at first，
-​                                                default value will be inside bottos account）        | No        |
+| ./bcli genesis setdelegate | --sender       | The signer（user name must be regietered at first，  default value will be inside bottos account）        | No        |
 |                            | --account      | The producer that will be added                      | Yes       |
 |                            | --signkey      | user's public key                                    | No        |
 |                            | --location     | The city designated by user                          | No        |
@@ -1098,8 +1097,7 @@ Parameter Description
 
 | chief command               | parameter list | Parameter Description                                | mandatory |
 | --------------------------- | :------------: | :--------------------------------------------------: | :-------: |
-| ./bcli genesis blkprodtrans | --sender       | The signer（user name must be regietered at first，
-​                                                 default value will be inside bottos account）        | No        |
+| ./bcli genesis blkprodtrans | --sender       | The signer（user name must be regietered at first，default value will be inside bottos account）        | No        |
 
 
 Return Information
@@ -1136,8 +1134,7 @@ Parameter Description
 
 | chief command                  | parameter list | Parameter Description                                     | mandatory |
 | ------------------------------ | :------------: | :-------------------------------------------------------: | :-------: |
-| ./bcli genesis cancelprevilige | --sender       | The signer（the user name must be registered at first,
-​                                                    the default value is the bottos account）                 | No        |
+| ./bcli genesis cancelprevilige | --sender       | The signer（the user name must be registered at first, the default value is the bottos account）                 | No        |
 
 Return Information
 
