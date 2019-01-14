@@ -371,19 +371,21 @@ Commandline Function Description
 
 Help information
 
-    ./bcli contract deploycode --help
+    ./bcli contract deploy --help
     NAME:
-        Bottos bcli tool contract deploycode - contract  deploycode
+       Bottos bcli tool contract deploy - contract deploy
     
     USAGE:
-        Bottos bcli tool contract deploycode [command options] [arguments...]
+       Bottos bcli tool contract deploy [command options] [arguments...]
     
     OPTIONS:
-        --contract value  the contract's name
-        --code value      the contract's wasm file path ( includes wasm file name )
-        --filetype value  the contract's file type: wasm or js (default: "wasm")
-        --abi value       the contract's abi file path ( includes abi file name )
-        --account value   the account name whom deploy the code
+       --contract value  the contract's name
+       --code value      the contract's wasm file path ( includes wasm file name )
+       --filetype value  the contract's file type: wasm or js (default: "wasm")
+       --abi value       the contract's abi file path ( includes abi file name )
+       --account value   the account name whom deploy the code
+
+
 
 
 
@@ -392,11 +394,12 @@ Parameter Description
 
 | chief command            | parameter list | Parameter Description         | mandatory |
 | ------------------------ | :------------: | :---------------------------: | :-------: |
-| bcli contract deploycode | --contract | contract name                 | Yes       |
-|                          | --code         | Contract file（.WASM）'s path | Yes       |
-|                          | --filetype         | user who signs the contract   | No       |
-|                          | --abi | Contract file（.abi）'s path | Yes       |
-| | --account | the account who deploy the contract | Yes |
+| bcli contract deploy     | --contract     | contract name                     | Yes       |
+|                          | --code         | Contract file（.WASM）'s path     | Yes       |
+|                          | --filetype     | contract file's type: wasm / js   | No        |
+|                          | --abi          | Contract file（.abi）'s path      | Yes       |
+|                          | --account      | the account who deploy the contract | Yes     |
+
 
 Return Information
 
@@ -404,7 +407,7 @@ This will return the transaction information after the command successfully be  
 
 Sample
 
-    ./bcli contract deploy --account tina123456789 --code testvm1/testVM1.wasm --abi testvm1/testVM1.abi --contract testvm1
+    ./bcli contract deploy --contract testvm1 --code testvm1/testVM1.wasm --abi testvm1/testVM1.abi --account tina123456789
 
 Output
 ​  
