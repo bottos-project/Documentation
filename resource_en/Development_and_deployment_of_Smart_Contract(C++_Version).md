@@ -306,15 +306,15 @@ curl  http://RESTHost:RESTPort/v1/transaction/status -X POST -d '{"trx_hash": "1
 After the contract is executed correctly, the data Valuea and Valueb saved to the chain are 2 and 3, respectively, and can be queried by the following command:
 
 ```
-./bcli  gettable --account testdbsaveread --table testTableName --key testKeyName
+./bcli  gettable --contract dbcontract@testdbsaveread --table testTableName --key testKeyName
 {
-    "contract": "testdbsaveread",
+    "contract": "dbcontract@testdbsaveread",
     "object": "testTableName",
     "key": "testKeyName",
     "value": "dc0002ce00000002ce00000003"
 }
 
-Table data is : map[valueA:2 valueB:3] 
+Table data is : map[valueA:2 valueB:3]  
 ```
 
 
@@ -379,7 +379,7 @@ Table data is : map[valueA:2 valueB:3]
 | valueBufLen | uint32_t | Length of Buffers used to store data                           |
 
   The Return Value：Get the length of data.
-  
+
 - uint32_t getParam(char *param, uint32_t bufLen);
 
   Functions: Get the parameters from invoking a contract

@@ -320,9 +320,9 @@ curl  http://RESTHost:RESTPort/v1/transaction/status -X POST -d '{"trx_hash": "1
 合约正确执行后，则保存至链上的数据valueA和valueB分别是2和3，可以通过如下命令进行查询：
 
 ```
-./bcli  gettable --account testdbsaveread --table testTableName --key testKeyName
+./bcli  gettable --contract dbcontract@testdbsaveread --table testTableName --key testKeyName
 {
-    "contract": "testdbsaveread",
+    "contract": "dbcontract@testdbsaveread",
     "object": "testTableName",
     "key": "testKeyName",
     "value": "dc0002ce00000002ce00000003"
