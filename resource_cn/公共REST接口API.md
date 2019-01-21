@@ -120,7 +120,12 @@
 | trx_merkle_root    | string     | 默克尔根值，该块打包的所有交易的根哈希值                     |
 | delegate           | string     | 生产者名称                                                   |
 | delegate_sign      | string     | 生产者签名                                                   |
-| trxs               | jsonArray  | 当前区块所打包的交易列表，具体见“查询交易信息”章节的响应字段 |
+| ResourceReceipt    | jsonObject | 交易消耗资源情况                                             |
+| account_name       | string     | 账户名称                                                     |
+| space_token_cost   | uint64     | 交易所消耗的空间资源                                         |
+| time_token_cost    | uint64     | 交易所消耗的时间资源                                         |
+| trxs               | jsonArray  | 当前区块所打包的交易列表，具体见“查询交易信息”章节的响应字段，另加TrxHash |
+| TrxHash            | string     | 交易HASH 值                                                  |
 
 **字段变化**
 
@@ -143,41 +148,50 @@
 
 - 响应：
 
-  
+
 
   ```
   HTTP/1.1 200 OK
   
   {
-      "errcode": 0,
-      "msg": "success",
-      "result": {
-          "prev_block_hash": "1b345401d8f859c05e37b5ccacd39ff5b4a21615b63f9b96edb59352a3e54e82",
-          "block_num": 32,
-          "block_hash": "405a6fb8b91a055a7a4cf007451ce0b31ea6626cb2d56ec050b126701fbf093d",
-          "cursor_block_label": 532613437,
-          "block_time": 1537259127,
-          "trx_merkle_root": "85f9d2fbe1d3c0a217e10932899b6f73b24fafe59a006406ed65d7e4a39a7416",
-          "delegate": "bottos",
-          "delegate_sign": "41c25998e7d432527f07ae5c10c5c30a4873e9519c29cb02e7f46e3a8e238baf47748efe3f24db3ff3630305441b1d24c5d0ba796b3332a8b8fd3fca4efc4cfb",
-          "trxs": [
-              {
-                  "version": 1,
-                  "cursor_num": 31,
-                  "cursor_label": 2749714050,
-                  "lifetime": 1537259224,
-                  "sender": "bottos",
-                  "contract": "bottos",
-                  "method": "newaccount",
-                  "param": {
-                      "name": "testtest",
-                      "pubkey": "0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f"
-                  },
-                  "sig_alg": 1,
-                  "signature": "c85fd25af493cbb6a79870ce0fc602acc892664ca17e2c646aff0332ca6db7787beeb7e5d8553de8e4b83bdf7b227762fedf9e3674888893f18bf31f0b05d622"
-              }
-          ]
-      }
+  	"errcode": 0,
+  	"msg": "success",
+  	"result": {
+  		"block_version": 65536,
+  		"prev_block_hash": "905c688db5fbb831b06c545a71ce7ae109bcedb447dd8af9670bd0fbe2bf4cec",
+  		"block_num": 281031,
+  		"block_hash": "e7fa5ae6def1d93bca2f62c9c386afe8f539ebed24ddeab0d7ce325b668f7a6f",
+  		"cursor_block_label": 1720679023,
+  		"block_time": 1546833570,
+  		"trx_merkle_root": "6ae1ce2045f6302db1a330432a90741741dcd47c346f2e2883bd5cedc8ce5ac0",
+  		"delegate": "bto-alibaba",
+  		"delegate_sign": "b359bac262801118a676d1d0bee8f069878e0753aa0400176b4d8c2509e25f36341c2613801b2e8bc45a03609093289a95a028fe3aac67b2652e1bf4907facb3",
+  		"trxs": [{
+  			"Transaction": {
+  				"version": 65536,
+  				"cursor_num": 281030,
+  				"cursor_label": 3804187884,
+  				"lifetime": 1546833667,
+  				"sender": "bottostest",
+  				"contract": "bottos",
+  				"method": "transfer",
+  				"param": {
+  					"from": "bottos",
+  					"memo": "",
+  					"to": "bottosreferrer1",
+  					"value": 200000000000
+  				},
+  				"sig_alg": 1,
+  				"signature": "97b53d105108cc949c64c5932ad200ddad12f69412ab01af7e3e6955fc9991b262c67c560e27742efe12bc130c1485a358a47c707d4c7722afdf27d8e96a5d2c"
+  			},
+  			"ResourceReceipt": {
+  				"account_name": "bottostest",
+  				"space_token_cost": 265,
+  				"time_token_cost": 100
+  			},
+  			"TrxHash": "81ff5685349926a6200abb3c13fad6d38505030c12b89af68d1a4d08b48d836e"
+  		}]
+  	}
   }
   ```
 
