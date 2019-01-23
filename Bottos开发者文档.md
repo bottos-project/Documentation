@@ -86,7 +86,7 @@
 
 ## 2.1. 使用区块浏览器总览Bottos链
 
-[Bottos区块浏览器](http://exblock.bottos.org:8888/#/home)地址 为 http://explorer.bottos.org
+[Bottos区块浏览器](http://explorer-mainnet.botfans.org/#/home)地址 为 http://explorer-mainnet.botfans.org
 
 ### 2.1.1. Bottos链状态总览
 
@@ -440,11 +440,11 @@ tar zvxf bottos_ubuntu_v3.4.tar.gz
 
 ### 4.1.2. 单节点开发环境
 
-单节点开发环境请参考文档： [单节点开发环境](./resource_cn/单节点开发环境.md)
+单节点开发环境请参考文档： [单节点开发环境](./resource_cn/单节点开发环境.MD)
 
 ### 4.1.3. 多节点开发环境
 
-多节点开发环境请参考文档： [多节点开发环境](./resource_cn/多节点开发环境.md)
+多节点开发环境请参考文档： [多节点开发环境](./resource_cn/多节点开发环境.MD)
 
 ## 4.2. 智能合约
 
@@ -517,4 +517,4 @@ BOTTOS智能合约支持C++和JavaScript两种语言编写，支持c++语言的�
 
 ## 6.5. 钱包API
 
-[钱包REST接口API](./resource_cn/钱包REST接口API.md)已提供
+[钱包REST接口API](./resource_cn/钱包REST接口.md)已提供

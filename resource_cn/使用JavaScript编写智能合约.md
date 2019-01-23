@@ -111,6 +111,5 @@ npm test
 
 ## 1.6. 相关文档
 
-- [使用JavaScript编写智能合约](http://doc.bottos.org:4000/%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6/Development/%E4%BD%BF%E7%94%A8JavaScript%E7%BC%96%E5%86%99%E6%99%BA%E8%83%BD%E5%90%88%E7%BA%A6.html)
 - [bottos-sdk-js API Document](https://github.com/bottos-project/bottos-sdk-js/wiki/API-Document)
 - 官方开发文档:http://www.bottos.org/
