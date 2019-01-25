@@ -45,8 +45,9 @@
 - Request : 
 
   ```
+  {
   	"account_name": "testtest1",
-  	"passwd": "123456"	
+  	"passwd": "Abc123"		
   }
   
   
@@ -166,7 +167,6 @@
 | errcode      | uint32     | Error code, 0-succeed, others refer to error code chapter |
 | msg          | string     | Response description                             |
 | result       | jsonObject | Response result and data details               |
-| account_name | string     | New registered account name                     |
 
 **Field change**
 
@@ -180,7 +180,7 @@
 
   ```
   {
-  	"account_name": "testtest",
+  	"account_name": "testaccount1",
   	"public_key": "0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f",
   	"referrer": "bottos"	
   }
@@ -191,11 +191,23 @@
   ```
    HTTP/1.1 200 OK
   {
-      "errcode": 0,
-      "msg": "success",
-      "result": {
-      	"account_name":"testtest"
-      }
+    "errcode": 0,
+    "msg": "success",
+    "result": {
+        "trx": {
+            "version": 65536,
+            "cursor_num": 1933,
+            "cursor_label": 503463811,
+            "lifetime": 1548325777,
+            "sender": "bottos",
+            "contract": "bottos",
+            "method": "newaccount",
+            "param": "dc0002da000c746573746163636f756e7431da008230343534663163323232336435353361613665653533656131636365613862376266373862386361393966336666363232613362623365363264656463373132303839303333643630393164373732393635343762633037313032326361323833386339653836646563323936363763663734306535633965363534623631323766",
+            "sig_alg": 1,
+            "signature": "b3b5dedc31a63947b5cd058cae8723daf9e0489439f9a9328b2c3e089bcf1df97d245ad36a553619f99ac166cbb7d4a81be6aaf4960c0dd5d8a22ad58f9f7a95"
+        },
+        "trx_hash": "e5281d1bbc7b70f955136fa9c32cfecadebf6f07956a55ad85ff7a5f9e32428a"
+    }
   }
   ```
 
@@ -250,7 +262,7 @@
   {
   	"account_name": "testtest1",
   	"private_key": "b799ef616830cd7b8599ae7958fbee56d4c8168ffd5421a16025a398b8a4be45",
-  	"passwd": "123456"
+  	"passwd": "Abc123"
   }
   ```
 
@@ -432,7 +444,6 @@
 | result       | jsonObject | Response result                                   |
 | wallet_path  | string     | Wallet path+file name                          |
 | account_name | string     | Account name                                   |
-| public_key   | string     | Public key value. It could not be found in chain if the account hasn't been registered to chain. |
 
 **Field change**
 
@@ -456,14 +467,12 @@
   	"errcode": 0,
   	"msg": "success",
   	"result": [{
-  		"wallet_path": "C:\\Users\\jim\\AppData\\Roaming\\bot\\testtest12.keystore",
-  		"account_name": "testtest12",
-  		"public_key": "0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f"
+  		"wallet_path": "C:\\Users\\jim\\AppData\\Roaming\\bot\\delegatecreate1.keystore",
+  		"account_name": "delegatecreate1"
   	},
   	{
-  		"wallet_path": "C:\\Users\\jim\\AppData\\Roaming\\bot\\testtest2.keystore",
-  		"account_name": "testtest2",
-  		"public_key": "not found on Chain"
+  		"wallet_path": "C:\\Users\\jim\\AppData\\Roaming\\bot\\delegatecreate2.keystore",
+  		"account_name": "delegatecreate2"
   	}]
   }
   ```
@@ -597,16 +606,19 @@
       "errcode": 0,
       "msg": "success",
       "result": {
-          "version": 1,
-          "cursor_num": 26,
-          "cursor_label": 1948301132,
-          "lifetime": 1537330126,
-          "sender": "bottos",
-          "contract": "bottos",
-          "method": "newaccount",
-          "param": "",
-          "sig_alg": 1,
-          "signature": "aa249f7c0e5a5564b48ada5e9f0ffa4665d955b08e08c43906a156fa5bf30272547f2e4cde31fa8d5d303f36a4de0718ec3284b2e82f93fa7da50a54cbdcf86a"
+          "trx": {
+                "version": 65536,
+                "cursor_num": 26,
+                "cursor_label": 1948301132,
+                "lifetime": 1537330126,
+                "sender": "bottos",
+                "contract": "bottos",
+                "method": "newaccount",
+                "param": "",
+                "sig_alg": 1,
+                "signature": "aa249f7c0e5a5564b48ada5e9f0ffa4665d955b08e08c43906a156fa5bf30272547f2e4cde31fa8d5d303f36a4de0718ec3284b2e82f93fa7da50a54cbdcf86a"
+            },
+            "trx_hash": "624d1b4049b3fd8aa32f0916d35e69bb7c084ed7204f5e9e28f5b37d5a281471"
       }
   }
   ```

@@ -197,24 +197,32 @@ Sample
 Outputs
 
     Account: bottos
-    Balance: 999770000.00000000 BTO
+    Balance: 935499000.00000000 BTO
     Pubkey: 0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f
-    
+
     StakedBalance: 0.00000000 BTO
     UnStakingBalance: 0.00000000 BTO
     StakedSpaceBalance: 0.00000000 BTO
     StakedTimeBalance: 0.00000000 BTO
     UnStakingTimestamp: 0
-    
-    AvailableSpaceBalance: 0
-    UsedSpaceBalance: 0
-    AvailableTimeBalance: 0
-    UsedTimeBalance: 0
-    
-    UnClaimedReward: 0.00000000 BTO
-    
+
+    Resource: {
+        "free_available_space": 0,
+        "free_used_space": 0,
+        "stake_available_space": 0,
+        "stake_used_space": 0,
+        "free_available_time": 0,
+        "free_used_time": 0,
+        "stake_available_time": 0,
+        "stake_used_time": 0
+     }
+
+    UnClaimedBlockReward: 0.00000000 BTO
+    UnClaimedVoteReward: 0.00000000 BTO
+    UnClaimedTotalReward: 0.00000000 BTO
+
     Vote: N/A
-    
+
     Contracts: N/A
 
 ##### Sample of user staking BTO
@@ -623,18 +631,18 @@ Help information
     ./bcli delegate --help
     NAME:
         Bottos bcli tool delegate - for delegate operations
-    
+
     USAGE:
         Bottos bcli tool delegate command [command options] [arguments...]
-    
+
     COMMANDS:
-        register    register delegate
-        cancel      cancel delegate
-        list        list delegates
-        vote        Vote for producers
-        cancelvote  cancel vote for producers
-        claimreward claim reward for producers
-    
+        register     register delegate
+        cancel       cancel delegate
+        list         list delegates
+        vote         Vote for delegate
+        cancelvote   cancel vote for producers
+        claimreward  claim reward for producers
+
     OPTIONS:
         --help, -h  show help
 
@@ -655,14 +663,14 @@ Help information
 
     ./bcli delegate register --help
     NAME:
-    Bottos bcli tool delegate register - register delegate
-    
+        Bottos bcli tool delegate register - register delegate
+
     USAGE:
         Bottos bcli tool delegate register [command options] [arguments...]
-    
+
     OPTIONS:
         --account value      account name
-        --signkey value      public sign key (default: "0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f")
+        --signkey value      public sign key
         --location value     location
         --description value  description
 
@@ -767,28 +775,36 @@ Output
 
     [
         {
-            "account_name": "adhil11111",
-            "active": false,
-            "desc": "",
-            "last_confirmed_block_num": 6358,
-            "last_slot": 1147647,
+            "account_name": "delegatecreate2",
+            "active": true,
+            "description": "",
             "location": "",
-            "report_key": "0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f",
-            "total_missed": 0
+            "public_key": "04cc788ad88378837658b150f33440bf531aea0acc13a6921814b1e01927fd812ddb5ade669c784f34af3350b9188c8b63bb114b5afde4f64bbbab0ccd1f925458",
+            "transit_votes": "50000000000",
+            "votes": "50000000000"
         },
         {
-            "account_name": "albireo2222",
-            "active": false,
-            "desc": "",
-            "last_confirmed_block_num": 6377,
-            "last_slot": 1147667,
+            "account_name": "delegatecreate3",
+            "active": true,
+            "description": "",
             "location": "",
-            "report_key": "0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f",
-            "total_missed": 0
+            "public_key": "0458e35c99eb4cb431653b0682bd51ebfcff1869a41f8eadb915b67e82d72f71f7dd5154108954dc818140f8991e186b55d774fd7b156914b4baa1d352d2d7765b",
+            "transit_votes": "50000000000",
+            "votes": "50000000000"
+        },
+        {
+            "account_name": "delegatecreate4",
+            "active": true,
+            "description": "",
+            "location": "",
+            "public_key": "043e3f77eb8154dbeaf28379abdf88dba44b2528268ab63f5b726a3ffd4619c7f7003dc761a47e09ef6edb9a615684caa3f859fbe39e6f15fb5305e24419d941b7",
+            "transit_votes": "50000000000",
+            "votes": "50000000000"
         },
         .....
         ....
         .... (略)
+    ]
 
 
 ##### BCLI Producer Voting Command
@@ -909,20 +925,20 @@ The BCLI block information chiefly includes: Getting current block information, 
 
 Help information
 
-    ./bcli getinfo --help
+    ./bcli getblkheader --help
     NAME:
-        bcli getinfo - get chian info
-    
+        bcli getblkheader - get header block's information
+
     USAGE:
-        bcli getinfo [arguments...]
+        bcli getblkheader [arguments...]
 
 
 Parameter Description
 
-| chief command  | parameter list | Parameter Description | mandatory |
-| -------------- | :------------: | :-------------------: | :-------: |
-| ./bcli getinfo | (Null)         | (Null)                | (Null)    |
-|                | (Null)         | (Null)                | (Null)    |
+| chief command         | parameter list | Parameter Description | mandatory |
+| --------------        | :------------: | :-------------------: | :-------: |
+| ./bcli getblkheader   | (Null)         | (Null)                | (Null)    |
+|                       | (Null)         | (Null)                | (Null)    |
 
 
 Return Information
@@ -931,20 +947,21 @@ The output gives the latest block header of realtime.
 
 Sample
 
-    ./bcli getinfo
+    ./bcli getblkheader
 
 Output
 
     ==Chain Info==
-    
+
     {
-        "head_block_num": 7047,
-        "head_block_hash": "34460313889fc988137e42394009df8880e5e82118fcae4579fc0e33d913309e",
-        "head_block_time": 1536569883,
-        "head_block_delegate": "sulafat",
-        "cursor_label": 3641913502,
-        "last_consensus_block_num": 7026,
-        "chain_id": "5c7c2ea85df042747b38b183c84c8313b499177ed4abbf29d0947f4908934941"
+        "head_block_num": 1077,
+        "head_block_hash": "f6173c548f2d2bc25d86232cb2d451c7b8d6ba3763477a212a33af4237eae6e7",
+        "head_block_time": 1548323109,
+        "head_block_delegate": "bottos",
+        "cursor_label": 938141415,
+        "last_consensus_block_num": 1077,
+        "chain_id": "4b97b92d2c78bcffe95ebd3067565c73a2931b39d5eb7234b11816dcec54761a",
+        "head_block_version": 65536
     }
 
 ##### BCLI Getting Latest block Information Command
@@ -953,14 +970,14 @@ Help information
 
     ./bcli getblock --help
     NAME:
-        bcli getblock - get block info
-    
+        bcli getblock - get block information
+
     USAGE:
         bcli getblock [command options] [arguments...]
-    
+
     OPTIONS:
-        --num value   get block by number (default: 100)
-        --hash value  get block by hash
+        --num value    get latest block by number: if this section is not set, then get the latest block, otherwise get the specific block of the number (default: 0)
+        --hash value   get specific block by hash
         --start value  get specific block from start num(do not use with --num or --hash) (default: 0)
         --end value    get specific block to end num (do not use with --num or --hash) (default: 0)
 
@@ -985,16 +1002,17 @@ Sample
     Output
     
     ==Block Info==
-    
+
     {
-        "prev_block_hash": "6de5f9fb40511d307a55f5838e936a4d8c211177a0750287010bc7e67935954f",
-        "block_num": 100,
-        "block_hash": "e97df19ae9b73ba46b5f5681b159f87a56a4aa8426dc0407f6ea4ed12fb1857d",
-        "cursor_block_label": 800163197,
-        "block_time": 1536548940,
+        "block_version": 65536,
+        "prev_block_hash": "dcf00f755695521d5342c4f9d5889490d2da754076a941a824ef4a1c2019bd94",
+        "block_num": 1136,
+        "block_hash": "e2d1dd86e473eb46ecf20522049f2ade4c3f89875b888c19d617d284ddf3f1a5",
+        "cursor_block_label": 3723751845,
+        "block_time": 1548323286,
         "trx_merkle_root": "0000000000000000000000000000000000000000000000000000000000000000",
-        "delegate": "vega1111111",
-        "delegate_sign": "fa3504d657168fb9b16ae9ee3d281ead80adb43fbb3859213198f856732b12c33459b2ff820af6fdf15c9dce7dde9a29fe0446a09568b1a34a3909cd64a73815",
+        "delegate": "bottos",
+        "delegate_sign": "fa6f1c0666db6bbb82c75f5bb45f7e6e892804a270304c2d9d653a17da4ef5477f5bc50896ae7f7d5dcf743f1a0726d177209288acdb61d2b3a519a8b13c6464",
         "trxs": null
     }
 
@@ -1041,15 +1059,15 @@ Help information
 
     ./bcli genesis setdelegate --help
     NAME:
-    Bottos bcli tool genesis setdelegate - set delegate
-    
+        Bottos bcli tool genesis setdelegate - set delegate
+
     USAGE:
         Bottos bcli tool genesis setdelegate [command options] [arguments...]
-    
+
     OPTIONS:
         --sender value       sender account
         --account value      account name
-        --signkey value      public sign key (default: "0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f")
+        --signkey value      public sign key
         --location value     location
         --description value  description
 
@@ -1279,7 +1297,7 @@ query account info：
 ```
 ./bcli account get --account delegatecreate5
 Account: delegatecreate5
-    Balance: 190000.00000000 BTO
+    Balance: 1900000.00000000 BTO
     Pubkey: 04ecec203a98be1d27d38d189a8f16f65a24e6ba813e139fdd82bf84c44bef36ffe5813f5cd9a8ab34b4a0c8f490beda68d81b22897f436a24a1ca1cec7c064e06
 
     StakedBalance: 100000.00000000 BTO
@@ -1288,12 +1306,20 @@ Account: delegatecreate5
     StakedTimeBalance: 100000.00000000 BTO
     UnStakingTimestamp: 0
 
-    AvailableSpaceBalance: 151142400800
-    UsedSpaceBalance: 0
-    AvailableTimeBalance: 28800000400
-    UsedTimeBalance: 0
+    Resource: {
+        "free_available_space": 569,
+        "free_used_space": 231,
+        "stake_available_space": 151142399536,
+        "stake_used_space": 464,
+        "free_available_time": 200,
+        "free_used_time": 200,
+        "stake_available_time": 28799999900,
+        "stake_used_time": 100
+     }
 
-    UnClaimedReward: 0.00000000 BTO
+    UnClaimedBlockReward: 0.00000000 BTO
+    UnClaimedVoteReward: 0.00000000 BTO
+    UnClaimedTotalReward: 0.00000000 BTO
 
     Vote: N/A
 
@@ -1402,22 +1428,34 @@ This will return the Transaction information of the designated Txhash sent by BC
 
 Sample
 
-    ./bcli transaction get --trxhash 86cbc8bd54d85fc817f3675103e62c5693fe7ef1520f2218f57c6406be05b46b
+    ./bcli transaction get --trxhash 8a403642ea7b51595d1a1454b43b83ba62420629581c3d2f0d2143342aa89c9f
 
 Output
 
     {
-        "contract": "bottos",
-        "cursor_label": 117036287,
-        "cursor_num": 7762,
-        "lifetime": 1536572206,
-        "method": "transfer",
-        "param": null,
-        "sender": "bottos",
-        "sig_alg": 1,
-        "signature": "3aa45652b368827fd5480721de1588ed08c2289de2cfa97ce352d65c8f1acc6e4f04b2c8492caacedb61097dea2728019d4c40c932d763ed7e26d051ca27a188",
-        "version": 1
+        "ResourceReceipt": null,
+        "Transaction": {
+            "contract": "bottos",
+            "cursor_label": 384655640,
+            "cursor_num": 1390,
+            "lifetime": 1548324148,
+            "method": "transfer",
+            "param": {
+                "from": "bottos",
+                "memo": "",
+                "to": "accountcreate5",
+                "value": 10000000000
+            },
+            "sender": "bottos",
+            "sig_alg": 1,
+            "signature": "97a3a4d4e103ed60e94cb79ba83fa0bae7eb623feceee6222dfd06156cd705b35ee5d85a07ab8b2e1ca95267408d4bf0b9d78fc7aa063e7d4a5ba67a1953b1c3",
+            "version": 65536
+        },
+        "TrxHash": "8a403642ea7b51595d1a1454b43b83ba62420629581c3d2f0d2143342aa89c9f"
     }
+
+    <<<Transaction Status>>> : commited
+    
 
 ##### BCLI Transaction Pushing Command
 

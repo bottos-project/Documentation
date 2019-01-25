@@ -38,6 +38,7 @@
 | cursor_label             | uint32     | 块标识                                   |
 | last_consensus_block_num | uint64     | 不可逆块号                               |
 | chain_id                 | string     | 链ID，同一链的所有节点的Chain_id必须相同 |
+| head_block_version       | uint64     | 链版本号                           |
 
 **字段变化**
 
@@ -62,18 +63,19 @@
   ```
   HTTP/1.1 200 OK
   {
-      "errcode": 0,
-      "msg": "",
-      "result": {
-          "head_block_num": 87,
-          "head_block_hash": "b34806eefc77b88743ab447f43658bf229fd4e5cd9452340e21f3995a5d2054b",
-          "head_block_time": 1534213225,
-          "head_block_delegate": "alsephina",
-          "cursor_label": 2782004555,
-          "last_consensus_block_num": 64,
-          "chain_id": "4b97b92d2c78bcffe95ebd3067565c73a2931b39d5eb7234b11816dcec54761a"
-      }
-  }
+    "errcode": 0,
+    "msg": "success",
+    "result": {
+        "head_block_num": 1487,
+        "head_block_hash": "5a808e8562636d424f2daac463aa901ff758af95d223b6ccd113ac2368d6ffb1",
+        "head_block_time": 1548324339,
+        "head_block_delegate": "bottos",
+        "cursor_label": 1758920625,
+        "last_consensus_block_num": 1487,
+        "chain_id": "4b97b92d2c78bcffe95ebd3067565c73a2931b39d5eb7234b11816dcec54761a",
+        "head_block_version": 65536
+    }
+}
   ```
 
 
@@ -142,7 +144,7 @@
   ```
   {
   	"block_num": 32,
-  	"block_hash": "405a6fb8b91a055a7a4cf007451ce0b31ea6626cb2d56ec050b126701fbf093d"
+  	"block_hash": "eeca4c8ee8410cf256d27e5e676f6ce395ebdffade431b52775bb20aa60b8929"
   }
   ```
 
@@ -154,45 +156,21 @@
   HTTP/1.1 200 OK
   
   {
-  	"errcode": 0,
-  	"msg": "success",
-  	"result": {
-  		"block_version": 65536,
-  		"prev_block_hash": "905c688db5fbb831b06c545a71ce7ae109bcedb447dd8af9670bd0fbe2bf4cec",
-  		"block_num": 281031,
-  		"block_hash": "e7fa5ae6def1d93bca2f62c9c386afe8f539ebed24ddeab0d7ce325b668f7a6f",
-  		"cursor_block_label": 1720679023,
-  		"block_time": 1546833570,
-  		"trx_merkle_root": "6ae1ce2045f6302db1a330432a90741741dcd47c346f2e2883bd5cedc8ce5ac0",
-  		"delegate": "bto-alibaba",
-  		"delegate_sign": "b359bac262801118a676d1d0bee8f069878e0753aa0400176b4d8c2509e25f36341c2613801b2e8bc45a03609093289a95a028fe3aac67b2652e1bf4907facb3",
-  		"trxs": [{
-  			"Transaction": {
-  				"version": 65536,
-  				"cursor_num": 281030,
-  				"cursor_label": 3804187884,
-  				"lifetime": 1546833667,
-  				"sender": "bottostest",
-  				"contract": "bottos",
-  				"method": "transfer",
-  				"param": {
-  					"from": "bottos",
-  					"memo": "",
-  					"to": "bottosreferrer1",
-  					"value": 200000000000
-  				},
-  				"sig_alg": 1,
-  				"signature": "97b53d105108cc949c64c5932ad200ddad12f69412ab01af7e3e6955fc9991b262c67c560e27742efe12bc130c1485a358a47c707d4c7722afdf27d8e96a5d2c"
-  			},
-  			"ResourceReceipt": {
-  				"account_name": "bottostest",
-  				"space_token_cost": 265,
-  				"time_token_cost": 100
-  			},
-  			"TrxHash": "81ff5685349926a6200abb3c13fad6d38505030c12b89af68d1a4d08b48d836e"
-  		}]
-  	}
-  }
+        "errcode": 0,
+        "msg": "success",
+        "result": {
+            "block_version": 65536,
+            "prev_block_hash": "9bd0e41e6f4b3464f0240d3655e25bdc2bbefbda4e346d3971ab3ca7fd072c40",
+            "block_num": 32,
+            "block_hash": "eeca4c8ee8410cf256d27e5e676f6ce395ebdffade431b52775bb20aa60b8929",
+            "cursor_block_label": 2785773865,
+            "block_time": 1548319974,
+            "trx_merkle_root": "0000000000000000000000000000000000000000000000000000000000000000",
+            "delegate": "bottos",
+            "delegate_sign": "9bf5f2f4cdce4bd9edc22a1856975d47877afb02b8cfaa335b11f9f3706e6fb7266679e20837154a54395ede7df34ff1f3aa805b613a8175e30efce32c21afb7",
+            "trxs": null
+        }
+   }
   ```
 
 ## 发送交易信息
@@ -358,7 +336,7 @@
 
   ```
   {
-  	"trx_hash": "85f9d2fbe1d3c0a217e10932899b6f73b24fafe59a006406ed65d7e4a39a7416"
+  	"trx_hash": "8a403642ea7b51595d1a1454b43b83ba62420629581c3d2f0d2143342aa89c9f"
   }
   ```
 
@@ -369,24 +347,30 @@
   ```
    HTTP/1.1 200 OK
   {
-      "errcode": 0,
-      "msg": "success",
-      "result": {
-          "version": 1,
-          "cursor_num": 31,
-          "cursor_label": 2749714050,
-          "lifetime": 1537259224,
-          "sender": "bottos",
-          "contract": "bottos",
-          "method": "newaccount",
-          "param": {
-              "name": "testtest",
-              "pubkey": "0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f"
-          },
-          "sig_alg": 1,
-          "signature": "c85fd25af493cbb6a79870ce0fc602acc892664ca17e2c646aff0332ca6db7787beeb7e5d8553de8e4b83bdf7b227762fedf9e3674888893f18bf31f0b05d622"
-      }
-  }
+    "errcode": 0,
+    "msg": "success",
+    "result": {
+        "Transaction": {
+            "version": 65536,
+            "cursor_num": 1390,
+            "cursor_label": 384655640,
+            "lifetime": 1548324148,
+            "sender": "bottos",
+            "contract": "bottos",
+            "method": "transfer",
+            "param": {
+                "from": "bottos",
+                "memo": "",
+                "to": "accountcreate5",
+                "value": 10000000000
+            },
+            "sig_alg": 1,
+            "signature": "97a3a4d4e103ed60e94cb79ba83fa0bae7eb623feceee6222dfd06156cd705b35ee5d85a07ab8b2e1ca95267408d4bf0b9d78fc7aa063e7d4a5ba67a1953b1c3"
+        },
+        "ResourceReceipt": null,
+        "TrxHash": "8a403642ea7b51595d1a1454b43b83ba62420629581c3d2f0d2143342aa89c9f"
+    }
+}
   ```
 
 ## 查询交易状态
@@ -436,7 +420,7 @@
 
   ```
   {
-  	"trx_hash": "e1ddadcb266f4973284f66f3f5002ddf7e1bbfad04095213f7d87d8f33f0b7e3"
+  	"trx_hash": "8a403642ea7b51595d1a1454b43b83ba62420629581c3d2f0d2143342aa89c9f"
   }
   ```
 
@@ -518,7 +502,7 @@
 
   ```
   {
-  	"account_name":"bottostest"
+  	"account_name":"bottos"
   }
   ```
 
@@ -528,29 +512,35 @@
 
   ```
    HTTP/1.1 200 OK
-  {
-      "errcode": 0,
-      "msg": "success",
-      "result": {
-        "account_name": "bottostest",
-        "pubkey": "045f9402135fd2a8d43e9dd27ef6cd3b9569559c970de161e117e4cb34f99f31485e441e263acc2424fa4e2bf3681bfeee14145590f822a82ffb9f0db82d1939b7",
-        "balance": "9999990000000000",
-        "staked_balance": "10000000000",
-        "staked_space_balance": "0",
-        "staked_time_balance": "0",
-        "unStaking_balance": "0",
-        "unStaking_timestamp": 0,
-        "vote": {
-            "delegate": "bottostest1",
-            "votes": "10000000000"
-        },
-        "available_space_balance": 199644,
-        "used_space_balance": 356,
-        "available_time_balance": 2000000,
-        "used_time_balance": 0
-      }
-  }
-  ```
+   {
+        "errcode": 0,
+        "msg": "success",
+        "result": {
+            "account_name": "bottos",
+            "pubkey": "0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f",
+            "balance": "93329890000000000",
+            "staked_balance": "0",
+            "staked_space_balance": "0",
+            "staked_time_balance": "0",
+            "unStaking_balance": "0",
+            "unStaking_timestamp": 0,
+            "resource": {
+                "free_available_space": 0,
+                "free_used_space": 0,
+                "stake_available_space": 0,
+                "stake_used_space": 0,
+                "free_available_time": 0,
+                "free_used_time": 0,
+                "stake_available_time": 0,
+                "stake_used_time": 0
+            },
+            "unClaimed_block_reward": "0",
+            "unClaimed_vote_reward": "0",
+            "deploy_contract_list": "",
+            "vote": null
+        }
+    }
+    ```
 
 
 ## 查询合约ABI
@@ -810,31 +800,40 @@
   ```
    HTTP/1.1 200 OK
   {
-      "errcode": 0,
-      "msg": "success",
-      "result":  [
-          {
-              "account_name": "adhil",
-              "report_key": "0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f",
-              "location": "shanghai,china",
-              "desc": "",
-              "last_slot": 1029945,
-              "total_missed": 0,
-              "last_confirmed_block_num": 32,
-              "active": true
-          },
-          {
-              "account_name": "albireo",
-              "report_key": "0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f",
-              "location": "",
-              "desc": "",
-              "last_slot": 1026356,
-              "total_missed": 123,
-              "last_confirmed_block_num": 10,
-              "active": false
-          }
-      ]
-  }
+        {
+        "errcode": 0,
+        "msg": "success",
+        "result": [
+            {
+                "account_name": "bottos",
+                "public_key": "0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f",
+                "location": "",
+                "description": "",
+                "votes": "",
+                "active": true,
+                "transit_votes": ""
+            },
+            {
+                "account_name": "delegatecreate1",
+                "public_key": "04290d3406ba34e4f048a512b2fa7c6687622106c7bf6b7a62dac4c31d5b8f3cbf829eb30790648dcab111fde5edbce038801d5ba43f20388c15249ddd22b081e1",
+                "location": "",
+                "description": "",
+                "votes": "50000000000",
+                "active": true,
+                "transit_votes": "50000000000"
+            },
+            {
+                "account_name": "delegatecreate2",
+                "public_key": "04cc788ad88378837658b150f33440bf531aea0acc13a6921814b1e01927fd812ddb5ade669c784f34af3350b9188c8b63bb114b5afde4f64bbbab0ccd1f925458",
+                "location": "",
+                "description": "",
+                "votes": "50000000000",
+                "active": true,
+                "transit_votes": "50000000000"
+            }
+        ]
+    }
+}
   ```
 
 
