@@ -404,7 +404,7 @@
 | errcode | uint32     | 错误码，0-相应成功，其他见错误码章节                         |
 | msg     | string     | 响应描述                                                     |
 | result  | jsonObject | 响应结果                                                     |
-| status  | string     | 查询交易状态结果，<br />”commited“：交易已生效；<br />”not found“：交易执行失败；<br />”pending“：交易已提交，但未处理 |
+| status  | string     | 查询交易状态结果，<br />”pending“：交易已提交，但未处理；<br />”packed“：交易已打包；<br />”not found“：交易执行失败；<br />”committed“：交易已成功生效 |
 
 **字段变化**
 
@@ -434,7 +434,7 @@
       "errcode": 0,
       "msg": "success",
       "result": {
-          "status": "commited"
+          "status": "committed"
       }
   }
   ```
@@ -540,7 +540,7 @@
             "vote": null
         }
     }
-    ```
+  ```
 
 
 ## 查询合约ABI

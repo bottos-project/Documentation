@@ -402,7 +402,7 @@ Note：block_num、block_hash can only choose one of them; If not given in eithe
 | errcode   | uint32     | Error code，0-Succeed，others refer to error code chapter    |
 | msg       | string     | response description                                         |
 | result    | jsonObject | response result                                              |
-| status    | string     | query transaction status result.<br />”commited“：Transaction has commited；<br />”not found“：Transaction execute failed；<br />”pending“：Transaction submitted but not processed |
+| status    | string     | query transaction status result.<br />”committed“：Transaction has successfully committed；<br />”not found“：Transaction execute failed；<br />”packed“：Transaction has packed；<br/>”pending“：Transaction submitted but not processed |
 
 **Fields Changes**
 
@@ -432,7 +432,7 @@ Note：block_num、block_hash can only choose one of them; If not given in eithe
       "errcode": 0,
       "msg": "success",
       "result": {
-          "status": "commited"
+          "status": "committed"
       }
   }
   ```
