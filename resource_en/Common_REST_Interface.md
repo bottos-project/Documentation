@@ -438,15 +438,15 @@ Note：block_num、block_hash can only choose one of them; If not given in eithe
   ```
 
 
-## Query Accounts Information**
+## Query Accounts Brief Information
 
 **API Function**
 
-> API Description： Query accounts information
+> API Description： Query accounts brief information
 >
 > **APIAddress**
 >
-> URL:  /v1/account/info
+> URL:  /v1/account/brief
 >
 > **Response Format**
 >
@@ -471,19 +471,89 @@ Note：block_num、block_hash can only choose one of them; If not given in eithe
 | result            | jsonObject | response result                             |
 | account_name      | string     | Account name                             |
 | pubkey            | string     | Public key                                 |
-| balance           | string     | Token value，                            |
-| staked_balance    | string     | Staked BTO value                        |
-| staked_space_balance | string | Staked BTO value for SPACE(Transactions need to consume SPACE) |
-| staked_time_balance | string | Staked BTO value for TIME(Transactions need to consume TIME) |
-| unStaking_balance | string     | Under unstakeing BTO value                    |
-| unStaking_timestamp | uint64     | Unstake token timestamp（ Unix timestamp ）         |
-| vote | jsonObject | vote information |
-| delegate | string | the delegate who were voted |
-| votes | string | Number of votes |
-| available_space_balance | uint64 | SPACE value of available |
-| used_space_balance | uint64 | SPACE value of used |
-| available_time_balance | uint64 | TIME value of available |
-| used_time_balance | uint64 | TIME value of used |
+| balance           | string     | Token value                            |
+
+**Fields Changes**
+
+- Null
+
+  **API Sample**
+
+> Address：<http://127.0.0.1:8689/v1/account/brief>
+
+- Request:
+
+  
+
+  ```
+  {
+  	"account_name":"bottos"
+  }
+  ```
+
+- Response:
+
+
+
+  ```
+   HTTP/1.1 200 OK
+  {
+        "errcode": 0,
+        "msg": "success",
+        "result": {
+            "account_name": "bottos",
+            "pubkey": "0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f",
+            "balance": "93329890000000000"
+        }
+  }
+  ```
+
+## Query Accounts Detail Information
+
+**API Function**
+
+> API Description： Query accounts detail information
+>
+> **APIAddress**
+>
+> URL:  /v1/account/info
+>
+> **Response Format**
+>
+> JSON
+>
+> **Request Format**
+>
+> POST
+
+**Request Parameter：**
+
+| Parameter    | Mandatory | Type   | Default Value | Description  |
+| ------------ | --------- | ------ | ------------- | ------------ |
+| account_name | TRUE      | string | Null          | Account name |
+
+**Response Fields：**
+
+| Parameter               | Type       | Description                                                  |
+| ----------------------- | ---------- | ------------------------------------------------------------ |
+| errcode                 | uint32     | Error code，0-Succeed，others refer to error code chapter    |
+| msg                     | string     | response description                                         |
+| result                  | jsonObject | response result                                              |
+| account_name            | string     | Account name                                                 |
+| pubkey                  | string     | Public key                                                   |
+| balance                 | string     | Token value，                                                |
+| staked_balance          | string     | Staked BTO value                                             |
+| staked_space_balance    | string     | Staked BTO value for SPACE(Transactions need to consume SPACE) |
+| staked_time_balance     | string     | Staked BTO value for TIME(Transactions need to consume TIME) |
+| unStaking_balance       | string     | Under unstakeing BTO value                                   |
+| unStaking_timestamp     | uint64     | Unstake token timestamp（ Unix timestamp ）                  |
+| vote                    | jsonObject | vote information                                             |
+| delegate                | string     | the delegate who were voted                                  |
+| votes                   | string     | Number of votes                                              |
+| available_space_balance | uint64     | SPACE value of available                                     |
+| used_space_balance      | uint64     | SPACE value of used                                          |
+| available_time_balance  | uint64     | TIME value of available                                      |
+| used_time_balance       | uint64     | TIME value of used                                           |
 
 Note：balance、staked_balance、staked_space_balance、staked_time_balance、unStaking_balance, the summary value of that three is the total token value of the change account.
 
@@ -509,7 +579,7 @@ Note：balance、staked_balance、staked_space_balance、staked_time_balance、u
 
 
 
-  ```
+```
    HTTP/1.1 200 OK
   {
         "errcode": 0,
@@ -539,8 +609,9 @@ Note：balance、staked_balance、staked_space_balance、staked_time_balance、u
             "vote": null
         }
   }
-  ```
+```
 
+## 
 
 ## Query Contract ABI
 
