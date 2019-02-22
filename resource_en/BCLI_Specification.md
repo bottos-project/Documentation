@@ -1597,6 +1597,8 @@ Parameter Description
 | chief command        | parameter list | Parameter Description          | mandatory |
 | -------------------- | :------------: | :----------------------------: | :-------: |
 | ./bcli wallet create | --account      | The user name binded by wallet | Yes       |
+|                      |  --type   | Wallet use type，normal：for transfer、vot etc；delegate：for Signature block |    No    |
+
 
 Return Information
 
