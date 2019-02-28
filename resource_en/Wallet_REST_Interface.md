@@ -1,4 +1,4 @@
-# Wallet REST Interface
+﻿# Wallet REST Interface
 
 ## One-Step to create wallet
 
@@ -138,7 +138,7 @@
 
 **API Function**
 
-> API Description: Create account
+> API Description: Create account, When calling this interface, you need to start the bottos node program; start the wallet service separately, this function is not available.
 >
 > **API Address**
 >
@@ -543,6 +543,89 @@
   ```
 
 
+
+## Sign for Transaction
+
+**API Function**
+
+> API Description: Sign for transaction
+>
+> **API Address**
+>
+> URL:  /v1/wallet/signtransaction
+>
+> **Result Format**
+>
+> JSON
+>
+> **Request Format**
+>
+> POST
+
+**Request Parameter：**
+
+| Parameter     | Mandatory | Type   | Default Value | Description                                            |
+| -------- | ---- | ------ | ------ | ----------------------------------------------- |
+| sender   | TRUE | string | Null     | Account name who send the transaction         |
+| contract | TRUE | string | Null     | Contract name                                 |
+| method   | TRUE | string | Null     | Contract method                                      |
+| param    | TRUE | string | Null     | Business structured data，after the bpl serialization, it converts to hexadecimal string |
+| sig_alg | FALSE | int | 1 | Signature algorithm type, currently only supports one type, and may be extended later |
+| type | FALSE | string | "normal" | Signature wallet usage type, normal: for transfer, voting, etc.; delegate: for producers to issue block signatures (for general producers) |
+| push_url | FALSE | string | "127.0.0.1:8689" | Receive server address information of the transaction, format: IP address or domain name + port number (default 8689), <br/> * Optional main network service node: mainnetservice1.bottos.org:8689; mainnetservice2.bottos.org:8689 
+* Optional test network service node: testnetservice1.bottos.org:8689; testnetservice2.bottos.org:8689 |
+
+**Response Field:**
+
+| Parameter    | Type       | Description                                       |
+| ------- | ---------- | ------------------------------------------ |
+| errcode | uint32     | Error code, 0-succeed, others refer to error code chapter       |
+| msg     | string     | Response description                                   |
+| result  | jsonObject | Response result，See the "Send Transaction information" request field specifically |
+
+**Field change**
+
+- Null
+
+  **API Sample**
+
+> Address : <http://127.0.0.1:6869/v1/wallet/signtransaction>
+
+- Request : 
+
+  ```
+  {
+  	"sender": "bottosreferrer1",
+  	"contract": "bottos",
+  	"method": "newaccount",
+  	"param": "dc0002da000a626f74746f7374657374da008230343931363362623834633739393438316131633630616331323265393431663566306233653639346435326439626530613862316561343730666361636266323564623439306330336334376564356465393862653735623435376333383730386465376539653935653461306263653634356539633033353861386435393638",
+  	"sig_alg": 1,
+  	"type": "normal",
+  	"push_url": "testnetservice2.bottos.org:8689"
+  }
+  ```
+
+- Response : 
+
+  ```
+   HTTP/1.1 200 OK
+  {
+      "errcode": 0,
+      "msg": "success",
+      "result": {
+          "version": 65792,
+          "cursor_num": 709915,
+          "cursor_label": 2189965103,
+          "lifetime": 1551089224,
+          "sender": "bottosreferrer1",
+          "contract": "bottos",
+          "method": "newaccount",
+          "param": "dc0002da000a626f74746f7374657374da008230343931363362623834633739393438316131633630616331323265393431663566306233653639346435326439626530613862316561343730666361636266323564623439306330336334376564356465393862653735623435376333383730386465376539653935653461306263653634356539633033353861386435393638",
+          "sig_alg": 1,
+          "signature": "2157bebc67481effcedcfacdf59da4ffc06976c443dedb7c511d7663a3126fe44191ae9c8f4605ea64566a4893d87a7cee3cc9f19c966fc214c6b6ee3c562f85"
+      }
+  }
+  ```
 
 ## Sign for HASH
 
