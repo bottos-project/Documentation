@@ -86,7 +86,7 @@
 
 ## 2.1. 使用区块浏览器总览Bottos链
 
-[Bottos区块浏览器](http://explorer-mainnet.botfans.org/#/home)地址 为 http://explorer-mainnet.botfans.org
+[Bottos区块浏览器](http://explorer.chainbottos.com)地址 为 http://explorer.chainbottos.com
 
 ### 2.1.1. Bottos链状态总览
 
