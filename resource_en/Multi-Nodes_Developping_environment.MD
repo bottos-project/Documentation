@@ -24,7 +24,7 @@ Prepare one VM as the creation node, and another 19 to 29 VMS as the producer no
 cd to your bottos release package directory:
 
 1  make a new pair of public-private key
- 
+
 ```
 ./bcli wallet generatekey
 public_key: 046607760d95319d4dbe26751c15f75d9154dd564aaff8a5346207cda90fc1b7f6f62f0f7382e964b18a1f3f3b7c6b7b212c63959d1e0ab2b51a4f122b0089e9e4
@@ -212,11 +212,11 @@ Once they are created, you need to set them to the producer role and execute the
 
 ```
 
-./bcli genesis setdelegate --sender=bottos --account delegate1 --signkey <the public key value 1 corresponds to node1>
+./bcli genesis setdelegate --sender=bottos --account delegatep1 --signkey <the public key value 1 corresponds to node1>
 
-./bcli genesis setdelegate --sender=bottos --account delegate2 --signkey <the public key value 2 corresponds to node2>
+./bcli genesis setdelegate --sender=bottos --account delegatep2 --signkey <the public key value 2 corresponds to node2>
 
-./bcli genesis setdelegate --sender=bottos --account delegate3 --signkey <the public key value 3 corresponds to node3>
+./bcli genesis setdelegate --sender=bottos --account delegatep3 --signkey <the public key value 3 corresponds to node3>
 
                         ...
                         ...
@@ -317,7 +317,9 @@ When all are confirmed to be close and consistent, move the chunk rights over th
 
 ./bcli genesis blkprodtrans --sender bottos --actblknum 100
 
-After a short period of time, if you observe the outputting of all the producer nodes, you can find that the outlier has started to replace in turn, indicating that the outputting has been successfully delivered：
+Notice: 100 is the block number that is effective for the handover of the block operation, which is a block number in the future, which is greater than the current block number.
+
+After the block number of the handover (above, 100) is exceeded,  if you observe the outputting of all the producer nodes, you can find that the outlier has started to replace in turn, indicating that the outputting has been successfully delivered：
 
 InsertBlock, number:1552, time:2018-12-18 10:06:18, delegate:<font color=#DC143C face="黑体">delegatep1</font>, trxn:0, hash:7664063509a4a813f2fa06a929f11a36ba66184e036dfe7c49937a28d5328050, prevHash:98f4567dbcd6dfd8c0bc7ce4f24ee96f2d3476691088e08475ae56bb62d6afd3, version:3.4.0
 
