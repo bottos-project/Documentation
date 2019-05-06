@@ -534,26 +534,37 @@ Note：block_num、block_hash can only choose one of them; If not given in eithe
 
 **Response Fields：**
 
-| Parameter               | Type       | Description                                                  |
-| ----------------------- | ---------- | ------------------------------------------------------------ |
-| errcode                 | uint32     | Error code，0-Succeed，others refer to error code chapter    |
-| msg                     | string     | response description                                         |
-| result                  | jsonObject | response result                                              |
-| account_name            | string     | Account name                                                 |
-| pubkey                  | string     | Public key                                                   |
-| balance                 | string     | Token value，                                                |
-| staked_balance          | string     | Staked BTO value                                             |
-| staked_space_balance    | string     | Staked BTO value for SPACE(Transactions need to consume SPACE) |
-| staked_time_balance     | string     | Staked BTO value for TIME(Transactions need to consume TIME) |
-| unStaking_balance       | string     | Under unstakeing BTO value                                   |
-| unStaking_timestamp     | uint64     | Unstake token timestamp（ Unix timestamp ）                  |
-| vote                    | jsonObject | vote information                                             |
-| delegate                | string     | the delegate who were voted                                  |
-| votes                   | string     | Number of votes                                              |
-| available_space_balance | uint64     | SPACE value of available                                     |
-| used_space_balance      | uint64     | SPACE value of used                                          |
-| available_time_balance  | uint64     | TIME value of available                                      |
-| used_time_balance       | uint64     | TIME value of used                                           |
+| Parameter              | Type       | Description                                                  |
+| ---------------------- | ---------- | ------------------------------------------------------------ |
+| errcode                | uint32     | Error code，0-Succeed，others refer to error code chapter    |
+| msg                    | string     | response description                                         |
+| result                 | jsonObject | response result                                              |
+| account_name           | string     | Account name                                                 |
+| pubkey                 | string     | Public key                                                   |
+| balance                | string     | Token value，                                                |
+| staked_balance         | string     | Staked BTO value                                             |
+| staked_space_balance   | string     | Staked BTO value for SPACE(Transactions need to consume SPACE) |
+| staked_time_balance    | string     | Staked BTO value for TIME(Transactions need to consume TIME) |
+| unStaking_balance      | string     | Under unstakeing BTO value                                   |
+| unStaking_timestamp    | uint64     | Unstake token timestamp（ Unix timestamp ）                  |
+| authority              | jsonObject | Multi-sign account authorization information                 |
+| author_account         | string     | authorization account                                        |
+| weight                 | uint32     | authorization account weight                                 |
+| resource               | jsonObject | Resource information                                         |
+| free_available_space   | uint64     | The number of SPACEs that can be used within the free quota  |
+| free_used_space        | uint64     | The number of SPACEs used within the free quota              |
+| stake_available_space  | uint64     | The number of SPACEs that can be used within the scope of the pledge |
+| stake_used_space       | uint64     | Number of SPACEs used within the scope of pledge             |
+| free_available_time    | uint64     | The number of TIMEs available for free credit                |
+| free_used_time         | uint64     | The number of TIMEs that have been used within the free credit |
+| stake_available_time   | uint64     | The number of TIMEs that can be used within the pledge       |
+| stake_used_time        | uint64     | The number of TIMEs that have been used within the pledge    |
+| unClaimed_block_reward | string     | Number of bonuses                                            |
+| unClaimed_vote_reward  | string     | Number of voting rewards                                     |
+| deploy_contract_list   | string     | List of contracts deployed for this account                  |
+| vote                   | jsonObject | vote information                                             |
+| delegate               | string     | the delegate who were voted                                  |
+| votes                  | string     | Number of votes                                              |
 
 Note：balance、staked_balance、staked_space_balance、staked_time_balance、unStaking_balance, the summary value of that three is the total token value of the change account.
 
@@ -571,7 +582,7 @@ Note：balance、staked_balance、staked_space_balance、staked_time_balance、u
 
   ```
   {
-  	"account_name":"bottos"
+  	"account_name":"bottostest"
   }
   ```
 
@@ -582,33 +593,44 @@ Note：balance、staked_balance、staked_space_balance、staked_time_balance、u
 ```
    HTTP/1.1 200 OK
   {
-        "errcode": 0,
-        "msg": "success",
-        "result": {
-            "account_name": "bottos",
-            "pubkey": "0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f",
-            "balance": "93329890000000000",
-            "staked_balance": "0",
-            "staked_space_balance": "0",
-            "staked_time_balance": "0",
-            "unStaking_balance": "0",
-            "unStaking_timestamp": 0,
-            "resource": {
-                "free_available_space": 0,
-                "free_used_space": 0,
-                "stake_available_space": 0,
-                "stake_used_space": 0,
-                "free_available_time": 0,
-                "free_used_time": 0,
-                "stake_available_time": 0,
-                "stake_used_time": 0
-            },
-            "unClaimed_block_reward": "0",
-            "unClaimed_vote_reward": "0",
-            "deploy_contract_list": "",
-            "vote": null
-        }
-  }
+	"errcode": 0,
+	"msg": "success",
+	"result": {
+		"account_name": "bottostest",
+		"pubkey": "0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f",
+		"balance": "90000000000",
+		"staked_balance": "0",
+		"staked_space_balance": "0",
+		"staked_time_balance": "0",
+		"unStaking_balance": "0",
+		"unStaking_timestamp": 0,
+		authority: [{
+			"author_account": "bobabcdefg",
+			"weight": 1
+		},
+		{
+			"author_account": "bobabcdefg1",
+			"weight": 1
+		}],
+		"resource": {
+			"free_available_space": 800,
+			"free_used_space": 0,
+			"stake_available_space": 279521403,
+			"stake_used_space": 0,
+			"free_available_time": 400,
+			"free_used_time": 0,
+			"stake_available_time": 141206920,
+			"stake_used_time": 0
+		},
+		"unClaimed_block_reward": "0",
+		"unClaimed_vote_reward": "0",
+		"deploy_contract_list": "",
+		"vote": {
+			"delegate": "bottostest12",
+			"votes": "6000000000"
+		}
+	}
+}
 ```
 
 ## 
