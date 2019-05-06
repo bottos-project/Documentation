@@ -537,6 +537,7 @@
 
 | 参数              | 类型       | 说明                                 |
 | ----------------- | ---------- | ------------------------------------ |
+|  |  |  |
 | errcode           | uint32     | 错误码，0-相应成功，其他见错误码章节 |
 | msg               | string     | 响应描述                             |
 | result            | jsonObject | 响应结果                             |
@@ -548,13 +549,24 @@
 | staked_time_balance     | string     | 质押TIME的BTO数量（交易需消耗TIME） |
 | unStaking_balance       | string     | 正解质押的BTO数量                     |
 | unStaking_timestamp | uint64     | 解质押的时间（ Unix时间戳 ）         |
-| vote                    | jsonObject | 投票信息                              |
-| delegate                | string     | 被投票生产者                          |
-| votes                   | string     | 投票数量                              |
-| available_space_balance | uint64     | 可使用的SPACE数量                     |
-| used_space_balance      | uint64     | 已用的SPACE数量                       |
-| available_time_balance  | uint64     | 可使用的TIME数量                      |
-| used_time_balance       | uint64     | 已使用的SPACE数量                     |
+| authority | jsonObject | 授权列表，若该账号非多签账号，不为空 |
+| author_account | string | 授权账号 |
+| weight | uint32 | 权重 |
+| resource | jsonObject | 账号资源情况 |
+| free_available_space   | uint64     | 免费额度内，可使用的SPACE数量         |
+| free_used_space        | uint64     | 免费额度内，已使用的SPACE数量         |
+| stake_available_space  | uint64     | 质押范围内，可使用的SPACE数量         |
+| stake_used_space       | uint64     | 质押范围内，已使用的SPACE数量         |
+| free_available_time    | uint64     | 免费额度内，可使用的TIME数量          |
+| free_used_time         | uint64     | 免费额度内，已使用的TIME数量          |
+| stake_available_time   | uint64     | 质押范围内，可使用的TIME数量          |
+| stake_used_time        | uint64     | 质押范围内，已使用的TIME数量          |
+| unClaimed_block_reward | string     | 出块奖励数                     |
+| unClaimed_vote_reward | string     | 投票奖励数                |
+| deploy_contract_list | string | 该账号部署的合约列表 |
+| vote | jsonObject | 投票信息 |
+| delegate | string | 被投票生产者 |
+| votes | string | 投票数量 |
 
 备注：balance、staked_balance、staked_space_balance、staked_time_balance、unStaking_balance 三者之和为改账户总的Token值 。
 
@@ -572,7 +584,7 @@
 
   ```
   {
-  	"account_name":"bottos"
+  	"account_name":"bottostest"
   }
   ```
 
@@ -583,33 +595,44 @@
   ```
    HTTP/1.1 200 OK
    {
-        "errcode": 0,
-        "msg": "success",
-        "result": {
-            "account_name": "bottos",
-            "pubkey": "0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f",
-            "balance": "93329890000000000",
-            "staked_balance": "0",
-            "staked_space_balance": "0",
-            "staked_time_balance": "0",
-            "unStaking_balance": "0",
-            "unStaking_timestamp": 0,
-            "resource": {
-                "free_available_space": 0,
-                "free_used_space": 0,
-                "stake_available_space": 0,
-                "stake_used_space": 0,
-                "free_available_time": 0,
-                "free_used_time": 0,
-                "stake_available_time": 0,
-                "stake_used_time": 0
-            },
-            "unClaimed_block_reward": "0",
-            "unClaimed_vote_reward": "0",
-            "deploy_contract_list": "",
-            "vote": null
-        }
-    }
+	"errcode": 0,
+	"msg": "success",
+	"result": {
+		"account_name": "bottostest",
+		"pubkey": "0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f",
+		"balance": "90000000000",
+		"staked_balance": "0",
+		"staked_space_balance": "0",
+		"staked_time_balance": "0",
+		"unStaking_balance": "0",
+		"unStaking_timestamp": 0,
+		authority: [{
+			"author_account": "bobabcdefg",
+			"weight": 1
+		},
+		{
+			"author_account": "bobabcdefg1",
+			"weight": 1
+		}],
+		"resource": {
+			"free_available_space": 800,
+			"free_used_space": 0,
+			"stake_available_space": 279521403,
+			"stake_used_space": 0,
+			"free_available_time": 400,
+			"free_used_time": 0,
+			"stake_available_time": 141206920,
+			"stake_used_time": 0
+		},
+		"unClaimed_block_reward": "0",
+		"unClaimed_vote_reward": "0",
+		"deploy_contract_list": "",
+		"vote": {
+			"delegate": "bottostest12",
+			"votes": "6000000000"
+		}
+	}
+}
   ```
 
 
@@ -906,4 +929,100 @@
 }
   ```
 
+## 获取转账提案详情
+
+**接口功能**
+
+> 接口说明： 获取转账提案详情
+>
+> **接口地址**
+>
+> URL:  /v1/proposal/review
+>
+> **返回格式**
+>
+> JSON
+>
+> **请求方式**
+>
+> POST
+
+**请求参数：**
+
+| 参数          | 必选  | 类型   | 默认值 | 说明           |
+| ------------- | ----- | ------ | ------ | -------------- |
+| proposal_name | TRUE  | string | 无     | 提案名称       |
+| proposer      | FALSE | string | 无     | 提案发起人账号 |
+
+**响应字段：**
+
+| 参数               | 类型       | 说明                                 |
+| ------------------ | ---------- | ------------------------------------ |
+| errcode            | uint32     | 错误码，0-相应成功，其他见错误码章节 |
+| msg                | string     | 响应描述                             |
+| result             | jsonObject | 响应结果                             |
+| proposal_name      | string     | 提案名称                             |
+| proposer           | string     | 提案发起人                           |
+| msign_account_name | string     | 多签账号名称                         |
+| author_list        | jsonArray  | 多签账号授权账号列表                 |
+| author_account     | string     | 授权账号                             |
+| is_approved        | string     | 提案是否同意                         |
+| packed_transaction | string     | 序列化之前的十六进制数据             |
+| transaction        | jsonObject | 交易数据                             |
+| from               | string     | 转账账号                             |
+| to                 | string     | 接收账号                             |
+| amount             | string     | 转账金额                             |
+| memo               | string     | 转账备注                             |
+| available          | bool       | 提案是否结束                         |
+| time               | uint64     | 提案提交时间                         |
+
+**字段变化**
+
+- 无
+
+  **接口示例**
+
+> 地址：<http://127.0.0.1:8689/v1/proposal/review >
+
+- 请求：
+
+  
+
+  ```
+  {
+      "proposal_name": "testtransfer",
+    	"proposer": "bobabcdefg"
+  }
+  ```
+
+- 响应：
+
+  
+
+  ```
+   HTTP/1.1 200 OK
+  {
+  	"errcode": 0,
+  	"msg": "success",
+  	"result": {
+  		"proposal_name": "testtransfer",
+  		"proposer": "bobabcdefg",
+  		"msign_account_name": "tester",
+  		"author_list": [{
+  			"author_account": "bob",
+  			"is_approved": "true",
+  			
+  		}],
+  		"packed_transaction": "c9b17f5b000000000000000000000100a6823403ea3055000000572d3ccdcd01000000005c95b1ca00000000003ccdcd34000000005c95b1ca00000000007015d60500000000000000045359530000000013706179207573657220736f6d65206d6f6e657900",
+  		"transaction": {
+  			"from": "bottos",
+  			"memo": "testtransfer",
+  			"to": "bottosreferrer1",
+  			"value": 100000000000
+  		},
+  		"available": true,
+  		"time": 1554692543
+  	}
+  }
+  ```
 
