@@ -171,6 +171,99 @@ Note：block_num、block_hash can only choose one of them; If not given in eithe
   }
   ```
 
+## Get hash for signature
+
+**API Function**
+
+> API Description：Get hash for signature
+>
+> **APIAddress**
+>
+> URL:  /v1/transaction/getHashForSign
+>
+> **Response Format**
+>
+> JSON
+>
+> **Request Format**
+>
+> POST
+
+**Request Parameter：**
+
+| Parameter | Mandatory | Type   | Default Value | Description                            |
+| --------- | --------- | ------ | ------------- | -------------------------------------- |
+| sender    | TRUE      | string | Null          | Sender                                 |
+| contract  | TRUE      | string | Null          | Contract name                          |
+| method    | TRUE      | string | Null          | Contract method                        |
+| param     | TRUE      | string | Null          | Business parameter, hexadecimal string |
+
+**Response Fields：**
+
+| Parameter    | Type       | Description                                                  |
+| ------------ | ---------- | ------------------------------------------------------------ |
+| errcode      | uint32     | Error code，0-Succeed，others refer to error code chapter    |
+| msg          | string     | response description                                         |
+| result       | jsonObject | response result                                              |
+| trx_hash     | string     | Hash value of each transaction                               |
+| trx          | jsonObject | Transaction details                                          |
+| version      | uint32     | Version number of block chain                                |
+| cursor_num   | uint64     | Latest block number，get by querying the block header        |
+| cursor_label | uint32     | Latest block label，get by querying the block header         |
+| lifetime     | uint64     | Transaction exipired time，by ways of getting block header, plus a certain delay |
+| sender       | string     | Sender                                                       |
+| contract     | string     | Contract name                                                |
+| method       | string     | Contract method                                              |
+| param        | string     | Business parameter，hexadecimal string                       |
+| sig_alg      | uint32     | Sign algorism                                                |
+| signature    | string     | Signature value                                              |
+
+**Fields Changes**
+
+- Null
+
+  **API Sample**
+
+> Address：<http://127.0.0.1:8689/v1/transaction/getHashForSign>
+
+- Request:
+
+  ```
+  {
+  	"sender": "bottos",
+  	"contract": "bottos",
+  	"method": "newaccount",
+  	"param": "dc0002da000a626f74746f7374657374da008230343931363362623834633739393438316131633630616331323265393431663566306233653639346435326439626530613862316561343730666361636266323564623439306330336334376564356465393862653735623435376333383730386465376539653935653461306263653634356539633033353861386435393638"
+  }
+  ```
+
+  
+
+- Response:
+
+  ```
+  HTTP/1.1 200 OK
+  {
+      "errcode": 0,
+      "msg": "success",
+      "result": {
+          "trx": {
+              "version": 65536,
+              "cursor_num": 942,
+              "cursor_label": 431961988,
+              "lifetime": 1558424134,
+              "sender": "bottos",
+              "contract": "bottos",
+              "method": "newaccount",
+              "param": "dc0002da000a626f74746f7374657374da008230343931363362623834633739393438316131633630616331323265393431663566306233653639346435326439626530613862316561343730666361636266323564623439306330336334376564356465393862653735623435376333383730386465376539653935653461306263653634356539633033353861386435393638",
+              "sig_alg": 1,
+              "signature": ""
+          },
+          "hash_for_sign": "ce3052ae25425b75d59670507481811f0310ee1348dea32723c6315d075539fd"
+      }
+  }
+  ```
+
 ## Send the transaction information
 
 **API Function**
