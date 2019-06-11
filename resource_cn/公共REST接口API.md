@@ -1,5 +1,7 @@
 ﻿# 公共REST接口
 
+# 区块相关
+
 ## 获取区块高度信息
 
 **接口功能**
@@ -173,221 +175,9 @@
    }
   ```
 
-## 发送交易信息
+# 交易相关
 
-**接口功能**
-
-> 接口说明： 发送交易信息
->
-> **接口地址**
->
-> URL:  /v1/transaction/send
->
-> **返回格式**
->
-> JSON
->
-> **请求方式**
->
-> POST
-
-**请求参数：**
-
-| 参数         | 必选 | 类型   | 默认值 | 说明                                                      |
-| ------------ | ---- | ------ | ------ | --------------------------------------------------------- |
-| version      | TRUE | uint32 | 无     | 最新区块号，调用获取区块头的version字段                   |
-| cursor_num   | TRUE | uint64 | 无     | 最新区块号，调用获取区块头获得                            |
-| cursor_label | TRUE | uint32 | 无     | 最新区块标识，调用获取区块头获得                          |
-| lifetime     | TRUE | uint64 | 无     | 交易过期时间，调用获取区块头，加一定的延时，推荐延时100秒 |
-| sender       | TRUE | string | 无     | 发送者                                                    |
-| contract     | TRUE | string | 无     | 合约名称                                                  |
-| method       | TRUE | string | 无     | 合约方法                                                  |
-| param        | TRUE | string | 无     | 业务参数，十六进制字符串                                  |
-| sig_alg      | TRUE | uint32 | 1      | 签名算法                                                  |
-| signature    | TRUE | string | 无     | 签名值                                                    |
-
-**响应字段：**
-
-| 参数         | 类型       | 说明                                       |
-| ------------ | ---------- | ------------------------------------------ |
-| errcode      | uint32     | 错误码，0-相应成功，其他见错误码章节       |
-| msg          | string     | 响应描述                                   |
-| result       | jsonObject | 响应结果                                   |
-| trx_hash     | string     | 交易哈希值                                 |
-| trx          | jsonObject | 交易详情                                   |
-| version      | uint32     | 链版本号                                   |
-| cursor_num   | uint64     | 最新区块号，调用获取区块头获得             |
-| cursor_label | uint32     | 最新区块标签，调用获取区块头获得           |
-| lifetime     | uint64     | 交易过期时间，调用获取区块头，加一定的延时 |
-| sender       | string     | 发送者                                     |
-| contract     | string     | 合约名称                                   |
-| method       | string     | 合约方法                                   |
-| param        | string     | 业务参数，十六进制字符串                   |
-| sig_alg      | uint32     | 签名算法                                   |
-| signature    | string     | 签名值                                     |
-
-**字段变化**
-
-- 无
-
-  **接口示例**
-
-> 地址：<http://127.0.0.1:8689/v1/transaction/send>
-
-- 请求：
-
-  
-
-  ```
-  {
-  	"version": 1,
-  	"cursor_num": 719,
-  	"cursor_label": 2997806499,
-  	"lifetime": 1534143531,
-  	"sender": "bottos",
-  	"contract": "bottos",
-  	"method": "newaccount",
-  	"param": "dc0002da0009757365727465737431da008230346430373538383030353634383861393864613365643234623766613265633061623864383464343764623534366333663138316137363462613366613165383237396637363434303963343164653031623030383065623161616565623935303966373932333535323061373565333432343432393134346234336331303462",
-  	"sig_alg": 1,
-  	"signature": "f0069bc363a55dc22207c75d15cc75524bf4950159130c6bf385f6f1ca877177362ad5ab51108e7f396043e3aee7058f1ca6a40fd6c79a8483e439d2e2bccf2c"
-  }
-  ```
-
-- 响应：
-
-  
-
-  ```
-  HTTP/1.1 200 OK
-  {
-      "errcode": 0,
-      "msg": "trx receive succ",
-      "result": {
-          "trx": {
-              "version": 1,
-              "cursor_num": 719,
-              "cursor_label": 2997806499,
-              "lifetime": 1534143531,
-              "sender": "delta",
-              "contract": "bottos",
-              "method": "newaccount",
-              "param": "dc0002da0009757365727465737431da008230346430373538383030353634383861393864613365643234623766613265633061623864383464343764623534366333663138316137363462613366613165383237396637363434303963343164653031623030383065623161616565623935303966373932333535323061373565333432343432393134346234336331303462",
-              "sig_alg": 1,
-              "signature": "f0069bc363a55dc22207c75d15cc75524bf4950159130c6bf385f6f1ca877177362ad5ab51108e7f396043e3aee7058f1ca6a40fd6c79a8483e439d2e2bccf2c"
-          },
-          "trx_hash": "1815f4d4dfb52b88fb445efc255a5be6275fc3ad694f802c01c40644f09b651f"
-      }
-  }
-  ```
-
-## 发送交易信息
-
-**接口功能**
-
-> 接口说明： 发送交易信息
->
-> **接口地址**
->
-> URL:  /v1/transaction/send
->
-> **返回格式**
->
-> JSON
->
-> **请求方式**
->
-> POST
-
-**请求参数：**
-
-| 参数         | 必选 | 类型   | 默认值 | 说明                                                      |
-| ------------ | ---- | ------ | ------ | --------------------------------------------------------- |
-| version      | TRUE | uint32 | 无     | 最新区块号，调用获取区块头的version字段                   |
-| cursor_num   | TRUE | uint64 | 无     | 最新区块号，调用获取区块头获得                            |
-| cursor_label | TRUE | uint32 | 无     | 最新区块标识，调用获取区块头获得                          |
-| lifetime     | TRUE | uint64 | 无     | 交易过期时间，调用获取区块头，加一定的延时，推荐延时100秒 |
-| sender       | TRUE | string | 无     | 发送者                                                    |
-| contract     | TRUE | string | 无     | 合约名称                                                  |
-| method       | TRUE | string | 无     | 合约方法                                                  |
-| param        | TRUE | string | 无     | 业务参数，十六进制字符串                                  |
-| sig_alg      | TRUE | uint32 | 1      | 签名算法                                                  |
-| signature    | TRUE | string | 无     | 签名值                                                    |
-
-**响应字段：**
-
-| 参数         | 类型       | 说明                                       |
-| ------------ | ---------- | ------------------------------------------ |
-| errcode      | uint32     | 错误码，0-相应成功，其他见错误码章节       |
-| msg          | string     | 响应描述                                   |
-| result       | jsonObject | 响应结果                                   |
-| trx_hash     | string     | 交易哈希值                                 |
-| trx          | jsonObject | 交易详情                                   |
-| version      | uint32     | 链版本号                                   |
-| cursor_num   | uint64     | 最新区块号，调用获取区块头获得             |
-| cursor_label | uint32     | 最新区块标签，调用获取区块头获得           |
-| lifetime     | uint64     | 交易过期时间，调用获取区块头，加一定的延时 |
-| sender       | string     | 发送者                                     |
-| contract     | string     | 合约名称                                   |
-| method       | string     | 合约方法                                   |
-| param        | string     | 业务参数，十六进制字符串                   |
-| sig_alg      | uint32     | 签名算法                                   |
-| signature    | string     | 签名值                                     |
-
-**字段变化**
-
-- 无
-
-  **接口示例**
-
-> 地址：<http://127.0.0.1:8689/v1/transaction/send>
-
-- 请求：
-
-  
-
-  ```
-  {
-  	"version": 1,
-  	"cursor_num": 719,
-  	"cursor_label": 2997806499,
-  	"lifetime": 1534143531,
-  	"sender": "bottos",
-  	"contract": "bottos",
-  	"method": "newaccount",
-  	"param": "dc0002da0009757365727465737431da008230346430373538383030353634383861393864613365643234623766613265633061623864383464343764623534366333663138316137363462613366613165383237396637363434303963343164653031623030383065623161616565623935303966373932333535323061373565333432343432393134346234336331303462",
-  	"sig_alg": 1,
-  	"signature": "f0069bc363a55dc22207c75d15cc75524bf4950159130c6bf385f6f1ca877177362ad5ab51108e7f396043e3aee7058f1ca6a40fd6c79a8483e439d2e2bccf2c"
-  }
-  ```
-
-- 响应：
-
-  
-
-  ```
-  HTTP/1.1 200 OK
-  {
-      "errcode": 0,
-      "msg": "trx receive succ",
-      "result": {
-          "trx": {
-              "version": 1,
-              "cursor_num": 719,
-              "cursor_label": 2997806499,
-              "lifetime": 1534143531,
-              "sender": "delta",
-              "contract": "bottos",
-              "method": "newaccount",
-              "param": "dc0002da0009757365727465737431da008230346430373538383030353634383861393864613365643234623766613265633061623864383464343764623534366333663138316137363462613366613165383237396637363434303963343164653031623030383065623161616565623935303966373932333535323061373565333432343432393134346234336331303462",
-              "sig_alg": 1,
-              "signature": "f0069bc363a55dc22207c75d15cc75524bf4950159130c6bf385f6f1ca877177362ad5ab51108e7f396043e3aee7058f1ca6a40fd6c79a8483e439d2e2bccf2c"
-          },
-          "trx_hash": "1815f4d4dfb52b88fb445efc255a5be6275fc3ad694f802c01c40644f09b651f"
-      }
-  }
-  ```
-
-## 获取签名哈希
+## 获取签名哈希-param已序列化
 
 **接口功能**
 
@@ -482,6 +272,302 @@
   }
   ```
 
+## 获取签名哈希
+
+**接口功能**
+
+> 接口说明： 获取签名哈希
+>
+> **接口地址**
+>
+> URL:  /v1/transaction/getHashForSign2
+>
+> **返回格式**
+>
+> JSON
+>
+> **请求方式**
+>
+> POST
+
+**请求参数：**
+
+| 参数     | 必选 | 类型       | 默认值 | 说明                                                    |
+| -------- | ---- | ---------- | ------ | ------------------------------------------------------- |
+| sender   | TRUE | string     | 无     | 发送交易的账号名称                                      |
+| contract | TRUE | string     | 无     | 合约名                                                  |
+| method   | TRUE | string     | 无     | 合约方法名                                              |
+| param    | TRUE | jsonObject | 无     | 业务结构数据，字段名称需与ABI文件中的fields结构字段相同 |
+
+
+
+**响应字段：**
+
+| 参数       | 类型       | 说明                                                         |
+| ---------- | ---------- | ------------------------------------------------------------ |
+| errcode    | uint32     | 错误码，0-相应成功，其他见错误码章节                         |
+| msg        | string     | 响应描述                                                     |
+| result     | jsonObject | 响应结果                                                     |
+| version    | uint32     | 链版本号                                                     |
+| cursor_num | uint64     | 最新区块号，调用获取区块头获得                               |
+| cursor_lab | uint32     | 最新区块标签，调用获取区块头获得                             |
+| lifetime   | uint64     | 交易过期时间，调用获取区块头，加一定的延时                   |
+| sender     | string     | 发送者                                                       |
+| contract   | string     | 合约名称                                                     |
+| method     | string     | 合约方法                                                     |
+| param      | jsonObject | 业务参数                                                     |
+| sig_alg    | uint32     | 签名算法                                                     |
+| signature  | string     | 签名值，为保持结构完整，保留改字段，可调用 《钱包REST接口》中的 对HASH签名 接口获得该值 |
+
+**字段变化**
+
+- 无
+
+  **接口示例**
+
+> 地址：<http://127.0.0.1:8689/v1/transaction/getHashForSign2
+
+- 请求：
+
+  
+
+  ```
+  {
+  	"sender": "bottos",
+  	"contract": "bottos",
+  	"method": "newaccount",
+  	"param": {
+  		"name": "bottostest13",
+  		"pubkey": "0492876e897e53de5d6767c41ba11217163baadc063ecbca38d4a3717d6c7f139c6e2d747dc6542d38c3d12dab495e3fad778852395ad247c76e63121864597f62"
+  	}
+  }
+  ```
+
+- 响应：
+
+  
+
+  ```
+   HTTP/1.1 200 OK
+  {
+      "errcode": 0,
+      "msg": "success",
+      "result": {
+          "trx": {
+              "version": 65536,
+              "cursor_num": 267,
+              "cursor_label": 3781540239,
+              "lifetime": 1558603054,
+              "sender": "bottos",
+              "contract": "bottos",
+              "method": "newaccount",
+              "param": "dc0002da000c626f74746f73746573743133da008230343932383736653839376535336465356436373637633431626131313231373136336261616463303633656362636133386434613337313764366337663133396336653264373437646336353432643338633364313264616234393565336661643737383835323339356164323437633736653633313231383634353937663632",
+              "sig_alg": 1,
+              "signature": ""
+          },
+          "hash_for_sign": "38153ccf7559dca16ec4b513716004c78be468e39a4bcd0ca46d49f6f0868174"
+      }
+  }
+  ```
+
+
+
+## 发送交易信息
+
+**接口功能**
+
+> 接口说明： 发送交易信息
+>
+> **接口地址**
+>
+> URL:  /v1/transaction/send
+>
+> **返回格式**
+>
+> JSON
+>
+> **请求方式**
+>
+> POST
+
+**请求参数：**
+
+| 参数         | 必选 | 类型   | 默认值 | 说明                                                      |
+| ------------ | ---- | ------ | ------ | --------------------------------------------------------- |
+| version      | TRUE | uint32 | 无     | 最新区块号，调用获取区块头的version字段                   |
+| cursor_num   | TRUE | uint64 | 无     | 最新区块号，调用获取区块头获得                            |
+| cursor_label | TRUE | uint32 | 无     | 最新区块标识，调用获取区块头获得                          |
+| lifetime     | TRUE | uint64 | 无     | 交易过期时间，调用获取区块头，加一定的延时，推荐延时100秒 |
+| sender       | TRUE | string | 无     | 发送者                                                    |
+| contract     | TRUE | string | 无     | 合约名称                                                  |
+| method       | TRUE | string | 无     | 合约方法                                                  |
+| param        | TRUE | string | 无     | 业务参数，十六进制字符串                                  |
+| sig_alg      | TRUE | uint32 | 1      | 签名算法                                                  |
+| signature    | TRUE | string | 无     | 签名值                                                    |
+
+**响应字段：**
+
+| 参数         | 类型       | 说明                                       |
+| ------------ | ---------- | ------------------------------------------ |
+| errcode      | uint32     | 错误码，0-相应成功，其他见错误码章节       |
+| msg          | string     | 响应描述                                   |
+| result       | jsonObject | 响应结果                                   |
+| trx_hash     | string     | 交易哈希值                                 |
+| trx          | jsonObject | 交易详情                                   |
+| version      | uint32     | 链版本号                                   |
+| cursor_num   | uint64     | 最新区块号，调用获取区块头获得             |
+| cursor_label | uint32     | 最新区块标签，调用获取区块头获得           |
+| lifetime     | uint64     | 交易过期时间，调用获取区块头，加一定的延时 |
+| sender       | string     | 发送者                                     |
+| contract     | string     | 合约名称                                   |
+| method       | string     | 合约方法                                   |
+| param        | string     | 业务参数，十六进制字符串                   |
+| sig_alg      | uint32     | 签名算法                                   |
+| signature    | string     | 签名值                                     |
+
+**字段变化**
+
+- 无
+
+  **接口示例**
+
+> 地址：<http://127.0.0.1:8689/v1/transaction/send>
+
+- 请求：
+
+  
+
+  ```
+  {
+  	"version": 1,
+  	"cursor_num": 719,
+  	"cursor_label": 2997806499,
+  	"lifetime": 1534143531,
+  	"sender": "bottos",
+  	"contract": "bottos",
+  	"method": "newaccount",
+  	"param": "dc0002da0009757365727465737431da008230346430373538383030353634383861393864613365643234623766613265633061623864383464343764623534366333663138316137363462613366613165383237396637363434303963343164653031623030383065623161616565623935303966373932333535323061373565333432343432393134346234336331303462",
+  	"sig_alg": 1,
+  	"signature": "f0069bc363a55dc22207c75d15cc75524bf4950159130c6bf385f6f1ca877177362ad5ab51108e7f396043e3aee7058f1ca6a40fd6c79a8483e439d2e2bccf2c"
+  }
+  ```
+
+- 响应：
+
+  
+
+  ```
+  HTTP/1.1 200 OK
+  {
+      "errcode": 0,
+      "msg": "trx receive succ",
+      "result": {
+          "trx": {
+              "version": 1,
+              "cursor_num": 719,
+              "cursor_label": 2997806499,
+              "lifetime": 1534143531,
+              "sender": "delta",
+              "contract": "bottos",
+              "method": "newaccount",
+              "param": "dc0002da0009757365727465737431da008230346430373538383030353634383861393864613365643234623766613265633061623864383464343764623534366333663138316137363462613366613165383237396637363434303963343164653031623030383065623161616565623935303966373932333535323061373565333432343432393134346234336331303462",
+              "sig_alg": 1,
+              "signature": "f0069bc363a55dc22207c75d15cc75524bf4950159130c6bf385f6f1ca877177362ad5ab51108e7f396043e3aee7058f1ca6a40fd6c79a8483e439d2e2bccf2c"
+          },
+          "trx_hash": "1815f4d4dfb52b88fb445efc255a5be6275fc3ad694f802c01c40644f09b651f"
+      }
+  }
+  ```
+
+## 查询交易信息
+
+**接口功能**
+
+> 接口说明： 查询交易信息
+>
+> **接口地址**
+>
+> URL:  /v1/transaction/get
+>
+> **返回格式**
+>
+> JSON
+>
+> **请求方式**
+>
+> POST
+
+**请求参数：**
+
+| 参数     | 必选 | 类型   | 默认值 | 说明       |
+| -------- | ---- | ------ | ------ | ---------- |
+| trx_hash | TRUE | string | 无     | 交易哈希值 |
+
+响应字段：**
+
+| 参数         | 类型       | 说明                                       |
+| ------------ | ---------- | ------------------------------------------ |
+| errcode      | uint32     | 错误码，0-相应成功，其他见错误码章节       |
+| msg          | string     | 响应描述                                   |
+| result       | jsonObject | 响应结果                                   |
+| trx_hash     | string     | 交易哈希值                                 |
+| trx          | jsonObject | 交易详情                                   |
+| version      | uint32     | 链版本号                                   |
+| cursor_num   | uint64     | 最新区块号，调用获取区块头获得             |
+| cursor_label | uint32     | 最新区块标签，调用获取区块头获得           |
+| lifetime     | uint64     | 交易过期时间，调用获取区块头，加一定的延时 |
+| sender       | string     | 发送者                                     |
+| contract     | string     | 合约名称                                   |
+| method       | string     | 合约方法                                   |
+| param        | jsonObject | 业务参数                                   |
+| sig_alg      | uint32     | 签名算法                                   |
+| signature    | string     | 签名值                                     |
+
+**字段变化**
+
+- 无
+
+  **接口示例**
+
+> 地址：<http://127.0.0.1:8689/v1/transaction/get>
+
+- 请求：
+
+  
+
+  ```
+  {
+  	"trx_hash": "85f9d2fbe1d3c0a217e10932899b6f73b24fafe59a006406ed65d7e4a39a7416"
+  }
+  ```
+
+- 响应：
+
+  
+
+  ```
+  HTTP/1.1 200 OK
+  {
+      "errcode": 0,
+      "msg": "success",
+      "result": {
+          "version": 1,
+          "cursor_num": 31,
+          "cursor_label": 2749714050,
+          "lifetime": 1537259224,
+          "sender": "bottos",
+          "contract": "bottos",
+          "method": "newaccount",
+          "param": {
+              "name": "testtest",
+              "pubkey": "0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f"
+          },
+          "sig_alg": 1,
+          "signature": "c85fd25af493cbb6a79870ce0fc602acc892664ca17e2c646aff0332ca6db7787beeb7e5d8553de8e4b83bdf7b227762fedf9e3674888893f18bf31f0b05d622"
+      }
+  }
+  ```
+
 ## 查询交易状态
 
 **接口功能**
@@ -513,7 +599,7 @@
 | errcode | uint32     | 错误码，0-相应成功，其他见错误码章节                         |
 | msg     | string     | 响应描述                                                     |
 | result  | jsonObject | 响应结果                                                     |
-| status  | string     | 查询交易状态结果，<br />”pending“：交易已提交，但未处理；<br />”packed“：交易已打包；<br />”not found“：交易执行失败；<br />”committed“：交易已成功生效 |
+| status  | string     | 查询交易状态结果，<br />”sending“：交易已提交，在缓存池中处理；<br/>”pending“：交易已提交，但未处理；<br />”packed“：交易已打包；<br />”not found“：交易执行失败；<br />”committed“：交易已成功生效 |
 
 **字段变化**
 
@@ -547,6 +633,8 @@
       }
   }
   ```
+
+# 账户相关
 
 ## 查询账户基本信息
 
@@ -617,6 +705,8 @@
         }
     }
 ```
+
+
 
 ## 查询账户详情
 
@@ -744,6 +834,7 @@
 }
   ```
 
+# 合约相关
 
 ## 查询合约ABI
 
@@ -939,6 +1030,8 @@
   }
   ```
 
+# 生产者相关
+
 ## 查询所有生产者
 
 **接口功能**
@@ -1038,6 +1131,8 @@
 }
   ```
 
+# 多签相关
+
 ## 获取转账提案详情
 
 **接口功能**
@@ -1135,3 +1230,327 @@
   }
   ```
 
+# 交易数据相关
+
+## 根据关键字查询数据
+
+**接口功能**
+
+> 接口说明： 根据关键字查询数据
+>
+> **接口地址**
+>
+> URL: /v1/common/queryDB
+>
+> **返回格式**
+>
+> JSON
+>
+> **请求方式**
+>
+> POST
+
+**请求参数：**
+
+| 参数       | 必选 | 类型   | 默认值 | 说明       |
+| ---------- | ---- | ------ | ------ | ---------- |
+| contract   | TRUE | string | 无     | 合约名称   |
+| table_name | TRUE | string | 无     | 合约表名   |
+| key        | TRUE | string | 无     | 查询关键字 |
+
+**响应字段：**
+
+| 参数       | 类型       | 说明                                 |
+| ---------- | ---------- | ------------------------------------ |
+| errcode    | uint32     | 错误码，0-相应成功，其他见错误码章节 |
+| msg        | string     | 响应描述                             |
+| result     | jsonObject | 响应结果                             |
+| contract   | string     | 合约名称                             |
+| table_name | string     | 合约表名                             |
+| key        | string     | 查询关键字                           |
+| value      | jsonObject | 查询到的数据                         |
+
+**字段变化**
+
+- 无
+
+  **接口示例**
+
+> 地址：<http://127.0.0.1:8689/v1/common/queryDB>
+
+- 请求：
+
+  ```
+  {
+  	"contract":"bottos",
+  	"table_name":"account",
+  	"key":"bottos"
+  }
+  ```
+
+- 响应：
+
+  ```
+   HTTP/1.1 200 OK
+  {
+      "errcode": 0,
+      "msg": "success",
+      "result": {
+          "contract": "bottos",
+          "table_name": "account",
+          "key": "bottos",
+          "Value": {
+              "account_name": "bottos",
+              "contract_name": null,
+              "create_date": 1533124800,
+              "gs_permission": true,
+              "public_key": "BFTxwiI9VTqm7lPqHM6ot794uMqZ8/9iKjuz5i3txxIIkDPWCR13KWVHvAcQIsooOMnobewpZnz3QOXJ5lS2En8="
+          }
+      }
+  }
+  ```
+
+## 序列化业务数据
+
+**接口功能**
+
+> 接口说明： 序列化业务数据，json 转为 十六进制字符串，作为“发送交易信息”请求中的parm 字段值。
+>
+> **接口地址**
+>
+> URL: /v1/common/jsontobin
+>
+> **返回格式**
+>
+> JSON
+>
+> **请求方式**
+>
+> POST
+
+**请求参数：**
+
+| 参数     | 必选 | 类型       | 默认值 | 说明                                                    |
+| -------- | ---- | ---------- | ------ | ------------------------------------------------------- |
+| sender   | TRUE | string     | 无     | 发送交易的账号名称                                      |
+| contract | TRUE | string     | 无     | 合约名                                                  |
+| method   | TRUE | string     | 无     | 合约方法名                                              |
+| param    | TRUE | JsonObject | 无     | 业务结构数据，字段名称需与ABI文件中的fields结构字段相同 |
+
+
+
+**响应字段：**
+
+| 参数    | 类型   | 说明                                 |
+| ------- | ------ | ------------------------------------ |
+| errcode | uint32 | 错误码，0-相应成功，其他见错误码章节 |
+| msg     | string | 响应描述                             |
+| result  | string | 序列化后的业务数据                   |
+
+**字段变化**
+
+- 无
+
+  **接口示例**
+
+> 地址：<<http://127.0.0.1:8689/v1/common/jsontobin>
+
+- 请求：
+
+  ```
+  {
+  	"sender": "bottos",
+  	"contract": "bottos",
+  	"method": "newaccount",
+  	"param": {
+  		"name": "bottostest11",
+  		"pubkey": "0492876e897e53de5d6767c41ba11217163baadc063ecbca38d4a3717d6c7f139c6e2d747dc6542d38c3d12dab495e3fad778852395ad247c76e63121864597f62"
+  	}
+  }
+  ```
+
+- 响应：
+
+  ```
+   HTTP/1.1 200 OK
+  {
+      "errcode": 0,
+      "msg": "success",
+      "result": "dc0002da000c626f74746f73746573743131da008230343932383736653839376535336465356436373637633431626131313231373136336261616463303633656362636133386434613337313764366337663133396336653264373437646336353432643338633364313264616234393565336661643737383835323339356164323437633736653633313231383634353937663632"
+  }
+  ```
+
+# 查询类
+
+## 查询交易记录列表
+
+**接口功能**
+
+> 接口说明： 
+>
+> **接口地址**
+>
+> URL: /transferl/queryPersonalTransferlListAuto
+>
+> **返回格式**
+>
+> JSON
+>
+> **请求方式**
+>
+> POST
+
+**请求参数：**
+
+| 参数        | 必选 | 类型   | 默认值 | 说明         |
+| ----------- | ---- | ------ | ------ | ------------ |
+| accountName | TRUE | string | 无     | 账号名称     |
+| start       | TRUE | int    | 无     | 起始页       |
+| length      | TRUE | int    | 无     | 每页条目数量 |
+
+
+
+**响应字段：**
+
+| 参数    | 类型   | 说明                                 |
+| ------- | ------ | ------------------------------------ |
+| errcode | uint32 | 错误码，0-相应成功，其他见错误码章节 |
+| msg     | string | 响应描述                             |
+| result  | string | 序列化后的业务数据                   |
+
+**字段变化**
+
+- 无
+
+  **接口示例**
+
+> 地址：<http://125.94.34.23:8080/transferl/queryPersonalTransferlListAuto>
+
+- 请求：
+
+  ```
+  {
+  	"accountName": "bottos.funds",
+  	"start": 0,
+  	"length": 20
+  }
+  ```
+
+- 响应：
+
+  ```
+   HTTP/1.1 200 OK
+  {
+  	"data": {
+  		"data": [{
+  			"blockNum": 2845146,
+  			"sender": "bottos.funds",
+  			"receiver": "bto1415926",
+  			"tradeAmount": 1814032318641,
+  			"currency": "BTO",
+  			"transactionId": "ef1384fe1ae5b52da7afe0996b3a5c3c64b825518c5e3c16938ac291a223a7e3",
+  			"tradeDate": 1554738564
+  		},		
+  		{
+  			"blockNum": 4195448,
+  			"sender": "bottos.funds",
+  			"receiver": "tioksbottos",
+  			"tradeAmount": 52000000000,
+  			"currency": "BTO",
+  			"transactionId": "36222017b2747bddb26cdb77e33bda19a206ac211e3242c7c4fe381239dfd9c1",
+  			"tradeDate": 1559038524
+  		}],
+  		"iTotalDisplayRecords": 2
+  	},
+  	"message": "find personal transfer success",
+  	"success": true
+  }
+  ```
+
+## 查询交易详情
+
+**接口功能**
+
+> 接口说明：
+>
+> **接口地址**
+>
+> URL: /trade/queryTradeDetailAuto
+>
+> **返回格式**
+>
+> JSON
+>
+> **请求方式**
+>
+> POST
+
+**请求参数：**
+
+| 参数          | 必选 | 类型   | 默认值 | 说明     |
+| ------------- | ---- | ------ | ------ | -------- |
+| transactionId | TRUE | string | 无     | 交易HASH |
+
+
+
+**响应字段：**
+
+| 参数    | 类型   | 说明                                 |
+| ------- | ------ | ------------------------------------ |
+| errcode | uint32 | 错误码，0-相应成功，其他见错误码章节 |
+| msg     | string | 响应描述                             |
+| result  | string | 序列化后的业务数据                   |
+
+**字段变化**
+
+- 无
+
+  **接口示例**
+
+> 地址：<http://125.94.34.23:8080/trade/queryTradeDetailAuto>
+
+- 请求：
+
+  ```
+  {
+  	"transactionId": "9dd7f5e7e7dd8a9e49fd23ac09e12b098a4fe4385af514f32626f6eecb119e21"
+  }
+  ```
+
+- 响应：
+
+  ```
+   HTTP/1.1 200 OK
+  {
+  	"data": {
+  		"data": {
+  			"blockNum": 4289315,
+  			"transactionId": "9dd7f5e7e7dd8a9e49fd23ac09e12b098a4fe4385af514f32626f6eecb119e21",
+  			"sender": "scottyu0711",
+  			"contract": "bottos",
+  			"method": "transfer",
+  			"param": {
+  				"from": "scottyu0711",
+  				"memo": "000837d0c03",
+  				"to": "gateiobottos",
+  				"value": 10000000000000
+  			},
+  			"tradeDate": 1559374704,
+  			"tradeStatus": "已确认",
+  			"resultType": "trade",
+  			"spaceTokenCost": 302,
+  			"timeTokenCost": 100
+  		}
+  	},
+  	"message": "transaction detail find success",
+  	"success": true
+  }
+  ```
+
+
+
+
+
+
+
+## 

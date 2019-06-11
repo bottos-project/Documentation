@@ -1,5 +1,7 @@
 ﻿# Common REST Interface
 
+# Block 
+
 ## Get Block Header Information
 
 **API Function**
@@ -170,6 +172,8 @@ Note：block_num、block_hash can only choose one of them; If not given in eithe
         }
   }
   ```
+
+# Transaction
 
 ## Get hash for signature
 
@@ -495,7 +499,7 @@ Note：block_num、block_hash can only choose one of them; If not given in eithe
 | errcode   | uint32     | Error code，0-Succeed，others refer to error code chapter    |
 | msg       | string     | response description                                         |
 | result    | jsonObject | response result                                              |
-| status    | string     | query transaction status result.<br />”committed“：Transaction has successfully committed；<br />”not found“：Transaction execute failed；<br />”packed“：Transaction has packed；<br/>”pending“：Transaction submitted but not processed |
+| status    | string     | query transaction status result.<br />”committed“：Transaction has successfully committed；<br />”not found“：Transaction execute failed；<br />”packed“：Transaction has packed；<br/>”pending“：Transaction submitted but not processed；<br />”sending“：Transaction has been submitted and processed in the cache pool |
 
 **Fields Changes**
 
@@ -530,6 +534,7 @@ Note：block_num、block_hash can only choose one of them; If not given in eithe
   }
   ```
 
+# Accounts
 
 ## Query Accounts Brief Information
 
@@ -723,10 +728,10 @@ Note：balance、staked_balance、staked_space_balance、staked_time_balance、u
 			"votes": "6000000000"
 		}
 	}
-}
+} 
 ```
 
-## 
+# Contract 
 
 ## Query Contract ABI
 
@@ -922,6 +927,8 @@ Note：balance、staked_balance、staked_space_balance、staked_time_balance、u
   }
   ```
 
+# Producer
+
 ## Query All Producers
 
 **API Functions**
@@ -1021,4 +1028,149 @@ Note：balance、staked_balance、staked_space_balance、staked_time_balance、u
     }
   ```
 
+# Transaction Data
 
+## Query Data Based on Keywords
+
+**API Function**
+
+> API Description： Query data based on keywords
+>
+> **APIAddress**
+>
+> URL: /v1/common/query
+>
+> **Response Format**
+>
+> JSON
+>
+> **Request Format**
+>
+> POST
+
+**Request Parameter：**
+
+| Parameter | Mandatory | Type   | Default Value | Description              |
+| --------- | --------- | ------ | ------------- | ------------------------ |
+| contract  | TRUE      | string | Null          | Contract name            |
+| object    | TRUE      | string | Null          | Contract table name      |
+| key       | TRUE      | string | Null          | The keyword for querying |
+
+**Response Fields：**
+
+| Parameter | Type       | Description                                               |
+| --------- | ---------- | --------------------------------------------------------- |
+| errcode   | uint32     | Error code，0-Succeed，others refer to error code chapter |
+| msg       | string     | response description                                      |
+| result    | jsonObject | response result                                           |
+| contract  | string     | Contract name                                             |
+| object    | string     | Contract table name                                       |
+| key       | string     | The keyword for querying                                  |
+| value     | uint32     | Queried value                                             |
+
+**Fields Changes**
+
+- Null
+
+  **API Sample**
+
+> Address：<http://127.0.0.1:8689/v1/common/query>
+
+- Request:
+
+  ```
+  {
+  	"contract":"bottostoken",
+  	"object":"DTO",
+  	"key":"aaa"
+  }
+  ```
+
+- Response:
+
+  ```
+   HTTP/1.1 200 OK
+  {
+    "errcode": 0,
+    "msg": "",
+    "result": {
+          "contract": "bottostoken",
+          "object": "DTO",
+          "key": "aaa",
+          "value": "dc0001cf000000ba43b74000"
+    }
+  }
+  ```
+
+## Serialization Of Business Data
+
+**API Function**
+
+> API Description: Serialize the business data, and the JSON converts to a hexadecimal string as the Parm field value in the "Send the transaction information request".
+>
+> **APIAddress**
+>
+> URL: /v1/common/jsontobin
+>
+> **Response Format**
+>
+> JSON
+>
+> **Request Format**
+>
+> POST
+
+**Request Parameter：**
+
+| Parameter | Mandatory | Type   | Default Value | Description              |
+| --------- | --------- | ------ | ------------- | ------------------------ |
+| contract  | TRUE      | string | Null          | Contract name            |
+| object    | TRUE      | string | Null          | Contract table name      |
+| key       | TRUE      | string | Null          | The keyword for querying |
+
+**Response Fields：**
+
+| Parameter | Type       | Description                                               |
+| --------- | ---------- | --------------------------------------------------------- |
+| errcode   | uint32     | Error code，0-Succeed，others refer to error code chapter |
+| msg       | string     | response description                                      |
+| result    | jsonObject | response result                                           |
+| contract  | string     | Contract name                                             |
+| object    | string     | Contract table name                                       |
+| key       | string     | The keyword for querying                                  |
+| value     | uint32     | Queried value                                             |
+
+**Fields Changes**
+
+- Null
+
+  **API Sample**
+
+> Address：<<http://127.0.0.1:8689/v1/common/jsontobin>
+
+- Request:
+
+  ```
+  {
+  	"account_name": "testtest",
+  	"public_key": "0454f1c2223d553aa6ee53ea1ccea8b7bf78b8ca99f3ff622a3bb3e62dedc712089033d6091d77296547bc071022ca2838c9e86dec29667cf740e5c9e654b6127f"
+  }
+  ```
+
+- Response:
+
+  ```
+   HTTP/1.1 200 OK
+  {
+    "errcode": 0,
+    "msg": "",
+    "result": {
+          "contract": "bottostoken",
+          "object": "DTO",
+          "key": "aaa",
+          "value": "dc0001cf000000ba43b74000"
+    }
+  }
+  ```
+
+## 
