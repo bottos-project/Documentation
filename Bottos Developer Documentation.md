@@ -10,47 +10,50 @@
   - [1.1. Project Brief](#11-project-brief)
   - [1.2. System Architecture](#12-system-architecture)
   - [1.3. Network Structure](#13-network-structure)
-- [2. Getting Started](#2-getting-started)
-  - [2.1. Browser Bottos Chain](#21-browser-bottos-chain)
-    - [2.1.1. Bottos Chain Overview](#211-bottos-chain-overview)
-    - [2.1.2. Activities on Bottos Chain](#212-activities-on-bottos-chain)
-    - [2.1.3. Locations of Super Nodes](#213-locations-of-super-nodes)
-  - [2.2. Run Bottos Chain on Local Machine](#22-run-bottos-chain-on-local-machine)
-  - [2.3. Prepare the Bottos Version](#23-prepare-the-bottos-version)
-  - [2.4. Ready to run environment](#24-ready-to-run-environment)
-    - [2.4.1. Start the local single-node environment](#241-start-the-local-single-node-environment)
-    - [2.4.2. Join an existing test network](#242-join-an-existing-test-network)
-  - [2.5. Experience basic operations](#25-experience-basic-operations)
-    - [2.5.1. Create the Wallet](#251-create-the-wallet)
-    - [2.5.2. Create Account](#252-create-account)
-    - [2.5.3. Experience the BTO transfer](#253-experience-the-bto-transfer)
-- [3. The advanced operation](#3-the-advanced-operation)
-  - [3.1. Stake](#31-stake)
-  - [3.2. Claim](#32-claim)
-  - [3.3. Vote Resources](#33-vote-resources)
-  - [3.4. Space Resources](#34-space-resources)
-  - [3.5. Time Resources](#35-time-resources)
-- [4. Developing Guide](#4-developing-guide)
+  
+- [2. Bottos Chain Browser](#2-getting-started)
+  - [2.1. Bottos Chain Overview](#21-bottos-chain-overview)
+  - [2.2. Activities on Bottos Chain](#22-activities-on-bottos-chain)
+  - [2.3. Locations of Super Nodes](#23-locations-of-super-nodes)
+  
+- [3. Developing Guide](#3-developing-guide)
+  - [3.1. Smart Contract](#31-smart-contract)
+    - [3.1.1. Introduction to Smart Contract](#311-introduction-to-smart-contract)
+    - [3.1.2. C++ smart contract developing example](#312-c-smart-contract-developing-example)
+    - [3.1.3. JavaScript smart contract developing example](#313-javascript-smart-contract-developing-example)
+  - [3.2. DAPP Development](#32-dapp-development)
+    - [3.2.1. JavaScript contract development example](#321-javascript-contract-development-example)
+  - [3.3. Development tools](#33-development-tools)
+    - [3.3.1. Wallet SDK](#331-wallet-sdk)
+    - [3.3.2. C++ Smart Contract Development SDK](#332-c-smart-contract-development-sdk)
+    - [3.3.3. JavaScript Smart Contract Development SDK](#333-javascript-smart-contract-development-sdk)
+  - [3.4. BCLI Command](#34-bcli-command)
+  
+- [4. Run Bottos Locally](#4-run-bottos-locally)
   - [4.1. Setup Environment](#41-setup-environment)
     - [4.1.1. Basic environment preparation](#411-basic-environment-preparation)
       - [4.1.1.1. Operating System](#4111-operating-system)
       - [4.1.1.2. Node base version package installation](#4112-node-base-version-package-installation)
     - [4.1.2. Single node developing environment](#412-single-node-developing-environment)
     - [4.1.3. Multi-Nodes developing environment](#413-multi-nodes-developing-environment)
-  - [4.2. Smart Contract](#42-smart-contract)
-    - [4.2.1. Introduction to Smart Contract](#421-introduction-to-smart-contract)
-    - [4.2.2. C++ smart contract developing example](#422-c-smart-contract-developing-example)
-    - [4.2.3. JavaScript smart contract developing example](#423-javascript-smart-contract-developing-example)
-  - [4.3. BCLI Command](#43-bcli-command)
-  - [4.4. DAPP Development](#44-dapp-development)
-    - [4.4.1. JavaScript contract development example](#441-javascript-contract-development-example)
-  - [4.5. Development tools](#45-development-tools)
-    - [4.5.1. Wallet SDK](#451-wallet-sdk)
-    - [4.5.2. C++ Smart Contract Development SDK](#452-c-smart-contract-development-sdk)
-    - [4.5.3. JavaScript Smart Contract Development SDK](#453-javascript-smart-contract-development-sdk)
+  - [4.2. Prepare the Bottos Version](#42-prepare-the-bottos-version)
+  - [4.3. Ready to run environment](#43-ready-to-run-environment)
+    - [4.3.1. Start the local single-node environment](#431-start-the-local-single-node-environment)
+    - [4.3.2. Join an existing test network](#432-join-an-existing-test-network)
+  - [4.4. Experience basic operations](#44-experience-basic-operations)
+    - [4.4.1. Create the Wallet](#441-create-the-wallet)
+    - [4.4.2. Create Account](#442-create-account)
+    - [4.4.3. Stake](#443-stake)
+    - [4.4.4. Claim](#444-claim)
+    - [4.4.5. Vote Resources](#445-vote-resources)
+    - [4.4.6. Space Resources](#446-space-resources)
+    - [4.4.7. Time Resources](#447-time-resources)
+    - [4.4.8. Experience the BTO transfer](#448-experience-the-bto-transfer)
+  
 - [5. Supernode startup guide](#5-supernode-startup-guide)
   - [5.1. Basis of preparation](#51-basis-of-preparation)
   - [5.2. Safe lifting](#52-safe-lifting)
+  
 - [6. Resource repository](#6-resource-repository)
   - [6.1. C++ Contract Development SDK](#61-c-contract-development-sdk)
   - [6.2. JavaScript Contract Development SDK](#62-javascript-contract-development-sdk)
@@ -75,40 +78,118 @@
 [Bottos Network Structure](./resource_en/Bottos_Network.md)
 
 
-# 2. Getting Started
-This chapter is an introduction to show you how to run the Bottos Chain, and how to use the basic instructions like register/transfer etc.
-
-And you can download mobile wallet to experience Bottos Chain. ([Android Wallet](https://dapp.botfans.org/wallet/BottosWallet.apk): https://dapp.botfans.org/wallet/BottosWallet.apk)
-
-
-
-## 2.1. Browser Bottos Chain
+# 2. Bottos Chain Browser
 
 [Bottos Browser](http://explorer.bottos.org) link is http://explorer.bottos.org
 
-### 2.1.1. Bottos Chain Overview
+### 2.1. Bottos Chain Overview
 
 ![](./common/bottos_browser.png)
 
-### 2.1.2. Activities on Bottos Chain
+### 2.2. Activities on Bottos Chain
 
 ![](./common/activities.png)
 
-
-### 2.1.3. Locations of Super Nodes
+### 2.3. Locations of Super Nodes
 
 ![](./common/supernodes.png)
 
 
-## 2.2. Run Bottos Chain on Local Machine
+# 3. Developing Guide
 
-## 2.3. Prepare the Bottos Version
+## 3.1. Smart Contract
+
+### 3.1.1. Introduction to Smart Contract
+
+### 3.1.2. C++ smart contract developing example
+
+[Writting Smart Contracts Using C++](./resource_en/Development_and_deployment_of_Smart_Contract(C++_Version).md)
+
+### 3.1.3. JavaScript smart contract developing example
+
+[Writting Smart Contracts Using JavaScript](./resource_en/Development_and_deployment_of_Smart_Contract(JavaScript_Version).md)
+
+## 3.2. DAPP Development
+
+### 3.2.1. JavaScript contract development example
+
+[DApp developing and debugging (JavaScript version)](./resource_en/DApp_developing_and_debugging(Java_Script_Version).md)
+
+## 3.3. Development tools
+
+### 3.3.1. Wallet SDK
+
+[Wallet SDK](https://github.com/bottos-project/bottos-js-crypto) already on Github
+
+### 3.3.2. C++ Smart Contract Development SDK
+
+[C++ Development SDK](https://github.com/bottos-project/contract-tool-cpp) already on Github
+
+### 3.3.3. JavaScript Smart Contract Development SDK
+
+[JavaScript Development SDK](https://github.com/bottos-project/contract-tool-js) already on Github
+
+## 3.4. BCLI Command
+
+[BCLI Specification](./resource_en/BCLI_Specification.md)
+
+
+# 4. Run Bottos Locally
+
+## 4.1. Setup Environment
+
+### 4.1.1. Basic environment preparation
+
+#### 4.1.1.1. Operating System
+
+UBUNTU16.04 LTS (or higher) is recommended
+
+[Set_up_the_Golang_Developing_environment.md](./resource_en/Set_up_the_Golang_Developping_environment.md)
+
+#### 4.1.1.2. Node base version package installation
+
+Bottos release packages' URL is under path of https://github.com/bottos-project/bottos/releases , it is recommended that users download the latest release package to test or verify it.
+
+In this sample, the version of package is v3.4.
+
+Enter the following command to install the tool and bottos to get the specific release version package.
+
+```
+apt-get update && apt-get install -y wget vim
+wget https://github.com/bottos-project/bottos/releases/download/tag_bottos3.4/bottos_ubuntu_v3.4.tar.gz
+```
+
+Unpack the downloaded version package:
+
+(After unpack the release package, the folder corresponding to the release version will be generated in the current directory. In this sample the generated folder is bottos_v3.4，the release package is bottos_ubuntu_v3.4.tar.gz)
+
+```
+tar zvxf bottos_ubuntu_v3.4.tar.gz
+```
+
+Release package file description
+
+    bottos        Node master program
+    bcli          Node supporting tools, details can be found in the bcli user description document on the official website
+    config.toml   The node configuration file is described in detail in the next section
+    genesis.toml  This file is used to uniquely identify an identified chain
+    Other 2 toml files  The file is prepared for the node to connect to the test network, which the user does not need to care about.
+
+### 4.1.2. Single node developing environment
+
+Refer to the documentation for a single-node developing environment： [Single node developing environment](./resource_en/Single_Node_mode_developing_environment.MD)
+
+### 4.1.3. Multi-Nodes developing environment
+
+For multi-nodes developing environment please refer to： [multi-nodes developing environment](./resource_en/Multi-Nodes_Developping_environment.MD)
+
+## 4.2. Prepare the Bottos Version
 
 [Prepare the Bottos version](./resource_en/Prepare_the_Bottos_Version.md)
 
-## 2.4. Ready to run environment
+## 4.3. Ready to run environment
 
-### 2.4.1. Start the local single-node environment
+### 4.3.1. Start the local single-node environment
 
 Start the Bottos single node with the following instructions
 
@@ -132,7 +213,7 @@ InsertBlock: number:2, delegate:bottos, trxn:0, time=1537948302, hash: 8abe6aef2
 
 &nbsp;
 
-### 2.4.2. Join an existing test network
+### 4.3.2. Join an existing test network
 
 
 Connect the single node started the Bottos test network. The following configuration needs to be done：
@@ -172,11 +253,12 @@ InsertBlock: number:3, delegate:bottos, trxn:0, time=1537888773, hash: 3bcf9ecf1
 CommitBlock by p2p: lib: 4
 ```
 
+## 4.4. Experience basic operations
+
+And you can download mobile wallet to experience Bottos Chain. ([Android Wallet](https://dapp.botfans.org/wallet/BottosWallet.apk): https://dapp.botfans.org/wallet/BottosWallet.apk)
 
 
-## 2.5. Experience basic operations
-
-### 2.5.1. Create the Wallet
+### 4.4.1. Create the Wallet
 
 Prepare your wallet account, password, and private key
 
@@ -212,7 +294,7 @@ Create wallet done. Now unlock the wallet within 300 seconds.
 }
 ```
 
-### 2.5.2. Create Account
+### 4.4.2. Create Account
 
 Perform the following actions under the project code path：
 
@@ -264,7 +346,68 @@ TrxHash: cde9db1ec6ed4622104acc81cac94c9765b9de3e997b1b4f46b1e83ed94163da
 Please create wallet for your new account.
 ```
 
-### 2.5.3. Experience the BTO transfer
+### 4.4.3. Stake
+
+Users need to stake a certain number of BTO in order to have sufficient authority to vote on the production node or to make transactions such as transfer or other contracts.
+
+For users who have not staked BTO:
+
+Users will not be able to perform voting operations (voting will fail), and the number of times they will perform contract transactions is very limited (free quota) : after 3 times of operation of transfer or other contracts, they will lose the operation permission on the same day (the same number of permissions will be restored on the next day).
+
+
+For users who have staked BTO:
+
+
+Open to users will vote more certain amount and the power of use of resources (depending on the stake count how many), if operating within 1 days more than the staking right number of operation (after voting, transfer or other contracts), the user also has a certain operation permissions (lines) for free, if after 1 days use these lines, then the day will lose operation permissions (the next day will return to a certain number of times permissions).
+
+Operation mode of stake:
+
+See section 4.4.5
+
+### 4.4.4. Claim
+
+In order to claim the staked BTO, the unstake operation should be done at first (in section 4.4.5, "unstake" operation shall be adopted on the mobile phone APP).
+
+After the unstaking operation is completed, the user shall wait for 3 days before "claim his/her BTO", then the BTO will immediately return to the user's account after the claim operation.
+
+### 4.4.5. Vote Resources
+
+There are two ways to stake resources:
+
+General users use mobile wallet to stake the resources of this account:
+
+1. Login or import users;
+
+2. In the "asset details" interface, click the BTO asset line to enter the pledge interface;
+
+3. Click the "stake" button, enter the "stake number" in the "stake BTO number", and select "space" or "time" according to the need of the "pledge target";
+
+
+4. Enter the password for pledge operation.
+
+If you are a developer, you can also use the BCLI command line to pledge;
+
+
+\# ./bcli account stake --account bottostest --amount 100 --target space
+
+
+\# ./bcli account stake --account bottostest --amount 100 --target time
+
+Directions: each account has a free push transaction limit of 3 push transactions every 24 hours (the measurement standard of a single push transaction is the amount of resources consumed by the transfer transaction)
+
+
+### 4.4.6. Space Resources
+
+Space resources include network resources and storage resources consumption, free space limit of 800Bytes. After the user stakes BTO to space, every vote/cancelvote and any transaction and transaction will consume certain space resources. It should be noted that when the user's space resources are used up, there will be 3 transactions, 800 Bytes of space and 400 microseconds of time. When any of the three transactions and space and time resources are consumed over, the quota will be stopped (vote will not be executed in the case of occupying free quota), and the quota will be restored the next day.
+
+
+### 4.4.7. Time Resources
+
+The time resource contains the total transaction time cost, typically 400 microseconds of time for free  per day.(Accordingly, the space resource is 800 Bytes for free per day). After the user stakes BTO to space, every vote/cancelvote and any transaction and transaction will consume certain space resources. It should be noted that when the user's space resources are used up, there will be 3 transactions, 800Bytes of space and 400 microseconds of time. When any of the three transactions and space and time resources are exhausted, the quota will be stopped (a vote cannot be executed if only the free quota is left) and the quota will be restored the next day.
+
+&nbsp;
+
+### 4.4.8. Experience the BTO transfer
 
 Do the following under the bottos project path：
 
@@ -315,165 +458,6 @@ Trx:
 }
 TrxHash: 83d5042570b666f2eba9e5cdbbab735444c93f4cb41a64e3b132dbba7fda6b43
 ```
-
-
-
-
-# 3. The advanced operation
-
-## 3.1. Stake
-
-Users need to stake a certain number of BTO in order to have sufficient authority to vote on the production node or to make transactions such as transfer or other contracts.
-
-For users who have not staked BTO:
-
-Users will not be able to perform voting operations (voting will fail), and the number of times they will perform contract transactions is very limited (free quota) : after 3 times of operation of transfer or other contracts, they will lose the operation permission on the same day (the same number of permissions will be restored on the next day).
-
-
-For users who have staked BTO:
-
-
-Open to users will vote more certain amount and the power of use of resources (depending on the stake count how many), if operating within 1 days more than the staking right number of operation (after voting, transfer or other contracts), the user also has a certain operation permissions (lines) for free, if after 1 days use these lines, then the day will lose operation permissions (the next day will return to a certain number of times permissions).
-
-Operation mode of stake:
-
-See section 3.3
-
-## 3.2. Claim
-
-In order to claim the staked BTO, the unstake operation should be done at first (in section 3.3, "unstake" operation shall be adopted on the mobile phone APP).
-
-After the unstaking operation is completed, the user shall wait for 3 days before "claim his/her BTO", then the BTO will immediately return to the user's account after the claim operation.
-
-## 3.3. Vote Resources
-
-There are two ways to stake resources:
-
-General users use mobile wallet to stake the resources of this account:
-
-1. Login or import users;
-
-2. In the "asset details" interface, click the BTO asset line to enter the pledge interface;
-
-3. Click the "stake" button, enter the "stake number" in the "stake BTO number", and select "space" or "time" according to the need of the "pledge target";
-
-
-4. Enter the password for pledge operation.
-
-If you are a developer, you can also use the BCLI command line to pledge;
-
-
-\# ./bcli account stake --account bottostest --amount 100 --target space
-
-
-\# ./bcli account stake --account bottostest --amount 100 --target time
-
-Directions: each account has a free push transaction limit of 3 push transactions every 24 hours (the measurement standard of a single push transaction is the amount of resources consumed by the transfer transaction)
-
-
-## 3.4. Space Resources
-
-Space resources include network resources and storage resources consumption, free space limit of 800Bytes. After the user stakes BTO to space, every vote/cancelvote and any transaction and transaction will consume certain space resources. It should be noted that when the user's space resources are used up, there will be 3 transactions, 800 Bytes of space and 400 microseconds of time. When any of the three transactions and space and time resources are consumed over, the quota will be stopped (vote will not be executed in the case of occupying free quota), and the quota will be restored the next day.
-
-
-## 3.5. Time Resources
-
-The time resource contains the total transaction time cost, typically 400 microseconds of time for free  per day.(Accordingly, the space resource is 800 Bytes for free per day). After the user stakes BTO to space, every vote/cancelvote and any transaction and transaction will consume certain space resources. It should be noted that when the user's space resources are used up, there will be 3 transactions, 800Bytes of space and 400 microseconds of time. When any of the three transactions and space and time resources are exhausted, the quota will be stopped (a vote cannot be executed if only the free quota is left) and the quota will be restored the next day.
-
-&nbsp;
-
-
-
-# 4. Developing Guide
-
-## 4.1. Setup Environment
-
-### 4.1.1. Basic environment preparation
-
-#### 4.1.1.1. Operating System
-
-UBUNTU16.04 LTS (or higher) is recommended
-
-[Set_up_the_Golang_Developing_environment.md](./resource_en/Set_up_the_Golang_Developping_environment.md)
-
-#### 4.1.1.2. Node base version package installation
-
-Bottos release packages' URL is under path of https://github.com/bottos-project/bottos/releases , it is recommended that users download the latest release package to test or verify it.
-
-In this sample, the version of package is v3.4.
-
-Enter the following command to install the tool and bottos to get the specific release version package.
-
-```
-apt-get update && apt-get install -y wget vim
-wget https://github.com/bottos-project/bottos/releases/download/tag_bottos3.4/bottos_ubuntu_v3.4.tar.gz
-```
-
-Unpack the downloaded version package:
-
-(After unpack the release package, the folder corresponding to the release version will be generated in the current directory. In this sample the generated folder is bottos_v3.4，the release package is bottos_ubuntu_v3.4.tar.gz)
-
-```
-tar zvxf bottos_ubuntu_v3.4.tar.gz
-```
-
-Release package file description
-
-    bottos        Node master program
-    bcli          Node supporting tools, details can be found in the bcli user description document on the official website
-    config.toml   The node configuration file is described in detail in the next section
-    genesis.toml  This file is used to uniquely identify an identified chain
-    Other 2 toml files  The file is prepared for the node to connect to the test network, which the user does not need to care about.
-
-### 4.1.2. Single node developing environment
-
-Refer to the documentation for a single-node developing environment： [Single node developing environment](./resource_en/Single_Node_mode_developing_environment.MD)
-
-### 4.1.3. Multi-Nodes developing environment
-
-For multi-nodes developing environment please refer to： [multi-nodes developing environment](./resource_en/Multi-Nodes_Developping_environment.MD)
-
-
-## 4.2. Smart Contract
-
-### 4.2.1. Introduction to Smart Contract
-
-### 4.2.2. C++ smart contract developing example
-
-[Writting Smart Contracts Using C++](./resource_en/Development_and_deployment_of_Smart_Contract(C++_Version).md)
-
-### 4.2.3. JavaScript smart contract developing example
-
-[Writting Smart Contracts Using JavaScript](./resource_en/Development_and_deployment_of_Smart_Contract(JavaScript_Version).md)
-
-## 4.3. BCLI Command
-
-[BCLI Specification](./resource_en/BCLI_Specification.md)
-
-
-## 4.4. DAPP Development
-
-### 4.4.1. JavaScript contract development example
-
-[DApp developing and debugging (JavaScript version)](./resource_en/DApp_developing_and_debugging(Java_Script_Version).md)
-
-
-
-## 4.5. Development tools
-
-### 4.5.1. Wallet SDK
-
-[Wallet SDK](https://github.com/bottos-project/bottos-js-crypto) already on Github
-
-### 4.5.2. C++ Smart Contract Development SDK
-
-[C++ Development SDK](https://github.com/bottos-project/contract-tool-cpp) already on Github
-
-### 4.5.3. JavaScript Smart Contract Development SDK
-
-[JavaScript Development SDK](https://github.com/bottos-project/contract-tool-js) already on Github
-
-
 
 # 5. Supernode startup guide
 
