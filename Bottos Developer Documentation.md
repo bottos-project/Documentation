@@ -101,7 +101,7 @@
 
 ### 3.1.1. Introduction to Smart Contract
 
-The BOTTOS smart contract supports both C++ and JavaScript. The smart contract that supports the C++ language is run on a virtual machine based on wagon/wasm. The coding rules and ABI are described separately for the user.
+The Bottos smart contract supports both C++ and JavaScript. The smart contract that supports the C++ language is run on a virtual machine based on wagon/wasm. The coding rules and ABI are described separately for the user.
 
 ### 3.1.2. C++ smart contract developing example
 
