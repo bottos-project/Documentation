@@ -1,3 +1,5 @@
+ ### deploy文件夹下包含了docker和k8s一键部署所需要的文件
+ 
  #### 当前最新镜像: yaoya12345/bottos:v1.3
 
 
