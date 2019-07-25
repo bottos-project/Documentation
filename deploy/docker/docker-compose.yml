@@ -1,0 +1,604 @@
+version: '3'
+services:
+  genesis:
+    image: yaoya12345/bottos:v1.0
+    container_name: genesis
+    restart: "on-failure"
+    stop_signal: SIGINT
+    ports:
+      - 18689:8689
+      - 19868:9868
+      - 16869:6869
+      - 16870:6870
+    networks:
+      - bottos_private
+    volumes:
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/shared_data:/Bottos/sharedData"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/genesis/datadir:/Bottos/datadir"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/genesis/configs:/Bottos/configs"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/genesis/log:/Bottos/log"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/genesis/mongodb:/Bottos/mongodb"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/genesis/keystores:/root/bot"
+    command: /Bottos/scripts/entrypoint.sh --type=genesis --account=bottos --mongodb=true --delegateNum=29 --peerlist=delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868
+  delegatep1:
+    image: yaoya12345/bottos:v1.0
+    container_name: delegatep1
+    restart: "on-failure"
+    stop_signal: SIGINT
+    ports:
+      - 18699:8689
+      - 19878:9868
+      - 16879:6869
+      - 16880:6870
+    networks:
+      - bottos_private
+    volumes:
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/shared_data:/Bottos/sharedData"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep1/datadir:/Bottos/datadir"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep1/configs:/Bottos/configs"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep1/log:/Bottos/log"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep1/mongodb:/Bottos/mongodb"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep1/keystores:/root/bot"
+    command: /Bottos/scripts/entrypoint.sh --type=delegate --account=delegatep1 --mongodb=true --delegateNum=29 --peerlist=genesis:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868
+  delegatep2:
+    image: yaoya12345/bottos:v1.0
+    container_name: delegatep2
+    restart: "on-failure"
+    stop_signal: SIGINT
+    ports:
+      - 18709:8689
+      - 19888:9868
+      - 16889:6869
+      - 16890:6870
+    networks:
+      - bottos_private
+    volumes:
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/shared_data:/Bottos/sharedData"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep2/datadir:/Bottos/datadir"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep2/configs:/Bottos/configs"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep2/log:/Bottos/log"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep2/mongodb:/Bottos/mongodb"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep2/keystores:/root/bot"
+    command: /Bottos/scripts/entrypoint.sh --type=delegate --account=delegatep2 --mongodb=true --delegateNum=29 --peerlist=genesis:9868,delegatep1:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868
+  delegatep3:
+    image: yaoya12345/bottos:v1.0
+    container_name: delegatep3
+    restart: "on-failure"
+    stop_signal: SIGINT
+    ports:
+      - 18719:8689
+      - 19898:9868
+      - 16899:6869
+      - 16900:6870
+    networks:
+      - bottos_private
+    volumes:
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/shared_data:/Bottos/sharedData"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep3/datadir:/Bottos/datadir"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep3/configs:/Bottos/configs"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep3/log:/Bottos/log"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep3/mongodb:/Bottos/mongodb"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep3/keystores:/root/bot"
+    command: /Bottos/scripts/entrypoint.sh --type=delegate --account=delegatep3 --mongodb=true --delegateNum=29 --peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868
+  delegatep4:
+    image: yaoya12345/bottos:v1.0
+    container_name: delegatep4
+    restart: "on-failure"
+    stop_signal: SIGINT
+    ports:
+      - 18729:8689
+      - 19908:9868
+      - 16909:6869
+      - 16910:6870
+    networks:
+      - bottos_private
+    volumes:
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/shared_data:/Bottos/sharedData"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep4/datadir:/Bottos/datadir"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep4/configs:/Bottos/configs"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep4/log:/Bottos/log"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep4/mongodb:/Bottos/mongodb"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep4/keystores:/root/bot"
+    command: /Bottos/scripts/entrypoint.sh --type=delegate --account=delegatep4 --mongodb=true --delegateNum=29 --peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868
+  delegatep5:
+    image: yaoya12345/bottos:v1.0
+    container_name: delegatep5
+    restart: "on-failure"
+    stop_signal: SIGINT
+    ports:
+      - 18739:8689
+      - 19918:9868
+      - 16919:6869
+      - 16920:6870
+    networks:
+      - bottos_private
+    volumes:
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/shared_data:/Bottos/sharedData"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep5/datadir:/Bottos/datadir"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep5/configs:/Bottos/configs"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep5/log:/Bottos/log"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep5/mongodb:/Bottos/mongodb"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep5/keystores:/root/bot"
+    command: /Bottos/scripts/entrypoint.sh --type=delegate --account=delegatep5 --mongodb=true --delegateNum=29 --peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868
+  delegatep6:
+    image: yaoya12345/bottos:v1.0
+    container_name: delegatep6
+    restart: "on-failure"
+    stop_signal: SIGINT
+    ports:
+      - 18749:8689
+      - 19928:9868
+      - 16929:6869
+      - 16930:6870
+    networks:
+      - bottos_private
+    volumes:
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/shared_data:/Bottos/sharedData"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep6/datadir:/Bottos/datadir"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep6/configs:/Bottos/configs"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep6/log:/Bottos/log"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep6/mongodb:/Bottos/mongodb"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep6/keystores:/root/bot"
+    command: /Bottos/scripts/entrypoint.sh --type=delegate --account=delegatep6 --mongodb=true --delegateNum=29 --peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868
+  delegatep7:
+    image: yaoya12345/bottos:v1.0
+    container_name: delegatep7
+    restart: "on-failure"
+    stop_signal: SIGINT
+    ports:
+      - 18759:8689
+      - 19938:9868
+      - 16939:6869
+      - 16940:6870
+    networks:
+      - bottos_private
+    volumes:
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/shared_data:/Bottos/sharedData"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep7/datadir:/Bottos/datadir"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep7/configs:/Bottos/configs"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep7/log:/Bottos/log"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep7/mongodb:/Bottos/mongodb"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep7/keystores:/root/bot"
+    command: /Bottos/scripts/entrypoint.sh --type=delegate --account=delegatep7 --mongodb=true --delegateNum=29 --peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868
+  delegatep8:
+    image: yaoya12345/bottos:v1.0
+    container_name: delegatep8
+    restart: "on-failure"
+    stop_signal: SIGINT
+    ports:
+      - 18769:8689
+      - 19948:9868
+      - 16949:6869
+      - 16950:6870
+    networks:
+      - bottos_private
+    volumes:
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/shared_data:/Bottos/sharedData"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep8/datadir:/Bottos/datadir"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep8/configs:/Bottos/configs"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep8/log:/Bottos/log"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep8/mongodb:/Bottos/mongodb"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep8/keystores:/root/bot"
+    command: /Bottos/scripts/entrypoint.sh --type=delegate --account=delegatep8 --mongodb=true --delegateNum=29 --peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868
+  delegatep9:
+    image: yaoya12345/bottos:v1.0
+    container_name: delegatep9
+    restart: "on-failure"
+    stop_signal: SIGINT
+    ports:
+      - 18779:8689
+      - 19958:9868
+      - 16959:6869
+      - 16960:6870
+    networks:
+      - bottos_private
+    volumes:
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/shared_data:/Bottos/sharedData"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep9/datadir:/Bottos/datadir"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep9/configs:/Bottos/configs"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep9/log:/Bottos/log"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep9/mongodb:/Bottos/mongodb"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep9/keystores:/root/bot"
+    command: /Bottos/scripts/entrypoint.sh --type=delegate --account=delegatep9 --mongodb=true --delegateNum=29 --peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868
+  delegatep10:
+    image: yaoya12345/bottos:v1.0
+    container_name: delegatep10
+    restart: "on-failure"
+    stop_signal: SIGINT
+    ports:
+      - 18789:8689
+      - 19968:9868
+      - 16969:6869
+      - 16970:6870
+    networks:
+      - bottos_private
+    volumes:
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/shared_data:/Bottos/sharedData"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep10/datadir:/Bottos/datadir"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep10/configs:/Bottos/configs"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep10/log:/Bottos/log"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep10/mongodb:/Bottos/mongodb"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep10/keystores:/root/bot"
+    command: /Bottos/scripts/entrypoint.sh --type=delegate --account=delegatep10 --mongodb=true --delegateNum=29 --peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868
+  delegatep11:
+    image: yaoya12345/bottos:v1.0
+    container_name: delegatep11
+    restart: "on-failure"
+    stop_signal: SIGINT
+    ports:
+      - 18799:8689
+      - 19978:9868
+      - 16979:6869
+      - 16980:6870
+    networks:
+      - bottos_private
+    volumes:
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/shared_data:/Bottos/sharedData"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep11/datadir:/Bottos/datadir"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep11/configs:/Bottos/configs"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep11/log:/Bottos/log"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep11/mongodb:/Bottos/mongodb"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep11/keystores:/root/bot"
+    command: /Bottos/scripts/entrypoint.sh --type=delegate --account=delegatep11 --mongodb=true --delegateNum=29 --peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868
+  delegatep12:
+    image: yaoya12345/bottos:v1.0
+    container_name: delegatep12
+    restart: "on-failure"
+    stop_signal: SIGINT
+    ports:
+      - 18809:8689
+      - 19988:9868
+      - 16989:6869
+      - 16990:6870
+    networks:
+      - bottos_private
+    volumes:
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/shared_data:/Bottos/sharedData"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep12/datadir:/Bottos/datadir"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep12/configs:/Bottos/configs"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep12/log:/Bottos/log"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep12/mongodb:/Bottos/mongodb"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep12/keystores:/root/bot"
+    command: /Bottos/scripts/entrypoint.sh --type=delegate --account=delegatep12 --mongodb=true --delegateNum=29 --peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868
+  delegatep13:
+    image: yaoya12345/bottos:v1.0
+    container_name: delegatep13
+    restart: "on-failure"
+    stop_signal: SIGINT
+    ports:
+      - 18819:8689
+      - 19998:9868
+      - 16999:6869
+      - 17000:6870
+    networks:
+      - bottos_private
+    volumes:
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/shared_data:/Bottos/sharedData"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep13/datadir:/Bottos/datadir"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep13/configs:/Bottos/configs"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep13/log:/Bottos/log"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep13/mongodb:/Bottos/mongodb"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep13/keystores:/root/bot"
+    command: /Bottos/scripts/entrypoint.sh --type=delegate --account=delegatep13 --mongodb=true --delegateNum=29 --peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868
+  delegatep14:
+    image: yaoya12345/bottos:v1.0
+    container_name: delegatep14
+    restart: "on-failure"
+    stop_signal: SIGINT
+    ports:
+      - 18829:8689
+      - 20008:9868
+      - 17009:6869
+      - 17010:6870
+    networks:
+      - bottos_private
+    volumes:
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/shared_data:/Bottos/sharedData"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep14/datadir:/Bottos/datadir"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep14/configs:/Bottos/configs"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep14/log:/Bottos/log"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep14/mongodb:/Bottos/mongodb"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep14/keystores:/root/bot"
+    command: /Bottos/scripts/entrypoint.sh --type=delegate --account=delegatep14 --mongodb=true --delegateNum=29 --peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868
+  delegatep15:
+    image: yaoya12345/bottos:v1.0
+    container_name: delegatep15
+    restart: "on-failure"
+    stop_signal: SIGINT
+    ports:
+      - 18839:8689
+      - 20018:9868
+      - 17019:6869
+      - 17020:6870
+    networks:
+      - bottos_private
+    volumes:
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/shared_data:/Bottos/sharedData"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep15/datadir:/Bottos/datadir"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep15/configs:/Bottos/configs"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep15/log:/Bottos/log"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep15/mongodb:/Bottos/mongodb"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep15/keystores:/root/bot"
+    command: /Bottos/scripts/entrypoint.sh --type=delegate --account=delegatep15 --mongodb=true --delegateNum=29 --peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868
+  delegatep16:
+    image: yaoya12345/bottos:v1.0
+    container_name: delegatep16
+    restart: "on-failure"
+    stop_signal: SIGINT
+    ports:
+      - 18849:8689
+      - 20028:9868
+      - 17029:6869
+      - 17030:6870
+    networks:
+      - bottos_private
+    volumes:
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/shared_data:/Bottos/sharedData"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep16/datadir:/Bottos/datadir"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep16/configs:/Bottos/configs"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep16/log:/Bottos/log"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep16/mongodb:/Bottos/mongodb"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep16/keystores:/root/bot"
+    command: /Bottos/scripts/entrypoint.sh --type=delegate --account=delegatep16 --mongodb=true --delegateNum=29 --peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868
+  delegatep17:
+    image: yaoya12345/bottos:v1.0
+    container_name: delegatep17
+    restart: "on-failure"
+    stop_signal: SIGINT
+    ports:
+      - 18859:8689
+      - 20038:9868
+      - 17039:6869
+      - 17040:6870
+    networks:
+      - bottos_private
+    volumes:
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/shared_data:/Bottos/sharedData"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep17/datadir:/Bottos/datadir"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep17/configs:/Bottos/configs"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep17/log:/Bottos/log"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep17/mongodb:/Bottos/mongodb"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep17/keystores:/root/bot"
+    command: /Bottos/scripts/entrypoint.sh --type=delegate --account=delegatep17 --mongodb=true --delegateNum=29 --peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868
+  delegatep18:
+    image: yaoya12345/bottos:v1.0
+    container_name: delegatep18
+    restart: "on-failure"
+    stop_signal: SIGINT
+    ports:
+      - 18869:8689
+      - 20048:9868
+      - 17049:6869
+      - 17050:6870
+    networks:
+      - bottos_private
+    volumes:
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/shared_data:/Bottos/sharedData"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep18/datadir:/Bottos/datadir"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep18/configs:/Bottos/configs"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep18/log:/Bottos/log"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep18/mongodb:/Bottos/mongodb"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep18/keystores:/root/bot"
+    command: /Bottos/scripts/entrypoint.sh --type=delegate --account=delegatep18 --mongodb=true --delegateNum=29 --peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868
+  delegatep19:
+    image: yaoya12345/bottos:v1.0
+    container_name: delegatep19
+    restart: "on-failure"
+    stop_signal: SIGINT
+    ports:
+      - 18879:8689
+      - 20058:9868
+      - 17059:6869
+      - 17060:6870
+    networks:
+      - bottos_private
+    volumes:
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/shared_data:/Bottos/sharedData"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep19/datadir:/Bottos/datadir"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep19/configs:/Bottos/configs"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep19/log:/Bottos/log"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep19/mongodb:/Bottos/mongodb"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep19/keystores:/root/bot"
+    command: /Bottos/scripts/entrypoint.sh --type=delegate --account=delegatep19 --mongodb=true --delegateNum=29 --peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868
+  delegatep20:
+    image: yaoya12345/bottos:v1.0
+    container_name: delegatep20
+    restart: "on-failure"
+    stop_signal: SIGINT
+    ports:
+      - 18889:8689
+      - 20068:9868
+      - 17069:6869
+      - 17070:6870
+    networks:
+      - bottos_private
+    volumes:
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/shared_data:/Bottos/sharedData"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep20/datadir:/Bottos/datadir"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep20/configs:/Bottos/configs"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep20/log:/Bottos/log"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep20/mongodb:/Bottos/mongodb"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep20/keystores:/root/bot"
+    command: /Bottos/scripts/entrypoint.sh --type=delegate --account=delegatep20 --mongodb=true --delegateNum=29 --peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868
+  delegatep21:
+    image: yaoya12345/bottos:v1.0
+    container_name: delegatep21
+    restart: "on-failure"
+    stop_signal: SIGINT
+    ports:
+      - 18899:8689
+      - 20078:9868
+      - 17079:6869
+      - 17080:6870
+    networks:
+      - bottos_private
+    volumes:
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/shared_data:/Bottos/sharedData"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep21/datadir:/Bottos/datadir"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep21/configs:/Bottos/configs"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep21/log:/Bottos/log"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep21/mongodb:/Bottos/mongodb"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep21/keystores:/root/bot"
+    command: /Bottos/scripts/entrypoint.sh --type=delegate --account=delegatep21 --mongodb=true --delegateNum=29 --peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868
+  delegatep22:
+    image: yaoya12345/bottos:v1.0
+    container_name: delegatep22
+    restart: "on-failure"
+    stop_signal: SIGINT
+    ports:
+      - 18909:8689
+      - 20088:9868
+      - 17089:6869
+      - 17090:6870
+    networks:
+      - bottos_private
+    volumes:
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/shared_data:/Bottos/sharedData"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep22/datadir:/Bottos/datadir"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep22/configs:/Bottos/configs"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep22/log:/Bottos/log"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep22/mongodb:/Bottos/mongodb"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep22/keystores:/root/bot"
+    command: /Bottos/scripts/entrypoint.sh --type=delegate --account=delegatep22 --mongodb=true --delegateNum=29 --peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868
+  delegatep23:
+    image: yaoya12345/bottos:v1.0
+    container_name: delegatep23
+    restart: "on-failure"
+    stop_signal: SIGINT
+    ports:
+      - 18919:8689
+      - 20098:9868
+      - 17099:6869
+      - 17100:6870
+    networks:
+      - bottos_private
+    volumes:
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/shared_data:/Bottos/sharedData"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep23/datadir:/Bottos/datadir"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep23/configs:/Bottos/configs"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep23/log:/Bottos/log"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep23/mongodb:/Bottos/mongodb"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep23/keystores:/root/bot"
+    command: /Bottos/scripts/entrypoint.sh --type=delegate --account=delegatep23 --mongodb=true --delegateNum=29 --peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868
+  delegatep24:
+    image: yaoya12345/bottos:v1.0
+    container_name: delegatep24
+    restart: "on-failure"
+    stop_signal: SIGINT
+    ports:
+      - 18929:8689
+      - 20108:9868
+      - 17109:6869
+      - 17110:6870
+    networks:
+      - bottos_private
+    volumes:
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/shared_data:/Bottos/sharedData"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep24/datadir:/Bottos/datadir"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep24/configs:/Bottos/configs"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep24/log:/Bottos/log"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep24/mongodb:/Bottos/mongodb"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep24/keystores:/root/bot"
+    command: /Bottos/scripts/entrypoint.sh --type=delegate --account=delegatep24 --mongodb=true --delegateNum=29 --peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868
+  delegatep25:
+    image: yaoya12345/bottos:v1.0
+    container_name: delegatep25
+    restart: "on-failure"
+    stop_signal: SIGINT
+    ports:
+      - 18939:8689
+      - 20118:9868
+      - 17119:6869
+      - 17120:6870
+    networks:
+      - bottos_private
+    volumes:
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/shared_data:/Bottos/sharedData"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep25/datadir:/Bottos/datadir"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep25/configs:/Bottos/configs"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep25/log:/Bottos/log"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep25/mongodb:/Bottos/mongodb"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep25/keystores:/root/bot"
+    command: /Bottos/scripts/entrypoint.sh --type=delegate --account=delegatep25 --mongodb=true --delegateNum=29 --peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868
+  delegatep26:
+    image: yaoya12345/bottos:v1.0
+    container_name: delegatep26
+    restart: "on-failure"
+    stop_signal: SIGINT
+    ports:
+      - 18949:8689
+      - 20128:9868
+      - 17129:6869
+      - 17130:6870
+    networks:
+      - bottos_private
+    volumes:
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/shared_data:/Bottos/sharedData"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep26/datadir:/Bottos/datadir"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep26/configs:/Bottos/configs"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep26/log:/Bottos/log"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep26/mongodb:/Bottos/mongodb"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep26/keystores:/root/bot"
+    command: /Bottos/scripts/entrypoint.sh --type=delegate --account=delegatep26 --mongodb=true --delegateNum=29 --peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868
+  delegatep27:
+    image: yaoya12345/bottos:v1.0
+    container_name: delegatep27
+    restart: "on-failure"
+    stop_signal: SIGINT
+    ports:
+      - 18959:8689
+      - 20138:9868
+      - 17139:6869
+      - 17140:6870
+    networks:
+      - bottos_private
+    volumes:
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/shared_data:/Bottos/sharedData"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep27/datadir:/Bottos/datadir"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep27/configs:/Bottos/configs"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep27/log:/Bottos/log"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep27/mongodb:/Bottos/mongodb"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep27/keystores:/root/bot"
+    command: /Bottos/scripts/entrypoint.sh --type=delegate --account=delegatep27 --mongodb=true --delegateNum=29 --peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep28:9868,delegatep29:9868
+  delegatep28:
+    image: yaoya12345/bottos:v1.0
+    container_name: delegatep28
+    restart: "on-failure"
+    stop_signal: SIGINT
+    ports:
+      - 18969:8689
+      - 20148:9868
+      - 17149:6869
+      - 17150:6870
+    networks:
+      - bottos_private
+    volumes:
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/shared_data:/Bottos/sharedData"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep28/datadir:/Bottos/datadir"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep28/configs:/Bottos/configs"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep28/log:/Bottos/log"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep28/mongodb:/Bottos/mongodb"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep28/keystores:/root/bot"
+    command: /Bottos/scripts/entrypoint.sh --type=delegate --account=delegatep28 --mongodb=true --delegateNum=29 --peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep29:9868
+  delegatep29:
+    image: yaoya12345/bottos:v1.0
+    container_name: delegatep29
+    restart: "on-failure"
+    stop_signal: SIGINT
+    ports:
+      - 18979:8689
+      - 20158:9868
+      - 17159:6869
+      - 17160:6870
+    networks:
+      - bottos_private
+    volumes:
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/shared_data:/Bottos/sharedData"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep29/datadir:/Bottos/datadir"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep29/configs:/Bottos/configs"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep29/log:/Bottos/log"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep29/mongodb:/Bottos/mongodb"
+      - "/home/irving/go/src/github.com/deploy/docker/Bottos_data/delegatep29/keystores:/root/bot"
+    command: /Bottos/scripts/entrypoint.sh --type=delegate --account=delegatep29 --mongodb=true --delegateNum=29 --peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868
+networks:
+  bottos_private:
