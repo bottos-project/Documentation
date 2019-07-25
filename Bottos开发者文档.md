@@ -342,7 +342,7 @@ root@JD-linglong3:~/code/bottos/bcli#
 创建部署目录，在该目录下执行
 
 ```shell
-docker pull yaoya12345/bottos:v1.0
+docker pull yaoya12345/bottos:v1.2
 ```
 
 成功进行拉取应该到如下打印
@@ -375,7 +375,7 @@ yaoya12345/bottos       v1.0                14daca277442        22 hours ago    
 
 #### 3.1.2 从Github下载脚本文件
 
-从Github下载脚本文件 makeDockerComposeYml.sh，并将下载的文件放到部署目录下。
+从[Github](https://github.com/bottos-project/Documentation/tree/master/deploy/docker)下载脚本文件 makeDockerComposeYml.sh，并将下载的文件放到部署目录下。
 
 在部署目录下使用 makeDockerComposeYml.sh 构建 docker-compose.yml
 
@@ -563,59 +563,29 @@ PreCommitBlock, number:324, time:2019-07-05 08:39:30, delegate:delegatep17, trxn
 
 ```
 
+管理容器基本指令
 
+```
+# 初始化
+$ docker-compose up -d
+
+# 停止
+$ docker-compose stop
+
+# 继续执行
+$ docker-compose start
+
+# 终止
+$ docker-compose down
+```
+
+#### 
 
 ### 3.2 一键多VM部署
 
 暂无
 
 ### 3.3 一键Kubernate部署
-
-#### 3.3.1 使用docker-compose管理单台主机上的多个生产节点容器
-
-- 进入 ./docker/
-
-  ```bash
-  $ cd ./docker
-  ```
-
-- 获取image，以下两种方法都可以
-
-  1. 自动从dockerhub上拉取（需要提前手动push到dockerhub）
-
-  ```
-  $ docker pull yaoya12345/bottos:v1.2
-  ```
-
-  2. 本地编译
-
-  ```
-  $ docker build -t yaoya12345/bottos:v1.2 .
-  ```
-
-- 生成docker-compose.yml
-
-  ```
-  $ ./makeDockerComposeYml.sh --delegateNum=$DELEGATE_NODE_NUM --mongodb=true|false --image=$IMAGE_NAME
-  ```
-
-- 管理容器基本指令
-
-  ```
-  # 初始化
-  $ docker-compose up -d
-  
-  # 停止
-  $ docker-compose stop
-  
-  # 继续执行
-  $ docker-compose start
-  
-  # 终止
-  $ docker-compose down
-  ```
-
-#### 3.3.2  使用kubernetes管理多台主机上的多个生产节点pod
 
 - 测试环境
 
