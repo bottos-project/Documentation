@@ -1,0 +1,2459 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: genesis
+  labels:
+    app: bottos
+    role: genesis
+spec:
+  selector:
+    app: bottos
+    role: genesis
+  clusterIP: None
+  ports:
+  - name: rest
+    port: 8689
+  - name: p2p
+    port: 9868
+  - name: wallet
+    port: 6869
+  - name: log
+    port: 6870
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: genesis
+  labels:
+    app: bottos
+    role: genesis
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: genesis
+    image: yaoya12345/bottos:v1.2
+    imagePullPolicy: IfNotPresent
+    command: ["/Bottos/scripts/entrypoint.sh","--type=genesis","--account=bottos","--mongodb=true","--delegateNum=29","--peerlist=delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868"]
+    resources:
+      requests:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+      limits:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+    lifecycle:
+      preStop:
+        exec:
+          command: ["/Bottos/scripts/stop.sh","--type=all"]
+    ports:
+    - name: rest
+      containerPort: 8689
+    - name: p2p
+      containerPort: 9868
+    - name: wallet
+      containerPort: 6869
+    - name: log
+      containerPort: 6870
+    volumeMounts:
+    - name: my-data
+      mountPath: /Bottos/sharedData
+      subPath: sharedData
+    - name: my-data
+      mountPath: /Bottos/datadir
+      subPath: genesis/datadir
+    - name: my-data
+      mountPath: /Bottos/configs
+      subPath: genesis/configs
+    - name: my-data
+      mountPath: /Bottos/log
+      subPath: genesis/log
+    - name: my-data
+      mountPath: /Bottos/mongodb
+      subPath: genesis/
+    - name: my-data
+      mountPath: /root/bot
+      subPath: genesis/keystoredir
+  volumes:
+    - name: my-data
+      persistentVolumeClaim:
+        claimName: nfs-pvc
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: delegatep1
+  labels:
+    app: bottos
+    role: delegatep1
+spec:
+  selector:
+    app: bottos
+    role: delegatep1
+  clusterIP: None
+  ports:
+  - name: rest
+    port: 8689
+  - name: p2p
+    port: 9868
+  - name: wallet
+    port: 6869
+  - name: log
+    port: 6870
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: delegatep1
+  labels:
+    app: bottos
+    role: delegatep1
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: genesis
+    image: yaoya12345/bottos:v1.2
+    imagePullPolicy: IfNotPresent
+    command: ["/Bottos/scripts/entrypoint.sh","--type=delegate","--account=delegatep1","--mongodb=true","--delegateNum=29","--peerlist=genesis:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868"]
+    resources:
+      requests:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+      limits:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+    lifecycle:
+      preStop:
+        exec:
+          command: ["/Bottos/scripts/stop.sh","--type=all"]
+    ports:
+    - name: rest
+      containerPort: 8689
+    - name: p2p
+      containerPort: 9868
+    - name: wallet
+      containerPort: 6869
+    - name: log
+      containerPort: 6870
+    volumeMounts:
+    - name: my-data
+      mountPath: /Bottos/sharedData
+      subPath: sharedData
+    - name: my-data
+      mountPath: /Bottos/datadir
+      subPath: delegatep1/datadir
+    - name: my-data
+      mountPath: /Bottos/configs
+      subPath: delegatep1/configs
+    - name: my-data
+      mountPath: /Bottos/log
+      subPath: delegatep1/log
+    - name: my-data
+      mountPath: /Bottos/mongodb
+      subPath: delegatep1/
+    - name: my-data
+      mountPath: /root/bot
+      subPath: delegatep1/keystoredir
+  volumes:
+    - name: my-data
+      persistentVolumeClaim:
+        claimName: nfs-pvc
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: delegatep2
+  labels:
+    app: bottos
+    role: delegatep2
+spec:
+  selector:
+    app: bottos
+    role: delegatep2
+  clusterIP: None
+  ports:
+  - name: rest
+    port: 8689
+  - name: p2p
+    port: 9868
+  - name: wallet
+    port: 6869
+  - name: log
+    port: 6870
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: delegatep2
+  labels:
+    app: bottos
+    role: delegatep2
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: genesis
+    image: yaoya12345/bottos:v1.2
+    imagePullPolicy: IfNotPresent
+    command: ["/Bottos/scripts/entrypoint.sh","--type=delegate","--account=delegatep2","--mongodb=true","--delegateNum=29","--peerlist=genesis:9868,delegatep1:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868"]
+    resources:
+      requests:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+      limits:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+    lifecycle:
+      preStop:
+        exec:
+          command: ["/Bottos/scripts/stop.sh","--type=all"]
+    ports:
+    - name: rest
+      containerPort: 8689
+    - name: p2p
+      containerPort: 9868
+    - name: wallet
+      containerPort: 6869
+    - name: log
+      containerPort: 6870
+    volumeMounts:
+    - name: my-data
+      mountPath: /Bottos/sharedData
+      subPath: sharedData
+    - name: my-data
+      mountPath: /Bottos/datadir
+      subPath: delegatep2/datadir
+    - name: my-data
+      mountPath: /Bottos/configs
+      subPath: delegatep2/configs
+    - name: my-data
+      mountPath: /Bottos/log
+      subPath: delegatep2/log
+    - name: my-data
+      mountPath: /Bottos/mongodb
+      subPath: delegatep2/
+    - name: my-data
+      mountPath: /root/bot
+      subPath: delegatep2/keystoredir
+  volumes:
+    - name: my-data
+      persistentVolumeClaim:
+        claimName: nfs-pvc
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: delegatep3
+  labels:
+    app: bottos
+    role: delegatep3
+spec:
+  selector:
+    app: bottos
+    role: delegatep3
+  clusterIP: None
+  ports:
+  - name: rest
+    port: 8689
+  - name: p2p
+    port: 9868
+  - name: wallet
+    port: 6869
+  - name: log
+    port: 6870
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: delegatep3
+  labels:
+    app: bottos
+    role: delegatep3
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: genesis
+    image: yaoya12345/bottos:v1.2
+    imagePullPolicy: IfNotPresent
+    command: ["/Bottos/scripts/entrypoint.sh","--type=delegate","--account=delegatep3","--mongodb=true","--delegateNum=29","--peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868"]
+    resources:
+      requests:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+      limits:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+    lifecycle:
+      preStop:
+        exec:
+          command: ["/Bottos/scripts/stop.sh","--type=all"]
+    ports:
+    - name: rest
+      containerPort: 8689
+    - name: p2p
+      containerPort: 9868
+    - name: wallet
+      containerPort: 6869
+    - name: log
+      containerPort: 6870
+    volumeMounts:
+    - name: my-data
+      mountPath: /Bottos/sharedData
+      subPath: sharedData
+    - name: my-data
+      mountPath: /Bottos/datadir
+      subPath: delegatep3/datadir
+    - name: my-data
+      mountPath: /Bottos/configs
+      subPath: delegatep3/configs
+    - name: my-data
+      mountPath: /Bottos/log
+      subPath: delegatep3/log
+    - name: my-data
+      mountPath: /Bottos/mongodb
+      subPath: delegatep3/
+    - name: my-data
+      mountPath: /root/bot
+      subPath: delegatep3/keystoredir
+  volumes:
+    - name: my-data
+      persistentVolumeClaim:
+        claimName: nfs-pvc
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: delegatep4
+  labels:
+    app: bottos
+    role: delegatep4
+spec:
+  selector:
+    app: bottos
+    role: delegatep4
+  clusterIP: None
+  ports:
+  - name: rest
+    port: 8689
+  - name: p2p
+    port: 9868
+  - name: wallet
+    port: 6869
+  - name: log
+    port: 6870
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: delegatep4
+  labels:
+    app: bottos
+    role: delegatep4
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: genesis
+    image: yaoya12345/bottos:v1.2
+    imagePullPolicy: IfNotPresent
+    command: ["/Bottos/scripts/entrypoint.sh","--type=delegate","--account=delegatep4","--mongodb=true","--delegateNum=29","--peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868"]
+    resources:
+      requests:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+      limits:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+    lifecycle:
+      preStop:
+        exec:
+          command: ["/Bottos/scripts/stop.sh","--type=all"]
+    ports:
+    - name: rest
+      containerPort: 8689
+    - name: p2p
+      containerPort: 9868
+    - name: wallet
+      containerPort: 6869
+    - name: log
+      containerPort: 6870
+    volumeMounts:
+    - name: my-data
+      mountPath: /Bottos/sharedData
+      subPath: sharedData
+    - name: my-data
+      mountPath: /Bottos/datadir
+      subPath: delegatep4/datadir
+    - name: my-data
+      mountPath: /Bottos/configs
+      subPath: delegatep4/configs
+    - name: my-data
+      mountPath: /Bottos/log
+      subPath: delegatep4/log
+    - name: my-data
+      mountPath: /Bottos/mongodb
+      subPath: delegatep4/
+    - name: my-data
+      mountPath: /root/bot
+      subPath: delegatep4/keystoredir
+  volumes:
+    - name: my-data
+      persistentVolumeClaim:
+        claimName: nfs-pvc
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: delegatep5
+  labels:
+    app: bottos
+    role: delegatep5
+spec:
+  selector:
+    app: bottos
+    role: delegatep5
+  clusterIP: None
+  ports:
+  - name: rest
+    port: 8689
+  - name: p2p
+    port: 9868
+  - name: wallet
+    port: 6869
+  - name: log
+    port: 6870
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: delegatep5
+  labels:
+    app: bottos
+    role: delegatep5
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: genesis
+    image: yaoya12345/bottos:v1.2
+    imagePullPolicy: IfNotPresent
+    command: ["/Bottos/scripts/entrypoint.sh","--type=delegate","--account=delegatep5","--mongodb=true","--delegateNum=29","--peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868"]
+    resources:
+      requests:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+      limits:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+    lifecycle:
+      preStop:
+        exec:
+          command: ["/Bottos/scripts/stop.sh","--type=all"]
+    ports:
+    - name: rest
+      containerPort: 8689
+    - name: p2p
+      containerPort: 9868
+    - name: wallet
+      containerPort: 6869
+    - name: log
+      containerPort: 6870
+    volumeMounts:
+    - name: my-data
+      mountPath: /Bottos/sharedData
+      subPath: sharedData
+    - name: my-data
+      mountPath: /Bottos/datadir
+      subPath: delegatep5/datadir
+    - name: my-data
+      mountPath: /Bottos/configs
+      subPath: delegatep5/configs
+    - name: my-data
+      mountPath: /Bottos/log
+      subPath: delegatep5/log
+    - name: my-data
+      mountPath: /Bottos/mongodb
+      subPath: delegatep5/
+    - name: my-data
+      mountPath: /root/bot
+      subPath: delegatep5/keystoredir
+  volumes:
+    - name: my-data
+      persistentVolumeClaim:
+        claimName: nfs-pvc
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: delegatep6
+  labels:
+    app: bottos
+    role: delegatep6
+spec:
+  selector:
+    app: bottos
+    role: delegatep6
+  clusterIP: None
+  ports:
+  - name: rest
+    port: 8689
+  - name: p2p
+    port: 9868
+  - name: wallet
+    port: 6869
+  - name: log
+    port: 6870
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: delegatep6
+  labels:
+    app: bottos
+    role: delegatep6
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: genesis
+    image: yaoya12345/bottos:v1.2
+    imagePullPolicy: IfNotPresent
+    command: ["/Bottos/scripts/entrypoint.sh","--type=delegate","--account=delegatep6","--mongodb=true","--delegateNum=29","--peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868"]
+    resources:
+      requests:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+      limits:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+    lifecycle:
+      preStop:
+        exec:
+          command: ["/Bottos/scripts/stop.sh","--type=all"]
+    ports:
+    - name: rest
+      containerPort: 8689
+    - name: p2p
+      containerPort: 9868
+    - name: wallet
+      containerPort: 6869
+    - name: log
+      containerPort: 6870
+    volumeMounts:
+    - name: my-data
+      mountPath: /Bottos/sharedData
+      subPath: sharedData
+    - name: my-data
+      mountPath: /Bottos/datadir
+      subPath: delegatep6/datadir
+    - name: my-data
+      mountPath: /Bottos/configs
+      subPath: delegatep6/configs
+    - name: my-data
+      mountPath: /Bottos/log
+      subPath: delegatep6/log
+    - name: my-data
+      mountPath: /Bottos/mongodb
+      subPath: delegatep6/
+    - name: my-data
+      mountPath: /root/bot
+      subPath: delegatep6/keystoredir
+  volumes:
+    - name: my-data
+      persistentVolumeClaim:
+        claimName: nfs-pvc
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: delegatep7
+  labels:
+    app: bottos
+    role: delegatep7
+spec:
+  selector:
+    app: bottos
+    role: delegatep7
+  clusterIP: None
+  ports:
+  - name: rest
+    port: 8689
+  - name: p2p
+    port: 9868
+  - name: wallet
+    port: 6869
+  - name: log
+    port: 6870
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: delegatep7
+  labels:
+    app: bottos
+    role: delegatep7
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: genesis
+    image: yaoya12345/bottos:v1.2
+    imagePullPolicy: IfNotPresent
+    command: ["/Bottos/scripts/entrypoint.sh","--type=delegate","--account=delegatep7","--mongodb=true","--delegateNum=29","--peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868"]
+    resources:
+      requests:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+      limits:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+    lifecycle:
+      preStop:
+        exec:
+          command: ["/Bottos/scripts/stop.sh","--type=all"]
+    ports:
+    - name: rest
+      containerPort: 8689
+    - name: p2p
+      containerPort: 9868
+    - name: wallet
+      containerPort: 6869
+    - name: log
+      containerPort: 6870
+    volumeMounts:
+    - name: my-data
+      mountPath: /Bottos/sharedData
+      subPath: sharedData
+    - name: my-data
+      mountPath: /Bottos/datadir
+      subPath: delegatep7/datadir
+    - name: my-data
+      mountPath: /Bottos/configs
+      subPath: delegatep7/configs
+    - name: my-data
+      mountPath: /Bottos/log
+      subPath: delegatep7/log
+    - name: my-data
+      mountPath: /Bottos/mongodb
+      subPath: delegatep7/
+    - name: my-data
+      mountPath: /root/bot
+      subPath: delegatep7/keystoredir
+  volumes:
+    - name: my-data
+      persistentVolumeClaim:
+        claimName: nfs-pvc
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: delegatep8
+  labels:
+    app: bottos
+    role: delegatep8
+spec:
+  selector:
+    app: bottos
+    role: delegatep8
+  clusterIP: None
+  ports:
+  - name: rest
+    port: 8689
+  - name: p2p
+    port: 9868
+  - name: wallet
+    port: 6869
+  - name: log
+    port: 6870
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: delegatep8
+  labels:
+    app: bottos
+    role: delegatep8
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: genesis
+    image: yaoya12345/bottos:v1.2
+    imagePullPolicy: IfNotPresent
+    command: ["/Bottos/scripts/entrypoint.sh","--type=delegate","--account=delegatep8","--mongodb=true","--delegateNum=29","--peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868"]
+    resources:
+      requests:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+      limits:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+    lifecycle:
+      preStop:
+        exec:
+          command: ["/Bottos/scripts/stop.sh","--type=all"]
+    ports:
+    - name: rest
+      containerPort: 8689
+    - name: p2p
+      containerPort: 9868
+    - name: wallet
+      containerPort: 6869
+    - name: log
+      containerPort: 6870
+    volumeMounts:
+    - name: my-data
+      mountPath: /Bottos/sharedData
+      subPath: sharedData
+    - name: my-data
+      mountPath: /Bottos/datadir
+      subPath: delegatep8/datadir
+    - name: my-data
+      mountPath: /Bottos/configs
+      subPath: delegatep8/configs
+    - name: my-data
+      mountPath: /Bottos/log
+      subPath: delegatep8/log
+    - name: my-data
+      mountPath: /Bottos/mongodb
+      subPath: delegatep8/
+    - name: my-data
+      mountPath: /root/bot
+      subPath: delegatep8/keystoredir
+  volumes:
+    - name: my-data
+      persistentVolumeClaim:
+        claimName: nfs-pvc
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: delegatep9
+  labels:
+    app: bottos
+    role: delegatep9
+spec:
+  selector:
+    app: bottos
+    role: delegatep9
+  clusterIP: None
+  ports:
+  - name: rest
+    port: 8689
+  - name: p2p
+    port: 9868
+  - name: wallet
+    port: 6869
+  - name: log
+    port: 6870
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: delegatep9
+  labels:
+    app: bottos
+    role: delegatep9
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: genesis
+    image: yaoya12345/bottos:v1.2
+    imagePullPolicy: IfNotPresent
+    command: ["/Bottos/scripts/entrypoint.sh","--type=delegate","--account=delegatep9","--mongodb=true","--delegateNum=29","--peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868"]
+    resources:
+      requests:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+      limits:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+    lifecycle:
+      preStop:
+        exec:
+          command: ["/Bottos/scripts/stop.sh","--type=all"]
+    ports:
+    - name: rest
+      containerPort: 8689
+    - name: p2p
+      containerPort: 9868
+    - name: wallet
+      containerPort: 6869
+    - name: log
+      containerPort: 6870
+    volumeMounts:
+    - name: my-data
+      mountPath: /Bottos/sharedData
+      subPath: sharedData
+    - name: my-data
+      mountPath: /Bottos/datadir
+      subPath: delegatep9/datadir
+    - name: my-data
+      mountPath: /Bottos/configs
+      subPath: delegatep9/configs
+    - name: my-data
+      mountPath: /Bottos/log
+      subPath: delegatep9/log
+    - name: my-data
+      mountPath: /Bottos/mongodb
+      subPath: delegatep9/
+    - name: my-data
+      mountPath: /root/bot
+      subPath: delegatep9/keystoredir
+  volumes:
+    - name: my-data
+      persistentVolumeClaim:
+        claimName: nfs-pvc
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: delegatep10
+  labels:
+    app: bottos
+    role: delegatep10
+spec:
+  selector:
+    app: bottos
+    role: delegatep10
+  clusterIP: None
+  ports:
+  - name: rest
+    port: 8689
+  - name: p2p
+    port: 9868
+  - name: wallet
+    port: 6869
+  - name: log
+    port: 6870
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: delegatep10
+  labels:
+    app: bottos
+    role: delegatep10
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: genesis
+    image: yaoya12345/bottos:v1.2
+    imagePullPolicy: IfNotPresent
+    command: ["/Bottos/scripts/entrypoint.sh","--type=delegate","--account=delegatep10","--mongodb=true","--delegateNum=29","--peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868"]
+    resources:
+      requests:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+      limits:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+    lifecycle:
+      preStop:
+        exec:
+          command: ["/Bottos/scripts/stop.sh","--type=all"]
+    ports:
+    - name: rest
+      containerPort: 8689
+    - name: p2p
+      containerPort: 9868
+    - name: wallet
+      containerPort: 6869
+    - name: log
+      containerPort: 6870
+    volumeMounts:
+    - name: my-data
+      mountPath: /Bottos/sharedData
+      subPath: sharedData
+    - name: my-data
+      mountPath: /Bottos/datadir
+      subPath: delegatep10/datadir
+    - name: my-data
+      mountPath: /Bottos/configs
+      subPath: delegatep10/configs
+    - name: my-data
+      mountPath: /Bottos/log
+      subPath: delegatep10/log
+    - name: my-data
+      mountPath: /Bottos/mongodb
+      subPath: delegatep10/
+    - name: my-data
+      mountPath: /root/bot
+      subPath: delegatep10/keystoredir
+  volumes:
+    - name: my-data
+      persistentVolumeClaim:
+        claimName: nfs-pvc
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: delegatep11
+  labels:
+    app: bottos
+    role: delegatep11
+spec:
+  selector:
+    app: bottos
+    role: delegatep11
+  clusterIP: None
+  ports:
+  - name: rest
+    port: 8689
+  - name: p2p
+    port: 9868
+  - name: wallet
+    port: 6869
+  - name: log
+    port: 6870
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: delegatep11
+  labels:
+    app: bottos
+    role: delegatep11
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: genesis
+    image: yaoya12345/bottos:v1.2
+    imagePullPolicy: IfNotPresent
+    command: ["/Bottos/scripts/entrypoint.sh","--type=delegate","--account=delegatep11","--mongodb=true","--delegateNum=29","--peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868"]
+    resources:
+      requests:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+      limits:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+    lifecycle:
+      preStop:
+        exec:
+          command: ["/Bottos/scripts/stop.sh","--type=all"]
+    ports:
+    - name: rest
+      containerPort: 8689
+    - name: p2p
+      containerPort: 9868
+    - name: wallet
+      containerPort: 6869
+    - name: log
+      containerPort: 6870
+    volumeMounts:
+    - name: my-data
+      mountPath: /Bottos/sharedData
+      subPath: sharedData
+    - name: my-data
+      mountPath: /Bottos/datadir
+      subPath: delegatep11/datadir
+    - name: my-data
+      mountPath: /Bottos/configs
+      subPath: delegatep11/configs
+    - name: my-data
+      mountPath: /Bottos/log
+      subPath: delegatep11/log
+    - name: my-data
+      mountPath: /Bottos/mongodb
+      subPath: delegatep11/
+    - name: my-data
+      mountPath: /root/bot
+      subPath: delegatep11/keystoredir
+  volumes:
+    - name: my-data
+      persistentVolumeClaim:
+        claimName: nfs-pvc
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: delegatep12
+  labels:
+    app: bottos
+    role: delegatep12
+spec:
+  selector:
+    app: bottos
+    role: delegatep12
+  clusterIP: None
+  ports:
+  - name: rest
+    port: 8689
+  - name: p2p
+    port: 9868
+  - name: wallet
+    port: 6869
+  - name: log
+    port: 6870
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: delegatep12
+  labels:
+    app: bottos
+    role: delegatep12
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: genesis
+    image: yaoya12345/bottos:v1.2
+    imagePullPolicy: IfNotPresent
+    command: ["/Bottos/scripts/entrypoint.sh","--type=delegate","--account=delegatep12","--mongodb=true","--delegateNum=29","--peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868"]
+    resources:
+      requests:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+      limits:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+    lifecycle:
+      preStop:
+        exec:
+          command: ["/Bottos/scripts/stop.sh","--type=all"]
+    ports:
+    - name: rest
+      containerPort: 8689
+    - name: p2p
+      containerPort: 9868
+    - name: wallet
+      containerPort: 6869
+    - name: log
+      containerPort: 6870
+    volumeMounts:
+    - name: my-data
+      mountPath: /Bottos/sharedData
+      subPath: sharedData
+    - name: my-data
+      mountPath: /Bottos/datadir
+      subPath: delegatep12/datadir
+    - name: my-data
+      mountPath: /Bottos/configs
+      subPath: delegatep12/configs
+    - name: my-data
+      mountPath: /Bottos/log
+      subPath: delegatep12/log
+    - name: my-data
+      mountPath: /Bottos/mongodb
+      subPath: delegatep12/
+    - name: my-data
+      mountPath: /root/bot
+      subPath: delegatep12/keystoredir
+  volumes:
+    - name: my-data
+      persistentVolumeClaim:
+        claimName: nfs-pvc
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: delegatep13
+  labels:
+    app: bottos
+    role: delegatep13
+spec:
+  selector:
+    app: bottos
+    role: delegatep13
+  clusterIP: None
+  ports:
+  - name: rest
+    port: 8689
+  - name: p2p
+    port: 9868
+  - name: wallet
+    port: 6869
+  - name: log
+    port: 6870
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: delegatep13
+  labels:
+    app: bottos
+    role: delegatep13
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: genesis
+    image: yaoya12345/bottos:v1.2
+    imagePullPolicy: IfNotPresent
+    command: ["/Bottos/scripts/entrypoint.sh","--type=delegate","--account=delegatep13","--mongodb=true","--delegateNum=29","--peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868"]
+    resources:
+      requests:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+      limits:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+    lifecycle:
+      preStop:
+        exec:
+          command: ["/Bottos/scripts/stop.sh","--type=all"]
+    ports:
+    - name: rest
+      containerPort: 8689
+    - name: p2p
+      containerPort: 9868
+    - name: wallet
+      containerPort: 6869
+    - name: log
+      containerPort: 6870
+    volumeMounts:
+    - name: my-data
+      mountPath: /Bottos/sharedData
+      subPath: sharedData
+    - name: my-data
+      mountPath: /Bottos/datadir
+      subPath: delegatep13/datadir
+    - name: my-data
+      mountPath: /Bottos/configs
+      subPath: delegatep13/configs
+    - name: my-data
+      mountPath: /Bottos/log
+      subPath: delegatep13/log
+    - name: my-data
+      mountPath: /Bottos/mongodb
+      subPath: delegatep13/
+    - name: my-data
+      mountPath: /root/bot
+      subPath: delegatep13/keystoredir
+  volumes:
+    - name: my-data
+      persistentVolumeClaim:
+        claimName: nfs-pvc
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: delegatep14
+  labels:
+    app: bottos
+    role: delegatep14
+spec:
+  selector:
+    app: bottos
+    role: delegatep14
+  clusterIP: None
+  ports:
+  - name: rest
+    port: 8689
+  - name: p2p
+    port: 9868
+  - name: wallet
+    port: 6869
+  - name: log
+    port: 6870
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: delegatep14
+  labels:
+    app: bottos
+    role: delegatep14
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: genesis
+    image: yaoya12345/bottos:v1.2
+    imagePullPolicy: IfNotPresent
+    command: ["/Bottos/scripts/entrypoint.sh","--type=delegate","--account=delegatep14","--mongodb=true","--delegateNum=29","--peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868"]
+    resources:
+      requests:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+      limits:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+    lifecycle:
+      preStop:
+        exec:
+          command: ["/Bottos/scripts/stop.sh","--type=all"]
+    ports:
+    - name: rest
+      containerPort: 8689
+    - name: p2p
+      containerPort: 9868
+    - name: wallet
+      containerPort: 6869
+    - name: log
+      containerPort: 6870
+    volumeMounts:
+    - name: my-data
+      mountPath: /Bottos/sharedData
+      subPath: sharedData
+    - name: my-data
+      mountPath: /Bottos/datadir
+      subPath: delegatep14/datadir
+    - name: my-data
+      mountPath: /Bottos/configs
+      subPath: delegatep14/configs
+    - name: my-data
+      mountPath: /Bottos/log
+      subPath: delegatep14/log
+    - name: my-data
+      mountPath: /Bottos/mongodb
+      subPath: delegatep14/
+    - name: my-data
+      mountPath: /root/bot
+      subPath: delegatep14/keystoredir
+  volumes:
+    - name: my-data
+      persistentVolumeClaim:
+        claimName: nfs-pvc
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: delegatep15
+  labels:
+    app: bottos
+    role: delegatep15
+spec:
+  selector:
+    app: bottos
+    role: delegatep15
+  clusterIP: None
+  ports:
+  - name: rest
+    port: 8689
+  - name: p2p
+    port: 9868
+  - name: wallet
+    port: 6869
+  - name: log
+    port: 6870
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: delegatep15
+  labels:
+    app: bottos
+    role: delegatep15
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: genesis
+    image: yaoya12345/bottos:v1.2
+    imagePullPolicy: IfNotPresent
+    command: ["/Bottos/scripts/entrypoint.sh","--type=delegate","--account=delegatep15","--mongodb=true","--delegateNum=29","--peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868"]
+    resources:
+      requests:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+      limits:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+    lifecycle:
+      preStop:
+        exec:
+          command: ["/Bottos/scripts/stop.sh","--type=all"]
+    ports:
+    - name: rest
+      containerPort: 8689
+    - name: p2p
+      containerPort: 9868
+    - name: wallet
+      containerPort: 6869
+    - name: log
+      containerPort: 6870
+    volumeMounts:
+    - name: my-data
+      mountPath: /Bottos/sharedData
+      subPath: sharedData
+    - name: my-data
+      mountPath: /Bottos/datadir
+      subPath: delegatep15/datadir
+    - name: my-data
+      mountPath: /Bottos/configs
+      subPath: delegatep15/configs
+    - name: my-data
+      mountPath: /Bottos/log
+      subPath: delegatep15/log
+    - name: my-data
+      mountPath: /Bottos/mongodb
+      subPath: delegatep15/
+    - name: my-data
+      mountPath: /root/bot
+      subPath: delegatep15/keystoredir
+  volumes:
+    - name: my-data
+      persistentVolumeClaim:
+        claimName: nfs-pvc
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: delegatep16
+  labels:
+    app: bottos
+    role: delegatep16
+spec:
+  selector:
+    app: bottos
+    role: delegatep16
+  clusterIP: None
+  ports:
+  - name: rest
+    port: 8689
+  - name: p2p
+    port: 9868
+  - name: wallet
+    port: 6869
+  - name: log
+    port: 6870
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: delegatep16
+  labels:
+    app: bottos
+    role: delegatep16
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: genesis
+    image: yaoya12345/bottos:v1.2
+    imagePullPolicy: IfNotPresent
+    command: ["/Bottos/scripts/entrypoint.sh","--type=delegate","--account=delegatep16","--mongodb=true","--delegateNum=29","--peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868"]
+    resources:
+      requests:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+      limits:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+    lifecycle:
+      preStop:
+        exec:
+          command: ["/Bottos/scripts/stop.sh","--type=all"]
+    ports:
+    - name: rest
+      containerPort: 8689
+    - name: p2p
+      containerPort: 9868
+    - name: wallet
+      containerPort: 6869
+    - name: log
+      containerPort: 6870
+    volumeMounts:
+    - name: my-data
+      mountPath: /Bottos/sharedData
+      subPath: sharedData
+    - name: my-data
+      mountPath: /Bottos/datadir
+      subPath: delegatep16/datadir
+    - name: my-data
+      mountPath: /Bottos/configs
+      subPath: delegatep16/configs
+    - name: my-data
+      mountPath: /Bottos/log
+      subPath: delegatep16/log
+    - name: my-data
+      mountPath: /Bottos/mongodb
+      subPath: delegatep16/
+    - name: my-data
+      mountPath: /root/bot
+      subPath: delegatep16/keystoredir
+  volumes:
+    - name: my-data
+      persistentVolumeClaim:
+        claimName: nfs-pvc
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: delegatep17
+  labels:
+    app: bottos
+    role: delegatep17
+spec:
+  selector:
+    app: bottos
+    role: delegatep17
+  clusterIP: None
+  ports:
+  - name: rest
+    port: 8689
+  - name: p2p
+    port: 9868
+  - name: wallet
+    port: 6869
+  - name: log
+    port: 6870
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: delegatep17
+  labels:
+    app: bottos
+    role: delegatep17
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: genesis
+    image: yaoya12345/bottos:v1.2
+    imagePullPolicy: IfNotPresent
+    command: ["/Bottos/scripts/entrypoint.sh","--type=delegate","--account=delegatep17","--mongodb=true","--delegateNum=29","--peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868"]
+    resources:
+      requests:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+      limits:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+    lifecycle:
+      preStop:
+        exec:
+          command: ["/Bottos/scripts/stop.sh","--type=all"]
+    ports:
+    - name: rest
+      containerPort: 8689
+    - name: p2p
+      containerPort: 9868
+    - name: wallet
+      containerPort: 6869
+    - name: log
+      containerPort: 6870
+    volumeMounts:
+    - name: my-data
+      mountPath: /Bottos/sharedData
+      subPath: sharedData
+    - name: my-data
+      mountPath: /Bottos/datadir
+      subPath: delegatep17/datadir
+    - name: my-data
+      mountPath: /Bottos/configs
+      subPath: delegatep17/configs
+    - name: my-data
+      mountPath: /Bottos/log
+      subPath: delegatep17/log
+    - name: my-data
+      mountPath: /Bottos/mongodb
+      subPath: delegatep17/
+    - name: my-data
+      mountPath: /root/bot
+      subPath: delegatep17/keystoredir
+  volumes:
+    - name: my-data
+      persistentVolumeClaim:
+        claimName: nfs-pvc
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: delegatep18
+  labels:
+    app: bottos
+    role: delegatep18
+spec:
+  selector:
+    app: bottos
+    role: delegatep18
+  clusterIP: None
+  ports:
+  - name: rest
+    port: 8689
+  - name: p2p
+    port: 9868
+  - name: wallet
+    port: 6869
+  - name: log
+    port: 6870
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: delegatep18
+  labels:
+    app: bottos
+    role: delegatep18
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: genesis
+    image: yaoya12345/bottos:v1.2
+    imagePullPolicy: IfNotPresent
+    command: ["/Bottos/scripts/entrypoint.sh","--type=delegate","--account=delegatep18","--mongodb=true","--delegateNum=29","--peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868"]
+    resources:
+      requests:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+      limits:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+    lifecycle:
+      preStop:
+        exec:
+          command: ["/Bottos/scripts/stop.sh","--type=all"]
+    ports:
+    - name: rest
+      containerPort: 8689
+    - name: p2p
+      containerPort: 9868
+    - name: wallet
+      containerPort: 6869
+    - name: log
+      containerPort: 6870
+    volumeMounts:
+    - name: my-data
+      mountPath: /Bottos/sharedData
+      subPath: sharedData
+    - name: my-data
+      mountPath: /Bottos/datadir
+      subPath: delegatep18/datadir
+    - name: my-data
+      mountPath: /Bottos/configs
+      subPath: delegatep18/configs
+    - name: my-data
+      mountPath: /Bottos/log
+      subPath: delegatep18/log
+    - name: my-data
+      mountPath: /Bottos/mongodb
+      subPath: delegatep18/
+    - name: my-data
+      mountPath: /root/bot
+      subPath: delegatep18/keystoredir
+  volumes:
+    - name: my-data
+      persistentVolumeClaim:
+        claimName: nfs-pvc
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: delegatep19
+  labels:
+    app: bottos
+    role: delegatep19
+spec:
+  selector:
+    app: bottos
+    role: delegatep19
+  clusterIP: None
+  ports:
+  - name: rest
+    port: 8689
+  - name: p2p
+    port: 9868
+  - name: wallet
+    port: 6869
+  - name: log
+    port: 6870
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: delegatep19
+  labels:
+    app: bottos
+    role: delegatep19
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: genesis
+    image: yaoya12345/bottos:v1.2
+    imagePullPolicy: IfNotPresent
+    command: ["/Bottos/scripts/entrypoint.sh","--type=delegate","--account=delegatep19","--mongodb=true","--delegateNum=29","--peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868"]
+    resources:
+      requests:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+      limits:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+    lifecycle:
+      preStop:
+        exec:
+          command: ["/Bottos/scripts/stop.sh","--type=all"]
+    ports:
+    - name: rest
+      containerPort: 8689
+    - name: p2p
+      containerPort: 9868
+    - name: wallet
+      containerPort: 6869
+    - name: log
+      containerPort: 6870
+    volumeMounts:
+    - name: my-data
+      mountPath: /Bottos/sharedData
+      subPath: sharedData
+    - name: my-data
+      mountPath: /Bottos/datadir
+      subPath: delegatep19/datadir
+    - name: my-data
+      mountPath: /Bottos/configs
+      subPath: delegatep19/configs
+    - name: my-data
+      mountPath: /Bottos/log
+      subPath: delegatep19/log
+    - name: my-data
+      mountPath: /Bottos/mongodb
+      subPath: delegatep19/
+    - name: my-data
+      mountPath: /root/bot
+      subPath: delegatep19/keystoredir
+  volumes:
+    - name: my-data
+      persistentVolumeClaim:
+        claimName: nfs-pvc
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: delegatep20
+  labels:
+    app: bottos
+    role: delegatep20
+spec:
+  selector:
+    app: bottos
+    role: delegatep20
+  clusterIP: None
+  ports:
+  - name: rest
+    port: 8689
+  - name: p2p
+    port: 9868
+  - name: wallet
+    port: 6869
+  - name: log
+    port: 6870
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: delegatep20
+  labels:
+    app: bottos
+    role: delegatep20
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: genesis
+    image: yaoya12345/bottos:v1.2
+    imagePullPolicy: IfNotPresent
+    command: ["/Bottos/scripts/entrypoint.sh","--type=delegate","--account=delegatep20","--mongodb=true","--delegateNum=29","--peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868"]
+    resources:
+      requests:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+      limits:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+    lifecycle:
+      preStop:
+        exec:
+          command: ["/Bottos/scripts/stop.sh","--type=all"]
+    ports:
+    - name: rest
+      containerPort: 8689
+    - name: p2p
+      containerPort: 9868
+    - name: wallet
+      containerPort: 6869
+    - name: log
+      containerPort: 6870
+    volumeMounts:
+    - name: my-data
+      mountPath: /Bottos/sharedData
+      subPath: sharedData
+    - name: my-data
+      mountPath: /Bottos/datadir
+      subPath: delegatep20/datadir
+    - name: my-data
+      mountPath: /Bottos/configs
+      subPath: delegatep20/configs
+    - name: my-data
+      mountPath: /Bottos/log
+      subPath: delegatep20/log
+    - name: my-data
+      mountPath: /Bottos/mongodb
+      subPath: delegatep20/
+    - name: my-data
+      mountPath: /root/bot
+      subPath: delegatep20/keystoredir
+  volumes:
+    - name: my-data
+      persistentVolumeClaim:
+        claimName: nfs-pvc
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: delegatep21
+  labels:
+    app: bottos
+    role: delegatep21
+spec:
+  selector:
+    app: bottos
+    role: delegatep21
+  clusterIP: None
+  ports:
+  - name: rest
+    port: 8689
+  - name: p2p
+    port: 9868
+  - name: wallet
+    port: 6869
+  - name: log
+    port: 6870
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: delegatep21
+  labels:
+    app: bottos
+    role: delegatep21
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: genesis
+    image: yaoya12345/bottos:v1.2
+    imagePullPolicy: IfNotPresent
+    command: ["/Bottos/scripts/entrypoint.sh","--type=delegate","--account=delegatep21","--mongodb=true","--delegateNum=29","--peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868"]
+    resources:
+      requests:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+      limits:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+    lifecycle:
+      preStop:
+        exec:
+          command: ["/Bottos/scripts/stop.sh","--type=all"]
+    ports:
+    - name: rest
+      containerPort: 8689
+    - name: p2p
+      containerPort: 9868
+    - name: wallet
+      containerPort: 6869
+    - name: log
+      containerPort: 6870
+    volumeMounts:
+    - name: my-data
+      mountPath: /Bottos/sharedData
+      subPath: sharedData
+    - name: my-data
+      mountPath: /Bottos/datadir
+      subPath: delegatep21/datadir
+    - name: my-data
+      mountPath: /Bottos/configs
+      subPath: delegatep21/configs
+    - name: my-data
+      mountPath: /Bottos/log
+      subPath: delegatep21/log
+    - name: my-data
+      mountPath: /Bottos/mongodb
+      subPath: delegatep21/
+    - name: my-data
+      mountPath: /root/bot
+      subPath: delegatep21/keystoredir
+  volumes:
+    - name: my-data
+      persistentVolumeClaim:
+        claimName: nfs-pvc
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: delegatep22
+  labels:
+    app: bottos
+    role: delegatep22
+spec:
+  selector:
+    app: bottos
+    role: delegatep22
+  clusterIP: None
+  ports:
+  - name: rest
+    port: 8689
+  - name: p2p
+    port: 9868
+  - name: wallet
+    port: 6869
+  - name: log
+    port: 6870
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: delegatep22
+  labels:
+    app: bottos
+    role: delegatep22
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: genesis
+    image: yaoya12345/bottos:v1.2
+    imagePullPolicy: IfNotPresent
+    command: ["/Bottos/scripts/entrypoint.sh","--type=delegate","--account=delegatep22","--mongodb=true","--delegateNum=29","--peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868"]
+    resources:
+      requests:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+      limits:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+    lifecycle:
+      preStop:
+        exec:
+          command: ["/Bottos/scripts/stop.sh","--type=all"]
+    ports:
+    - name: rest
+      containerPort: 8689
+    - name: p2p
+      containerPort: 9868
+    - name: wallet
+      containerPort: 6869
+    - name: log
+      containerPort: 6870
+    volumeMounts:
+    - name: my-data
+      mountPath: /Bottos/sharedData
+      subPath: sharedData
+    - name: my-data
+      mountPath: /Bottos/datadir
+      subPath: delegatep22/datadir
+    - name: my-data
+      mountPath: /Bottos/configs
+      subPath: delegatep22/configs
+    - name: my-data
+      mountPath: /Bottos/log
+      subPath: delegatep22/log
+    - name: my-data
+      mountPath: /Bottos/mongodb
+      subPath: delegatep22/
+    - name: my-data
+      mountPath: /root/bot
+      subPath: delegatep22/keystoredir
+  volumes:
+    - name: my-data
+      persistentVolumeClaim:
+        claimName: nfs-pvc
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: delegatep23
+  labels:
+    app: bottos
+    role: delegatep23
+spec:
+  selector:
+    app: bottos
+    role: delegatep23
+  clusterIP: None
+  ports:
+  - name: rest
+    port: 8689
+  - name: p2p
+    port: 9868
+  - name: wallet
+    port: 6869
+  - name: log
+    port: 6870
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: delegatep23
+  labels:
+    app: bottos
+    role: delegatep23
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: genesis
+    image: yaoya12345/bottos:v1.2
+    imagePullPolicy: IfNotPresent
+    command: ["/Bottos/scripts/entrypoint.sh","--type=delegate","--account=delegatep23","--mongodb=true","--delegateNum=29","--peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868"]
+    resources:
+      requests:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+      limits:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+    lifecycle:
+      preStop:
+        exec:
+          command: ["/Bottos/scripts/stop.sh","--type=all"]
+    ports:
+    - name: rest
+      containerPort: 8689
+    - name: p2p
+      containerPort: 9868
+    - name: wallet
+      containerPort: 6869
+    - name: log
+      containerPort: 6870
+    volumeMounts:
+    - name: my-data
+      mountPath: /Bottos/sharedData
+      subPath: sharedData
+    - name: my-data
+      mountPath: /Bottos/datadir
+      subPath: delegatep23/datadir
+    - name: my-data
+      mountPath: /Bottos/configs
+      subPath: delegatep23/configs
+    - name: my-data
+      mountPath: /Bottos/log
+      subPath: delegatep23/log
+    - name: my-data
+      mountPath: /Bottos/mongodb
+      subPath: delegatep23/
+    - name: my-data
+      mountPath: /root/bot
+      subPath: delegatep23/keystoredir
+  volumes:
+    - name: my-data
+      persistentVolumeClaim:
+        claimName: nfs-pvc
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: delegatep24
+  labels:
+    app: bottos
+    role: delegatep24
+spec:
+  selector:
+    app: bottos
+    role: delegatep24
+  clusterIP: None
+  ports:
+  - name: rest
+    port: 8689
+  - name: p2p
+    port: 9868
+  - name: wallet
+    port: 6869
+  - name: log
+    port: 6870
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: delegatep24
+  labels:
+    app: bottos
+    role: delegatep24
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: genesis
+    image: yaoya12345/bottos:v1.2
+    imagePullPolicy: IfNotPresent
+    command: ["/Bottos/scripts/entrypoint.sh","--type=delegate","--account=delegatep24","--mongodb=true","--delegateNum=29","--peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868"]
+    resources:
+      requests:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+      limits:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+    lifecycle:
+      preStop:
+        exec:
+          command: ["/Bottos/scripts/stop.sh","--type=all"]
+    ports:
+    - name: rest
+      containerPort: 8689
+    - name: p2p
+      containerPort: 9868
+    - name: wallet
+      containerPort: 6869
+    - name: log
+      containerPort: 6870
+    volumeMounts:
+    - name: my-data
+      mountPath: /Bottos/sharedData
+      subPath: sharedData
+    - name: my-data
+      mountPath: /Bottos/datadir
+      subPath: delegatep24/datadir
+    - name: my-data
+      mountPath: /Bottos/configs
+      subPath: delegatep24/configs
+    - name: my-data
+      mountPath: /Bottos/log
+      subPath: delegatep24/log
+    - name: my-data
+      mountPath: /Bottos/mongodb
+      subPath: delegatep24/
+    - name: my-data
+      mountPath: /root/bot
+      subPath: delegatep24/keystoredir
+  volumes:
+    - name: my-data
+      persistentVolumeClaim:
+        claimName: nfs-pvc
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: delegatep25
+  labels:
+    app: bottos
+    role: delegatep25
+spec:
+  selector:
+    app: bottos
+    role: delegatep25
+  clusterIP: None
+  ports:
+  - name: rest
+    port: 8689
+  - name: p2p
+    port: 9868
+  - name: wallet
+    port: 6869
+  - name: log
+    port: 6870
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: delegatep25
+  labels:
+    app: bottos
+    role: delegatep25
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: genesis
+    image: yaoya12345/bottos:v1.2
+    imagePullPolicy: IfNotPresent
+    command: ["/Bottos/scripts/entrypoint.sh","--type=delegate","--account=delegatep25","--mongodb=true","--delegateNum=29","--peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868"]
+    resources:
+      requests:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+      limits:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+    lifecycle:
+      preStop:
+        exec:
+          command: ["/Bottos/scripts/stop.sh","--type=all"]
+    ports:
+    - name: rest
+      containerPort: 8689
+    - name: p2p
+      containerPort: 9868
+    - name: wallet
+      containerPort: 6869
+    - name: log
+      containerPort: 6870
+    volumeMounts:
+    - name: my-data
+      mountPath: /Bottos/sharedData
+      subPath: sharedData
+    - name: my-data
+      mountPath: /Bottos/datadir
+      subPath: delegatep25/datadir
+    - name: my-data
+      mountPath: /Bottos/configs
+      subPath: delegatep25/configs
+    - name: my-data
+      mountPath: /Bottos/log
+      subPath: delegatep25/log
+    - name: my-data
+      mountPath: /Bottos/mongodb
+      subPath: delegatep25/
+    - name: my-data
+      mountPath: /root/bot
+      subPath: delegatep25/keystoredir
+  volumes:
+    - name: my-data
+      persistentVolumeClaim:
+        claimName: nfs-pvc
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: delegatep26
+  labels:
+    app: bottos
+    role: delegatep26
+spec:
+  selector:
+    app: bottos
+    role: delegatep26
+  clusterIP: None
+  ports:
+  - name: rest
+    port: 8689
+  - name: p2p
+    port: 9868
+  - name: wallet
+    port: 6869
+  - name: log
+    port: 6870
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: delegatep26
+  labels:
+    app: bottos
+    role: delegatep26
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: genesis
+    image: yaoya12345/bottos:v1.2
+    imagePullPolicy: IfNotPresent
+    command: ["/Bottos/scripts/entrypoint.sh","--type=delegate","--account=delegatep26","--mongodb=true","--delegateNum=29","--peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep27:9868,delegatep28:9868,delegatep29:9868"]
+    resources:
+      requests:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+      limits:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+    lifecycle:
+      preStop:
+        exec:
+          command: ["/Bottos/scripts/stop.sh","--type=all"]
+    ports:
+    - name: rest
+      containerPort: 8689
+    - name: p2p
+      containerPort: 9868
+    - name: wallet
+      containerPort: 6869
+    - name: log
+      containerPort: 6870
+    volumeMounts:
+    - name: my-data
+      mountPath: /Bottos/sharedData
+      subPath: sharedData
+    - name: my-data
+      mountPath: /Bottos/datadir
+      subPath: delegatep26/datadir
+    - name: my-data
+      mountPath: /Bottos/configs
+      subPath: delegatep26/configs
+    - name: my-data
+      mountPath: /Bottos/log
+      subPath: delegatep26/log
+    - name: my-data
+      mountPath: /Bottos/mongodb
+      subPath: delegatep26/
+    - name: my-data
+      mountPath: /root/bot
+      subPath: delegatep26/keystoredir
+  volumes:
+    - name: my-data
+      persistentVolumeClaim:
+        claimName: nfs-pvc
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: delegatep27
+  labels:
+    app: bottos
+    role: delegatep27
+spec:
+  selector:
+    app: bottos
+    role: delegatep27
+  clusterIP: None
+  ports:
+  - name: rest
+    port: 8689
+  - name: p2p
+    port: 9868
+  - name: wallet
+    port: 6869
+  - name: log
+    port: 6870
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: delegatep27
+  labels:
+    app: bottos
+    role: delegatep27
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: genesis
+    image: yaoya12345/bottos:v1.2
+    imagePullPolicy: IfNotPresent
+    command: ["/Bottos/scripts/entrypoint.sh","--type=delegate","--account=delegatep27","--mongodb=true","--delegateNum=29","--peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep28:9868,delegatep29:9868"]
+    resources:
+      requests:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+      limits:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+    lifecycle:
+      preStop:
+        exec:
+          command: ["/Bottos/scripts/stop.sh","--type=all"]
+    ports:
+    - name: rest
+      containerPort: 8689
+    - name: p2p
+      containerPort: 9868
+    - name: wallet
+      containerPort: 6869
+    - name: log
+      containerPort: 6870
+    volumeMounts:
+    - name: my-data
+      mountPath: /Bottos/sharedData
+      subPath: sharedData
+    - name: my-data
+      mountPath: /Bottos/datadir
+      subPath: delegatep27/datadir
+    - name: my-data
+      mountPath: /Bottos/configs
+      subPath: delegatep27/configs
+    - name: my-data
+      mountPath: /Bottos/log
+      subPath: delegatep27/log
+    - name: my-data
+      mountPath: /Bottos/mongodb
+      subPath: delegatep27/
+    - name: my-data
+      mountPath: /root/bot
+      subPath: delegatep27/keystoredir
+  volumes:
+    - name: my-data
+      persistentVolumeClaim:
+        claimName: nfs-pvc
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: delegatep28
+  labels:
+    app: bottos
+    role: delegatep28
+spec:
+  selector:
+    app: bottos
+    role: delegatep28
+  clusterIP: None
+  ports:
+  - name: rest
+    port: 8689
+  - name: p2p
+    port: 9868
+  - name: wallet
+    port: 6869
+  - name: log
+    port: 6870
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: delegatep28
+  labels:
+    app: bottos
+    role: delegatep28
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: genesis
+    image: yaoya12345/bottos:v1.2
+    imagePullPolicy: IfNotPresent
+    command: ["/Bottos/scripts/entrypoint.sh","--type=delegate","--account=delegatep28","--mongodb=true","--delegateNum=29","--peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep29:9868"]
+    resources:
+      requests:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+      limits:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+    lifecycle:
+      preStop:
+        exec:
+          command: ["/Bottos/scripts/stop.sh","--type=all"]
+    ports:
+    - name: rest
+      containerPort: 8689
+    - name: p2p
+      containerPort: 9868
+    - name: wallet
+      containerPort: 6869
+    - name: log
+      containerPort: 6870
+    volumeMounts:
+    - name: my-data
+      mountPath: /Bottos/sharedData
+      subPath: sharedData
+    - name: my-data
+      mountPath: /Bottos/datadir
+      subPath: delegatep28/datadir
+    - name: my-data
+      mountPath: /Bottos/configs
+      subPath: delegatep28/configs
+    - name: my-data
+      mountPath: /Bottos/log
+      subPath: delegatep28/log
+    - name: my-data
+      mountPath: /Bottos/mongodb
+      subPath: delegatep28/
+    - name: my-data
+      mountPath: /root/bot
+      subPath: delegatep28/keystoredir
+  volumes:
+    - name: my-data
+      persistentVolumeClaim:
+        claimName: nfs-pvc
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: delegatep29
+  labels:
+    app: bottos
+    role: delegatep29
+spec:
+  selector:
+    app: bottos
+    role: delegatep29
+  clusterIP: None
+  ports:
+  - name: rest
+    port: 8689
+  - name: p2p
+    port: 9868
+  - name: wallet
+    port: 6869
+  - name: log
+    port: 6870
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: delegatep29
+  labels:
+    app: bottos
+    role: delegatep29
+spec:
+  restartPolicy: OnFailure
+  containers:
+  - name: genesis
+    image: yaoya12345/bottos:v1.2
+    imagePullPolicy: IfNotPresent
+    command: ["/Bottos/scripts/entrypoint.sh","--type=delegate","--account=delegatep29","--mongodb=true","--delegateNum=29","--peerlist=genesis:9868,delegatep1:9868,delegatep2:9868,delegatep3:9868,delegatep4:9868,delegatep5:9868,delegatep6:9868,delegatep7:9868,delegatep8:9868,delegatep9:9868,delegatep10:9868,delegatep11:9868,delegatep12:9868,delegatep13:9868,delegatep14:9868,delegatep15:9868,delegatep16:9868,delegatep17:9868,delegatep18:9868,delegatep19:9868,delegatep20:9868,delegatep21:9868,delegatep22:9868,delegatep23:9868,delegatep24:9868,delegatep25:9868,delegatep26:9868,delegatep27:9868,delegatep28:9868"]
+    resources:
+      requests:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+      limits:
+        cpu: "90m"
+        memory: "320Mi"
+        ephemeral-storage: "400Mi"
+    lifecycle:
+      preStop:
+        exec:
+          command: ["/Bottos/scripts/stop.sh","--type=all"]
+    ports:
+    - name: rest
+      containerPort: 8689
+    - name: p2p
+      containerPort: 9868
+    - name: wallet
+      containerPort: 6869
+    - name: log
+      containerPort: 6870
+    volumeMounts:
+    - name: my-data
+      mountPath: /Bottos/sharedData
+      subPath: sharedData
+    - name: my-data
+      mountPath: /Bottos/datadir
+      subPath: delegatep29/datadir
+    - name: my-data
+      mountPath: /Bottos/configs
+      subPath: delegatep29/configs
+    - name: my-data
+      mountPath: /Bottos/log
+      subPath: delegatep29/log
+    - name: my-data
+      mountPath: /Bottos/mongodb
+      subPath: delegatep29/
+    - name: my-data
+      mountPath: /root/bot
+      subPath: delegatep29/keystoredir
+  volumes:
+    - name: my-data
+      persistentVolumeClaim:
+        claimName: nfs-pvc
