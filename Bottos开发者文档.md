@@ -3425,22 +3425,24 @@ console.log(keys.privateKey)
 
 参数:
 
-|   Name   |   Type   | Required | Description |
-| :------: | :------: | :------: | :---------: |
-| callback | Function |   True   |  回调方法   |
+无
 
 示例:
 
 ```shell
-Wallet.createMnemonic((info) => {
+Wallet.createMnemonic().then(data => {
   // 输出助记词
-  console.log(info.mnemonic)
+  console.log(data.mnemonic)
 
   // 输出私钥
-  console.log(info.privateKey)
+  console.log(data.privateKey)
 
-  // 输出公庶
-  console.log(info.publicKey)
+  // 输出公钥
+  console.log(data.publicKey)
+}).catch(error=>{
+
+  // 异常处理
+  console.log(error)
 })
 ```
 
@@ -3451,19 +3453,22 @@ Wallet.createMnemonic((info) => {
 |   name   |   Type   | Required | Description |
 | :------: | :------: | :------: | :---------: |
 | mnemonic |  string  |   True   |   助记词    |
-| callback | Function |   True   |  回调方法   |
 
 示例:
 
 ```shell
 let mnemonic = 'output define output remember special physical entry unlock vendor track mountain young federal diary need struggle dawn staff buzz filter sound gun unaware'
 
-Wallet.recoverMnemonic(mnemonic, (keys) => {
+Wallet.recoverMnemonic(mnemonic).then(keys => {
   // 打印私钥
   console.log(keys.privateKey)
 
   // 打印公钥
   console.log(keys.publicKey)
+}).catch(error=>{
+
+  // 异常处理
+  console.log(error)
 })
 ```
 
