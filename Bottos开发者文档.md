@@ -6108,4 +6108,4 @@ This transaction is sent. Please check its result by command : bcli transaction 
 
 ## 7 Bottos白皮书 
 
-[Bottos白皮书](https://github.com/bottos-project/magiccube)
+[Bottos白皮书](https://github.com/bottos-project/magiccube/blob/master/BottosWhitepaper_EN.pdf)
