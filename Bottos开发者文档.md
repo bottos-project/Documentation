@@ -123,7 +123,7 @@ Bottos节点分为基础服务节点、应用型节点、轻型节点、超轻�
 
 1. Golang语言环境安装
 
-> [Golang语言环境安装](./Golang语言环境安装.md)
+> [Golang语言环境安装](https://github.com/bottos-project/Documentation/blob/master/resource_cn/Golang%E8%AF%AD%E8%A8%80%E7%8E%AF%E5%A2%83%E5%AE%89%E8%A3%85.md)
 
 2. MinGW程序安装(Windows ONLY)
 
@@ -6104,7 +6104,8 @@ This transaction is sent. Please check its result by command : bcli transaction 
 
 ## 6 技术社区 
 
-微信群，或者海外社区链接
+[telegram海外社区链接](https://t.me/bottosofficial)
 
 ## 7 Bottos白皮书 
 
+[Bottos白皮书](https://github.com/bottos-project/magiccube)
