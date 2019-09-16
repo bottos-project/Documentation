@@ -672,7 +672,7 @@ $ docker-compose down
   - k8s自动调度pod到相应的服务器上
   - 所有数据会持久化在nfs服务器上的 `/home/bottos/k8s/save_data/` 下
 
-### 3.4 一键部署Ddpp
+### 3.4 一键部署DApp
 
 #### cpp智能合约自动部署工具
 
