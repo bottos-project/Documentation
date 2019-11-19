@@ -1,4 +1,4 @@
-# Bottos Developer Documentation (Bottos开发手册)
+# Bottos Developer Documentation
 
 *All the developer documentations are listed above.*
 
@@ -8,6 +8,5 @@
 
   English: https://gitter.im/bottos-project/bottos
   
-  Chinese: http://forum.botfans.org/
   
 
